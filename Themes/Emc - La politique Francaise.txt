@@ -1,0 +1,197 @@
+SESSION|1
+QUESTION|La France est une …………… démocratique.
+REPONSES|République;Monarchie;Dictature
+BONNE|République
+EXPLICATION|La France est une République démocratique.
+
+SESSION|1
+QUESTION|Dans l’Antiquité, à …………………, la démocratie était directe.
+REPONSES|Athènes;Rome;Paris
+BONNE|Athènes
+EXPLICATION|À Athènes, les citoyens décidaient directement.
+
+SESSION|1
+QUESTION|Dans une démocratie directe, les …………… décident eux-mêmes.
+REPONSES|citoyens;députés;sénateurs
+BONNE|citoyens
+EXPLICATION|Les citoyens votent eux-mêmes les décisions.
+
+SESSION|1
+QUESTION|En France, la démocratie est …………………
+REPONSES|représentative;directe;royale
+BONNE|représentative
+EXPLICATION|Les citoyens élisent des représentants.
+
+SESSION|1
+QUESTION|Le Président de la République est élu pour ……… ans.
+REPONSES|5;6;7
+BONNE|5
+EXPLICATION|Le mandat présidentiel dure 5 ans.
+
+SESSION|1
+QUESTION|Le Président est élu aux élections …………………
+REPONSES|présidentielles;législatives;régionales
+BONNE|présidentielles
+EXPLICATION|Les citoyens votent lors des élections présidentielles.
+
+SESSION|1
+QUESTION|En France, on peut voter à partir de ……… ans.
+REPONSES|18;16;21
+BONNE|18
+EXPLICATION|Le droit de vote est accordé à 18 ans.
+
+SESSION|1
+QUESTION|Le Président représente la …………… à l’étranger.
+REPONSES|France;ville;Assemblée
+BONNE|France
+EXPLICATION|Il représente le pays à l’international.
+
+SESSION|1
+QUESTION|Le Président …………… les lois.
+REPONSES|promulgue;vote;annule
+BONNE|promulgue
+EXPLICATION|Il signe les lois pour les rendre applicables.
+
+SESSION|1
+QUESTION|Le Président est chef des …………………
+REPONSES|armées;écoles;départements
+BONNE|armées
+EXPLICATION|Il est le chef des armées françaises.
+
+SESSION|1
+QUESTION|Le Président peut organiser un …………………
+REPONSES|référendum;concours;débat
+BONNE|référendum
+EXPLICATION|Le référendum est une question posée directement au peuple.
+
+SESSION|1
+QUESTION|Le Président nomme un Premier …………………
+REPONSES|ministre;député;sénateur
+BONNE|ministre
+EXPLICATION|Le Premier ministre dirige le gouvernement.
+
+SESSION|1
+QUESTION|Le gouvernement est composé des …………………
+REPONSES|ministres;maires;citoyens
+BONNE|ministres
+EXPLICATION|Les ministres forment le gouvernement.
+
+SESSION|2
+QUESTION|Le Parlement est composé de deux chambres : l’Assemblée nationale et le ……………
+REPONSES|Sénat;Gouvernement;Conseil constitutionnel
+BONNE|Sénat
+EXPLICATION|Le Parlement comprend l’Assemblée nationale et le Sénat.
+
+SESSION|2
+QUESTION|Les députés siègent à l’…………………… nationale.
+REPONSES|Assemblée;République;Élection
+BONNE|Assemblée
+EXPLICATION|Les députés sont membres de l’Assemblée nationale.
+
+SESSION|2
+QUESTION|L’Assemblée nationale est composée de ………… députés.
+REPONSES|577;348;500
+BONNE|577
+EXPLICATION|Il y a 577 députés élus en France.
+
+SESSION|2
+QUESTION|Les députés sont élus pour ………… ans.
+REPONSES|5;6;7
+BONNE|5
+EXPLICATION|Le mandat d’un député dure 5 ans.
+
+SESSION|2
+QUESTION|Les députés sont élus lors des élections …………………
+REPONSES|législatives;présidentielles;municipales
+BONNE|législatives
+EXPLICATION|Les citoyens élisent les députés aux élections législatives.
+
+SESSION|2
+QUESTION|Les sénateurs siègent au …………………
+REPONSES|Sénat;Gouvernement;Palais présidentiel
+BONNE|Sénat
+EXPLICATION|Les sénateurs sont membres du Sénat.
+
+SESSION|2
+QUESTION|Les sénateurs sont élus par des représentants des ………………… locales.
+REPONSES|collectivités;écoles;associations
+BONNE|collectivités
+EXPLICATION|Ils sont élus par des élus locaux (maires, conseillers…).
+
+SESSION|2
+QUESTION|Le rôle principal du Parlement est de voter les …………………
+REPONSES|lois;élections;discours
+BONNE|lois
+EXPLICATION|Le Parlement discute et vote les lois.
+
+SESSION|2
+QUESTION|L’Assemblée nationale peut renverser le …………………
+REPONSES|gouvernement;Président;Sénat
+BONNE|gouvernement
+EXPLICATION|Elle peut voter une motion de censure.
+
+SESSION|2
+QUESTION|Le Parlement contrôle l’action du …………………
+REPONSES|gouvernement;maire;Président uniquement
+BONNE|gouvernement
+EXPLICATION|Les députés et sénateurs surveillent l’action du gouvernement.
+
+SESSION|3
+QUESTION|En France, il existe trois grandes collectivités locales : les communes, les départements et les …………………
+REPONSES|régions;cantons;districts
+BONNE|régions
+EXPLICATION|Les trois niveaux sont communes, départements et régions.
+
+SESSION|3
+QUESTION|Les communes correspondent aux ………………… et villages.
+REPONSES|villes;quartiers;pays
+BONNE|villes
+EXPLICATION|Une commune peut être une ville ou un village.
+
+SESSION|3
+QUESTION|Le maire est élu lors des élections …………………
+REPONSES|municipales;législatives;présidentielles
+BONNE|municipales
+EXPLICATION|Les citoyens élisent le conseil municipal aux élections municipales.
+
+SESSION|3
+QUESTION|Le département est dirigé par un président élu aux élections …………………
+REPONSES|départementales;régionales;européennes
+BONNE|départementales
+EXPLICATION|Les conseillers départementaux élisent un président.
+
+SESSION|3
+QUESTION|La région est dirigée par un président élu aux élections …………………
+REPONSES|régionales;municipales;sénatoriales
+BONNE|régionales
+EXPLICATION|Les conseillers régionaux élisent le président de région.
+
+SESSION|3
+QUESTION|Les élus locaux sont élus pour ………… ans.
+REPONSES|6;5;7
+BONNE|6
+EXPLICATION|Le mandat des élus locaux dure 6 ans.
+
+SESSION|3
+QUESTION|Les communes s’occupent par exemple des ………………… et des bus.
+REPONSES|écoles;lycées;universités
+BONNE|écoles
+EXPLICATION|Les communes gèrent les écoles primaires.
+
+SESSION|3
+QUESTION|Les départements s’occupent par exemple des …………………
+REPONSES|collèges;lycées;universités
+BONNE|collèges
+EXPLICATION|Les départements gèrent les collèges.
+
+SESSION|3
+QUESTION|Les régions s’occupent par exemple des …………………
+REPONSES|lycées;écoles primaires;mairies
+BONNE|lycées
+EXPLICATION|Les régions gèrent les lycées et les transports régionaux.
+
+SESSION|3
+QUESTION|Les collectivités locales participent à la gestion du …………………
+REPONSES|territoire;pays étranger;Parlement
+BONNE|territoire
+EXPLICATION|Elles organisent la vie locale sur leur territoire.

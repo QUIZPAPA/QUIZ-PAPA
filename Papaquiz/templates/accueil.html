@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QUIZ QUIZZZ QUIZZZZZ</title>
+    <style>
+        body { background:#95F5A6; font-family:Comic Sans MS; text-align:center; }
+        button { font-size:18px; padding:10px 20px; background:#B0F7FF; }
+    </style>
+</head>
+<body>
+    <h1>Choisis ton thème</h1>
+
+    <form method="post" action="/start">
+        <select name="theme" required>
+            {% for t in themes %}
+                <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button>🚀 Commencer</button>
+    </form>
+</body>
+</html>

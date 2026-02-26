@@ -1,0 +1,99 @@
+QUESTION|Les Grecs vivaient-ils dans un seul pays ?
+REPONSES|Oui;Non;🍕 Seulement quand Zeus commandait une pizza
+BONNE|Non
+EXPLICATION|Les Grecs vivaient dans de nombreuses cités-États indépendantes.
+
+QUESTION|Comment appelle-t-on une cité grecque fondée ailleurs ?
+REPONSES|Une colonie;Une métropole;🛸 Une cité venue de l’espace
+BONNE|Une colonie
+EXPLICATION|Une colonie est une cité fondée loin de la cité d’origine.
+
+QUESTION|Comment s’appelle la cité d’origine d’une colonie ?
+REPONSES|La métropole;La colonie;🦄 Le village des licornes
+BONNE|La métropole
+EXPLICATION|La métropole est la cité d’où partent les colons.
+
+QUESTION|Qu’est-ce qu’une cité grecque ?
+REPONSES|Un territoire indépendant avec une ville et une campagne;Un empire;🏰 Un château magique
+BONNE|Un territoire indépendant avec une ville et une campagne
+EXPLICATION|Chaque cité grecque est indépendante et possède son propre territoire.
+
+QUESTION|Comment s’appelle la place centrale de la cité ?
+REPONSES|L’agora;L’acropole;🎡 Le parc d’attractions
+BONNE|L’agora
+EXPLICATION|L’agora est le centre politique, commercial et social.
+
+QUESTION|Où se trouvent les principaux temples ?
+REPONSES|Sur l’acropole;Sur l’agora;🏖️ Sur la plage sacrée
+BONNE|Sur l’acropole
+EXPLICATION|L’acropole est la colline sacrée.
+
+QUESTION|La campagne fait-elle partie de la cité grecque ?
+REPONSES|Oui;Non;🚜 Seulement pour les chèvres savantes
+BONNE|Oui
+EXPLICATION|La campagne nourrit la ville et fait partie de la cité.
+
+QUESTION|Chaque cité grecque a-t-elle sa monnaie ?
+REPONSES|Oui;Non;💳 Elles payaient en cartes bancaires
+BONNE|Oui
+EXPLICATION|Chaque cité est indépendante et frappe sa monnaie.
+
+QUESTION|Dans quelle cité est née la démocratie ?
+REPONSES|Athènes;Sparte;🎮 Dans un jeu vidéo
+BONNE|Athènes
+EXPLICATION|Athènes invente la démocratie au Ve siècle avant J.-C.
+
+QUESTION|Que signifie le mot démocratie ?
+REPONSES|Le pouvoir appartient au peuple;Le pouvoir appartient au roi;🤖 Le pouvoir aux robots
+BONNE|Le pouvoir appartient au peuple
+EXPLICATION|Les citoyens participent aux décisions politiques.
+
+QUESTION|Les femmes sont-elles citoyennes à Athènes ?
+REPONSES|Non;Oui;👑 Seulement les reines invisibles
+BONNE|Non
+EXPLICATION|Les femmes n’ont pas de droits politiques.
+
+QUESTION|Les esclaves sont-ils citoyens ?
+REPONSES|Non;Oui;🐐 Seulement les esclaves chèvres
+BONNE|Non
+EXPLICATION|Les esclaves n’ont aucun droit politique.
+
+QUESTION|Qu’est-ce qu’un mythe ?
+REPONSES|Un récit imaginaire avec des dieux;Un document historique sûr;🐉 Une histoire écrite par des dragons
+BONNE|Un récit imaginaire avec des dieux
+EXPLICATION|Les mythes expliquent le monde avec des dieux et des héros.
+
+QUESTION|Qui a écrit l’Iliade et l’Odyssée ?
+REPONSES|Homère;Zeus;🧙‍♂️ Un magicien distrait
+BONNE|Homère
+EXPLICATION|Homère est un poète grec.
+
+QUESTION|L’Iliade est-elle un mythe ?
+REPONSES|Oui;Non;📺 Une série Netflix
+BONNE|Oui
+EXPLICATION|L’Iliade est un récit mythologique.
+
+QUESTION|Quel sanctuaire est dédié à Apollon ?
+REPONSES|Delphes;Olympie;🎤 Une salle de concert
+BONNE|Delphes
+EXPLICATION|Delphes est dédié au dieu Apollon.
+
+QUESTION|Pourquoi Olympie est-elle célèbre ?
+REPONSES|Pour les Jeux olympiques;Pour la démocratie;🎢 Pour ses montagnes russes
+BONNE|Pour les Jeux olympiques
+EXPLICATION|Des concours sportifs ont lieu tous les 4 ans.
+
+QUESTION|Qui participe aux décisions à Athènes ?
+REPONSES|Les citoyens;Tous les habitants;📢 Celui qui crie le plus fort
+BONNE|Les citoyens
+EXPLICATION|Seuls les citoyens participent à la vie politique.
+
+QUESTION|Pourquoi la démocratie athénienne est-elle limitée ?
+REPONSES|Beaucoup d’habitants sont exclus;Tout le monde vote;🛸 Les aliens décident
+BONNE|Beaucoup d’habitants sont exclus
+EXPLICATION|Femmes, esclaves et métèques sont exclus.
+
+QUESTION|Quelle phrase résume le mieux le monde grec ?
+REPONSES|Des cités indépendantes unies par une culture commune;Un empire dirigé par un roi;🦖 Un royaume de dinosaures
+BONNE|Des cités indépendantes unies par une culture commune
+EXPLICATION|Les Grecs partagent une langue, des dieux et des traditions.

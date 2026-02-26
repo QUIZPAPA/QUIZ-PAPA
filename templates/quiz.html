@@ -1,81 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Quiz</title>
-<style>
-body { background:#95F5A6; font-family:Comic Sans MS; }
-.container { display:flex; }
-.logo { width:400px; }
-.zone { flex:1; padding:20px; }
-button { font-size:18px; padding:10px; margin:5px; width:80%; }
-</style>
+    <title>Quiz</title>
+    <style>
+        body { 
+            background: #95F5A6; 
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
+            margin:0; 
+            padding:0;
+        }
 
-<script>
-function playGood(){ new Audio("/static/sounds/tada.mp3").play(); }
-function playBad(){ new Audio("/static/sounds/outch.mp3").play(); }
+        .container { 
+            display: flex; 
+            align-items: flex-start; 
+            padding: 20px;
+        }
 
-function scintiller(){
-    let img = document.getElementById("logo");
-    let i = 0;
-    let interval = setInterval(()=>{
-        img.style.visibility = (i%2==0)?"hidden":"visible";
-        i++;
-        if(i>6){ clearInterval(interval); img.style.visibility="visible"; }
-    },80);
-}
+        .logo { 
+            width: 400px; 
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
 
-function trembler(){
-    let img = document.getElementById("logo");
-    let i=0;
-    let interval=setInterval(()=>{
-        img.style.transform = (i%2==0)?"translateX(8px)":"translateX(-8px)";
-        i++;
-        if(i>10){ clearInterval(interval); img.style.transform="translateX(0px)"; }
-    },50);
-}
-</script>
+        .zone { 
+            flex: 1; 
+            padding: 20px; 
+        }
 
+        button { 
+            font-size: 18px; 
+            padding: 12px; 
+            margin: 8px 0; 
+            width: 80%; 
+            border: 2px solid #70d5ff;
+            border-radius: 12px; 
+            background-color: #b8f0ff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #70d5ff;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .feedback {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        h2 { margin: 10px 0; }
+        h3 { margin: 5px 0; }
+
+    </style>
+
+    <script>
+        function playGood(){ new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); }
+        function playBad(){ new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); }
+
+        function scintiller(){
+            let img = document.getElementById("logo");
+            let i = 0;
+            let interval = setInterval(()=>{
+                img.style.visibility = (i%2==0)?"hidden":"visible";
+                i++;
+                if(i>6){ clearInterval(interval); img.style.visibility="visible"; }
+            },80);
+        }
+
+        function trembler(){
+            let img = document.getElementById("logo");
+            let i=0;
+            let interval=setInterval(()=>{
+                img.style.transform = (i%2==0)?"translateX(8px)":"translateX(-8px)";
+                i++;
+                if(i>10){ clearInterval(interval); img.style.transform="translateX(0px)"; }
+            },50);
+        }
+    </script>
 </head>
 <body>
 
 <div class="container">
-    <img id="logo" class="logo" src="/static/logo.png">
+    <img id="logo" class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
 
     <div class="zone">
 
-{% if not fin %}
+    {% if not fin %}
 
-    {% if feedback %}
-        {% if feedback[0] == "bonne" %}
-            <script>playGood(); scintiller();</script>
-            <h3 style="color:green;">✅ Bonne réponse<br>{{ feedback[1] }}</h3>
+        {% if feedback %}
+            {% if feedback[0] == "bonne" %}
+                <script>playGood(); scintiller();</script>
+                <h3 style="color:green;">✅ Bonne réponse<br>{{ feedback[1] }}</h3>
+            {% else %}
+                <script>playBad(); trembler();</script>
+                <h3 style="color:red;">❌ Mauvaise réponse<br>
+                Bonne réponse : {{ feedback[1] }}<br>
+                {{ feedback[2] }}</h3>
+            {% endif %}
+            <a href="/quiz"><button>➡️ Question suivante</button></a>
+
         {% else %}
-            <script>playBad(); trembler();</script>
-            <h3 style="color:red;">❌ Mauvaise réponse<br>
-            Bonne réponse : {{ feedback[1] }}<br>
-            {{ feedback[2] }}</h3>
+
+            <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
+            <h2>{{ question.question }}</h2>
+
+            <form method="post">
+                {% for r in reponses %}
+                    <button name="reponse" value="{{ r }}">{{ r }}</button>
+                {% endfor %}
+            </form>
+
         {% endif %}
-        <a href="/quiz"><button>➡️ Question suivante</button></a>
 
     {% else %}
 
-        <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
-        <h2>{{ question.question }}</h2>
-
-        <form method="post">
-            {% for r in reponses %}
-                <button name="reponse" value="{{ r }}">{{ r }}</button><br>
-            {% endfor %}
-        </form>
+        <h2>Session terminée</h2>
+        <a href="/"><button>🏠 Retour accueil</button></a>
 
     {% endif %}
-
-{% else %}
-
-    <h2>Session terminée</h2>
-    <a href="/">Retour accueil</a>
-
-{% endif %}
 
     </div>
 </div>

@@ -1,14 +1,18 @@
-from flask import Flask, render_template, request, redirect, session
+import os
 import random
+from flask import Flask, render_template, request, redirect, session
 from quiz_logic import charger_themes, charger_questions
 
+# Création de l'application Flask
 app = Flask(__name__)
 app.secret_key = "supersecret"
 
+# Route d'accueil
 @app.route("/")
 def accueil():
     return render_template("accueil.html", themes=charger_themes())
 
+# Démarrage d'une session quiz
 @app.route("/start", methods=["POST"])
 def start():
     theme = request.form["theme"]
@@ -22,9 +26,9 @@ def start():
 
     return redirect("/quiz")
 
+# Route du quiz
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
-
     if "questions" not in session:
         return redirect("/")
 
@@ -71,5 +75,8 @@ def quiz():
     else:
         return render_template("quiz.html", fin=True)
 
+# Point d'entrée pour développement local
+# Render utilisera gunicorn, donc ce bloc est optionnel
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)

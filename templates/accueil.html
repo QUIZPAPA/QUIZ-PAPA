@@ -2,22 +2,98 @@
 <html>
 <head>
     <title>QUIZ QUIZZZ QUIZZZZZ</title>
+
     <style>
-        body { background:#95F5A6; font-family:Comic Sans MS; text-align:center; }
-        button { font-size:18px; padding:10px 20px; background:#B0F7FF; }
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #95F5A6, #B0F7FF);
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 400px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 2px solid #70d5ff;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            font-size: 18px;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            background-color: #70d5ff;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4cc7ff;
+            transform: scale(1.05);
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
     </style>
 </head>
 <body>
-    <h1>Choisis ton thème</h1>
 
-    <form method="post" action="/start">
-        <select name="theme" required>
-            {% for t in themes %}
-                <option value="{{ t }}">{{ t }}</option>
-            {% endfor %}
-        </select>
-        <br><br>
-        <button>🚀 Commencer</button>
-    </form>
+    <div class="card">
+
+        <!-- Si tu as un logo dans static/images -->
+        <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
+
+        <h1>🎯 Choisis ton thème</h1>
+
+        <form method="post" action="/start">
+            <select name="theme" required>
+                {% for t in themes %}
+                    <option value="{{ t }}">{{ t }}</option>
+                {% endfor %}
+            </select>
+
+            <button type="submit">🚀 Commencer le quiz</button>
+        </form>
+
+    </div>
+
 </body>
 </html>

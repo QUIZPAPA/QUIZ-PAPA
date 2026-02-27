@@ -10,7 +10,7 @@
     <style>
         body { 
             background: #95F5A6; 
-            font-family: 'Fredoka', sans-serif; 
+            font-family: 'Comic Sans MS', cursive, sans-serif; 
             margin:0; 
             padding:0;
         }
@@ -22,7 +22,7 @@
         }
 
         .logo { 
-            width: 200px; 
+            width: 400px; 
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
@@ -57,14 +57,13 @@
 
         h2 { margin: 10px 0; }
         h3 { margin: 5px 0; }
+
     </style>
 
     <script>
-        // Sons
-        function playGood(){ new Audio("static/sounds/tada.mp3").play(); }
-        function playBad(){ new Audio("static/sounds/outch.mp3").play(); }
+        function playGood(){ new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); }
+        function playBad(){ new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); }
 
-        // Effets logo
         function scintiller(){
             let img = document.getElementById("logo");
             let i = 0;
@@ -84,69 +83,51 @@
                 if(i>10){ clearInterval(interval); img.style.transform="translateX(0px)"; }
             },50);
         }
-
-        // QUESTIONS DE TEST (à remplacer par ton themes.js)
-        const themes = {
-            science: [
-                { question:"Quelle planète est la plus proche du Soleil ?", réponses:["Vénus","Mercure","Mars"], bonne:"Mercure", explication:"Mercure est la planète la plus proche du Soleil." },
-                { question:"L'eau gèle à ?", réponses:["0°C","32°C","100°C"], bonne:"0°C", explication:"L'eau gèle à 0°C." }
-            ],
-            histoire: [
-                { question:"Qui a découvert l'Amérique ?", réponses:["Christophe Colomb","Vasco de Gama","Magellan"], bonne:"Christophe Colomb", explication:"Christophe Colomb a découvert l'Amérique en 1492." }
-            ]
-        };
-
-        let currentQuestion = 0;
-        let questions = [];
-
-        function startQuiz(){
-            const theme = localStorage.getItem("theme") || "science"; 
-            questions = themes[theme];
-            if(!questions){ 
-                alert("Thème introuvable !"); 
-                return; 
-            }
-            showQuestion();
-        }
-
-        function showQuestion(){
-            if(currentQuestion >= questions.length){
-                document.getElementById("zone").innerHTML = "<h2>Quiz terminé !</h2>";
-                return;
-            }
-            const q = questions[currentQuestion];
-            let html = `<h2>${q.question}</h2>`;
-            q.réponses.forEach(r => {
-                html += `<button onclick="checkAnswer('${r}')">${r}</button><br>`;
-            });
-            html += `<div id="feedback" class="feedback"></div>`;
-            document.getElementById("zone").innerHTML = html;
-        }
-
-        function checkAnswer(selected){
-            const q = questions[currentQuestion];
-            const feedbackDiv = document.getElementById("feedback");
-            if(selected === q.bonne){
-                feedbackDiv.textContent = "Bonne réponse ! ✅ " + q.explication;
-                playGood();
-                scintiller();
-            } else {
-                feedbackDiv.textContent = "Mauvaise réponse ❌ " + q.explication;
-                playBad();
-                trembler();
-            }
-            currentQuestion++;
-            setTimeout(showQuestion, 1500);
-        }
-
-        window.onload = startQuiz;
     </script>
 </head>
-
 <body>
-    <div class="container">
-        <img src="static/images/logo.png" class="logo" id="logo">
-        <div class="zone" id="zone"></div>
+
+<div class="container">
+    <img id="logo" class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
+
+    <div class="zone">
+
+    {% if not fin %}
+
+        {% if feedback %}
+            {% if feedback[0] == "bonne" %}
+                <script>playGood(); scintiller();</script>
+                <h3 style="color:green;">✅ Bonne réponse<br>{{ feedback[1] }}</h3>
+            {% else %}
+                <script>playBad(); trembler();</script>
+                <h3 style="color:red;">❌ Mauvaise réponse<br>
+                Bonne réponse : {{ feedback[1] }}<br>
+                {{ feedback[2] }}</h3>
+            {% endif %}
+            <a href="/quiz"><button>➡️ Question suivante</button></a>
+
+        {% else %}
+
+            <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
+            <h2>{{ question.question }}</h2>
+
+            <form method="post">
+                {% for r in reponses %}
+                    <button name="reponse" value="{{ r }}">{{ r }}</button>
+                {% endfor %}
+            </form>
+
+        {% endif %}
+
+    {% else %}
+
+        <h2>Session terminée</h2>
+        <a href="/"><button>🏠 Retour accueil</button></a>
+
+    {% endif %}
+
     </div>
+</div>
+
 </body>
 </html>

@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QUIZ QUIZZZ QUIZZZZZ</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Google Font Fredoka -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #95F5A6, #B0F7FF);
-            font-family: 'fredoka', sans-serif;
+            font-family: 'Fredoka', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,8 +26,15 @@
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             text-align: center;
-            width: 400px;
+            width: 90%;
+            max-width: 420px;
             animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .logo {
+            width: 120px;
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
         }
 
         h1 {
@@ -31,34 +43,30 @@
 
         select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             font-size: 16px;
             border-radius: 10px;
             border: 2px solid #70d5ff;
             margin-bottom: 20px;
+            font-family: 'Fredoka', sans-serif;
         }
 
         button {
             width: 100%;
             font-size: 18px;
-            padding: 12px;
+            padding: 14px;
             border-radius: 12px;
             border: none;
             background-color: #70d5ff;
             color: white;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-family: 'Fredoka', sans-serif;
         }
 
         button:hover {
             background-color: #4cc7ff;
             transform: scale(1.05);
-        }
-
-        .logo {
-            width: 120px;
-            margin-bottom: 15px;
-            animation: float 3s ease-in-out infinite;
         }
 
         @keyframes float {
@@ -72,14 +80,21 @@
             to { opacity: 1; transform: scale(1); }
         }
 
+        /* Petit ajustement mobile */
+        @media (max-width: 480px) {
+            .card {
+                padding: 25px;
+            }
+        }
+
     </style>
 </head>
+
 <body>
 
     <div class="card">
 
-        <!-- Si tu as un logo dans static/images -->
-        <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
+        <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" alt="Logo Quiz">
 
         <h1>🎯 Choisis ton thème</h1>
 

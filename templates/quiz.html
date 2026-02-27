@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html>
 <head>
-<head>
-    <title>QUIZ QUIZZZ QUIZZZZZ</title>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
 
+    <!-- Police Fredoka -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-    <title>Quiz</title>
-    <style>
         body { 
             background: #95F5A6; 
-            font-family: 'fredoka', sans-serif; 
+            font-family: 'Fredoka', sans-serif; 
             margin:0; 
             padding:0;
         }
@@ -58,7 +55,6 @@
 
         h2 { margin: 10px 0; }
         h3 { margin: 5px 0; }
-
     </style>
 
     <script>
@@ -86,49 +82,3 @@
         }
     </script>
 </head>
-<body>
-
-<div class="container">
-    <img id="logo" class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
-
-    <div class="zone">
-
-    {% if not fin %}
-
-        {% if feedback %}
-            {% if feedback[0] == "bonne" %}
-                <script>playGood(); scintiller();</script>
-                <h3 style="color:green;">✅ Bonne réponse<br>{{ feedback[1] }}</h3>
-            {% else %}
-                <script>playBad(); trembler();</script>
-                <h3 style="color:red;">❌ Mauvaise réponse<br>
-                Bonne réponse : {{ feedback[1] }}<br>
-                {{ feedback[2] }}</h3>
-            {% endif %}
-            <a href="/quiz"><button>➡️ Question suivante</button></a>
-
-        {% else %}
-
-            <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
-            <h2>{{ question.question }}</h2>
-
-            <form method="post">
-                {% for r in reponses %}
-                    <button name="reponse" value="{{ r }}">{{ r }}</button>
-                {% endfor %}
-            </form>
-
-        {% endif %}
-
-    {% else %}
-
-        <h2>Session terminée</h2>
-        <a href="/"><button>🏠 Retour accueil</button></a>
-
-    {% endif %}
-
-    </div>
-</div>
-
-</body>
-</html>

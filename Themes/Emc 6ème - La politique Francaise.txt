@@ -194,4 +194,5 @@ SESSION|3
 QUESTION|Les collectivités locales participent à la gestion du …………………
 REPONSES|territoire;pays étranger;Parlement
 BONNE|territoire
+
 EXPLICATION|Elles organisent la vie locale sur leur territoire.

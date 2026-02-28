@@ -1,0 +1,299 @@
+SESSION|1
+QUESTION|D’où proviennent principalement les aliments d’origine animale ?
+REPONSES|De l’élevage d’animaux domestiques;De la culture des céréales uniquement;De la pêche de loisir
+BONNE|De l’élevage d’animaux domestiques
+EXPLICATION|La viande, le lait et les œufs proviennent principalement d’animaux élevés par l’être humain depuis des siècles.
+
+SESSION|1
+QUESTION|Quels sont les deux types d’élevage de poules étudiés ?
+REPONSES|Élevage en batterie et élevage en plein air;Élevage intensif et élevage marin;Élevage sauvage et élevage naturel
+BONNE|Élevage en batterie et élevage en plein air
+EXPLICATION|L’élevage en batterie se fait en cage tandis que le plein air permet l’accès à l’extérieur.
+
+SESSION|1
+QUESTION|Dans quel type d’élevage les poules vivent-elles en cage ?
+REPONSES|En batterie;En plein air;En agriculture biologique
+BONNE|En batterie
+EXPLICATION|Les poules en batterie vivent dans des cages avec peu d’espace et sans accès extérieur.
+
+SESSION|1
+QUESTION|Quel élevage permet aux poules d’avoir accès à l’extérieur ?
+REPONSES|L’élevage en plein air;L’élevage en batterie;L’élevage intensif fermé
+BONNE|L’élevage en plein air
+EXPLICATION|Les poules peuvent sortir, gratter le sol et voir la lumière naturelle.
+
+SESSION|1
+QUESTION|Pourquoi coupe-t-on parfois le bec des poules en batterie ?
+REPONSES|Pour limiter les blessures entre elles;Pour améliorer la ponte;Pour faciliter l’alimentation
+BONNE|Pour limiter les blessures entre elles
+EXPLICATION|La promiscuité provoque des agressions, le bec est coupé pour éviter qu’elles ne se blessent.
+
+SESSION|1
+QUESTION|Quel élevage produit généralement des œufs de meilleure qualité ?
+REPONSES|L’élevage en plein air;L’élevage en batterie;Les deux sont identiques
+BONNE|L’élevage en plein air
+EXPLICATION|Des conditions plus naturelles améliorent la qualité nutritionnelle et gustative des œufs.
+
+SESSION|1
+QUESTION|Quelle quantité moyenne de viande consomme une personne en France par an ?
+REPONSES|89 kg;29 kg;120 kg
+BONNE|89 kg
+EXPLICATION|La consommation moyenne en France est élevée par rapport à la moyenne mondiale.
+
+SESSION|1
+QUESTION|Combien d’animaux sont abattus chaque année dans le monde pour l’alimentation ?
+REPONSES|65 milliards;65 millions;6 milliards
+BONNE|65 milliards
+EXPLICATION|Ce chiffre montre l’ampleur mondiale de la production de viande.
+
+SESSION|1
+QUESTION|Quel élevage demande environ 15 500 litres d’eau pour produire 1 kg de viande ?
+REPONSES|Le bœuf;Le poulet;Le porc
+BONNE|Le bœuf
+EXPLICATION|L’élevage bovin consomme beaucoup d’eau pour l’alimentation et l’entretien des animaux.
+
+SESSION|1
+QUESTION|Quel pourcentage des émissions mondiales de gaz à effet de serre est dû à l’élevage ?
+REPONSES|14,5%;4,5%;34,5%
+BONNE|14,5%
+EXPLICATION|L’élevage contribue au réchauffement climatique notamment par les émissions de méthane.
+
+SESSION|1
+QUESTION|Pourquoi l’élevage participe-t-il à la déforestation ?
+REPONSES|Pour cultiver des céréales destinées aux animaux;Pour construire des bâtiments;Pour développer les villes
+BONNE|Pour cultiver des céréales destinées aux animaux
+EXPLICATION|Une grande partie des terres agricoles sert à produire l’alimentation animale.
+
+SESSION|1
+QUESTION|Que provoquent le fumier et le lisier en excès ?
+REPONSES|Une pollution des sols et de l’eau;Une amélioration immédiate des rivières;Une diminution des cultures
+BONNE|Une pollution des sols et de l’eau
+EXPLICATION|Ils peuvent libérer des nitrates et phosphates qui polluent les milieux aquatiques.
+
+SESSION|1
+QUESTION|Qu’est-ce que l’agriculture ?
+REPONSES|La culture du sol pour produire des aliments;L’élevage uniquement;La transformation industrielle
+BONNE|La culture du sol pour produire des aliments
+EXPLICATION|L’agriculture consiste à cultiver la terre pour produire des végétaux alimentaires.
+
+SESSION|1
+QUESTION|Qu’est-ce que l’agriculture intensive ?
+REPONSES|Une production à grande échelle utilisant machines et produits chimiques;Une petite production familiale;Une agriculture sans outils
+BONNE|Une production à grande échelle utilisant machines et produits chimiques
+EXPLICATION|Elle vise à produire beaucoup grâce aux technologies et intrants chimiques.
+
+SESSION|1
+QUESTION|Qu’est-ce que la permaculture ?
+REPONSES|Une agriculture respectueuse des écosystèmes;Une agriculture sans récolte;Une agriculture entièrement mécanisée
+BONNE|Une agriculture respectueuse des écosystèmes
+EXPLICATION|Elle cherche à produire durablement en respectant les sols et la biodiversité.
+
+SESSION|1
+QUESTION|Pourquoi la permaculture évite-t-elle les pesticides chimiques ?
+REPONSES|Pour préserver la santé des sols et des êtres vivants;Pour réduire les récoltes;Pour simplifier le travail
+BONNE|Pour préserver la santé des sols et des êtres vivants
+EXPLICATION|Les pesticides chimiques peuvent détruire des espèces utiles et polluer les sols.
+
+SESSION|1
+QUESTION|Quel outil est utilisé en permaculture pour aérer le sol sans le retourner ?
+REPONSES|La grelinette;Le bulldozer;La moissonneuse-batteuse
+BONNE|La grelinette
+EXPLICATION|Elle permet d’aérer la terre tout en préservant sa structure naturelle.
+
+SESSION|1
+QUESTION|Pourquoi installer des récupérateurs d’eau de pluie ?
+REPONSES|Pour économiser les ressources en eau;Pour augmenter la production chimique;Pour remplacer l’irrigation
+BONNE|Pour économiser les ressources en eau
+EXPLICATION|Cela limite le gaspillage et protège les nappes phréatiques.
+
+SESSION|1
+QUESTION|Pourquoi diversifier les cultures est-il utile ?
+REPONSES|Pour limiter les maladies et améliorer les rendements;Pour uniformiser les champs;Pour réduire la biodiversité
+BONNE|Pour limiter les maladies et améliorer les rendements
+EXPLICATION|La diversité renforce la résistance des cultures face aux parasites.
+
+SESSION|1
+QUESTION|Quel est l’objectif principal d’une agriculture durable ?
+REPONSES|Produire tout en protégeant l’environnement;Produire le maximum sans limite;Réduire la population agricole
+BONNE|Produire tout en protégeant l’environnement
+EXPLICATION|Il s’agit de nourrir la population sans dégrader les ressources naturelles.
+
+SESSION|2
+QUESTION|Pourquoi l’agriculture intensive utilise-t-elle beaucoup de machines ?
+REPONSES|Pour produire rapidement sur de grandes surfaces;Pour remplacer les agriculteurs;Pour réduire la taille des exploitations
+BONNE|Pour produire rapidement sur de grandes surfaces
+EXPLICATION|Les machines permettent de cultiver de vastes champs plus vite. Cela augmente les rendements mais consomme beaucoup d’énergie.
+
+SESSION|2
+QUESTION|Quel est l’impact principal des engrais chimiques utilisés en excès ?
+REPONSES|La pollution des sols et des eaux;L’augmentation naturelle de la biodiversité;La disparition des cultures
+BONNE|La pollution des sols et des eaux
+EXPLICATION|Les engrais en excès peuvent contaminer les nappes phréatiques et perturber les écosystèmes.
+
+SESSION|2
+QUESTION|Pourquoi l’agriculture intensive peut-elle réduire la biodiversité ?
+REPONSES|Elle favorise les monocultures;Elle multiplie les espèces cultivées;Elle protège toutes les espèces sauvages
+BONNE|Elle favorise les monocultures
+EXPLICATION|Cultiver une seule espèce sur de grandes surfaces limite la diversité des plantes et des animaux.
+
+SESSION|2
+QUESTION|Qu’est-ce qu’une monoculture ?
+REPONSES|La culture d’une seule espèce sur une grande surface;La culture de plusieurs espèces ensemble;Un élevage spécialisé
+BONNE|La culture d’une seule espèce sur une grande surface
+EXPLICATION|La monoculture fragilise les sols et favorise la propagation rapide des maladies.
+
+SESSION|2
+QUESTION|Pourquoi la permaculture protège-t-elle la structure du sol ?
+REPONSES|Elle évite de le retourner profondément;Elle utilise davantage de produits chimiques;Elle remplace la terre par du sable
+BONNE|Elle évite de le retourner profondément
+EXPLICATION|Le sol reste vivant et conserve ses micro-organismes essentiels à sa fertilité.
+
+SESSION|2
+QUESTION|Quel est l’intérêt du compost en agriculture ?
+REPONSES|Enrichir naturellement le sol;Remplacer totalement l’eau;Accélérer la croissance artificiellement
+BONNE|Enrichir naturellement le sol
+EXPLICATION|Le compost apporte des nutriments issus de matières organiques recyclées.
+
+SESSION|2
+QUESTION|Pourquoi produire de la viande nécessite-t-il beaucoup de céréales ?
+REPONSES|Les animaux consomment des végétaux pour grandir;Les céréales servent uniquement à l’exportation;Les animaux ne mangent pas de végétaux
+BONNE|Les animaux consomment des végétaux pour grandir
+EXPLICATION|Il faut plusieurs kilos de céréales pour produire un kilo de viande.
+
+SESSION|2
+QUESTION|Pourquoi réduire la consommation de viande peut-il limiter la déforestation ?
+REPONSES|Moins de terres sont nécessaires pour nourrir les animaux;Cela augmente la production agricole;Cela supprime les cultures céréalières
+BONNE|Moins de terres sont nécessaires pour nourrir les animaux
+EXPLICATION|Une baisse de la demande réduit la pression sur les forêts transformées en terres agricoles.
+
+SESSION|2
+QUESTION|Quel est le but principal de la permaculture ?
+REPONSES|Créer un système agricole durable;Produire le plus rapidement possible;Remplacer toutes les cultures traditionnelles
+BONNE|Créer un système agricole durable
+EXPLICATION|Elle vise à produire en respectant les équilibres naturels et les ressources.
+
+SESSION|2
+QUESTION|Pourquoi les pesticides peuvent-ils perturber les écosystèmes ?
+REPONSES|Ils peuvent détruire des espèces utiles;Ils améliorent toujours les sols;Ils empêchent toute croissance végétale
+BONNE|Ils peuvent détruire des espèces utiles
+EXPLICATION|Ils affectent parfois les insectes pollinisateurs et d’autres organismes essentiels.
+
+SESSION|2
+QUESTION|Quel est le rôle des zones humides en agriculture durable ?
+REPONSES|Conserver l’eau et favoriser la biodiversité;Augmenter l’utilisation des engrais;Réduire la production végétale
+BONNE|Conserver l’eau et favoriser la biodiversité
+EXPLICATION|Les zones humides stockent l’eau et abritent de nombreuses espèces.
+
+SESSION|2
+QUESTION|Pourquoi choisir des plantes résistantes est-il utile ?
+REPONSES|Elles nécessitent moins de traitements chimiques;Elles poussent sans eau;Elles empêchent toute maladie
+BONNE|Elles nécessitent moins de traitements chimiques
+EXPLICATION|Des plantes adaptées résistent mieux aux maladies et aux conditions climatiques.
+
+SESSION|2
+QUESTION|Pourquoi l’agriculture intensive dépend-elle du pétrole ?
+REPONSES|Les machines et engrais en nécessitent;Les plantes en ont besoin;Le sol en produit naturellement
+BONNE|Les machines et engrais en nécessitent
+EXPLICATION|Le carburant et la fabrication d’engrais chimiques reposent sur les énergies fossiles.
+
+SESSION|2
+QUESTION|Quel effet le réchauffement climatique peut-il avoir sur l’agriculture ?
+REPONSES|Des sécheresses plus fréquentes;Une stabilité parfaite des récoltes;Une augmentation automatique des rendements
+BONNE|Des sécheresses plus fréquentes
+EXPLICATION|Les événements climatiques extrêmes peuvent réduire les productions agricoles.
+
+SESSION|2
+QUESTION|Pourquoi alterner les cultures est-il bénéfique ?
+REPONSES|Cela limite les maladies et l’épuisement du sol;Cela réduit la diversité;Cela empêche la croissance des plantes
+BONNE|Cela limite les maladies et l’épuisement du sol
+EXPLICATION|La rotation des cultures améliore la fertilité et réduit les parasites.
+
+SESSION|2
+QUESTION|Pourquoi parle-t-on d’agriculture durable ?
+REPONSES|Elle vise une production sur le long terme;Elle dure seulement une saison;Elle supprime toute innovation
+BONNE|Elle vise une production sur le long terme
+EXPLICATION|Elle cherche à nourrir la population actuelle sans compromettre l’avenir.
+
+SESSION|2
+QUESTION|Pourquoi l’eau doit-elle être utilisée avec précaution en agriculture ?
+REPONSES|C’est une ressource limitée;Elle est illimitée;Elle ne sert qu’à nettoyer
+BONNE|C’est une ressource limitée
+EXPLICATION|Une mauvaise gestion peut entraîner pénuries et conflits d’usage.
+
+SESSION|2
+QUESTION|Pourquoi préserver les sols est-il essentiel ?
+REPONSES|Ils sont indispensables à la production alimentaire;Ils se régénèrent instantanément;Ils ne servent qu’à construire
+BONNE|Ils sont indispensables à la production alimentaire
+EXPLICATION|Sans sols fertiles, il est impossible de produire durablement des aliments.
+
+SESSION|2
+QUESTION|Quel équilibre l’agriculture moderne doit-elle trouver ?
+REPONSES|Produire suffisamment tout en protégeant l’environnement;Produire sans se soucier des ressources;Réduire toute production
+BONNE|Produire suffisamment tout en protégeant l’environnement
+EXPLICATION|Il faut concilier besoins alimentaires et protection des écosystèmes.
+
+SESSION|2
+QUESTION|Pourquoi limiter le gaspillage alimentaire est-il important ?
+REPONSES|Cela réduit l’utilisation inutile des ressources;Cela augmente la production;Cela améliore la qualité des sols
+BONNE|Cela réduit l’utilisation inutile des ressources
+EXPLICATION|Produire des aliments demande de l’eau, de l’énergie et des terres qu’il faut préserver.
+
+SESSION|3
+QUESTION|Pourquoi dit-on que le sol est un milieu vivant ?
+REPONSES|Il contient des micro-organismes et des êtres vivants;Il respire comme un humain;Il ne contient que des minéraux
+BONNE|Il contient des micro-organismes et des êtres vivants
+EXPLICATION|Le sol abrite bactéries, champignons et vers de terre qui participent à sa fertilité.
+
+SESSION|3
+QUESTION|Quel est le rôle des vers de terre ?
+REPONSES|Aérer et enrichir le sol;Dévorer les cultures;Produire des engrais chimiques
+BONNE|Aérer et enrichir le sol
+EXPLICATION|Leurs galeries facilitent la circulation de l’eau et de l’air dans la terre.
+
+SESSION|3
+QUESTION|Qu’est-ce que la pollinisation ?
+REPONSES|Le transport du pollen permettant la reproduction;Un arrosage intensif;Un traitement chimique
+BONNE|Le transport du pollen permettant la reproduction
+EXPLICATION|Elle permet la formation des fruits et des graines indispensables à l’alimentation.
+
+SESSION|3
+QUESTION|Pourquoi les abeilles sont-elles importantes en agriculture ?
+REPONSES|Elles assurent la pollinisation;Elles produisent des engrais;Elles labourent les champs
+BONNE|Elles assurent la pollinisation
+EXPLICATION|De nombreuses cultures dépendent des insectes pollinisateurs pour produire.
+
+SESSION|3
+QUESTION|Pourquoi la rotation des cultures est-elle bénéfique ?
+REPONSES|Elle évite l’épuisement du sol;Elle augmente les pesticides;Elle réduit la fertilité
+BONNE|Elle évite l’épuisement du sol
+EXPLICATION|Alterner les cultures améliore la qualité du sol et limite les maladies.
+
+SESSION|3
+QUESTION|Pourquoi récupérer l’eau de pluie est-il utile ?
+REPONSES|Pour économiser l’eau potable;Pour augmenter les engrais;Pour remplacer les cultures
+BONNE|Pour économiser l’eau potable
+EXPLICATION|Cela limite le gaspillage et protège les ressources naturelles.
+
+SESSION|3
+QUESTION|Pourquoi la biodiversité protège-t-elle les cultures ?
+REPONSES|Elle limite la propagation des maladies;Elle supprime toute concurrence;Elle empêche la croissance
+BONNE|Elle limite la propagation des maladies
+EXPLICATION|Une diversité d’espèces rend les écosystèmes plus stables.
+
+SESSION|3
+QUESTION|Pourquoi parle-t-on d’alternative alimentaire avec les insectes ?
+REPONSES|Ils demandent moins de ressources que le bétail;Ils remplacent totalement les plantes;Ils produisent plus de gaz
+BONNE|Ils demandent moins de ressources que le bétail
+EXPLICATION|L’élevage d’insectes consomme moins d’eau et d’espace.
+
+SESSION|3
+QUESTION|Quel lien existe entre climat et agriculture ?
+REPONSES|Le climat influence les récoltes;Il n’y a aucun lien;L’agriculture ne dépend pas du climat
+BONNE|Le climat influence les récoltes
+EXPLICATION|Sécheresses ou inondations peuvent réduire fortement les productions.
+
+SESSION|3
+QUESTION|Pourquoi protéger les haies agricoles est-il utile ?
+REPONSES|Elles favorisent la biodiversité et limitent l’érosion;Elles empêchent la croissance;Elles réduisent la surface cultivable
+BONNE|Elles favorisent la biodiversité et limitent l’érosion
+EXPLICATION|Les haies abritent des espèces utiles et protègent les sols du vent.

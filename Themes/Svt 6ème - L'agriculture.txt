@@ -18,7 +18,7 @@ EXPLICATION|Les poules en batterie vivent dans des cages avec très peu d’espa
 
 SESSION|1
 QUESTION|Quel élevage permet aux poules d’avoir accès à l’extérieur ?
-REPONSES|L’élevage en plein air;L’élevage en batterie; L’élevage spatial
+REPONSES|L’élevage en plein air;L’élevage en batterie;L’élevage spatial
 BONNE|L’élevage en plein air
 EXPLICATION|Les poules plein air peuvent courir, gratter la terre et voir la lumière du jour.
 
@@ -30,25 +30,25 @@ EXPLICATION|La promiscuité entraîne des agressions, le bec est donc coupé pou
 
 SESSION|1
 QUESTION|Quel élevage produit généralement des œufs de meilleure qualité ?
-REPONSES|L’élevage en plein air;L’élevage en batterie; Les poules ninja secrètes
+REPONSES|L’élevage en plein air;L’élevage en batterie;Les poules ninja secrètes
 BONNE|L’élevage en plein air
 EXPLICATION|Les conditions de vie plus naturelles améliorent la qualité gustative et nutritionnelle des œufs.
 
 SESSION|1
 QUESTION|Quelle quantité moyenne de viande consomme une personne en France par an ?
-REPONSES|89 kg;29 kg; 300 kg
+REPONSES|89 kg;29 kg;300 kg
 BONNE|89 kg
 EXPLICATION|La consommation moyenne est d’environ 89 kg par an, ce qui est élevé à l’échelle mondiale.
 
 SESSION|1
 QUESTION|Combien d’animaux sont abattus chaque année dans le monde pour l’alimentation ?
-REPONSES|65 milliards;65 millions; 650 poissons magiques
+REPONSES|65 milliards;65 millions;650 poissons magiques
 BONNE|65 milliards
 EXPLICATION|Ce chiffre montre l’ampleur mondiale de la production de viande.
 
 SESSION|1
 QUESTION|Quel élevage demande environ 15 500 L d’eau pour produire 1 kg de viande ?
-REPONSES|Le bœuf;Le poulet; Le poisson volant
+REPONSES|Le bœuf;Le poulet;Le poisson volant
 BONNE|Le bœuf
 EXPLICATION|L’élevage bovin est très gourmand en eau, notamment pour nourrir les animaux.
 

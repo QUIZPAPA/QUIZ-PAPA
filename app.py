@@ -94,13 +94,7 @@ def quiz():
                     session.modified = True
                     return redirect("/quiz")
                 else:
-                    return render_template(
-        "quiz.html",
-        fin=True,
-        session_actuelle=session_actuelle,
-        score_session=session["score_session"],
-        total=len(questions[str(session_actuelle)])
-    )
+                    return render_template("quiz.html", fin=True)
 
     # -------------------------
     # MODE RÉVISION
@@ -150,11 +144,6 @@ def quiz():
 
         else:
             return render_template("quiz.html", fin=True)
-
-@app.route("/reset")
-def reset():
-    session.clear()
-    return redirect("/")
 
 
 if __name__ == "__main__":

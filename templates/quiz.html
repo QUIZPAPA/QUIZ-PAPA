@@ -8,37 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        body { 
-            background: #95F5A6; 
-            font-family: 'Fredoka', cursive, sans-serif; 
-            margin:0; 
+        body {
+            background: #95F5A6;
+            font-family: 'Fredoka', cursive, sans-serif;
+            margin:0;
             padding:0;
         }
 
-        .container { 
-            display: flex; 
-            align-items: flex-start; 
+        .container {
+            display: flex;
+            align-items: flex-start;
             padding: 20px;
         }
 
-        .logo { 
-            width: 400px; 
+        .logo {
+            width: 400px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .zone { 
-            flex: 1; 
-            padding: 20px; 
+        .zone {
+            flex: 1;
+            padding: 20px;
         }
 
-        button { 
-            font-size: 18px; 
-            padding: 12px; 
-            margin: 8px 0; 
-            width: 80%; 
+        button {
+            font-size: 18px;
+            padding: 12px;
+            margin: 8px 0;
+            width: 80%;
             border: 2px solid #70d5ff;
-            border-radius: 12px; 
+            border-radius: 12px;
             background-color: #b8f0ff;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -52,7 +52,6 @@
 
         h2 { margin: 10px 0; }
         h3 { margin: 5px 0; }
-
     </style>
 
     <!-- Sons -->
@@ -92,7 +91,6 @@
             });
         }
     </script>
-
 </head>
 <body>
 
@@ -104,7 +102,6 @@
     {% if not fin %}
 
         {% if feedback %}
-
             {% if feedback[0] == "bonne" %}
                 <script>playGood(); scintiller();</script>
                 <h3 style="color:green;">
@@ -125,7 +122,6 @@
             </a>
 
         {% else %}
-
             <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
             <h2>{{ question.question }}</h2>
 
@@ -134,14 +130,12 @@
                     <button name="reponse" value="{{ r }}">{{ r }}</button>
                 {% endfor %}
             </form>
-
         {% endif %}
 
     {% else %}
-
         <h2>Session {{ session_actuelle }} terminée !</h2>
-
-        {% set pourcentage = (score_session / total * 100) | int %}
+        {% set total_safe = total if total > 0 else 1 %}
+        {% set pourcentage = (score_session / total_safe * 100) | int %}
 
         <h3>
             {% if pourcentage == 100 %}
@@ -161,10 +155,9 @@
         </p>
 
         <!-- BOUTON SIMPLE RETOUR ACCUEIL -->
-        <a href="/">
-            <button>Choisir un autre thème</button>
-        </a>
-
+        <form action="/" method="get">
+            <button type="submit">Choisir un autre thème</button>
+        </form>
     {% endif %}
 
     </div>

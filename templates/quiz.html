@@ -57,12 +57,16 @@
 
         h2 { margin: 10px 0; }
         h3 { margin: 5px 0; }
-
     </style>
 
+    <!-- Sons -->
     <script>
-        function playGood(){ new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); }
-        function playBad(){ new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); }
+        function playGood(){ 
+            new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); 
+        }
+        function playBad(){ 
+            new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); 
+        }
 
         function scintiller(){
             let img = document.getElementById("logo");
@@ -84,18 +88,20 @@
             },50);
         }
     </script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-<script>
-function lancerConfettis() {
-    confetti({
-        particleCount: 200,
-        spread: 100,
-        origin: { y: 0.6 }
-    });
-}
-</script>
+    <!-- Confettis -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        function lancerConfettis() {
+            confetti({
+                particleCount: 200,
+                spread: 100,
+                origin: { y: 0.6 }
+            });
+        }
+    </script>
 </head>
+
 <body>
 
 <div class="container">
@@ -106,25 +112,40 @@ function lancerConfettis() {
     {% if not fin %}
 
         {% if feedback %}
+
             {% if feedback[0] == "bonne" %}
                 <script>playGood(); scintiller();</script>
-                <h3 style="color:green;">✅ Bonne réponse<br>{{ feedback[1] }}</h3>
+                <h3 style="color:green;">
+                    Bonne réponse<br>
+                    {{ feedback[1] }}
+                </h3>
             {% else %}
                 <script>playBad(); trembler();</script>
-                <h3 style="color:red;">❌ Mauvaise réponse<br>
-                Bonne réponse : {{ feedback[1] }}<br>
-                {{ feedback[2] }}</h3>
+                <h3 style="color:red;">
+                    Mauvaise réponse<br>
+                    Bonne réponse : {{ feedback[1] }}<br>
+                    {{ feedback[2] }}
+                </h3>
             {% endif %}
-            <a href="/quiz"><button>➡️ Question suivante</button></a>
+
+            <a href="/quiz">
+                <button>Question suivante</button>
+            </a>
 
         {% else %}
 
-            <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
+            <h3>
+                Session {{ session_actuelle }} — 
+                Question {{ index+1 }}/{{ total }}
+            </h3>
+
             <h2>{{ question.question }}</h2>
 
             <form method="post">
                 {% for r in reponses %}
-                    <button name="reponse" value="{{ r }}">{{ r }}</button>
+                    <button name="reponse" value="{{ r }}">
+                        {{ r }}
+                    </button>
                 {% endfor %}
             </form>
 
@@ -132,31 +153,44 @@ function lancerConfettis() {
 
     {% else %}
 
-    <h2>🎉 Session {{ session_actuelle }} terminée !</h2>
+        <!-- Lancement confettis automatique -->
+        <script>
+            window.onload = function() {
+                lancerConfettis();
+            }
+        </script>
 
-    <h3>
-        {% set pourcentage = (score_session / total * 100) | int %}
-        
-        {% if pourcentage == 100 %}
-            🌟 Incroyable ! 100% ! Tu maîtrises parfaitement cette session !
-        {% elif pourcentage >= 75 %}
-            💪 Bravo ! Tu es sur la très bonne voie, continue comme ça !
-        {% elif pourcentage >= 50 %}
-            👍 Bon travail ! Encore un petit effort et ce sera parfait !
+        <h2>Session {{ session_actuelle }} terminée !</h2>
+
+        {% if score_session is defined and total is defined and total > 0 %}
+
+            {% set pourcentage = (score_session / total * 100) | int %}
+
+            <h3>
+                {% if pourcentage == 100 %}
+                    Incroyable ! 100% ! Tu maîtrises parfaitement cette session !
+                {% elif pourcentage >= 75 %}
+                    Bravo ! Tu es sur la très bonne voie, continue comme ça !
+                {% elif pourcentage >= 50 %}
+                    Bon travail ! Encore un petit effort et ce sera parfait !
+                {% else %}
+                    Tu progresses ! L’important c’est d’apprendre, continue !
+                {% endif %}
+            </h3>
+
+            <p>
+                Score : {{ score_session }} / {{ total }}
+            </p>
+
         {% else %}
-            🚀 Tu progresses ! L’important c’est d’apprendre, continue !
+            <h3>Bravo pour ta progression !</h3>
         {% endif %}
-    </h3>
 
-    <p>
-        Score : {{ score_session }} / {{ total }}
-    </p>
+        <a href="/quiz">
+            <button>Continuer</button>
+        </a>
 
-    <a href="/quiz">
-        <button>➡️ Continuer</button>
-    </a>
-
-{% endif %}
+    {% endif %}
 
     </div>
 </div>

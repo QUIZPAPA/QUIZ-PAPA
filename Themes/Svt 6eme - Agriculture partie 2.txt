@@ -1,0 +1,59 @@
+SESSION|1
+QUESTION|Pourquoi dit-on que le sol est un milieu vivant ?
+REPONSES|Il contient des micro-organismes et des êtres vivants;Il ne contient que des minéraux;Il est composé uniquement d’eau
+BONNE|Il contient des micro-organismes et des êtres vivants
+EXPLICATION|Le sol abrite bactéries, champignons et vers de terre qui participent à sa fertilité.
+
+SESSION|1
+QUESTION|Quel est le rôle des vers de terre ?
+REPONSES|Aérer et enrichir le sol;Dévorer les cultures;Assécher la terre
+BONNE|Aérer et enrichir le sol
+EXPLICATION|Leurs galeries facilitent la circulation de l’eau et de l’air dans la terre.
+
+SESSION|1
+QUESTION|Qu’est-ce que la pollinisation ?
+REPONSES|Le transport du pollen permettant la reproduction;Un arrosage intensif;Un traitement chimique
+BONNE|Le transport du pollen permettant la reproduction
+EXPLICATION|Elle permet la formation des fruits et des graines indispensables à l’alimentation.
+
+SESSION|1
+QUESTION|Pourquoi les abeilles sont-elles importantes en agriculture ?
+REPONSES|Elles assurent la pollinisation;Elles produisent des engrais;Elles labourent les champs
+BONNE|Elles assurent la pollinisation
+EXPLICATION|De nombreuses cultures dépendent des insectes pollinisateurs pour produire.
+
+SESSION|1
+QUESTION|Pourquoi la rotation des cultures est-elle bénéfique ?
+REPONSES|Elle évite l’épuisement du sol;Elle augmente les pesticides;Elle réduit la fertilité
+BONNE|Elle évite l’épuisement du sol
+EXPLICATION|Alterner les cultures améliore la qualité du sol et limite les maladies.
+
+SESSION|1
+QUESTION|Pourquoi récupérer l’eau de pluie est-il utile ?
+REPONSES|Pour économiser l’eau potable;Pour augmenter les engrais;Pour remplacer les cultures
+BONNE|Pour économiser l’eau potable
+EXPLICATION|Cela limite le gaspillage et protège les ressources naturelles.
+
+SESSION|1
+QUESTION|Pourquoi la biodiversité protège-t-elle les cultures ?
+REPONSES|Elle limite la propagation des maladies;Elle supprime toute concurrence;Elle empêche la croissance
+BONNE|Elle limite la propagation des maladies
+EXPLICATION|Une diversité d’espèces rend les écosystèmes plus stables.
+
+SESSION|1
+QUESTION|Pourquoi l’élevage contribue-t-il au réchauffement climatique ?
+REPONSES|Il émet des gaz à effet de serre;Il réduit la température;Il supprime le dioxyde de carbone
+BONNE|Il émet des gaz à effet de serre
+EXPLICATION|Les ruminants produisent du méthane, un gaz à effet de serre important.
+
+SESSION|1
+QUESTION|Pourquoi limiter la déforestation est-il important ?
+REPONSES|Pour préserver la biodiversité et le climat;Pour augmenter les terres urbaines;Pour réduire l’agriculture
+BONNE|Pour préserver la biodiversité et le climat
+EXPLICATION|Les forêts stockent du carbone et abritent de nombreuses espèces.
+
+SESSION|1
+QUESTION|Quelle idée résume le mieux l’agriculture de demain ?
+REPONSES|Produire durablement en respectant la nature;Produire sans limite;Supprimer toute production animale
+BONNE|Produire durablement en respectant la nature
+EXPLICATION|L’objectif est de nourrir la population tout en protégeant les ressources naturelles.

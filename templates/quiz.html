@@ -8,37 +8,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            background: #95F5A6;
-            font-family: 'Fredoka', cursive, sans-serif;
-            margin:0;
+        body { 
+            background: #95F5A6; 
+            font-family: 'Fredoka', cursive, sans-serif; 
+            margin:0; 
             padding:0;
         }
 
-        .container {
-            display: flex;
-            align-items: flex-start;
+        .container { 
+            display: flex; 
+            align-items: flex-start; 
             padding: 20px;
         }
 
-        .logo {
-            width: 400px;
+        .logo { 
+            width: 400px; 
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
 
-        .zone {
-            flex: 1;
-            padding: 20px;
+        .zone { 
+            flex: 1; 
+            padding: 20px; 
         }
 
-        button {
-            font-size: 18px;
-            padding: 12px;
-            margin: 8px 0;
-            width: 80%;
+        button { 
+            font-size: 18px; 
+            padding: 12px; 
+            margin: 8px 0; 
+            width: 80%; 
             border: 2px solid #70d5ff;
-            border-radius: 12px;
+            border-radius: 12px; 
             background-color: #b8f0ff;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -50,11 +50,16 @@
             transform: scale(1.05);
         }
 
+        .feedback {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
         h2 { margin: 10px 0; }
         h3 { margin: 5px 0; }
+
     </style>
 
-    <!-- Sons -->
     <script>
         function playGood(){ new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); }
         function playBad(){ new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); }
@@ -79,18 +84,6 @@
             },50);
         }
     </script>
-
-    <!-- Confettis -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script>
-        function lancerConfettis() {
-            confetti({
-                particleCount: 200,
-                spread: 100,
-                origin: { y: 0.6 }
-            });
-        }
-    </script>
 </head>
 <body>
 
@@ -104,24 +97,17 @@
         {% if feedback %}
             {% if feedback[0] == "bonne" %}
                 <script>playGood(); scintiller();</script>
-                <h3 style="color:green;">
-                    Bonne réponse !<br>
-                    {{ feedback[1] }}
-                </h3>
+                <h3 style="color:green;">✅ Bonne réponse<br>{{ feedback[1] }}</h3>
             {% else %}
                 <script>playBad(); trembler();</script>
-                <h3 style="color:red;">
-                    Mauvaise réponse<br>
-                    Bonne réponse : {{ feedback[1] }}<br>
-                    {{ feedback[2] }}
-                </h3>
+                <h3 style="color:red;">❌ Mauvaise réponse<br>
+                Bonne réponse : {{ feedback[1] }}<br>
+                {{ feedback[2] }}</h3>
             {% endif %}
-
-            <a href="/quiz">
-                <button>Question suivante</button>
-            </a>
+            <a href="/quiz"><button>➡️ Question suivante</button></a>
 
         {% else %}
+
             <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
             <h2>{{ question.question }}</h2>
 
@@ -130,34 +116,14 @@
                     <button name="reponse" value="{{ r }}">{{ r }}</button>
                 {% endfor %}
             </form>
+
         {% endif %}
 
     {% else %}
-        <h2>Session {{ session_actuelle }} terminée !</h2>
-        {% set total_safe = total if total > 0 else 1 %}
-        {% set pourcentage = (score_session / total_safe * 100) | int %}
 
-        <h3>
-            {% if pourcentage == 100 %}
-                <script>lancerConfettis();</script>
-                Incroyable ! 100% ! Tu maîtrises parfaitement cette session !
-            {% elif pourcentage >= 75 %}
-                Bravo ! Tu es sur la très bonne voie, continue comme ça !
-            {% elif pourcentage >= 50 %}
-                Bon travail ! Encore un petit effort et ce sera parfait !
-            {% else %}
-                Tu progresses ! L’important c’est d’apprendre, continue !
-            {% endif %}
-        </h3>
+        <h2>Session terminée</h2>
+        <a href="/"><button>🏠 Retour accueil</button></a>
 
-        <p>
-            Score : {{ score_session }} / {{ total }}
-        </p>
-
-        <!-- BOUTON SIMPLE RETOUR ACCUEIL -->
-        <form action="/" method="get">
-            <button type="submit">Choisir un autre thème</button>
-        </form>
     {% endif %}
 
     </div>

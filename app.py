@@ -94,7 +94,13 @@ def quiz():
                     session.modified = True
                     return redirect("/quiz")
                 else:
-                    return render_template("quiz.html", fin=True)
+                    return render_template(
+        "quiz.html",
+        fin=True,
+        session_actuelle=session_actuelle,
+        score_session=session["score_session"],
+        total=len(questions[str(session_actuelle)])
+    )
 
     # -------------------------
     # MODE RÉVISION

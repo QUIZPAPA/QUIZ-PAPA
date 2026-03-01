@@ -84,6 +84,17 @@
             },50);
         }
     </script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+function lancerConfettis() {
+    confetti({
+        particleCount: 200,
+        spread: 100,
+        origin: { y: 0.6 }
+    });
+}
+</script>
 </head>
 <body>
 
@@ -121,10 +132,31 @@
 
     {% else %}
 
-        <h2>Session terminée</h2>
-        <a href="/"><button>🏠 Retour accueil</button></a>
+    <h2>🎉 Session {{ session_actuelle }} terminée !</h2>
 
-    {% endif %}
+    <h3>
+        {% set pourcentage = (score_session / total * 100) | int %}
+        
+        {% if pourcentage == 100 %}
+            🌟 Incroyable ! 100% ! Tu maîtrises parfaitement cette session !
+        {% elif pourcentage >= 75 %}
+            💪 Bravo ! Tu es sur la très bonne voie, continue comme ça !
+        {% elif pourcentage >= 50 %}
+            👍 Bon travail ! Encore un petit effort et ce sera parfait !
+        {% else %}
+            🚀 Tu progresses ! L’important c’est d’apprendre, continue !
+        {% endif %}
+    </h3>
+
+    <p>
+        Score : {{ score_session }} / {{ total }}
+    </p>
+
+    <a href="/quiz">
+        <button>➡️ Continuer</button>
+    </a>
+
+{% endif %}
 
     </div>
 </div>

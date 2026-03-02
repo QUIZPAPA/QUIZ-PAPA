@@ -50,32 +50,30 @@
             transform: scale(1.05);
         }
 
-        h2 { margin: 10px 0; }
-        h3 { margin: 5px 0; }
+        /* ===== BRAVO ANIMATION PLUS LONGUE ===== */
 
-        /* ===== BRAVO FLOAT ===== */
-
-        .bravo-text {
+        .bravo-overlay {
             position: fixed;
-            top: 40%;
+            top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.5);
-            font-size: 80px;
+            transform: translate(-50%, -50%) scale(0.7);
+            font-size: 100px;
             font-weight: 600;
             color: white;
-            text-shadow: 
+            text-shadow:
                 0 0 10px rgba(0,0,0,0.3),
-                0 0 20px rgba(0,0,0,0.2);
+                0 0 25px rgba(0,0,0,0.2);
             opacity: 0;
-            animation: bravoAppear 1.2s forwards;
-            z-index: 1000;
+            animation: bravoAnim 4s ease forwards;
+            z-index: 9999;
             pointer-events: none;
         }
 
-        @keyframes bravoAppear {
-            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
-            40% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
-            70% { transform: translate(-50%, -50%) scale(1); }
+        @keyframes bravoAnim {
+            0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.7); }
+            15%  { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+            25%  { transform: translate(-50%, -50%) scale(1); }
+            75%  { opacity: 1; }
             100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
         }
 
@@ -146,26 +144,29 @@
 
     {% else %}
 
-        <!-- BRAVO FLOATING -->
-        <div class="bravo-text">🎉 BRAVO 🎉</div>
+        <!-- BRAVO -->
+        <div class="bravo-overlay">🎉 BRAVO 🎉</div>
 
         <script>
             window.onload = function() {
 
-                // Attendre que BRAVO commence à disparaître
+                // Confettis plus gros et plus visibles
                 setTimeout(function() {
 
                     confetti({
-                        particleCount: 250,
-                        spread: 130,
+                        particleCount: 200,
+                        spread: 120,
+                        startVelocity: 45,
+                        gravity: 0.8,
+                        scalar: 1.5,   // <-- taille augmentée
                         origin: { y: 0.6 }
                     });
 
-                }, 900); // lance confettis après l'effet pop
+                }, 1500); // confettis après apparition complète
             }
         </script>
 
-        <h2 style="margin-top:80px;">Quiz terminé !</h2>
+        <h2 style="margin-top:120px;">Quiz terminé !</h2>
         <h3>Tu peux être fier de toi 👏</h3>
 
         <a href="/">

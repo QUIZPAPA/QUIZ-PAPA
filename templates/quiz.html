@@ -52,6 +52,39 @@
 
         h2 { margin: 10px 0; }
         h3 { margin: 5px 0; }
+
+        /* ================= POPUP BRAVO ================= */
+
+        .popup {
+            position: fixed;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: white;
+            padding: 40px 60px;
+            font-size: 40px;
+            font-weight: bold;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            animation: popin 0.6s forwards;
+            z-index: 999;
+        }
+
+        @keyframes popin {
+            0% { transform: translate(-50%, -50%) scale(0); }
+            70% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        .fadeout {
+            animation: fadeout 1s forwards;
+        }
+
+        @keyframes fadeout {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
+
     </style>
 
     <!-- Sons -->
@@ -120,9 +153,15 @@
 
     {% else %}
 
-        <!-- Confettis automatiques -->
+        <!-- POPUP BRAVO -->
+        <div id="bravoPopup" class="popup">
+            🎉 BRAVO !!! 🎉
+        </div>
+
+        <!-- Confettis + disparition popup -->
         <script>
             window.onload = function() {
+
                 confetti({
                     particleCount: 250,
                     spread: 120,
@@ -130,17 +169,13 @@
                 });
 
                 setTimeout(function() {
-                    confetti({
-                        particleCount: 150,
-                        spread: 160,
-                        origin: { y: 0.5 }
-                    });
-                }, 400);
+                    document.getElementById("bravoPopup").classList.add("fadeout");
+                }, 2500);
             }
         </script>
 
-        <h2>🎉 Quiz terminé !</h2>
-        <h3>Bravo pour ton travail !</h3>
+        <h2 style="margin-top:40px;">Quiz terminé !</h2>
+        <h3>Tu peux être fier de toi 👏</h3>
 
         <a href="/">
             <button>Choisir un nouveau thème</button>

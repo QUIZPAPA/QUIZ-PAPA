@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Quiz</title>
 
-    <!-- Police Fredoka -->
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -13,6 +12,7 @@
             font-family: 'Fredoka', cursive, sans-serif; 
             margin:0; 
             padding:0;
+            overflow-x:hidden;
         }
 
         .container { 
@@ -53,41 +53,34 @@
         h2 { margin: 10px 0; }
         h3 { margin: 5px 0; }
 
-        /* ================= POPUP BRAVO ================= */
+        /* ===== BRAVO FLOAT ===== */
 
-        .popup {
+        .bravo-text {
             position: fixed;
-            top: 35%;
+            top: 40%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            background: white;
-            padding: 40px 60px;
-            font-size: 40px;
-            font-weight: bold;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-            animation: popin 0.6s forwards;
-            z-index: 999;
+            transform: translate(-50%, -50%) scale(0.5);
+            font-size: 80px;
+            font-weight: 600;
+            color: white;
+            text-shadow: 
+                0 0 10px rgba(0,0,0,0.3),
+                0 0 20px rgba(0,0,0,0.2);
+            opacity: 0;
+            animation: bravoAppear 1.2s forwards;
+            z-index: 1000;
+            pointer-events: none;
         }
 
-        @keyframes popin {
-            0% { transform: translate(-50%, -50%) scale(0); }
-            70% { transform: translate(-50%, -50%) scale(1.1); }
-            100% { transform: translate(-50%, -50%) scale(1); }
-        }
-
-        .fadeout {
-            animation: fadeout 1s forwards;
-        }
-
-        @keyframes fadeout {
-            from { opacity: 1; }
-            to { opacity: 0; }
+        @keyframes bravoAppear {
+            0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+            40% { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
+            70% { transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
         }
 
     </style>
 
-    <!-- Sons -->
     <script>
         function playGood(){ new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); }
         function playBad(){ new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); }
@@ -153,28 +146,26 @@
 
     {% else %}
 
-        <!-- POPUP BRAVO -->
-        <div id="bravoPopup" class="popup">
-            🎉 BRAVO !!! 🎉
-        </div>
+        <!-- BRAVO FLOATING -->
+        <div class="bravo-text">🎉 BRAVO 🎉</div>
 
-        <!-- Confettis + disparition popup -->
         <script>
             window.onload = function() {
 
-                confetti({
-                    particleCount: 250,
-                    spread: 120,
-                    origin: { y: 0.6 }
-                });
-
+                // Attendre que BRAVO commence à disparaître
                 setTimeout(function() {
-                    document.getElementById("bravoPopup").classList.add("fadeout");
-                }, 2500);
+
+                    confetti({
+                        particleCount: 250,
+                        spread: 130,
+                        origin: { y: 0.6 }
+                    });
+
+                }, 900); // lance confettis après l'effet pop
             }
         </script>
 
-        <h2 style="margin-top:40px;">Quiz terminé !</h2>
+        <h2 style="margin-top:80px;">Quiz terminé !</h2>
         <h3>Tu peux être fier de toi 👏</h3>
 
         <a href="/">

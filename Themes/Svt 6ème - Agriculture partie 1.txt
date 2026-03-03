@@ -114,4 +114,5 @@ SESSION|1
 QUESTION|Quel est l’objectif principal d’une agriculture durable ?
 REPONSES|Produire tout en protégeant l’environnement;Produire le maximum sans limite;Réduire la population agricole
 BONNE|Produire tout en protégeant l’environnement
+
 EXPLICATION|Il s’agit de nourrir la population sans dégrader les ressources naturelles.

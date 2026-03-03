@@ -1,0 +1,200 @@
+SESSION|1
+QUESTION|Selon le mythe, qui sont les fondateurs de Rome ?
+REPONSES|Romulus et Rémus;Énée et Anchise;César et Auguste
+BONNE|Romulus et Rémus
+EXPLICATION|La légende raconte que les jumeaux Romulus et Rémus fondent Rome après avoir été abandonnés à leur naissance.
+SESSION|1
+QUESTION|Qui est la mère de Romulus et Rémus dans la légende ?
+REPONSES|Rhéa Silvia;Cléopâtre;Cornélie
+BONNE|Rhéa Silvia
+EXPLICATION|Rhéa Silvia est une prêtresse forcée au célibat qui donne naissance aux jumeaux selon le mythe.
+SESSION|1
+QUESTION|Quel dieu est présenté comme le père des jumeaux ?
+REPONSES|Mars;Jupiter;Neptune
+BONNE|Mars
+EXPLICATION|Dans la légende, Mars, dieu de la guerre, est le père des deux enfants.
+SESSION|1
+QUESTION|Quel animal aurait nourri Romulus et Rémus ?
+REPONSES|Une louve;Une chèvre;Une ourse
+BONNE|Une louve
+EXPLICATION|Abandonnés sur les rives du Tibre, ils auraient été allaités par une louve.
+SESSION|1
+QUESTION|Sur quelle rivière les jumeaux sont-ils abandonnés ?
+REPONSES|Le Tibre;Le Nil;Le Danube
+BONNE|Le Tibre
+EXPLICATION|Le Tibre est le fleuve qui traverse Rome et joue un rôle central dans la légende.
+SESSION|1
+QUESTION|Sur quelle colline Romulus fonde-t-il Rome ?
+REPONSES|Le Palatin;Le Capitole;L’Aventin
+BONNE|Le Palatin
+EXPLICATION|Selon la tradition, Romulus choisit la colline du Palatin pour fonder la ville.
+SESSION|1
+QUESTION|Pourquoi Romulus tue-t-il Rémus ?
+REPONSES|Rémus se moque des murailles;Pour devenir roi seul;À cause d’un dieu
+BONNE|Rémus se moque des murailles
+EXPLICATION|Rémus franchit les limites tracées par son frère, ce qui provoque sa mort.
+SESSION|1
+QUESTION|Comment les Romains interprétaient-ils le vol des oiseaux ?
+REPONSES|Comme un signe des dieux;Comme un phénomène naturel;Comme un hasard
+BONNE|Comme un signe des dieux
+EXPLICATION|Les augures observaient les oiseaux pour connaître la volonté divine.
+SESSION|1
+QUESTION|Comment appelle-t-on ces signes envoyés par les dieux ?
+REPONSES|Les auspices;Les comices;Les édits
+BONNE|Les auspices
+EXPLICATION|Les auspices sont des présages interprétés avant une décision importante.
+SESSION|1
+QUESTION|Quelle date traditionnelle marque la fondation de Rome ?
+REPONSES|-753;-509;-27
+BONNE|-753
+EXPLICATION|Les Romains fixent traditionnellement la fondation de la ville en 753 av. J.-C.
+SESSION|1
+QUESTION|Quel héros troyen est lié aux origines légendaires de Rome ?
+REPONSES|Énée;Achille;Ulysse
+BONNE|Énée
+EXPLICATION|Énée, héros venu de Troie, serait l’ancêtre lointain des fondateurs de Rome.
+SESSION|1
+QUESTION|Que montre le mythe de la louve pour les Romains ?
+REPONSES|Une origine divine et héroïque;Un récit scientifique;Un fait archéologique
+BONNE|Une origine divine et héroïque
+EXPLICATION|La légende donne à Rome une origine prestigieuse liée aux dieux.
+SESSION|1
+QUESTION|Pourquoi le mythe est-il important pour les Romains ?
+REPONSES|Il renforce l’identité de la cité;Il décrit des fouilles;Il explique les lois
+BONNE|Il renforce l’identité de la cité
+EXPLICATION|Le récit fondateur unit les habitants autour d’une histoire commune.
+SESSION|1
+QUESTION|Qui devient le premier roi de Rome selon la tradition ?
+REPONSES|Romulus;Rémus;Énée
+BONNE|Romulus
+EXPLICATION|Après la mort de son frère, Romulus règne seul sur la nouvelle cité.
+SESSION|1
+QUESTION|Le récit de Romulus et Rémus relève surtout de :
+REPONSES|La légende;L’archéologie;Un document officiel
+BONNE|La légende
+EXPLICATION|Ce récit repose sur des traditions anciennes et non sur des preuves historiques.
+SESSION|2
+QUESTION|Qui sont les premiers habitants de la région de Rome ?
+REPONSES|Les Latins;Les Gaulois;Les Grecs
+BONNE|Les Latins
+EXPLICATION|Les Latins occupent le Latium, région où naît la future ville de Rome.
+SESSION|2
+QUESTION|Quel peuple influence fortement Rome au VIe siècle av. J.-C. ?
+REPONSES|Les Étrusques;Les Égyptiens;Les Perses
+BONNE|Les Étrusques
+EXPLICATION|Les Étrusques dominent Rome et participent à son développement urbain.
+SESSION|2
+QUESTION|Combien de collines forment le site de Rome ?
+REPONSES|Sept;Trois;Douze
+BONNE|Sept
+EXPLICATION|Rome est bâtie sur sept collines qui facilitent sa défense.
+SESSION|2
+QUESTION|Pourquoi le site de Rome est-il favorable ?
+REPONSES|Il permet échanges et défense;Il est isolé;Il est désertique
+BONNE|Il permet échanges et défense
+EXPLICATION|La position près du Tibre favorise le commerce et la protection.
+SESSION|2
+QUESTION|Qu’est-ce que le Forum à Rome ?
+REPONSES|La place centrale politique;Un temple;Un port
+BONNE|La place centrale politique
+EXPLICATION|Le Forum est le cœur de la vie politique, religieuse et commerciale.
+SESSION|2
+QUESTION|Quel type de régime existe à Rome avant -509 ?
+REPONSES|Une monarchie;Une démocratie;Un empire
+BONNE|Une monarchie
+EXPLICATION|Rome est d’abord dirigée par des rois avant la République.
+SESSION|2
+QUESTION|Pourquoi les Romains chassent-ils leur dernier roi ?
+REPONSES|Ils refusent la tyrannie;Ils veulent un empereur;Ils perdent une guerre
+BONNE|Ils refusent la tyrannie
+EXPLICATION|Le dernier roi est accusé d’abus de pouvoir, ce qui provoque sa chute.
+SESSION|2
+QUESTION|En quelle année débute la République romaine ?
+REPONSES|-509;-753;-27
+BONNE|-509
+EXPLICATION|En 509 av. J.-C., les Romains remplacent le roi par des magistrats élus.
+SESSION|2
+QUESTION|Quel est le rôle des fouilles archéologiques ?
+REPONSES|Étudier les vestiges;Inventer des mythes;Écrire des légendes
+BONNE|Étudier les vestiges
+EXPLICATION|Les archéologues analysent les traces matérielles pour comprendre le passé.
+SESSION|2
+QUESTION|Que montrent les recherches sur la naissance de Rome ?
+REPONSES|Une formation progressive;Une création en un jour;Un miracle divin
+BONNE|Une formation progressive
+EXPLICATION|Rome se développe peu à peu à partir de villages latins.
+SESSION|2
+QUESTION|Les murailles anciennes de Rome sont attribuées à :
+REPONSES|Des rois étrusques;Romulus seul;Jules César
+BONNE|Des rois étrusques
+EXPLICATION|Les rois étrusques renforcent et organisent la ville.
+SESSION|2
+QUESTION|Quelle activité favorise le développement de Rome ?
+REPONSES|Le commerce;La piraterie;La pêche lointaine
+BONNE|Le commerce
+EXPLICATION|Sa position permet des échanges entre peuples d’Italie.
+SESSION|2
+QUESTION|Le mythe et l’Histoire sont :
+REPONSES|Deux récits différents;Identiques;Toujours confondus
+BONNE|Deux récits différents
+EXPLICATION|Le mythe relève de la tradition tandis que l’Histoire s’appuie sur des preuves.
+SESSION|2
+QUESTION|Pourquoi les Romains gardent-ils leur mythe fondateur ?
+REPONSES|Il renforce leur prestige;Il est scientifique;Il est obligatoire
+BONNE|Il renforce leur prestige
+EXPLICATION|Une origine divine valorise la puissance de la cité.
+SESSION|2
+QUESTION|La fondation réelle de Rome correspond à :
+REPONSES|Un regroupement de villages;Un acte unique;Une conquête grecque
+BONNE|Un regroupement de villages
+EXPLICATION|Plusieurs villages latins s’unissent progressivement pour former Rome.
+SESSION|3
+QUESTION|Qu’est-ce que la République romaine ?
+REPONSES|Un régime sans roi;Un empire;Une monarchie
+BONNE|Un régime sans roi
+EXPLICATION|La République remplace le roi par des magistrats élus.
+SESSION|3
+QUESTION|Qui dirige Rome sous la République ?
+REPONSES|Deux consuls;Un empereur;Un roi
+BONNE|Deux consuls
+EXPLICATION|Les consuls sont élus pour un an et dirigent l’État et l’armée.
+SESSION|3
+QUESTION|Qu’est-ce que le Sénat ?
+REPONSES|Une assemblée de sénateurs;Un temple;Une armée
+BONNE|Une assemblée de sénateurs
+EXPLICATION|Le Sénat conseille les magistrats et joue un rôle politique majeur.
+SESSION|3
+QUESTION|Qui est citoyen romain sous la République ?
+REPONSES|Un homme libre du Latium;Tout habitant;Un esclave
+BONNE|Un homme libre du Latium
+EXPLICATION|Les citoyens participent aux assemblées et votent les lois.
+SESSION|3
+QUESTION|Comment appelle-t-on une guerre entre Romains ?
+REPONSES|Une guerre civile;Une guerre punique;Une croisade
+BONNE|Une guerre civile
+EXPLICATION|Une guerre civile oppose des habitants d’un même pays.
+SESSION|3
+QUESTION|Pourquoi la République connaît-elle des crises ?
+REPONSES|À cause des rivalités politiques;Par manque de mythes;Par absence d’armée
+BONNE|À cause des rivalités politiques
+EXPLICATION|Les luttes de pouvoir affaiblissent progressivement le régime.
+SESSION|3
+QUESTION|Qui met fin à la République en -27 ?
+REPONSES|Octave Auguste;Romulus;Hannibal
+BONNE|Octave Auguste
+EXPLICATION|Octave concentre les pouvoirs et fonde le régime impérial.
+SESSION|3
+QUESTION|Après -27, Rome devient :
+REPONSES|Un empire;Une cité grecque;Une démocratie directe
+BONNE|Un empire
+EXPLICATION|Le pouvoir est désormais exercé par un empereur.
+SESSION|3
+QUESTION|Le mythe de fondation sert surtout à :
+REPONSES|Expliquer symboliquement les origines;Donner des preuves;Rédiger des lois
+BONNE|Expliquer symboliquement les origines
+EXPLICATION|Il donne un sens symbolique à la naissance de la cité.
+SESSION|3
+QUESTION|L’Histoire de Rome s’appuie sur :
+REPONSES|Des sources et des vestiges;Des rêves;Des légendes seules
+BONNE|Des sources et des vestiges
+EXPLICATION|Les historiens utilisent textes et découvertes archéologiques pour comprendre le passé.

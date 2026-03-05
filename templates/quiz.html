@@ -50,117 +50,100 @@ button:hover {
     transform: scale(1.05);
 }
 
-.listen-btn{
-    width:auto;
-    font-size:14px;
-    padding:6px 12px;
-    margin-top:8px;
-    background:#ffffff;
-    border:2px solid #70d5ff;
-}
-
-.listen-btn:hover{
-    background:#70d5ff;
-}
-
-.reponse{
-    display:block;
+.replay {
+    font-size:16px;
+    width:200px;
+    margin-bottom:15px;
 }
 
 h2 { margin: 10px 0; }
 h3 { margin: 5px 0; }
 
+#bravoMessage{
+    position:fixed;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:60px;
+    color:white;
+    text-shadow:0 0 15px black;
+    opacity:0;
+    pointer-events:none;
+}
+
 </style>
-
-<script>
-
-function playGood(){ new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); }
-function playBad(){ new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); }
-
-function scintiller(){
-    let img = document.getElementById("logo");
-    let i = 0;
-    let interval = setInterval(()=>{
-        img.style.visibility = (i%2==0)?"hidden":"visible";
-        i++;
-        if(i>6){ clearInterval(interval); img.style.visibility="visible"; }
-    },80);
-}
-
-function trembler(){
-    let img = document.getElementById("logo");
-    let i=0;
-    let interval=setInterval(()=>{
-        img.style.transform = (i%2==0)?"translateX(8px)":"translateX(-8px)";
-        i++;
-        if(i>10){ clearInterval(interval); img.style.transform="translateX(0px)"; }
-    },50);
-}
-
-</script>
-
-<script>
-
-/* ==========================
-   SYNTHESE VOCALE
-========================== */
-
-function lireTexte(texte){
-
-    speechSynthesis.cancel()
-
-    let msg = new SpeechSynthesisUtterance(texte)
-
-    msg.lang="fr-FR"
-    msg.rate=0.95
-    msg.pitch=1
-
-    speechSynthesis.speak(msg)
-}
-
-function lireQuestion(){
-
-let texte = document.getElementById("question").innerText
-
-lireTexte(texte)
-
-}
-
-/* lecture automatique */
-
-window.onload = function(){
-
-let q = document.getElementById("question")
-
-if(q){
-lireTexte(q.innerText)
-}
-
-}
-
-</script>
-
-<!-- Confettis -->
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
 
+let texteQuestion = "";
+let texteCorrection = "";
+
+function parler(texte){
+
+    speechSynthesis.cancel();
+
+    let msg = new SpeechSynthesisUtterance(texte);
+
+    msg.lang = "fr-FR";
+    msg.rate = 0.95;
+    msg.pitch = 1;
+
+    speechSynthesis.speak(msg);
+}
+
+function lireQuestion(){
+    parler(texteQuestion);
+}
+
+function lireCorrection(){
+    parler(texteCorrection);
+}
+
+function lireBouton(){
+    parler("Question suivante");
+}
+
+function lireReponse(rep){
+    parler(rep);
+}
+
 function lancerConfettis(){
 
-confetti({
-particleCount:150,
-spread:100,
-origin:{y:0.6},
-scalar:1.4
-})
+    confetti({
+        particleCount:150,
+        spread:120,
+        scalar:1.6,
+        origin:{y:0.6}
+    });
+}
 
+function animationFin(){
+
+    let bravo = document.getElementById("bravoMessage");
+
+    bravo.style.opacity = 1;
+
+    parler("Bravo ! Tu as terminé le quiz !");
+
+    setTimeout(()=>{
+        lancerConfettis();
+    },1500);
+
+    setTimeout(()=>{
+        bravo.style.transition="opacity 2s";
+        bravo.style.opacity=0;
+    },4000);
 }
 
 </script>
 
 </head>
+
 <body>
+
+<div id="bravoMessage">🎉 BRAVO ! 🎉</div>
 
 <div class="container">
 
@@ -174,13 +157,25 @@ scalar:1.4
 
 {% if feedback[0] == "bonne" %}
 
-<script>playGood(); scintiller();</script>
+<script>
+
+texteCorrection = "Bonne réponse. {{ feedback[1] }}";
+
+window.onload = lireCorrection;
+
+</script>
 
 <h3 style="color:green;">✅ Bonne réponse<br>{{ feedback[1] }}</h3>
 
 {% else %}
 
-<script>playBad(); trembler();</script>
+<script>
+
+texteCorrection = "Mauvaise réponse. La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}";
+
+window.onload = lireCorrection;
+
+</script>
 
 <h3 style="color:red;">❌ Mauvaise réponse<br>
 Bonne réponse : {{ feedback[1] }}<br>
@@ -188,26 +183,38 @@ Bonne réponse : {{ feedback[1] }}<br>
 
 {% endif %}
 
-<a href="/quiz"><button>➡️ Question suivante</button></a>
+<a href="/quiz">
+<button onmouseover="lireBouton()">
+➡️ Question suivante
+</button>
+</a>
 
 {% else %}
 
+<script>
+
+texteQuestion = "{{ question.question }}";
+
+window.onload = lireQuestion;
+
+</script>
+
+<button class="replay" onclick="lireQuestion()">
+🔊 Réécouter la question
+</button>
+
 <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
 
-<h2 id="question">{{ question.question }}</h2>
-
-<button class="listen-btn" onclick="lireQuestion()">🔊 Réécouter</button>
+<h2>{{ question.question }}</h2>
 
 <form method="post">
 
 {% for r in reponses %}
 
 <button
-class="reponse"
 name="reponse"
 value="{{ r }}"
-onmouseover="lireTexte(this.innerText)"
->
+onmouseover="lireReponse('{{ r }}')">
 
 {{ r }}
 
@@ -222,19 +229,13 @@ onmouseover="lireTexte(this.innerText)"
 {% else %}
 
 <script>
-
-setTimeout(()=>{
-lancerConfettis()
-},500)
-
+window.onload = animationFin;
 </script>
 
-<h2>🎉 Bravo ! Tu as terminé le quiz !</h2>
+<h2>Session terminée</h2>
 
 <a href="/">
-
 <button>🏠 Retour accueil</button>
-
 </a>
 
 {% endif %}

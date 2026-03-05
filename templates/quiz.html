@@ -1,181 +1,245 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Quiz</title>
+<meta charset="UTF-8">
+<title>Quiz</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
-    <style>
-        body { 
-            background: #95F5A6; 
-            font-family: 'Fredoka', cursive, sans-serif; 
-            margin:0; 
-            padding:0;
-            overflow-x:hidden;
-        }
+<style>
 
-        .container { 
-            display: flex; 
-            align-items: flex-start; 
-            padding: 20px;
-        }
+body { 
+    background: #95F5A6; 
+    font-family: 'Fredoka', cursive, sans-serif; 
+    margin:0; 
+    padding:0;
+}
 
-        .logo { 
-            width: 400px; 
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
+.container { 
+    display: flex; 
+    align-items: flex-start; 
+    padding: 20px;
+}
 
-        .zone { 
-            flex: 1; 
-            padding: 20px; 
-        }
+.logo { 
+    width: 400px; 
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
-        button { 
-            font-size: 18px; 
-            padding: 12px; 
-            margin: 8px 0; 
-            width: 80%; 
-            border: 2px solid #70d5ff;
-            border-radius: 12px; 
-            background-color: #b8f0ff;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+.zone { 
+    flex: 1; 
+    padding: 20px; 
+}
 
-        button:hover {
-            background-color: #70d5ff;
-            color: white;
-            transform: scale(1.05);
-        }
+button { 
+    font-size: 18px; 
+    padding: 12px; 
+    margin: 8px 0; 
+    width: 80%; 
+    border: 2px solid #70d5ff;
+    border-radius: 12px; 
+    background-color: #b8f0ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        /* ===== BRAVO ANIMATION PLUS LONGUE ===== */
+button:hover {
+    background-color: #70d5ff;
+    color: white;
+    transform: scale(1.05);
+}
 
-        .bravo-overlay {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0.7);
-            font-size: 100px;
-            font-weight: 600;
-            color: white;
-            text-shadow:
-                0 0 10px rgba(0,0,0,0.3),
-                0 0 25px rgba(0,0,0,0.2);
-            opacity: 0;
-            animation: bravoAnim 4s ease forwards;
-            z-index: 9999;
-            pointer-events: none;
-        }
+.listen-btn{
+    width:auto;
+    font-size:14px;
+    padding:6px 12px;
+    margin-top:8px;
+    background:#ffffff;
+    border:2px solid #70d5ff;
+}
 
-        @keyframes bravoAnim {
-            0%   { opacity: 0; transform: translate(-50%, -50%) scale(0.7); }
-            15%  { opacity: 1; transform: translate(-50%, -50%) scale(1.2); }
-            25%  { transform: translate(-50%, -50%) scale(1); }
-            75%  { opacity: 1; }
-            100% { opacity: 0; transform: translate(-50%, -50%) scale(1); }
-        }
+.listen-btn:hover{
+    background:#70d5ff;
+}
 
-    </style>
+.reponse{
+    display:block;
+}
 
-    <script>
-        function playGood(){ new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); }
-        function playBad(){ new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); }
+h2 { margin: 10px 0; }
+h3 { margin: 5px 0; }
 
-        function scintiller(){
-            let img = document.getElementById("logo");
-            let i = 0;
-            let interval = setInterval(()=>{
-                img.style.visibility = (i%2==0)?"hidden":"visible";
-                i++;
-                if(i>6){ clearInterval(interval); img.style.visibility="visible"; }
-            },80);
-        }
+</style>
 
-        function trembler(){
-            let img = document.getElementById("logo");
-            let i=0;
-            let interval=setInterval(()=>{
-                img.style.transform = (i%2==0)?"translateX(8px)":"translateX(-8px)";
-                i++;
-                if(i>10){ clearInterval(interval); img.style.transform="translateX(0px)"; }
-            },50);
-        }
-    </script>
+<script>
 
-    <!-- Confettis -->
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+function playGood(){ new Audio("{{ url_for('static', filename='sounds/tada.mp3') }}").play(); }
+function playBad(){ new Audio("{{ url_for('static', filename='sounds/outch.mp3') }}").play(); }
+
+function scintiller(){
+    let img = document.getElementById("logo");
+    let i = 0;
+    let interval = setInterval(()=>{
+        img.style.visibility = (i%2==0)?"hidden":"visible";
+        i++;
+        if(i>6){ clearInterval(interval); img.style.visibility="visible"; }
+    },80);
+}
+
+function trembler(){
+    let img = document.getElementById("logo");
+    let i=0;
+    let interval=setInterval(()=>{
+        img.style.transform = (i%2==0)?"translateX(8px)":"translateX(-8px)";
+        i++;
+        if(i>10){ clearInterval(interval); img.style.transform="translateX(0px)"; }
+    },50);
+}
+
+</script>
+
+<script>
+
+/* ==========================
+   SYNTHESE VOCALE
+========================== */
+
+function lireTexte(texte){
+
+    speechSynthesis.cancel()
+
+    let msg = new SpeechSynthesisUtterance(texte)
+
+    msg.lang="fr-FR"
+    msg.rate=0.95
+    msg.pitch=1
+
+    speechSynthesis.speak(msg)
+}
+
+function lireQuestion(){
+
+let texte = document.getElementById("question").innerText
+
+lireTexte(texte)
+
+}
+
+/* lecture automatique */
+
+window.onload = function(){
+
+let q = document.getElementById("question")
+
+if(q){
+lireTexte(q.innerText)
+}
+
+}
+
+</script>
+
+<!-- Confettis -->
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+
+function lancerConfettis(){
+
+confetti({
+particleCount:150,
+spread:100,
+origin:{y:0.6},
+scalar:1.4
+})
+
+}
+
+</script>
 
 </head>
 <body>
 
 <div class="container">
-    <img id="logo" class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
 
-    <div class="zone">
+<img id="logo" class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
 
-    {% if not fin %}
+<div class="zone">
 
-        {% if feedback %}
-            {% if feedback[0] == "bonne" %}
-                <script>playGood(); scintiller();</script>
-                <h3 style="color:green;">Bonne réponse<br>{{ feedback[1] }}</h3>
-            {% else %}
-                <script>playBad(); trembler();</script>
-                <h3 style="color:red;">Mauvaise réponse<br>
-                Bonne réponse : {{ feedback[1] }}<br>
-                {{ feedback[2] }}</h3>
-            {% endif %}
-            <a href="/quiz"><button>Question suivante</button></a>
+{% if not fin %}
 
-        {% else %}
+{% if feedback %}
 
-            <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
-            <h2>{{ question.question }}</h2>
+{% if feedback[0] == "bonne" %}
 
-            <form method="post">
-                {% for r in reponses %}
-                    <button name="reponse" value="{{ r }}">{{ r }}</button>
-                {% endfor %}
-            </form>
+<script>playGood(); scintiller();</script>
 
-        {% endif %}
+<h3 style="color:green;">✅ Bonne réponse<br>{{ feedback[1] }}</h3>
 
-    {% else %}
+{% else %}
 
-        <!-- BRAVO -->
-        <div class="bravo-overlay">🎉 BRAVO 🎉</div>
+<script>playBad(); trembler();</script>
 
-        <script>
-            window.onload = function() {
+<h3 style="color:red;">❌ Mauvaise réponse<br>
+Bonne réponse : {{ feedback[1] }}<br>
+{{ feedback[2] }}</h3>
 
-                // Confettis plus gros et plus visibles
-                setTimeout(function() {
+{% endif %}
 
-                    confetti({
-                        particleCount: 200,
-                        spread: 120,
-                        startVelocity: 45,
-                        gravity: 0.8,
-                        scalar: 1.5,   // <-- taille augmentée
-                        origin: { y: 0.6 }
-                    });
+<a href="/quiz"><button>➡️ Question suivante</button></a>
 
-                }, 1500); // confettis après apparition complète
-            }
-        </script>
+{% else %}
 
-        <h2 style="margin-top:120px;">Quiz terminé !</h2>
-        <h3>Tu peux être fier de toi 👏</h3>
+<h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
 
-        <a href="/">
-            <button>Choisir un nouveau thème</button>
-        </a>
+<h2 id="question">{{ question.question }}</h2>
 
-    {% endif %}
+<button class="listen-btn" onclick="lireQuestion()">🔊 Réécouter</button>
 
-    </div>
+<form method="post">
+
+{% for r in reponses %}
+
+<button
+class="reponse"
+name="reponse"
+value="{{ r }}"
+onmouseover="lireTexte(this.innerText)"
+>
+
+{{ r }}
+
+</button>
+
+{% endfor %}
+
+</form>
+
+{% endif %}
+
+{% else %}
+
+<script>
+
+setTimeout(()=>{
+lancerConfettis()
+},500)
+
+</script>
+
+<h2>🎉 Bravo ! Tu as terminé le quiz !</h2>
+
+<a href="/">
+
+<button>🏠 Retour accueil</button>
+
+</a>
+
+{% endif %}
+
+</div>
 </div>
 
 </body>

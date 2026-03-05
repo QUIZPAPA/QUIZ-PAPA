@@ -1,114 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QUIZ QUIZZZ QUIZZZZZ</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUIZ QUIZZZ QUIZZZZZ</title>
 
-    <!-- Google Font Fredoka -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #95F5A6, #B0F7FF);
-            font-family: 'Fredoka', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+<style>
 
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 90%;
-            max-width: 420px;
-            animation: fadeIn 0.8s ease-in-out;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #95F5A6, #B0F7FF);
+    font-family: 'Fredoka', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        .logo {
-            width: 120px;
-            margin-bottom: 15px;
-            animation: float 3s ease-in-out infinite;
-        }
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    animation: fadeIn 0.8s ease-in-out;
+}
 
-        h1 {
-            margin-bottom: 20px;
-        }
+.logo {
+    width: 120px;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+}
 
-        select {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            border-radius: 10px;
-            border: 2px solid #70d5ff;
-            margin-bottom: 20px;
-            font-family: 'Fredoka', sans-serif;
-        }
+h1 {
+    margin-bottom: 10px;
+}
 
-        button {
-            width: 100%;
-            font-size: 18px;
-            padding: 14px;
-            border-radius: 12px;
-            border: none;
-            background-color: #70d5ff;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Fredoka', sans-serif;
-        }
+.info {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
 
-        button:hover {
-            background-color: #4cc7ff;
-            transform: scale(1.05);
-        }
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #70d5ff;
+    margin-bottom: 20px;
+    font-family: 'Fredoka', sans-serif;
+}
 
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
+button {
+    width: 100%;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background-color: #70d5ff;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Fredoka', sans-serif;
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.9); }
-            to { opacity: 1; transform: scale(1); }
-        }
+button:hover {
+    background-color: #4cc7ff;
+    transform: scale(1.05);
+}
 
-        /* Petit ajustement mobile */
-        @media (max-width: 480px) {
-            .card {
-                padding: 25px;
-            }
-        }
+.replay {
+    margin-top: 10px;
+    font-size: 14px;
+    background: #eee;
+    color: #333;
+}
 
-    </style>
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 25px;
+    }
+}
+
+</style>
+
+<script>
+
+function parler(texte){
+
+    speechSynthesis.cancel();
+
+    let msg = new SpeechSynthesisUtterance(texte);
+
+    msg.lang = "fr-FR";
+    msg.rate = 0.95;
+    msg.pitch = 1;
+
+    speechSynthesis.speak(msg);
+}
+
+function lireAccueil(){
+
+    parler("Bienvenue dans le quiz. Sélectionne ton thème. Passe la souris sur les boutons pour entendre les propositions.");
+}
+
+function lireTheme(){
+    let select = document.querySelector("select");
+    let theme = select.options[select.selectedIndex].text;
+    parler(theme);
+}
+
+function lireBouton(){
+    parler("Commencer le quiz");
+}
+
+</script>
+
 </head>
 
-<body>
+<body onload="lireAccueil()">
 
-    <div class="card">
+<div class="card">
 
-        <img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" alt="Logo Quiz">
+<img src="{{ url_for('static', filename='images/logo.png') }}" class="logo">
 
-        <h1>🎯 Choisis ton thème</h1>
+<h1>🎯 Sélectionne ton thème</h1>
 
-        <form method="post" action="/start">
-            <select name="theme" required>
-                {% for t in themes %}
-                    <option value="{{ t }}">{{ t }}</option>
-                {% endfor %}
-            </select>
+<p class="info">
+Passe la souris sur les boutons pour entendre les propositions.
+</p>
 
-            <button type="submit">🚀 Commencer le quiz</button>
-        </form>
+<form method="post" action="/start">
 
-    </div>
+<select name="theme" required onchange="lireTheme()">
+
+{% for t in themes %}
+<option value="{{ t }}">{{ t }}</option>
+{% endfor %}
+
+</select>
+
+<button type="submit" onmouseover="lireBouton()">
+🚀 Commencer le quiz
+</button>
+
+</form>
+
+<button class="replay" onclick="lireAccueil()">
+🔊 Réécouter les instructions
+</button>
+
+</div>
 
 </body>
 </html>

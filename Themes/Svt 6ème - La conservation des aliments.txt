@@ -1,119 +1,119 @@
 SESSION|1
-QUESTION|Quelles sont les premières techniques utilisées par l’être humain pour conserver les aliments ?
-REPONSES|Le sel le sucre ou la graisse;La réfrigération;La surgélation
-BONNE|Le sel le sucre ou la graisse
-EXPLICATION|Depuis l’Antiquité les humains utilisent le sel le sucre ou la graisse pour empêcher les microbes de se développer et ralentir la dégradation des aliments.
+QUESTION|Pourquoi les aliments peuvent-ils se dégrader avec le temps ?
+REPONSES|À cause des micro-organismes;À cause de la gravité;À cause de la rotation de la Terre
+BONNE|À cause des micro-organismes
+EXPLICATION|Des micro-organismes comme les bactéries et les moisissures utilisent les nutriments des aliments pour se nourrir et se multiplier, ce qui provoque leur dégradation.
 
 SESSION|1
-QUESTION|Quel inventeur met au point vers 1790 la stérilisation par chauffage dans des récipients en verre ?
-REPONSES|Appert;Pasteur;Perkins
-BONNE|Appert
-EXPLICATION|Nicolas Appert découvre qu’en chauffant des aliments dans un récipient fermé on peut les conserver longtemps sans qu’ils se dégradent.
+QUESTION|Quel risque peut provoquer la consommation d’un aliment contaminé par des microbes ?
+REPONSES|Une intoxication alimentaire;Une fracture;Une allergie au soleil
+BONNE|Une intoxication alimentaire
+EXPLICATION|Certaines bactéries produisent des substances toxiques qui peuvent rendre une personne malade après avoir mangé un aliment contaminé.
 
 SESSION|1
-QUESTION|L’invention d’Appert est l’ancêtre de quelle technique moderne ?
-REPONSES|Les boîtes de conserve;Les réfrigérateurs;La surgélation
-BONNE|Les boîtes de conserve
-EXPLICATION|La méthode d’Appert est à l’origine de la mise en conserve qui permet aujourd’hui de conserver les aliments pendant plusieurs mois ou années.
+QUESTION|Pourquoi un aliment laissé longtemps à température ambiante peut-il devenir dangereux ?
+REPONSES|Les microbes se multiplient rapidement;Il devient plus lourd;Il change de couleur
+BONNE|Les microbes se multiplient rapidement
+EXPLICATION|À température ambiante les bactéries se développent très vite et peuvent rendre l’aliment impropre à la consommation.
 
 SESSION|1
-QUESTION|Au XIXe siècle Perkins et Carré inventent quel appareil ?
-REPONSES|Le réfrigérateur;Le four;Le micro-ondes
-BONNE|Le réfrigérateur
-EXPLICATION|Le réfrigérateur permet de conserver les aliments plus longtemps en ralentissant le développement des micro-organismes grâce au froid.
-
-SESSION|1
-QUESTION|À quelle température fonctionne généralement un réfrigérateur ?
-REPONSES|Entre 0°C et 4°C;Entre 10°C et 15°C;Entre -10°C et -20°C
-BONNE|Entre 0°C et 4°C
-EXPLICATION|Une température proche de 4°C ralentit fortement la multiplication des bactéries responsables de la dégradation des aliments.
-
-SESSION|1
-QUESTION|Quel scientifique comprend au XIXe siècle le rôle des microbes dans la dégradation des aliments ?
-REPONSES|Pasteur;Newton;Darwin
-BONNE|Pasteur
-EXPLICATION|Louis Pasteur montre que les micro-organismes sont responsables de nombreuses altérations des aliments et de certaines maladies.
-
-SESSION|1
-QUESTION|Pourquoi les aliments peuvent-ils provoquer des intoxications alimentaires ?
-REPONSES|À cause de micro-organismes pathogènes;À cause du froid;À cause de la lumière
-BONNE|À cause de micro-organismes pathogènes
-EXPLICATION|Certaines bactéries présentes dans les aliments peuvent produire des substances dangereuses pour la santé.
-
-SESSION|1
-QUESTION|Qu’est-ce que la pasteurisation ?
-REPONSES|Un chauffage entre 60°C et 80°C;Un refroidissement à 0°C;Une congélation à -40°C
-BONNE|Un chauffage entre 60°C et 80°C
-EXPLICATION|La pasteurisation consiste à chauffer un aliment pendant un temps court pour détruire une grande partie des microbes sans trop modifier l’aliment.
-
-SESSION|1
-QUESTION|Quand les congélateurs apparaissent-ils dans les maisons ?
-REPONSES|Vers 1960;Vers 1900;Vers 2000
-BONNE|Vers 1960
-EXPLICATION|À partir des années 1960 les congélateurs deviennent courants dans les foyers et permettent de conserver les aliments pendant plusieurs mois.
-
-SESSION|1
-QUESTION|Qu’est-ce que la surgélation ?
-REPONSES|Une congélation très rapide;Un simple refroidissement;Un séchage
-BONNE|Une congélation très rapide
-EXPLICATION|La surgélation refroidit très rapidement les aliments à très basse température afin de préserver leur texture et leurs qualités nutritionnelles.
-
-SESSION|1
-QUESTION|Pourquoi le froid conserve-t-il les aliments ?
-REPONSES|Il ralentit la multiplication des microbes;Il détruit les vitamines;Il chauffe les aliments
+QUESTION|Pourquoi le froid ralentit-il la dégradation des aliments ?
+REPONSES|Il ralentit la multiplication des microbes;Il enlève les vitamines;Il supprime l’eau
 BONNE|Il ralentit la multiplication des microbes
-EXPLICATION|Les micro-organismes se développent beaucoup plus lentement à basse température.
+EXPLICATION|Les micro-organismes ont besoin d’une certaine température pour se multiplier et le froid ralentit fortement leur activité.
 
 SESSION|1
-QUESTION|Quelle technique consiste à retirer l’air autour d’un aliment ?
-REPONSES|La mise sous vide;La fermentation;La cuisson
+QUESTION|Pourquoi le sel permet-il de conserver certains aliments depuis l’Antiquité ?
+REPONSES|Il empêche les microbes de se développer;Il rend les aliments plus lourds;Il les refroidit
+BONNE|Il empêche les microbes de se développer
+EXPLICATION|Le sel retire l’eau nécessaire à la survie des micro-organismes et limite leur multiplication.
+
+SESSION|1
+QUESTION|Pourquoi le sucre peut-il aussi servir à conserver certains aliments comme les confitures ?
+REPONSES|Il empêche les microbes de se développer;Il refroidit les aliments;Il change leur couleur
+BONNE|Il empêche les microbes de se développer
+EXPLICATION|Comme le sel, une grande quantité de sucre empêche les micro-organismes de se développer en limitant l’eau disponible.
+
+SESSION|1
+QUESTION|Pourquoi les humains ont-ils inventé des techniques de conservation des aliments ?
+REPONSES|Pour éviter les maladies et le gaspillage;Pour changer la forme des aliments;Pour augmenter leur poids
+BONNE|Pour éviter les maladies et le gaspillage
+EXPLICATION|Conserver les aliments permet de les garder plus longtemps tout en réduisant les risques d’intoxication alimentaire.
+
+SESSION|2
+QUESTION|Quel inventeur découvre vers 1790 une méthode de conservation par chauffage dans un récipient fermé ?
+REPONSES|Nicolas Appert;Louis Pasteur;Albert Einstein
+BONNE|Nicolas Appert
+EXPLICATION|Appert découvre que chauffer les aliments dans un récipient fermé permet de les conserver longtemps sans qu’ils se dégradent.
+
+SESSION|2
+QUESTION|L’invention de Nicolas Appert est à l’origine de quelle technique moderne ?
+REPONSES|Les boîtes de conserve;La surgélation;La fermentation
+BONNE|Les boîtes de conserve
+EXPLICATION|La mise en conserve permet de conserver les aliments pendant de très longues périodes en détruisant les microbes.
+
+SESSION|2
+QUESTION|Quel scientifique a montré que les micro-organismes sont responsables de nombreuses dégradations des aliments ?
+REPONSES|Louis Pasteur;Galilée;Newton
+BONNE|Louis Pasteur
+EXPLICATION|Pasteur prouve que les microbes présents dans l’air peuvent contaminer les aliments et provoquer leur altération.
+
+SESSION|2
+QUESTION|Quelle technique porte le nom de Pasteur ?
+REPONSES|La pasteurisation;La congélation;La fermentation
+BONNE|La pasteurisation
+EXPLICATION|La pasteurisation consiste à chauffer un aliment pendant un court moment pour éliminer une grande partie des microbes.
+
+SESSION|2
+QUESTION|Quel appareil inventé au XIXe siècle permet de conserver les aliments grâce au froid ?
+REPONSES|Le réfrigérateur;La machine à vapeur;Le microscope
+BONNE|Le réfrigérateur
+EXPLICATION|Le réfrigérateur maintient les aliments à basse température afin de ralentir la multiplication des micro-organismes.
+
+SESSION|2
+QUESTION|Quand les congélateurs deviennent-ils courants dans les maisons ?
+REPONSES|Vers les années 1960;Vers 1800;Vers 2000
+BONNE|Vers les années 1960
+EXPLICATION|L’arrivée des congélateurs dans les foyers permet de conserver les aliments pendant plusieurs mois.
+
+SESSION|3
+QUESTION|Quelle est la température habituelle à l’intérieur d’un réfrigérateur ?
+REPONSES|Entre 0°C et 4°C;Entre 15°C et 20°C;Entre -20°C et -30°C
+BONNE|Entre 0°C et 4°C
+EXPLICATION|Cette température ralentit fortement la multiplication des bactéries responsables de la dégradation des aliments.
+
+SESSION|3
+QUESTION|Quelle technique consiste à congeler très rapidement les aliments ?
+REPONSES|La surgélation;La fermentation;La salaison
+BONNE|La surgélation
+EXPLICATION|La surgélation refroidit très rapidement les aliments afin de préserver leur texture et leurs qualités nutritionnelles.
+
+SESSION|3
+QUESTION|Quelle technique consiste à retirer l’air autour d’un aliment pour mieux le conserver ?
+REPONSES|La mise sous vide;La cuisson;La fermentation
 BONNE|La mise sous vide
-EXPLICATION|La mise sous vide empêche l’oxygène de favoriser le développement de nombreux microbes.
+EXPLICATION|La mise sous vide limite la présence d’oxygène et ralentit le développement de nombreux micro-organismes.
 
-SESSION|1
-QUESTION|Quelle technique utilise des rayonnements pour conserver les aliments ?
-REPONSES|L’ionisation;La cuisson;La réfrigération
+SESSION|3
+QUESTION|Pourquoi certains aliments sont-ils conservés dans du vinaigre ?
+REPONSES|Le vinaigre crée un milieu acide défavorable aux microbes;Le vinaigre refroidit les aliments;Le vinaigre les rend plus lourds
+BONNE|Le vinaigre crée un milieu acide défavorable aux microbes
+EXPLICATION|Beaucoup de micro-organismes ne peuvent pas se développer dans un environnement très acide.
+
+SESSION|3
+QUESTION|Quelle technique moderne utilise des rayonnements pour éliminer certains microbes ?
+REPONSES|L’ionisation;La cuisson;La congélation
 BONNE|L’ionisation
-EXPLICATION|L’ionisation utilise des rayonnements pour détruire certains micro-organismes et prolonger la conservation des aliments.
+EXPLICATION|L’ionisation permet de détruire certains micro-organismes afin d’augmenter la durée de conservation des aliments.
 
-SESSION|1
-QUESTION|Pourquoi conserve-t-on les aliments aujourd’hui ?
-REPONSES|Pour éviter le gaspillage et les intoxications;Pour les rendre plus lourds;Pour changer leur couleur
-BONNE|Pour éviter le gaspillage et les intoxications
-EXPLICATION|Les techniques de conservation permettent de garder les aliments plus longtemps tout en protégeant la santé.
+SESSION|3
+QUESTION|Pourquoi les scientifiques cherchent-ils encore de nouvelles techniques de conservation ?
+REPONSES|Pour mieux conserver les aliments et limiter le gaspillage;Pour changer leur couleur;Pour augmenter leur taille
+BONNE|Pour mieux conserver les aliments et limiter le gaspillage
+EXPLICATION|Les chercheurs cherchent des méthodes plus efficaces pour protéger la santé et préserver la qualité des aliments.
 
-SESSION|1
-QUESTION|Quel risque limite la conservation des aliments ?
-REPONSES|Les intoxications alimentaires;Les tempêtes;Les tremblements de terre
-BONNE|Les intoxications alimentaires
-EXPLICATION|Les intoxications alimentaires sont causées par des microbes présents dans des aliments mal conservés.
-
-SESSION|1
-QUESTION|Pourquoi jeter moins d’aliments est-il important ?
-REPONSES|Pour éviter le gaspillage;Pour augmenter les déchets;Pour consommer plus d’énergie
-BONNE|Pour éviter le gaspillage
-EXPLICATION|La conservation permet de réduire le gaspillage alimentaire et d’utiliser les ressources de manière plus responsable.
-
-SESSION|1
-QUESTION|Quel aliment est souvent conservé grâce au vinaigre ?
-REPONSES|Les cornichons;Le pain;Le fromage
-BONNE|Les cornichons
-EXPLICATION|Le vinaigre crée un milieu acide qui empêche de nombreux microbes de se développer.
-
-SESSION|1
-QUESTION|Quel exemple d’aliment est souvent conservé par congélation ?
-REPONSES|Le poisson;Le sel;Le sucre
-BONNE|Le poisson
-EXPLICATION|Le poisson est souvent congelé pour être conservé longtemps sans se dégrader.
-
-SESSION|1
-QUESTION|Quel type de micro-organismes dégrade souvent les aliments ?
-REPONSES|Les bactéries;Les planètes;Les roches
-BONNE|Les bactéries
-EXPLICATION|Les bactéries utilisent les nutriments des aliments pour se multiplier et peuvent les rendre impropres à la consommation.
-
-SESSION|1
-QUESTION|Sur quoi travaillent encore les chercheurs aujourd’hui ?
-REPONSES|De nouvelles techniques de conservation;De nouvelles planètes;De nouveaux continents
-BONNE|De nouvelles techniques de conservation
-EXPLICATION|Les scientifiques cherchent des méthodes de conservation plus efficaces pour préserver la qualité des aliments et limiter le gaspillage.
+SESSION|3
+QUESTION|Quel est l’objectif principal de toutes les techniques de conservation des aliments ?
+REPONSES|Empêcher le développement des microbes;Changer le goût des aliments;Augmenter leur poids
+BONNE|Empêcher le développement des microbes
+EXPLICATION|Toutes les méthodes de conservation cherchent à ralentir ou empêcher la multiplication des micro-organismes responsables de la dégradation des aliments.

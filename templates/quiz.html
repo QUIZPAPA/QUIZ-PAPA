@@ -142,9 +142,55 @@ function animationFin(){
 
 <div class="container">
 
-<img id="logo" class="logo"
-src="{{ url_for('static', filename='images/themes/' + session.get('theme','logo.txt')[:-4] + '.png') }}"
-onerror="this.src='{{ url_for('static', filename='images/logo.png') }}'">
+<img id="logo" class="logo">
+
+<script>
+
+let theme = "{{ session.get('theme','logo.txt') }}".replace(".txt","");
+
+let chemins = [
+
+"/static/images/themes/" + theme + ".png",
+
+"/static/images/themes/" + theme.toLowerCase() + ".png",
+
+"/static/images/themes/" + theme.replaceAll(" ","-") + ".png",
+
+"/static/images/themes/" + theme.replaceAll(" ","-").toLowerCase() + ".png",
+
+"/static/images/themes/" + theme
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"")
+    .replaceAll(" ","-") + ".png"
+];
+
+let index = 0;
+
+function essayerImage(){
+
+    if(index >= chemins.length){
+        document.getElementById("logo").src="/static/images/logo.png";
+        return;
+    }
+
+    let img = new Image();
+
+    img.onload = function(){
+        document.getElementById("logo").src = chemins[index];
+    }
+
+    img.onerror = function(){
+        index++;
+        essayerImage();
+    }
+
+    img.src = chemins[index];
+}
+
+essayerImage();
+
+</script>
 
 <div class="zone">
 

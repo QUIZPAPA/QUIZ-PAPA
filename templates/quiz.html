@@ -147,7 +147,10 @@ function animationFin(){
 
 <div class="container">
 
-<img id="logo" class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
+<!-- IMAGE DU THEME -->
+<img id="logo" class="logo"
+src="{{ url_for('static', filename='images/themes/' + session.theme.replace('.txt','') + '.png') }}"
+onerror="this.src='{{ url_for('static', filename='images/logo.png') }}'">
 
 <div class="zone">
 

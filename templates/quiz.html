@@ -15,6 +15,32 @@ body {
     padding:0;
 }
 
+/* Bandeau thème */
+
+.headerTheme{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    position:relative;
+}
+
+.headerTheme img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.headerTheme h1{
+    position:absolute;
+    bottom:20px;
+    left:30px;
+    color:white;
+    font-size:42px;
+    text-shadow:0 0 15px black;
+}
+
+/* Layout */
+
 .container { 
     display: flex; 
     align-items: flex-start; 
@@ -22,7 +48,7 @@ body {
 }
 
 .logo { 
-    width: 400px; 
+    width: 350px; 
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
@@ -31,6 +57,8 @@ body {
     flex: 1; 
     padding: 20px; 
 }
+
+/* Boutons */
 
 button { 
     font-size: 18px; 
@@ -42,6 +70,7 @@ button {
     background-color: #b8f0ff;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
 }
 
 button:hover {
@@ -58,6 +87,8 @@ button:hover {
 
 h2 { margin: 10px 0; }
 h3 { margin: 5px 0; }
+
+/* Bravo animation */
 
 #bravoMessage{
     position:fixed;
@@ -79,6 +110,8 @@ h3 { margin: 5px 0; }
 
 let texteQuestion = "";
 let texteCorrection = "";
+
+/* Synthèse vocale */
 
 function parler(texte){
 
@@ -109,6 +142,8 @@ function lireReponse(rep){
     parler(rep);
 }
 
+/* Confettis */
+
 function lancerConfettis(){
 
     confetti({
@@ -137,6 +172,47 @@ function animationFin(){
     },4000);
 }
 
+/* Chargement image thème */
+
+function chargerImageTheme(){
+
+    const nomTheme = "{{ nom_theme }}";
+
+    const imageTheme = "/static/images/themes/" + nomTheme + ".png";
+    const imageDefault = "/static/images/themes/default.png";
+
+    const imgHeader = document.getElementById("themeImage");
+    const imgLogo = document.getElementById("logo");
+
+    imgHeader.src = imageTheme;
+    imgLogo.src = imageTheme;
+
+    imgHeader.onerror = function(){
+        imgHeader.src = imageDefault;
+    }
+
+    imgLogo.onerror = function(){
+        imgLogo.src = imageDefault;
+    }
+
+}
+
+/* Initialisation */
+
+function initPage(){
+
+    chargerImageTheme();
+
+    if(texteQuestion !== ""){
+        lireQuestion();
+    }
+
+    if(texteCorrection !== ""){
+        lireCorrection();
+    }
+
+}
+
 </script>
 
 </head>
@@ -145,9 +221,19 @@ function animationFin(){
 
 <div id="bravoMessage">🎉 BRAVO ! 🎉</div>
 
+<!-- Bandeau thème -->
+
+<div class="headerTheme">
+
+<img id="themeImage">
+
+<h1>{{ nom_theme }}</h1>
+
+</div>
+
 <div class="container">
 
-<img id="logo" class="logo" src="{{ url_for('static', filename='images/logo.png') }}">
+<img id="logo" class="logo">
 
 <div class="zone">
 
@@ -161,7 +247,7 @@ function animationFin(){
 
 texteCorrection = "Bonne réponse. {{ feedback[1] }}";
 
-window.onload = lireCorrection;
+window.onload = initPage;
 
 </script>
 
@@ -173,7 +259,7 @@ window.onload = lireCorrection;
 
 texteCorrection = "Mauvaise réponse. La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}";
 
-window.onload = lireCorrection;
+window.onload = initPage;
 
 </script>
 
@@ -195,7 +281,7 @@ Bonne réponse : {{ feedback[1] }}<br>
 
 texteQuestion = "{{ question.question }}";
 
-window.onload = lireQuestion;
+window.onload = initPage;
 
 </script>
 
@@ -229,7 +315,12 @@ onmouseover="lireReponse('{{ r }}')">
 {% else %}
 
 <script>
-window.onload = animationFin;
+
+window.onload = function(){
+    initPage();
+    animationFin();
+}
+
 </script>
 
 <h2>Session terminée</h2>

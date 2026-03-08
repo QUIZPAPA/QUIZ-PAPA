@@ -81,15 +81,11 @@ let texteQuestion = "";
 let texteCorrection = "";
 
 function parler(texte){
-
     speechSynthesis.cancel();
-
     let msg = new SpeechSynthesisUtterance(texte);
-
     msg.lang = "fr-FR";
     msg.rate = 0.95;
     msg.pitch = 1;
-
     speechSynthesis.speak(msg);
 }
 
@@ -110,7 +106,6 @@ function lireReponse(rep){
 }
 
 function lancerConfettis(){
-
     confetti({
         particleCount:150,
         spread:120,
@@ -147,9 +142,8 @@ function animationFin(){
 
 <div class="container">
 
-<!-- IMAGE DU THEME -->
 <img id="logo" class="logo"
-src="{{ url_for('static', filename='images/themes/' + session.theme.replace('.txt','') + '.png') }}"
+src="{{ url_for('static', filename='images/themes/' + session.get('theme','logo.txt')[:-4] + '.png') }}"
 onerror="this.src='{{ url_for('static', filename='images/logo.png') }}'">
 
 <div class="zone">

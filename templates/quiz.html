@@ -56,9 +56,6 @@ width:200px;
 margin-bottom:15px;
 }
 
-h2{margin:10px 0;}
-h3{margin:5px 0;}
-
 #bravoMessage{
 position:fixed;
 top:40%;
@@ -77,50 +74,57 @@ pointer-events:none;
 position:fixed;
 right:40px;
 bottom:20px;
-width:180px;
+width:160px;
+transition:transform 0.4s;
 }
 
-#avatar img{
-width:100%;
-transition:transform 0.2s;
+/* bouche qui parle */
+
+.talk #mouth{
+animation:talk 0.25s infinite alternate;
 }
 
-/* animation parole */
-
-.parle{
-animation:parler 0.35s infinite alternate;
+@keyframes talk{
+0%{transform:scaleY(1);}
+100%{transform:scaleY(0.3);}
 }
 
-@keyframes parler{
-0%{transform:rotate(-2deg);}
-100%{transform:rotate(2deg);}
+/* saut joie */
+
+.happy{
+animation:jump 0.6s;
 }
 
-/* bonne réponse */
-
-.joie{
-animation:joie 0.6s;
-}
-
-@keyframes joie{
+@keyframes jump{
 0%{transform:translateY(0);}
-30%{transform:translateY(-40px);}
-60%{transform:translateY(0);}
+40%{transform:translateY(-60px);}
+70%{transform:translateY(0);}
 100%{transform:translateY(-15px);}
 }
 
-/* mauvaise réponse */
+/* oups */
 
-.oups{
-animation:oups 0.6s;
+.oops{
+animation:oops 0.6s;
 }
 
-@keyframes oups{
+@keyframes oops{
 0%{transform:rotate(0);}
-25%{transform:rotate(-15deg);}
-50%{transform:rotate(15deg);}
-75%{transform:rotate(-10deg);}
+25%{transform:rotate(-10deg);}
+50%{transform:rotate(10deg);}
+75%{transform:rotate(-6deg);}
 100%{transform:rotate(0);}
+}
+
+/* clignement yeux */
+
+#eyes{
+animation:blink 4s infinite;
+}
+
+@keyframes blink{
+0%,92%,100%{transform:scaleY(1);}
+95%{transform:scaleY(0.1);}
 }
 
 </style>
@@ -129,56 +133,78 @@ animation:oups 0.6s;
 
 <script>
 
-let texteQuestion="";
-let texteCorrection="";
+let texteQuestion=""
+let texteCorrection=""
+
+function avatarParle(on){
+
+let avatar=document.getElementById("avatar")
+
+if(on)
+avatar.classList.add("talk")
+else
+avatar.classList.remove("talk")
+
+}
 
 function parler(texte){
 
-speechSynthesis.cancel();
+speechSynthesis.cancel()
 
-let avatar=document.getElementById("avatarImg");
-avatar.classList.add("parle");
+let msg=new SpeechSynthesisUtterance(texte)
 
-let msg=new SpeechSynthesisUtterance(texte);
+msg.lang="fr-FR"
+msg.rate=0.95
+msg.pitch=1
 
-msg.lang="fr-FR";
-msg.rate=0.95;
-msg.pitch=1;
+msg.onstart=function(){
+avatarParle(true)
+}
 
 msg.onend=function(){
-avatar.classList.remove("parle");
-};
+avatarParle(false)
+}
 
-speechSynthesis.speak(msg);
+speechSynthesis.speak(msg)
 
 }
 
 function lireQuestion(){
-parler(texteQuestion);
+parler(texteQuestion)
 }
 
 function lireCorrection(){
-parler(texteCorrection);
+parler(texteCorrection)
 }
 
 function lireBouton(){
-parler("Question suivante");
+parler("Question suivante")
 }
 
 function lireReponse(rep){
-parler(rep);
+parler(rep)
 }
 
 function bonneAnimation(){
-let avatar=document.getElementById("avatarImg");
-avatar.classList.add("joie");
-setTimeout(()=>avatar.classList.remove("joie"),700);
+
+let avatar=document.getElementById("avatar")
+avatar.classList.add("happy")
+
+setTimeout(()=>{
+avatar.classList.remove("happy")
+},800)
+
 }
 
 function mauvaiseAnimation(){
-let avatar=document.getElementById("avatarImg");
-avatar.classList.add("oups");
-setTimeout(()=>avatar.classList.remove("oups"),700);
+
+let avatar=document.getElementById("avatar")
+avatar.classList.add("oops")
+
+setTimeout(()=>{
+avatar.classList.remove("oops")
+},800)
+
 }
 
 function lancerConfettis(){
@@ -188,26 +214,26 @@ particleCount:150,
 spread:120,
 scalar:1.6,
 origin:{y:0.6}
-});
+})
 
 }
 
 function animationFin(){
 
-let bravo=document.getElementById("bravoMessage");
+let bravo=document.getElementById("bravoMessage")
 
-bravo.style.opacity=1;
+bravo.style.opacity=1
 
-parler("Bravo ! Tu as terminé le quiz !");
-
-setTimeout(()=>{
-lancerConfettis();
-},1500);
+parler("Bravo ! Tu as terminé le quiz !")
 
 setTimeout(()=>{
-bravo.style.transition="opacity 2s";
-bravo.style.opacity=0;
-},4000);
+lancerConfettis()
+},1500)
+
+setTimeout(()=>{
+bravo.style.transition="opacity 2s"
+bravo.style.opacity=0
+},4000)
 
 }
 
@@ -232,11 +258,11 @@ bravo.style.opacity=0;
 {% if feedback[0] == "bonne" %}
 
 <script>
-texteCorrection="Bravo ! {{ feedback[1] }}";
+texteCorrection="Bravo ! {{ feedback[1] }}"
 window.onload=function(){
-bonneAnimation();
-lireCorrection();
-};
+bonneAnimation()
+lireCorrection()
+}
 </script>
 
 <h3 style="color:green;">🎉 Bravo !<br>{{ feedback[1] }}</h3>
@@ -244,11 +270,11 @@ lireCorrection();
 {% else %}
 
 <script>
-texteCorrection="Oups ! La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}";
+texteCorrection="Oups ! La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}"
 window.onload=function(){
-mauvaiseAnimation();
-lireCorrection();
-};
+mauvaiseAnimation()
+lireCorrection()
+}
 </script>
 
 <h3 style="color:red;">❌ Oups !<br>
@@ -266,8 +292,8 @@ Bonne réponse : {{ feedback[1] }}<br>
 {% else %}
 
 <script>
-texteQuestion="{{ question.question }}";
-window.onload=lireQuestion;
+texteQuestion="{{ question.question }}"
+window.onload=lireQuestion
 </script>
 
 <button class="replay" onclick="lireQuestion()">
@@ -300,7 +326,7 @@ onmouseover="lireReponse('{{ r }}')">
 {% else %}
 
 <script>
-window.onload=animationFin;
+window.onload=animationFin
 </script>
 
 <h2>Session terminée</h2>
@@ -314,10 +340,29 @@ window.onload=animationFin;
 </div>
 </div>
 
-<!-- PERSONNAGE -->
+<!-- PERSONNAGE SVG -->
 
 <div id="avatar">
-<img id="avatarImg" src="{{ url_for('static', filename='images/logo.png') }}">
+
+<svg viewBox="0 0 200 200">
+
+<!-- cheveux -->
+<path d="M40 70 Q100 10 160 70 L160 120 L40 120 Z" fill="#5b3a29"/>
+
+<!-- visage -->
+<circle cx="100" cy="100" r="50" fill="#ffd7b5"/>
+
+<!-- yeux -->
+<g id="eyes">
+<circle cx="80" cy="95" r="6" fill="#000"/>
+<circle cx="120" cy="95" r="6" fill="#000"/>
+</g>
+
+<!-- bouche -->
+<ellipse id="mouth" cx="100" cy="120" rx="12" ry="6" fill="#d33"/>
+
+</svg>
+
 </div>
 
 </body>

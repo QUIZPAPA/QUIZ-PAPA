@@ -39,13 +39,13 @@ margin:8px 0;
 width:80%;
 border:2px solid #70d5ff;
 border-radius:12px;
-background-color:#b8f0ff;
+background:#b8f0ff;
 cursor:pointer;
-transition:all 0.3s ease;
+transition:all 0.3s;
 }
 
 button:hover{
-background-color:#70d5ff;
+background:#70d5ff;
 color:white;
 transform:scale(1.05);
 }
@@ -68,63 +68,45 @@ opacity:0;
 pointer-events:none;
 }
 
-/* PERSONNAGE */
+/* mascotte */
 
-#avatar{
+#mascotte{
 position:fixed;
 right:40px;
 bottom:20px;
-width:160px;
-transition:transform 0.4s;
+width:220px;
+transition:transform 0.3s;
 }
 
-/* bouche qui parle */
-
-.talk #mouth{
-animation:talk 0.25s infinite alternate;
-}
-
-@keyframes talk{
-0%{transform:scaleY(1);}
-100%{transform:scaleY(0.3);}
+#mascotte img{
+width:100%;
 }
 
 /* saut joie */
 
-.happy{
+.joie{
 animation:jump 0.6s;
 }
 
 @keyframes jump{
-0%{transform:translateY(0);}
-40%{transform:translateY(-60px);}
-70%{transform:translateY(0);}
-100%{transform:translateY(-15px);}
+0%{transform:translateY(0)}
+40%{transform:translateY(-60px)}
+70%{transform:translateY(0)}
+100%{transform:translateY(-15px)}
 }
 
 /* oups */
 
-.oops{
+.oups{
 animation:oops 0.6s;
 }
 
 @keyframes oops{
-0%{transform:rotate(0);}
-25%{transform:rotate(-10deg);}
-50%{transform:rotate(10deg);}
-75%{transform:rotate(-6deg);}
-100%{transform:rotate(0);}
-}
-
-/* clignement yeux */
-
-#eyes{
-animation:blink 4s infinite;
-}
-
-@keyframes blink{
-0%,92%,100%{transform:scaleY(1);}
-95%{transform:scaleY(0.1);}
+0%{transform:rotate(0)}
+25%{transform:rotate(-10deg)}
+50%{transform:rotate(10deg)}
+75%{transform:rotate(-6deg)}
+100%{transform:rotate(0)}
 }
 
 </style>
@@ -136,20 +118,13 @@ animation:blink 4s infinite;
 let texteQuestion=""
 let texteCorrection=""
 
-function avatarParle(on){
-
-let avatar=document.getElementById("avatar")
-
-if(on)
-avatar.classList.add("talk")
-else
-avatar.classList.remove("talk")
-
-}
+let mascotte
 
 function parler(texte){
 
 speechSynthesis.cancel()
+
+mascotte.src="/static/images/mascotte_parle.png"
 
 let msg=new SpeechSynthesisUtterance(texte)
 
@@ -157,12 +132,8 @@ msg.lang="fr-FR"
 msg.rate=0.95
 msg.pitch=1
 
-msg.onstart=function(){
-avatarParle(true)
-}
-
 msg.onend=function(){
-avatarParle(false)
+mascotte.src="/static/images/mascotte_neutre.png"
 }
 
 speechSynthesis.speak(msg)
@@ -187,23 +158,29 @@ parler(rep)
 
 function bonneAnimation(){
 
-let avatar=document.getElementById("avatar")
-avatar.classList.add("happy")
+mascotte.src="/static/images/mascotte_joie.png"
+
+let bloc=document.getElementById("mascotte")
+bloc.classList.add("joie")
 
 setTimeout(()=>{
-avatar.classList.remove("happy")
-},800)
+bloc.classList.remove("joie")
+mascotte.src="/static/images/mascotte_neutre.png"
+},900)
 
 }
 
 function mauvaiseAnimation(){
 
-let avatar=document.getElementById("avatar")
-avatar.classList.add("oops")
+mascotte.src="/static/images/mascotte_oups.png"
+
+let bloc=document.getElementById("mascotte")
+bloc.classList.add("oups")
 
 setTimeout(()=>{
-avatar.classList.remove("oops")
-},800)
+bloc.classList.remove("oups")
+mascotte.src="/static/images/mascotte_neutre.png"
+},900)
 
 }
 
@@ -235,6 +212,10 @@ bravo.style.transition="opacity 2s"
 bravo.style.opacity=0
 },4000)
 
+}
+
+window.onload=function(){
+mascotte=document.getElementById("avatarImg")
 }
 
 </script>
@@ -340,29 +321,8 @@ window.onload=animationFin
 </div>
 </div>
 
-<!-- PERSONNAGE SVG -->
-
-<div id="avatar">
-
-<svg viewBox="0 0 200 200">
-
-<!-- cheveux -->
-<path d="M40 70 Q100 10 160 70 L160 120 L40 120 Z" fill="#5b3a29"/>
-
-<!-- visage -->
-<circle cx="100" cy="100" r="50" fill="#ffd7b5"/>
-
-<!-- yeux -->
-<g id="eyes">
-<circle cx="80" cy="95" r="6" fill="#000"/>
-<circle cx="120" cy="95" r="6" fill="#000"/>
-</g>
-
-<!-- bouche -->
-<ellipse id="mouth" cx="100" cy="120" rx="12" ry="6" fill="#d33"/>
-
-</svg>
-
+<div id="mascotte">
+<img id="avatarImg" src="/static/images/mascotte_neutre.png">
 </div>
 
 </body>

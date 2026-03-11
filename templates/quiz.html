@@ -77,18 +77,19 @@ bottom:20px;
 width:240px;
 }
 
+/* respiration naturelle */
+
 .avatar{
 width:100%;
-transform-origin:center;
-animation:respiration 4s ease-in-out infinite;
+animation:respiration 5s ease-in-out infinite;
 }
 
-/* respiration */
-
 @keyframes respiration{
-0%{transform:scale(1)}
-50%{transform:scale(1.02)}
-100%{transform:scale(1)}
+
+0%{transform:translateY(0)}
+50%{transform:translateY(-4px)}
+100%{transform:translateY(0)}
+
 }
 
 /* clignement */
@@ -103,7 +104,7 @@ animation:blink 0.15s;
 100%{transform:scaleY(1)}
 }
 
-/* rebond */
+/* rebond joie */
 
 .joyeux{
 animation:rebond 0.6s;
@@ -125,29 +126,53 @@ let texteQuestion=""
 let texteCorrection=""
 
 let avatar
-
-/* images mascotte */
+let boucheInterval=null
 
 const images={
 neutre:"/static/images/mascotte_neutre.png",
-parle:"/static/images/mascotte_parle.png",
+parle1:"/static/images/mascotte_parle1.png",
+parle2:"/static/images/mascotte_parle2.png",
 joie:"/static/images/mascotte_joie.png",
 oups:"/static/images/mascotte_oups.png"
 }
 
-/* changement image */
+/* changer mascotte */
 
 function setAvatar(etat){
 avatar.src=images[etat]
 }
 
-/* PARLER */
+/* animation bouche */
+
+function startTalking(){
+
+let ouvert=true
+
+boucheInterval=setInterval(()=>{
+
+avatar.src=ouvert ? images.parle1 : images.parle2
+
+ouvert=!ouvert
+
+},120)
+
+}
+
+function stopTalking(){
+
+clearInterval(boucheInterval)
+
+setAvatar("neutre")
+
+}
+
+/* parler */
 
 function parler(texte){
 
 speechSynthesis.cancel()
 
-setAvatar("parle")
+startTalking()
 
 let msg=new SpeechSynthesisUtterance(texte)
 
@@ -156,7 +181,7 @@ msg.rate=0.95
 msg.pitch=1
 
 msg.onend=function(){
-setAvatar("neutre")
+stopTalking()
 }
 
 speechSynthesis.speak(msg)
@@ -179,7 +204,7 @@ function lireReponse(rep){
 parler(rep)
 }
 
-/* BONNE REPONSE */
+/* bonne réponse */
 
 function bonneAnimation(){
 
@@ -190,11 +215,11 @@ avatar.classList.add("joyeux")
 setTimeout(()=>{
 avatar.classList.remove("joyeux")
 setAvatar("neutre")
-},2000)
+},1500)
 
 }
 
-/* MAUVAISE REPONSE */
+/* mauvaise réponse */
 
 function mauvaiseAnimation(){
 
@@ -202,11 +227,11 @@ setAvatar("oups")
 
 setTimeout(()=>{
 setAvatar("neutre")
-},2000)
+},1500)
 
 }
 
-/* CONFETTIS */
+/* confettis */
 
 function lancerConfettis(){
 
@@ -219,7 +244,7 @@ origin:{y:0.6}
 
 }
 
-/* FIN QUIZ */
+/* fin quiz */
 
 function animationFin(){
 
@@ -240,7 +265,7 @@ bravo.style.opacity=0
 
 }
 
-/* CLIGNEMENT YEUX */
+/* clignement */
 
 function blink(){
 
@@ -256,13 +281,13 @@ function blinkLoop(){
 
 blink()
 
-const prochain=3000+Math.random()*4000
+const prochain=3000+Math.random()*5000
 
 setTimeout(blinkLoop,prochain)
 
 }
 
-/* INIT */
+/* init */
 
 window.onload=function(){
 
@@ -293,11 +318,19 @@ blinkLoop()
 {% if feedback[0] == "bonne" %}
 
 <script>
+
 texteCorrection=`Bravo ! {{ feedback[1] }}`
+
 setTimeout(function(){
+
 bonneAnimation()
+
+setTimeout(()=>{
 lireCorrection()
+},700)
+
 },200)
+
 </script>
 
 <h3 style="color:green;">🎉 Bravo !<br>{{ feedback[1] }}</h3>
@@ -305,11 +338,19 @@ lireCorrection()
 {% else %}
 
 <script>
+
 texteCorrection=`Oups ! La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}`
+
 setTimeout(function(){
+
 mauvaiseAnimation()
+
+setTimeout(()=>{
 lireCorrection()
+},700)
+
 },200)
+
 </script>
 
 <h3 style="color:red;">❌ Oups !<br>
@@ -327,8 +368,11 @@ Bonne réponse : {{ feedback[1] }}<br>
 {% else %}
 
 <script>
+
 texteQuestion=`{{ question.question }}`
+
 setTimeout(lireQuestion,300)
+
 </script>
 
 <button class="replay" onclick="lireQuestion()">

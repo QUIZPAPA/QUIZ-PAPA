@@ -146,12 +146,13 @@ avatar.src=images[etat]
 
 function startTalking(){
 
+if(boucheInterval) clearInterval(boucheInterval)
+
 let ouvert=true
 
 boucheInterval=setInterval(()=>{
 
 avatar.src=ouvert ? images.parle1 : images.parle2
-
 ouvert=!ouvert
 
 },120)
@@ -160,7 +161,10 @@ ouvert=!ouvert
 
 function stopTalking(){
 
+if(boucheInterval){
 clearInterval(boucheInterval)
+boucheInterval=null
+}
 
 setAvatar("neutre")
 
@@ -172,6 +176,7 @@ function parler(texte){
 
 speechSynthesis.cancel()
 
+stopTalking()
 startTalking()
 
 let msg=new SpeechSynthesisUtterance(texte)
@@ -208,6 +213,8 @@ parler(rep)
 
 function bonneAnimation(){
 
+stopTalking()
+
 setAvatar("joie")
 
 avatar.classList.add("joyeux")
@@ -222,6 +229,8 @@ setAvatar("neutre")
 /* mauvaise réponse */
 
 function mauvaiseAnimation(){
+
+stopTalking()
 
 setAvatar("oups")
 

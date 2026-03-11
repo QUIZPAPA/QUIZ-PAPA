@@ -77,7 +77,7 @@ bottom:20px;
 width:240px;
 }
 
-/* respiration naturelle */
+/* respiration */
 
 .avatar{
 width:100%;
@@ -85,11 +85,9 @@ animation:respiration 5s ease-in-out infinite;
 }
 
 @keyframes respiration{
-
 0%{transform:translateY(0)}
 50%{transform:translateY(-4px)}
 100%{transform:translateY(0)}
-
 }
 
 /* clignement */
@@ -104,7 +102,7 @@ animation:blink 0.15s;
 100%{transform:scaleY(1)}
 }
 
-/* rebond joie */
+/* joie */
 
 .joyeux{
 animation:rebond 0.6s;
@@ -122,11 +120,16 @@ animation:rebond 0.6s;
 
 <script>
 
+/* ------------------- VARIABLES ------------------- */
+
 let texteQuestion=""
 let texteCorrection=""
 
 let avatar
 let boucheInterval=null
+let etatMascotte="neutre"
+
+/* images mascotte */
 
 const images={
 neutre:"/static/images/mascotte_neutre.png",
@@ -136,15 +139,36 @@ joie:"/static/images/mascotte_joie.png",
 oups:"/static/images/mascotte_oups.png"
 }
 
-/* changer mascotte */
+/* ------------------- ETAT MASCOTTE ------------------- */
 
-function setAvatar(etat){
-avatar.src=images[etat]
+function setEtat(nouvelEtat){
+
+if(!avatar) return
+
+etatMascotte=nouvelEtat
+
+if(nouvelEtat==="neutre"){
+stopTalking()
+avatar.src=images.neutre
 }
 
-/* animation bouche */
+if(nouvelEtat==="joie"){
+stopTalking()
+avatar.src=images.joie
+}
+
+if(nouvelEtat==="oups"){
+stopTalking()
+avatar.src=images.oups
+}
+
+}
+
+/* ------------------- BOUCHE ------------------- */
 
 function startTalking(){
+
+if(!avatar) return
 
 if(boucheInterval) clearInterval(boucheInterval)
 
@@ -152,7 +176,10 @@ let ouvert=true
 
 boucheInterval=setInterval(()=>{
 
+if(etatMascotte!=="parle") return
+
 avatar.src=ouvert ? images.parle1 : images.parle2
+
 ouvert=!ouvert
 
 },120)
@@ -166,17 +193,15 @@ clearInterval(boucheInterval)
 boucheInterval=null
 }
 
-setAvatar("neutre")
-
 }
 
-/* parler */
+/* ------------------- VOIX ------------------- */
 
 function parler(texte){
 
 speechSynthesis.cancel()
 
-stopTalking()
+setEtat("parle")
 startTalking()
 
 let msg=new SpeechSynthesisUtterance(texte)
@@ -186,7 +211,7 @@ msg.rate=0.95
 msg.pitch=1
 
 msg.onend=function(){
-stopTalking()
+setEtat("neutre")
 }
 
 speechSynthesis.speak(msg)
@@ -209,38 +234,32 @@ function lireReponse(rep){
 parler(rep)
 }
 
-/* bonne réponse */
+/* ------------------- REPONSES ------------------- */
 
 function bonneAnimation(){
 
-stopTalking()
-
-setAvatar("joie")
+setEtat("joie")
 
 avatar.classList.add("joyeux")
 
 setTimeout(()=>{
 avatar.classList.remove("joyeux")
-setAvatar("neutre")
+setEtat("neutre")
 },1500)
 
 }
-
-/* mauvaise réponse */
 
 function mauvaiseAnimation(){
 
-stopTalking()
-
-setAvatar("oups")
+setEtat("oups")
 
 setTimeout(()=>{
-setAvatar("neutre")
+setEtat("neutre")
 },1500)
 
 }
 
-/* confettis */
+/* ------------------- CONFETTIS ------------------- */
 
 function lancerConfettis(){
 
@@ -253,7 +272,7 @@ origin:{y:0.6}
 
 }
 
-/* fin quiz */
+/* ------------------- FIN QUIZ ------------------- */
 
 function animationFin(){
 
@@ -274,9 +293,11 @@ bravo.style.opacity=0
 
 }
 
-/* clignement */
+/* ------------------- CLIGNEMENT ------------------- */
 
 function blink(){
+
+if(etatMascotte!=="neutre") return
 
 avatar.classList.add("cligne")
 
@@ -296,15 +317,15 @@ setTimeout(blinkLoop,prochain)
 
 }
 
-/* init */
+/* ------------------- INIT ------------------- */
 
-window.onload=function(){
+document.addEventListener("DOMContentLoaded", function(){
 
 avatar=document.getElementById("avatarImg")
 
 blinkLoop()
 
-}
+})
 
 </script>
 

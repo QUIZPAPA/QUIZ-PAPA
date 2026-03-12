@@ -17,10 +17,28 @@ margin:0;
 padding:0;
 }
 
+/* bandeau thème */
+
+.theme-bar{
+
+width:100%;
+background:#70d5ff;
+color:white;
+font-size:24px;
+font-weight:600;
+text-align:center;
+padding:15px 0;
+
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+
+}
+
+/* structure */
+
 .container{
 display:flex;
 align-items:center;
-min-height:100vh;
+min-height:calc(100vh - 70px);
 padding:40px;
 gap:50px;
 }
@@ -159,6 +177,12 @@ parler("Question suivante")
 </head>
 
 <body>
+
+<div class="theme-bar">
+
+🧠 Thème : {{ theme }}
+
+</div>
 
 <div class="container">
 

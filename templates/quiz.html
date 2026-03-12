@@ -17,16 +17,15 @@ margin:0;
 padding:0;
 }
 
-/* structure */
-
 .container{
 display:flex;
-align-items:flex-start;
-padding:30px;
-gap:40px;
+align-items:center;
+min-height:100vh;
+padding:40px;
+gap:50px;
 }
 
-/* mascotte gif */
+/* mascotte */
 
 .mascotte{
 width:320px;
@@ -36,12 +35,34 @@ justify-content:center;
 align-items:center;
 }
 
-/* halo autour du gif */
-
 .mascotte img{
+
 width:100%;
-filter:drop-shadow(0 0 25px rgba(255,255,255,0.9))
+
+filter:
+drop-shadow(0 0 20px rgba(255,255,255,0.9))
 drop-shadow(0 0 40px rgba(255,255,255,0.6));
+
+animation: respiration 5s ease-in-out infinite;
+
+}
+
+/* respiration */
+
+@keyframes respiration{
+
+0%{
+transform:translateY(0px) scale(1);
+}
+
+50%{
+transform:translateY(-6px) scale(1.02);
+}
+
+100%{
+transform:translateY(0px) scale(1);
+}
+
 }
 
 /* zone quiz */
@@ -77,22 +98,13 @@ width:220px;
 margin-bottom:15px;
 }
 
-/* texte */
-
-h2{
-margin-top:10px;
-}
-
 </style>
 
 <script>
 
-/* ------------------- */
-/* lecture vocale */
-/* ------------------- */
-
 let texteQuestion=""
 let texteCorrection=""
+let questionEnCours=true
 
 function parler(texte){
 
@@ -104,45 +116,57 @@ msg.lang="fr-FR"
 msg.rate=0.95
 msg.pitch=1
 
+msg.onend=function(){
+
+questionEnCours=false
+
+}
+
 speechSynthesis.speak(msg)
 
 }
 
 function lireQuestion(){
+
+questionEnCours=true
 parler(texteQuestion)
+
 }
 
 function lireCorrection(){
+
+questionEnCours=true
 parler(texteCorrection)
+
 }
 
 function lireReponse(rep){
+
+if(questionEnCours) return
+
 parler(rep)
+
 }
 
 function lireBouton(){
+
 parler("Question suivante")
+
 }
 
 </script>
 
 </head>
 
-
 <body>
 
 <div class="container">
-
-<!-- mascotte gif -->
 
 <div class="mascotte">
 
 <img src="{{ url_for('static', filename='images/mascotte_parle.gif') }}">
 
 </div>
-
-
-<!-- zone quiz -->
 
 <div class="zone">
 
@@ -189,7 +213,7 @@ Bonne réponse : {{ feedback[1] }}<br>
 
 <a href="/quiz">
 
-<button onmouseover="lireBouton()">
+<button onclick="lireBouton()">
 ➡️ Question suivante
 </button>
 

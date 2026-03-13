@@ -9,7 +9,21 @@ app.secret_key = "supersecret"
 
 @app.route("/")
 def accueil():
-    return render_template("accueil.html", themes=charger_themes())
+
+    themes = charger_themes()
+
+    matieres = {}
+
+    for t in themes:
+
+        matiere = t.split()[0]
+
+        if matiere not in matieres:
+            matieres[matiere] = []
+
+        matieres[matiere].append(t)
+
+    return render_template("accueil.html", matieres=matieres)
 
 
 @app.route("/start", methods=["POST"])
@@ -17,9 +31,7 @@ def start():
 
     theme = request.form["theme"]
 
-    # sauvegarde du thème
     session["theme"] = theme
-
     session["questions"] = charger_questions(theme)
     session["session_actuelle"] = 1
     session["index_question"] = 0
@@ -35,7 +47,6 @@ def quiz():
     if "questions" not in session:
         return redirect("/")
 
-    # récupération du thème
     theme = session.get("theme", "Quiz")
     theme = theme.replace("_", " ").replace(".txt", "")
 
@@ -74,8 +85,6 @@ def quiz():
                 feedback=feedback
             )
 
-        # questions restantes
-
         if index_question < len(questions_session):
 
             q = questions_session[index_question]
@@ -92,8 +101,6 @@ def quiz():
                 index=index_question,
                 fin=False
             )
-
-        # fin de session
 
         else:
 

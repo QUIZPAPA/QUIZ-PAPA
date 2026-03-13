@@ -69,6 +69,13 @@ color:white;
 transform:scale(1.05);
 }
 
+button:disabled{
+background:#d3d3d3;
+border-color:#b0b0b0;
+cursor:not-allowed;
+transform:none;
+}
+
 .replay{
 font-size:16px;
 width:220px;
@@ -103,6 +110,11 @@ speechSynthesis.cancel()
 
 lectureTerminee=false
 
+let bouton = document.getElementById("btnSuivant")
+if(bouton){
+bouton.disabled=true
+}
+
 let msg=new SpeechSynthesisUtterance(texte)
 
 msg.lang="fr-FR"
@@ -110,7 +122,14 @@ msg.rate=0.95
 msg.pitch=1
 
 msg.onend=function(){
+
 lectureTerminee=true
+
+let bouton = document.getElementById("btnSuivant")
+if(bouton){
+bouton.disabled=false
+}
+
 }
 
 speechSynthesis.speak(msg)
@@ -126,7 +145,13 @@ parler(texteCorrection)
 }
 
 function lireBouton(){
+
+if(!lectureTerminee){
+return
+}
+
 parler("Question suivante")
+
 }
 
 function lireReponse(rep){
@@ -218,7 +243,7 @@ Bonne réponse : {{ feedback[1] }}<br>
 {% endif %}
 
 <a href="/quiz">
-<button onmouseenter="lireBouton()">
+<button id="btnSuivant" onmouseenter="lireBouton()" disabled>
 ➡️ Question suivante
 </button>
 </a>

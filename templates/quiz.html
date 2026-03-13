@@ -1,8 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="fr">
-
 <head>
-
 <meta charset="UTF-8">
 <title>Quiz</title>
 
@@ -17,80 +16,40 @@ margin:0;
 padding:0;
 }
 
-/* bandeau thème */
-
-.theme-bar{
-
+.bandeau{
 width:100%;
 background:#70d5ff;
 color:white;
 font-size:24px;
 font-weight:600;
+padding:12px;
 text-align:center;
-padding:15px 0;
-
-box-shadow:0 4px 10px rgba(0,0,0,0.15);
-
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
 }
-
-/* structure */
 
 .container{
 display:flex;
-align-items:center;
-min-height:calc(100vh - 70px);
-padding:40px;
-gap:50px;
+align-items:flex-start;
+padding:20px;
 }
-
-/* mascotte */
 
 .mascotte{
 width:320px;
-flex-shrink:0;
-display:flex;
-justify-content:center;
-align-items:center;
+margin-right:30px;
+filter:drop-shadow(0 0 30px rgba(255,255,255,0.6));
+animation:respiration 5s ease-in-out infinite;
 }
-
-.mascotte img{
-
-width:100%;
-
-filter:
-drop-shadow(0 0 20px rgba(255,255,255,0.9))
-drop-shadow(0 0 40px rgba(255,255,255,0.6));
-
-animation: respiration 5s ease-in-out infinite;
-
-}
-
-/* respiration */
 
 @keyframes respiration{
-
-0%{
-transform:translateY(0px) scale(1);
+0%{transform:translateY(0) scale(1);}
+50%{transform:translateY(-4px) scale(1.02);}
+100%{transform:translateY(0) scale(1);}
 }
-
-50%{
-transform:translateY(-6px) scale(1.02);
-}
-
-100%{
-transform:translateY(0px) scale(1);
-}
-
-}
-
-/* zone quiz */
 
 .zone{
 flex:1;
-padding:10px;
+padding:20px;
 }
-
-/* boutons */
 
 button{
 font-size:18px;
@@ -101,7 +60,7 @@ border:2px solid #70d5ff;
 border-radius:12px;
 background:#b8f0ff;
 cursor:pointer;
-transition:all 0.2s;
+transition:all 0.3s;
 }
 
 button:hover{
@@ -116,17 +75,33 @@ width:220px;
 margin-bottom:15px;
 }
 
+#bravoMessage{
+position:fixed;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:60px;
+color:white;
+text-shadow:0 0 15px black;
+opacity:0;
+pointer-events:none;
+}
+
 </style>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
 
 let texteQuestion=""
 let texteCorrection=""
-let questionEnCours=true
+let lectureTerminee=false
 
 function parler(texte){
 
 speechSynthesis.cancel()
+
+lectureTerminee=false
 
 let msg=new SpeechSynthesisUtterance(texte)
 
@@ -135,9 +110,7 @@ msg.rate=0.95
 msg.pitch=1
 
 msg.onend=function(){
-
-questionEnCours=false
-
+lectureTerminee=true
 }
 
 speechSynthesis.speak(msg)
@@ -145,30 +118,54 @@ speechSynthesis.speak(msg)
 }
 
 function lireQuestion(){
-
-questionEnCours=true
 parler(texteQuestion)
-
 }
 
 function lireCorrection(){
-
-questionEnCours=true
 parler(texteCorrection)
+}
 
+function lireBouton(){
+parler("Question suivante")
 }
 
 function lireReponse(rep){
 
-if(questionEnCours) return
+if(!lectureTerminee){
+return
+}
 
 parler(rep)
 
 }
 
-function lireBouton(){
+function lancerConfettis(){
 
-parler("Question suivante")
+confetti({
+particleCount:150,
+spread:120,
+scalar:1.6,
+origin:{y:0.6}
+})
+
+}
+
+function animationFin(){
+
+let bravo=document.getElementById("bravoMessage")
+
+bravo.style.opacity=1
+
+parler("Bravo ! Tu as terminé le quiz !")
+
+setTimeout(()=>{
+lancerConfettis()
+},1500)
+
+setTimeout(()=>{
+bravo.style.transition="opacity 2s"
+bravo.style.opacity=0
+},4000)
 
 }
 
@@ -178,19 +175,15 @@ parler("Question suivante")
 
 <body>
 
-<div class="theme-bar">
-
+<div class="bandeau">
 🧠 Thème : {{ theme }}
-
 </div>
+
+<div id="bravoMessage">🎉 BRAVO ! 🎉</div>
 
 <div class="container">
 
-<div class="mascotte">
-
-<img src="{{ url_for('static', filename='images/mascotte_parle.gif') }}">
-
-</div>
+<img class="mascotte" src="{{ url_for('static', filename='images/mascotte_parle.gif') }}">
 
 <div class="zone">
 
@@ -201,65 +194,47 @@ parler("Question suivante")
 {% if feedback[0] == "bonne" %}
 
 <script>
-
 texteCorrection="Bravo ! {{ feedback[1] }}"
-
 setTimeout(function(){
 lireCorrection()
-},300)
-
+},200)
 </script>
 
-<h3 style="color:green;">
-🎉 Bravo !<br>
-{{ feedback[1] }}
-</h3>
+<h3 style="color:green;">🎉 Bravo !<br>{{ feedback[1] }}</h3>
 
 {% else %}
 
 <script>
-
 texteCorrection="Oups ! La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}"
-
 setTimeout(function(){
 lireCorrection()
-},300)
-
+},200)
 </script>
 
-<h3 style="color:red;">
-❌ Oups !<br>
+<h3 style="color:red;">❌ Oups !<br>
 Bonne réponse : {{ feedback[1] }}<br>
-{{ feedback[2] }}
-</h3>
+{{ feedback[2] }}</h3>
 
 {% endif %}
 
 <a href="/quiz">
-
-<button onclick="lireBouton()">
+<button onmouseenter="lireBouton()">
 ➡️ Question suivante
 </button>
-
 </a>
 
 {% else %}
 
 <script>
-
 texteQuestion="{{ question.question }}"
 setTimeout(lireQuestion,300)
-
 </script>
 
 <button class="replay" onclick="lireQuestion()">
 🔊 Réécouter la question
 </button>
 
-<h3>
-Session {{ session_actuelle }} —
-Question {{ index+1 }}/{{ total }}
-</h3>
+<h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
 
 <h2>{{ question.question }}</h2>
 
@@ -270,7 +245,7 @@ Question {{ index+1 }}/{{ total }}
 <button
 name="reponse"
 value="{{ r }}"
-onmouseover="lireReponse('{{ r }}')">
+onmouseenter="lireReponse('{{ r }}')">
 
 {{ r }}
 
@@ -284,6 +259,10 @@ onmouseover="lireReponse('{{ r }}')">
 
 {% else %}
 
+<script>
+setTimeout(animationFin,300)
+</script>
+
 <h2>Session terminée</h2>
 
 <a href="/">
@@ -293,9 +272,7 @@ onmouseover="lireReponse('{{ r }}')">
 {% endif %}
 
 </div>
-
 </div>
 
 </body>
-
 </html>

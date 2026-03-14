@@ -2,46 +2,142 @@
 <html lang="fr">
 
 <head>
+
 <meta charset="UTF-8">
 <title>Quiz Papa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 
 body{
-font-family:Arial;
 background:#95F5A6;
+font-family:'Fredoka',sans-serif;
+margin:0;
+padding:0;
 text-align:center;
-padding-top:80px;
 }
+
+/* bandeau */
+
+.bandeau{
+width:100%;
+background:#70d5ff;
+color:white;
+font-size:36px;
+font-weight:600;
+padding:15px;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* layout */
+
+.container{
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px;
+gap:50px;
+}
+
+/* mascotte */
+
+.mascotte{
+width:320px;
+filter:drop-shadow(0 0 30px rgba(255,255,255,0.6));
+animation:respiration 5s ease-in-out infinite;
+}
+
+@keyframes respiration{
+0%{transform:translateY(0) scale(1);}
+50%{transform:translateY(-5px) scale(1.02);}
+100%{transform:translateY(0) scale(1);}
+}
+
+/* zone selection */
+
+.selection{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* menus */
 
 select{
-font-size:20px;
+font-size:18px;
 padding:10px;
-margin:15px;
-width:350px;
+margin:10px;
+width:300px;
 }
 
+/* bouton */
+
 button{
-font-size:22px;
+font-size:20px;
 padding:12px 30px;
 margin-top:20px;
 background:#70d5ff;
 border:none;
 border-radius:10px;
 cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#4fc3f7;
+color:white;
 }
 
 </style>
 
+<script>
+
+function parler(texte){
+
+speechSynthesis.cancel()
+
+let msg=new SpeechSynthesisUtterance(texte)
+
+msg.lang="fr-FR"
+msg.rate=0.95
+msg.pitch=1
+
+speechSynthesis.speak(msg)
+
+}
+
+/* lecture accueil */
+
+function lireAccueil(){
+
+parler("Bienvenue dans le quiz. Choisis une matière puis un thème pour commencer.")
+
+}
+
+</script>
+
 </head>
 
-<body>
+<body onload="lireAccueil()">
 
-<h1>Choisis ton quiz</h1>
+<div class="bandeau">
+Quiz éducatif
+</div>
+
+<div class="container">
+
+<img class="mascotte" src="{{ url_for('static', filename='images/mascotte_parle.gif') }}">
+
+<div class="selection">
+
+<h2>Choisis ton quiz</h2>
 
 <form method="post" action="/start">
 
-<select id="matiere">
+<select id="matiere" onmouseenter="parler('Choisis une matière')">
+
 <option value="">Choisir une matière</option>
 
 {% for matiere in matieres %}
@@ -54,7 +150,7 @@ cursor:pointer;
 
 <br>
 
-<select name="theme" id="theme">
+<select name="theme" id="theme" onmouseenter="parler('Choisis un thème')">
 
 <option value="">Choisir un thème</option>
 
@@ -62,9 +158,15 @@ cursor:pointer;
 
 <br>
 
-<button type="submit">Commencer</button>
+<button type="submit" onmouseenter="parler('Commencer le quiz')">
+Commencer
+</button>
 
 </form>
+
+</div>
+
+</div>
 
 <script>
 
@@ -99,5 +201,4 @@ themeSelect.appendChild(option)
 </script>
 
 </body>
-
 </html>

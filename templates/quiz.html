@@ -62,7 +62,7 @@ background:#b8f0ff;
 cursor:pointer;
 transition:all 0.3s;
 
-/* texte non sélectionnable */
+/* empêcher sélection texte */
 user-select:none;
 -webkit-user-select:none;
 -moz-user-select:none;
@@ -100,8 +100,6 @@ opacity:0;
 pointer-events:none;
 }
 
-/* réponse sélectionnée */
-
 .repSelected{
 background:#70d5ff !important;
 color:white;
@@ -119,6 +117,7 @@ let texteCorrection=""
 let lectureTerminee=false
 
 let derniereSelection=null
+let tactile=false
 
 function parler(texte){
 
@@ -180,15 +179,29 @@ parler(rep)
 
 }
 
-/* sélection + validation */
+/* détection tactile */
 
-function selectionnerReponse(btn, texte){
+window.addEventListener("touchstart", function(){
+tactile=true
+}, {once:true})
+
+
+/* gestion clic */
+
+function clicReponse(btn, texte){
 
 if(!lectureTerminee){
 return
 }
 
-/* premier clic : sélection */
+/* PC → validation directe */
+
+if(!tactile){
+btn.closest("form").submit()
+return
+}
+
+/* TABLETTE */
 
 if(derniereSelection !== btn){
 
@@ -198,7 +211,7 @@ b.classList.remove("repSelected")
 
 btn.classList.add("repSelected")
 
-derniereSelection = btn
+derniereSelection=btn
 
 parler(texte)
 
@@ -206,7 +219,7 @@ return
 
 }
 
-/* deuxième clic : validation */
+/* deuxième tap */
 
 btn.closest("form").submit()
 
@@ -316,16 +329,16 @@ setTimeout(lireQuestion,300)
 {% for r in reponses %}
 
 <button
-type="button"
+type="submit"
+name="reponse"
+value="{{ r }}"
 class="repBtn"
-onclick="selectionnerReponse(this, `{{ r }}`)"
+onclick="clicReponse(this, `{{ r }}`)"
 onmouseenter="lireReponse(`{{ r }}`)">
 
 {{ r }}
 
 </button>
-
-<input type="hidden" name="reponse" value="{{ r }}">
 
 {% endfor %}
 

@@ -61,6 +61,12 @@ border-radius:12px;
 background:#b8f0ff;
 cursor:pointer;
 transition:all 0.3s;
+
+/* texte non sélectionnable */
+user-select:none;
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
 }
 
 button:hover{
@@ -94,6 +100,14 @@ opacity:0;
 pointer-events:none;
 }
 
+/* réponse sélectionnée */
+
+.repSelected{
+background:#70d5ff !important;
+color:white;
+transform:scale(1.05);
+}
+
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -103,6 +117,8 @@ pointer-events:none;
 let texteQuestion=""
 let texteCorrection=""
 let lectureTerminee=false
+
+let derniereSelection=null
 
 function parler(texte){
 
@@ -161,6 +177,38 @@ return
 }
 
 parler(rep)
+
+}
+
+/* sélection + validation */
+
+function selectionnerReponse(btn, texte){
+
+if(!lectureTerminee){
+return
+}
+
+/* premier clic : sélection */
+
+if(derniereSelection !== btn){
+
+document.querySelectorAll(".repBtn").forEach(b=>{
+b.classList.remove("repSelected")
+})
+
+btn.classList.add("repSelected")
+
+derniereSelection = btn
+
+parler(texte)
+
+return
+
+}
+
+/* deuxième clic : validation */
+
+btn.closest("form").submit()
 
 }
 
@@ -268,13 +316,16 @@ setTimeout(lireQuestion,300)
 {% for r in reponses %}
 
 <button
-name="reponse"
-value="{{ r }}"
-onmouseenter="lireReponse('{{ r }}')">
+type="button"
+class="repBtn"
+onclick="selectionnerReponse(this, `{{ r }}`)"
+onmouseenter="lireReponse(`{{ r }}`)">
 
 {{ r }}
 
 </button>
+
+<input type="hidden" name="reponse" value="{{ r }}">
 
 {% endfor %}
 

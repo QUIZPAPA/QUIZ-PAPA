@@ -1,0 +1,119 @@
+SESSION|1
+QUESTION|Qu’est-ce qu’une commune en France ?
+REPONSES|Une ville ou un village avec une mairie;Une région entière;Un pays indépendant
+BONNE|Une ville ou un village avec une mairie
+EXPLICATION|Une commune est la plus petite collectivité territoriale. Elle correspond à une ville ou un village administré par un maire et un conseil municipal.
+
+SESSION|1
+QUESTION|Qui dirige une commune ?
+REPONSES|Le maire;Le président de la République;Le préfet
+BONNE|Le maire
+EXPLICATION|Le maire est le principal responsable de la commune. Il organise la vie locale avec le conseil municipal.
+
+SESSION|1
+QUESTION|Comment appelle-t-on les élections qui permettent de choisir les élus d’une commune ?
+REPONSES|Les élections municipales;Les élections législatives;Les élections présidentielles
+BONNE|Les élections municipales
+EXPLICATION|Les élections municipales servent à élire les membres du conseil municipal qui dirigent la commune.
+
+SESSION|1
+QUESTION|Qui élit le maire ?
+REPONSES|Le conseil municipal;Le président de la République;Les enseignants de la commune
+BONNE|Le conseil municipal
+EXPLICATION|Les citoyens élisent les conseillers municipaux. Ensuite, ces conseillers élisent le maire parmi eux.
+
+SESSION|1
+QUESTION|Combien de temps dure le mandat des élus municipaux ?
+REPONSES|6 ans;5 ans;4 ans
+BONNE|6 ans
+EXPLICATION|Les conseillers municipaux et le maire sont élus pour un mandat de six ans.
+
+SESSION|1
+QUESTION|Qui peut voter aux élections municipales en France ?
+REPONSES|Les citoyens majeurs inscrits sur les listes électorales;Tous les habitants;Les enfants de la commune
+BONNE|Les citoyens majeurs inscrits sur les listes électorales
+EXPLICATION|Pour voter, il faut avoir au moins 18 ans, être inscrit sur les listes électorales et posséder le droit de vote.
+
+SESSION|1
+QUESTION|Où les citoyens vont-ils voter lors d’une élection municipale ?
+REPONSES|Dans un bureau de vote;À la préfecture;Au tribunal
+BONNE|Dans un bureau de vote
+EXPLICATION|Le bureau de vote est l’endroit où les citoyens déposent leur bulletin dans l’urne.
+
+SESSION|1
+QUESTION|Comment s’appelle la liste de personnes qui se présentent ensemble aux élections municipales ?
+REPONSES|Une liste électorale;Une équipe sportive;Un gouvernement
+BONNE|Une liste électorale
+EXPLICATION|Les candidats se présentent souvent en groupe appelé liste électorale avec un projet pour la commune.
+
+SESSION|1
+QUESTION|Comment s’appelle le document sur lequel on choisit les candidats ?
+REPONSES|Le bulletin de vote;La carte d’identité;Le passeport
+BONNE|Le bulletin de vote
+EXPLICATION|Le bulletin de vote permet d’exprimer son choix lors de l’élection.
+
+SESSION|1
+QUESTION|Dans quoi le bulletin de vote est-il déposé ?
+REPONSES|Dans l’urne;Dans une boîte aux lettres;Dans un tiroir
+BONNE|Dans l’urne
+EXPLICATION|L’urne est la boîte transparente où les citoyens déposent leur bulletin lors du vote.
+
+SESSION|2
+QUESTION|Comment appelle-t-on l’ensemble des personnes élues dans une commune ?
+REPONSES|Le conseil municipal;Le Parlement;Le gouvernement
+BONNE|Le conseil municipal
+EXPLICATION|Le conseil municipal est composé de conseillers élus qui prennent des décisions pour la commune.
+
+SESSION|2
+QUESTION|Quel est l’un des rôles principaux du conseil municipal ?
+REPONSES|Prendre des décisions pour la commune;Diriger le pays;Commander l’armée
+BONNE|Prendre des décisions pour la commune
+EXPLICATION|Le conseil municipal vote des décisions sur les projets et les dépenses de la commune.
+
+SESSION|2
+QUESTION|Quel lieu symbolise souvent la commune et l’administration locale ?
+REPONSES|La mairie;Le palais présidentiel;Le Sénat
+BONNE|La mairie
+EXPLICATION|La mairie est le bâtiment où travaillent le maire et les services municipaux.
+
+SESSION|2
+QUESTION|Qui organise les services municipaux comme l’état civil ou les écoles primaires ?
+REPONSES|Le maire et la mairie;Le Président de la République;Les députés
+BONNE|Le maire et la mairie
+EXPLICATION|La mairie gère de nombreux services utiles aux habitants comme l’état civil ou les écoles.
+
+SESSION|2
+QUESTION|Quel principe démocratique permet aux citoyens de choisir leurs représentants ?
+REPONSES|Le vote;La nomination;Le tirage au sort
+BONNE|Le vote
+EXPLICATION|Dans une démocratie, les citoyens choisissent leurs représentants grâce au vote.
+
+SESSION|2
+QUESTION|Comment appelle-t-on l’action de participer à une élection ?
+REPONSES|Voter;Nommer;Commander
+BONNE|Voter
+EXPLICATION|Voter consiste à choisir un candidat ou une liste lors d’une élection.
+
+SESSION|2
+QUESTION|Pourquoi les élections sont-elles importantes dans une démocratie ?
+REPONSES|Elles permettent aux citoyens de choisir leurs représentants;Elles servent seulement à compter les habitants;Elles remplacent les lois
+BONNE|Elles permettent aux citoyens de choisir leurs représentants
+EXPLICATION|Les élections permettent aux citoyens de participer à la vie politique en choisissant leurs élus.
+
+SESSION|2
+QUESTION|Comment appelle-t-on une personne qui a le droit de voter ?
+REPONSES|Un électeur;Un candidat;Un ministre
+BONNE|Un électeur
+EXPLICATION|Un électeur est un citoyen qui possède le droit de vote.
+
+SESSION|2
+QUESTION|Comment appelle-t-on les personnes qui se présentent pour être élues ?
+REPONSES|Des candidats;Des juges;Des préfets
+BONNE|Des candidats
+EXPLICATION|Les candidats proposent un projet et cherchent à être élus par les citoyens.
+
+SESSION|2
+QUESTION|Que doivent faire les candidats pour convaincre les électeurs ?
+REPONSES|Présenter des idées et un programme;Donner des ordres;Faire des lois seuls
+BONNE|Présenter des idées et un programme
+EXPLICATION|Les candidats expliquent leurs projets pour améliorer la vie de la commune.

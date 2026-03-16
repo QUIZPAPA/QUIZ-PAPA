@@ -1,0 +1,119 @@
+SESSION|1
+QUESTION|Qui devient le premier empereur romain en -27 av. J.-C. ?
+REPONSES|Octave Auguste;Jules César;Néron
+BONNE|Octave Auguste
+EXPLICATION|En -27 av. J.-C., Octave reçoit le titre d’Auguste et devient le premier empereur de Rome.
+
+SESSION|1
+QUESTION|Quel titre signifie « élu des dieux » et est donné aux empereurs romains ?
+REPONSES|Auguste;Consul;Sénateur
+BONNE|Auguste
+EXPLICATION|Le titre Auguste signifie « vénérable » ou « choisi par les dieux ». Il est porté par les empereurs romains.
+
+SESSION|1
+QUESTION|Quel mot latin donné aux généraux romains a donné le mot empereur ?
+REPONSES|Imperator;Centurion;Tribun
+BONNE|Imperator
+EXPLICATION|Imperator était un titre donné aux chefs militaires victorieux et donnera plus tard le mot empereur.
+
+SESSION|1
+QUESTION|Quel type de pouvoir possède l’empereur romain ?
+REPONSES|Un pouvoir absolu;Un pouvoir limité;Aucun pouvoir
+BONNE|Un pouvoir absolu
+EXPLICATION|L’empereur concentre plusieurs pouvoirs importants et dirige l’Empire.
+
+SESSION|1
+QUESTION|Quel pouvoir permet à l’empereur de gouverner et faire les lois ?
+REPONSES|Le pouvoir politique;Le pouvoir artistique;Le pouvoir agricole
+BONNE|Le pouvoir politique
+EXPLICATION|L’empereur dirige l’Empire et décide des lois.
+
+SESSION|1
+QUESTION|Quel pouvoir fait de l’empereur le chef de la religion romaine ?
+REPONSES|Le pouvoir religieux;Le pouvoir commercial;Le pouvoir judiciaire
+BONNE|Le pouvoir religieux
+EXPLICATION|L’empereur joue aussi un rôle religieux important dans l’Empire romain.
+
+SESSION|1
+QUESTION|Quel pouvoir permet à l’empereur de commander l’armée ?
+REPONSES|Le pouvoir militaire;Le pouvoir sportif;Le pouvoir administratif
+BONNE|Le pouvoir militaire
+EXPLICATION|L’empereur est le chef de l’armée romaine et dirige les soldats.
+
+SESSION|2
+QUESTION|Comment appelle-t-on la frontière fortifiée de l’Empire romain ?
+REPONSES|Le limes;Le forum;Le cirque
+BONNE|Le limes
+EXPLICATION|Le limes est une frontière souvent fortifiée destinée à protéger l’Empire romain.
+
+SESSION|2
+QUESTION|Quels peuples se trouvent souvent au-delà des frontières de l’Empire romain ?
+REPONSES|Les peuples barbares;Les Romains;Les Grecs
+BONNE|Les peuples barbares
+EXPLICATION|Les Romains appellent barbares les peuples vivant hors de l’Empire.
+
+SESSION|2
+QUESTION|Quelle ville est le centre de l’Empire romain ?
+REPONSES|Rome;Athènes;Alexandrie
+BONNE|Rome
+EXPLICATION|Rome est la capitale politique et symbolique de l’Empire romain.
+
+SESSION|2
+QUESTION|Pourquoi les Romains construisent-ils de nombreuses routes ?
+REPONSES|Pour relier les territoires de l’Empire;Pour faire des courses;Pour décorer les villes
+BONNE|Pour relier les territoires de l’Empire
+EXPLICATION|Les routes permettent de relier les provinces à Rome et de faciliter les déplacements.
+
+SESSION|2
+QUESTION|Quelle expression célèbre rappelle l’importance de Rome dans les routes ?
+REPONSES|Tous les chemins mènent à Rome;Rome ne s’est pas faite en un jour;Veni vidi vici
+BONNE|Tous les chemins mènent à Rome
+EXPLICATION|Cette expression montre que de nombreuses routes convergent vers la capitale de l’Empire.
+
+SESSION|2
+QUESTION|Comment appelle-t-on la période de paix et de prospérité dans l’Empire romain ?
+REPONSES|La Pax Romana;La guerre romaine;La paix grecque
+BONNE|La Pax Romana
+EXPLICATION|La Pax Romana est une longue période de paix et de prospérité dans l’Empire.
+
+SESSION|3
+QUESTION|Comment appelle-t-on l’adoption du mode de vie romain par les populations conquises ?
+REPONSES|La romanisation;La colonisation;La migration
+BONNE|La romanisation
+EXPLICATION|La romanisation correspond à l’adoption de la langue, des lois et du mode de vie romains.
+
+SESSION|3
+QUESTION|Comment appelle-t-on un habitant libre de l’Empire qui n’est pas citoyen romain ?
+REPONSES|Un pérégrin;Un consul;Un empereur
+BONNE|Un pérégrin
+EXPLICATION|Un pérégrin est un habitant libre des provinces mais qui ne possède pas la citoyenneté romaine.
+
+SESSION|3
+QUESTION|Comment appelle-t-on un canal qui amène l’eau dans les villes romaines ?
+REPONSES|Un aqueduc;Un temple;Un forum
+BONNE|Un aqueduc
+EXPLICATION|Les aqueducs transportent l’eau sur de longues distances jusqu’aux villes.
+
+SESSION|3
+QUESTION|Comment appelle-t-on les bains publics romains ?
+REPONSES|Les thermes;Les cirques;Les amphores
+BONNE|Les thermes
+EXPLICATION|Les thermes sont des bains publics où les Romains se lavent et se détendent.
+
+SESSION|3
+QUESTION|Quel bâtiment accueille des combats de gladiateurs ?
+REPONSES|Un amphithéâtre;Un temple;Une basilique
+BONNE|Un amphithéâtre
+EXPLICATION|Les amphithéâtres sont de grands bâtiments ovales où se déroulent les spectacles.
+
+SESSION|3
+QUESTION|Quel bâtiment accueille les courses de chars ?
+REPONSES|Un cirque;Un théâtre;Un forum
+BONNE|Un cirque
+EXPLICATION|Les cirques sont de longs stades destinés aux courses de chars.
+
+SESSION|3
+QUESTION|Quel récit raconte la fondation mythique de Rome par deux frères ?
+REPONSES|Le mythe de Romulus et Rémus;La guerre de Troie;Le mythe d’Hercule
+BONNE|Le mythe de Romulus et Rémus
+EXPLICATION|Selon la légende, Romulus fonde la ville de Rome après avoir vaincu son frère Rémus.

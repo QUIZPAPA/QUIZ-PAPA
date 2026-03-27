@@ -1,0 +1,179 @@
+SESSION|1
+QUESTION|Qu’est-ce qu’un micro-organisme ?
+REPONSES|Un être vivant invisible à l’œil nu;Un animal très petit visible;Un objet non vivant
+BONNE|Un être vivant invisible à l’œil nu
+EXPLICATION|Les micro-organismes sont des êtres vivants trop petits pour être vus sans microscope.
+
+SESSION|1
+QUESTION|Où peut-on trouver des micro-organismes ?
+REPONSES|Partout dans l’environnement;Uniquement dans l’eau;Seulement dans le corps humain
+BONNE|Partout dans l’environnement
+EXPLICATION|Ils sont présents dans l’air, l’eau, le sol et sur les êtres vivants.
+
+SESSION|1
+QUESTION|Les micro-organismes sont :
+REPONSES|Vivants;Inertes;Fabriqués par l’homme
+BONNE|Vivants
+EXPLICATION|Ils respirent, se nourrissent et se reproduisent.
+
+SESSION|1
+QUESTION|Quel outil permet d’observer les micro-organismes ?
+REPONSES|Le microscope;La loupe;Les jumelles
+BONNE|Le microscope
+EXPLICATION|Le microscope permet de voir des objets invisibles à l’œil nu.
+
+SESSION|1
+QUESTION|Certains micro-organismes sont utiles car ils permettent :
+REPONSES|De fabriquer des aliments;De détruire les aliments;De les rendre invisibles
+BONNE|De fabriquer des aliments
+EXPLICATION|Ils sont utilisés pour fabriquer du yaourt, du pain ou du fromage.
+
+SESSION|1
+QUESTION|Certains micro-organismes peuvent être :
+REPONSES|Dangereux pour la santé;Toujours utiles;Toujours invisibles dans l’air
+BONNE|Dangereux pour la santé
+EXPLICATION|Certains provoquent des maladies.
+
+SESSION|1
+QUESTION|Les micro-organismes peuvent se multiplier :
+REPONSES|Très rapidement;Très lentement uniquement;Jamais
+BONNE|Très rapidement
+EXPLICATION|Ils se reproduisent vite si les conditions sont favorables.
+
+SESSION|1
+QUESTION|Pour se développer, les micro-organismes ont besoin :
+REPONSES|De nourriture et de chaleur;De lumière uniquement;De sable
+BONNE|De nourriture et de chaleur
+EXPLICATION|Ils se développent mieux dans un milieu chaud et riche en nutriments.
+
+SESSION|1
+QUESTION|Les aliments peuvent contenir :
+REPONSES|Des micro-organismes;Uniquement des vitamines;Seulement de l’eau
+BONNE|Des micro-organismes
+EXPLICATION|Les aliments peuvent être contaminés par des micro-organismes.
+
+SESSION|1
+QUESTION|Pourquoi faut-il conserver les aliments au froid ?
+REPONSES|Pour ralentir les micro-organismes;Pour les chauffer;Pour les rendre sucrés
+BONNE|Pour ralentir les micro-organismes
+EXPLICATION|Le froid limite leur multiplication.
+
+SESSION|2
+QUESTION|Dans une expérience avec des éprouvettes, que cherche-t-on à observer ?
+REPONSES|Le développement des micro-organismes;La couleur du verre;La taille de l’éprouvette
+BONNE|Le développement des micro-organismes
+EXPLICATION|Les expériences permettent d’observer leur croissance.
+
+SESSION|2
+QUESTION|Pourquoi utilise-t-on plusieurs éprouvettes dans une expérience ?
+REPONSES|Pour comparer différentes conditions;Pour décorer;Pour gagner du temps
+BONNE|Pour comparer différentes conditions
+EXPLICATION|On teste plusieurs situations pour voir les différences.
+
+SESSION|2
+QUESTION|Une éprouvette laissée à température ambiante montre :
+REPONSES|Une forte multiplication;Aucune activité;Une disparition des micro-organismes
+BONNE|Une forte multiplication
+EXPLICATION|La température ambiante favorise leur développement.
+
+SESSION|2
+QUESTION|Une éprouvette placée au froid montre :
+REPONSES|Une multiplication ralentie;Une multiplication plus rapide;Une explosion
+BONNE|Une multiplication ralentie
+EXPLICATION|Le froid ralentit l’activité des micro-organismes.
+
+SESSION|2
+QUESTION|Pourquoi ferme-t-on les éprouvettes ?
+REPONSES|Pour éviter la contamination extérieure;Pour les chauffer;Pour les vider
+BONNE|Pour éviter la contamination extérieure
+EXPLICATION|Cela permet de contrôler l’expérience.
+
+SESSION|2
+QUESTION|Dans une expérience, que signifie un liquide qui devient trouble ?
+REPONSES|Les micro-organismes se développent;Il n’y a rien;Le liquide disparaît
+BONNE|Les micro-organismes se développent
+EXPLICATION|Le trouble indique leur présence et leur multiplication.
+
+SESSION|2
+QUESTION|Si une éprouvette reste claire, cela signifie :
+REPONSES|Peu ou pas de micro-organismes;Beaucoup de microbes;Une explosion
+BONNE|Peu ou pas de micro-organismes
+EXPLICATION|L’absence de trouble montre qu’ils ne se développent pas.
+
+SESSION|2
+QUESTION|Pourquoi chauffer une solution avant l’expérience ?
+REPONSES|Pour tuer les micro-organismes;Pour les nourrir;Pour changer la couleur
+BONNE|Pour tuer les micro-organismes
+EXPLICATION|La chaleur détruit les micro-organismes présents.
+
+SESSION|2
+QUESTION|Une éprouvette chauffée puis fermée reste claire car :
+REPONSES|Les micro-organismes ont été détruits;Ils se multiplient plus;Elle est vide
+BONNE|Les micro-organismes ont été détruits
+EXPLICATION|Le chauffage empêche leur développement.
+
+SESSION|2
+QUESTION|Que montre une expérience bien contrôlée ?
+REPONSES|L’effet d’un seul facteur;Tous les facteurs en même temps;Aucun résultat
+BONNE|L’effet d’un seul facteur
+EXPLICATION|On ne change qu’un élément pour comprendre son rôle.
+
+SESSION|3
+QUESTION|Pourquoi certains aliments se conservent mal ?
+REPONSES|Les micro-organismes s’y développent;Ils disparaissent;Ils deviennent solides
+BONNE|Les micro-organismes s’y développent
+EXPLICATION|Ils provoquent la dégradation des aliments.
+
+SESSION|3
+QUESTION|La chaleur a pour effet sur les micro-organismes :
+REPONSES|De les détruire;De les multiplier;De les colorer
+BONNE|De les détruire
+EXPLICATION|La chaleur élevée tue les micro-organismes.
+
+SESSION|3
+QUESTION|Le froid a pour effet :
+REPONSES|De ralentir leur activité;De les tuer tous;De les rendre visibles
+BONNE|De ralentir leur activité
+EXPLICATION|Ils restent vivants mais se développent moins.
+
+SESSION|3
+QUESTION|Pourquoi faut-il laver les aliments ?
+REPONSES|Pour éliminer des micro-organismes;Pour les cuire;Pour les agrandir
+BONNE|Pour éliminer des micro-organismes
+EXPLICATION|Cela réduit les risques de contamination.
+
+SESSION|3
+QUESTION|Les micro-organismes peuvent transformer les aliments en :
+REPONSES|Produits nouveaux;Objets solides;Lumière
+BONNE|Produits nouveaux
+EXPLICATION|Exemple : lait transformé en yaourt.
+
+SESSION|3
+QUESTION|Quel est un exemple d’aliment fabriqué grâce aux micro-organismes ?
+REPONSES|Le yaourt;L’eau;Le sucre pur
+BONNE|Le yaourt
+EXPLICATION|Des bactéries transforment le lait en yaourt.
+
+SESSION|3
+QUESTION|Pourquoi certains aliments sentent mauvais en vieillissant ?
+REPONSES|À cause des micro-organismes;À cause de la lumière;À cause du froid
+BONNE|À cause des micro-organismes
+EXPLICATION|Ils dégradent les aliments.
+
+SESSION|3
+QUESTION|Les micro-organismes ont besoin d’eau pour :
+REPONSES|Se développer;Disparaître;Se solidifier
+BONNE|Se développer
+EXPLICATION|L’humidité favorise leur croissance.
+
+SESSION|3
+QUESTION|Un aliment sec se conserve mieux car :
+REPONSES|Il y a moins d’eau;Il est plus chaud;Il est plus lourd
+BONNE|Il y a moins d’eau
+EXPLICATION|Les micro-organismes ont besoin d’eau pour vivre.
+
+SESSION|3
+QUESTION|Pourquoi couvrir les aliments ?
+REPONSES|Pour éviter les contaminations;Pour les chauffer;Pour les alourdir
+BONNE|Pour éviter les contaminations
+EXPLICATION|Cela limite l’arrivée de nouveaux micro-organismes.

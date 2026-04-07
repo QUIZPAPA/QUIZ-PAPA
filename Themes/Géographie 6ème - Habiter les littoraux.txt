@@ -1,0 +1,179 @@
+SESSION|1
+QUESTION|Qu’est-ce qu’un littoral ?
+REPONSES|Un espace entre la terre et la mer;Une montagne;Une forêt
+BONNE|Un espace entre la terre et la mer
+EXPLICATION|Le littoral est la zone de contact entre la terre et la mer.
+
+SESSION|1
+QUESTION|Comment appelle-t-on la concentration des populations sur les littoraux ?
+REPONSES|La littoralisation;La désertification;L’urbanisation
+BONNE|La littoralisation
+EXPLICATION|La littoralisation désigne le fait que de plus en plus de personnes vivent près des côtes.
+
+SESSION|1
+QUESTION|Quelle part de la population mondiale vit à moins de 60 km des côtes ?
+REPONSES|Environ 60%;Environ 20%;Environ 90%
+BONNE|Environ 60%
+EXPLICATION|Aujourd’hui, une grande partie de la population mondiale vit près des littoraux.
+
+SESSION|1
+QUESTION|Quel type d’espace trouve-t-on dans les zones industrialo-portuaires ?
+REPONSES|Des activités industrielles et portuaires;Des forêts protégées;Des zones agricoles
+BONNE|Des activités industrielles et portuaires
+EXPLICATION|Ces zones regroupent des ports, des usines et des entrepôts.
+
+SESSION|1
+QUESTION|Quel est le rôle d’un port ?
+REPONSES|Importer et exporter des marchandises;Produire de l’électricité;Cultiver des plantes
+BONNE|Importer et exporter des marchandises
+EXPLICATION|Les ports permettent de faire circuler les marchandises entre les pays.
+
+SESSION|1
+QUESTION|Quel type d’espace attire les touristes sur les littoraux ?
+REPONSES|Les stations balnéaires;Les mines;Les usines
+BONNE|Les stations balnéaires
+EXPLICATION|Les stations balnéaires proposent des activités liées à la mer.
+
+SESSION|1
+QUESTION|Quelles activités trouve-t-on dans une station balnéaire ?
+REPONSES|Des activités aquatiques;Des activités minières;Des activités agricoles
+BONNE|Des activités aquatiques
+EXPLICATION|On y pratique la baignade, la plongée ou les sports nautiques.
+
+SESSION|1
+QUESTION|Pourquoi les littoraux attirent-ils les populations ?
+REPONSES|Pour le travail et les loisirs;Pour fuir les villes;Pour cultiver uniquement
+BONNE|Pour le travail et les loisirs
+EXPLICATION|Les littoraux offrent des emplois et des activités touristiques.
+
+SESSION|1
+QUESTION|Quel exemple de zone portuaire est cité dans le cours ?
+REPONSES|Yokohama;Paris;Berlin
+BONNE|Yokohama
+EXPLICATION|Yokohama est un grand port industriel au Japon.
+
+SESSION|1
+QUESTION|Quel exemple de lieu touristique est cité ?
+REPONSES|Les Maldives;L’Amazonie;Le Sahara
+BONNE|Les Maldives
+EXPLICATION|Les Maldives sont un espace touristique très fréquenté.
+
+SESSION|2
+QUESTION|Qu’est-ce qu’un conflit d’usage ?
+REPONSES|Un conflit entre différents utilisateurs d’un espace;Une guerre entre pays;Un problème climatique
+BONNE|Un conflit entre différents utilisateurs d’un espace
+EXPLICATION|Différents acteurs veulent utiliser le même espace pour des activités différentes.
+
+SESSION|2
+QUESTION|Pourquoi y a-t-il des conflits d’usage sur les littoraux ?
+REPONSES|Parce que les activités sont nombreuses;Parce qu’il n’y a personne;Parce qu’il n’y a pas d’eau
+BONNE|Parce que les activités sont nombreuses
+EXPLICATION|Les littoraux concentrent activités économiques, tourisme et habitat.
+
+SESSION|2
+QUESTION|Qui peut être en conflit sur un littoral ?
+REPONSES|Habitants, touristes et entreprises;Uniquement les touristes;Uniquement les agriculteurs
+BONNE|Habitants, touristes et entreprises
+EXPLICATION|Différents acteurs ont des intérêts différents sur un même espace.
+
+SESSION|2
+QUESTION|Quel problème peut provoquer le tourisme de masse ?
+REPONSES|Des inégalités et de la pollution;Une baisse de population;Une disparition de la mer
+BONNE|Des inégalités et de la pollution
+EXPLICATION|Le tourisme peut créer des tensions et dégrader l’environnement.
+
+SESSION|2
+QUESTION|Quel impact ont les zones industrialo-portuaires ?
+REPONSES|Elles peuvent polluer;Elles font disparaître la mer;Elles arrêtent le commerce
+BONNE|Elles peuvent polluer
+EXPLICATION|Les activités industrielles peuvent dégrader l’environnement.
+
+SESSION|2
+QUESTION|Qu’est-ce qu’un aménagement du littoral ?
+REPONSES|Une transformation de l’espace par l’homme;Une tempête;Une montagne
+BONNE|Une transformation de l’espace par l’homme
+EXPLICATION|Les humains modifient les littoraux pour leurs activités.
+
+SESSION|2
+QUESTION|Pourquoi les littoraux sont-ils très utilisés ?
+REPONSES|Ils concentrent beaucoup d’activités;Ils sont vides;Ils sont isolés
+BONNE|Ils concentrent beaucoup d’activités
+EXPLICATION|Commerce, tourisme et habitat s’y développent.
+
+SESSION|2
+QUESTION|Quel type de transport est important dans les ports ?
+REPONSES|Le transport maritime;Le transport spatial;Le transport animal
+BONNE|Le transport maritime
+EXPLICATION|Les bateaux transportent des marchandises à travers le monde.
+
+SESSION|2
+QUESTION|Pourquoi les habitants peuvent-ils être gênés par certaines activités ?
+REPONSES|À cause du bruit et de la pollution;À cause du froid;À cause du vent
+BONNE|À cause du bruit et de la pollution
+EXPLICATION|Certaines activités dégradent la qualité de vie.
+
+SESSION|2
+QUESTION|Pourquoi faut-il organiser les activités sur les littoraux ?
+REPONSES|Pour limiter les conflits;Pour agrandir la mer;Pour supprimer les habitants
+BONNE|Pour limiter les conflits
+EXPLICATION|Une bonne organisation permet de mieux partager l’espace.
+
+SESSION|3
+QUESTION|À quels risques les littoraux sont-ils exposés ?
+REPONSES|Aux risques climatiques;Aux risques spatiaux;Aux risques volcaniques uniquement
+BONNE|Aux risques climatiques
+EXPLICATION|Les littoraux subissent la montée des eaux et les tempêtes.
+
+SESSION|3
+QUESTION|Quel phénomène est lié au changement climatique ?
+REPONSES|La montée des eaux;La baisse des montagnes;La disparition de l’air
+BONNE|La montée des eaux
+EXPLICATION|Le réchauffement climatique provoque une élévation du niveau des mers.
+
+SESSION|3
+QUESTION|Quel autre risque peut toucher les littoraux ?
+REPONSES|Les tsunamis;Les sécheresses uniquement;Les tremblements de terre uniquement
+BONNE|Les tsunamis
+EXPLICATION|Les tsunamis peuvent provoquer de graves dégâts sur les côtes.
+
+SESSION|3
+QUESTION|Pourquoi les littoraux sont-ils fragiles ?
+REPONSES|Leur équilibre est fragile;Ils sont trop solides;Ils sont vides
+BONNE|Leur équilibre est fragile
+EXPLICATION|Les écosystèmes littoraux sont sensibles aux activités humaines.
+
+SESSION|3
+QUESTION|Qu’est-ce que la biodiversité ?
+REPONSES|La diversité des êtres vivants;La taille des villes;Le nombre d’habitants
+BONNE|La diversité des êtres vivants
+EXPLICATION|La biodiversité correspond à l’ensemble des espèces vivantes.
+
+SESSION|3
+QUESTION|Pourquoi faut-il protéger les littoraux ?
+REPONSES|Pour préserver la biodiversité;Pour construire plus de routes;Pour polluer moins
+BONNE|Pour préserver la biodiversité
+EXPLICATION|Les littoraux abritent des espèces fragiles à protéger.
+
+SESSION|3
+QUESTION|Que peut provoquer la pollution sur les littoraux ?
+REPONSES|La destruction des milieux naturels;La création de montagnes;La disparition du sable
+BONNE|La destruction des milieux naturels
+EXPLICATION|La pollution abîme les écosystèmes marins et côtiers.
+
+SESSION|3
+QUESTION|Pourquoi parle-t-on d’équilibre fragile ?
+REPONSES|Parce que les milieux peuvent être facilement perturbés;Parce qu’ils sont solides;Parce qu’ils sont vides
+BONNE|Parce que les milieux peuvent être facilement perturbés
+EXPLICATION|Un petit changement peut avoir de grandes conséquences sur ces milieux.
+
+SESSION|3
+QUESTION|Que doivent faire les humains face aux risques littoraux ?
+REPONSES|Protéger et aménager les espaces;Ignorer les dangers;Quitter toutes les côtes
+BONNE|Protéger et aménager les espaces
+EXPLICATION|Il faut adapter les aménagements pour limiter les risques.
+
+SESSION|3
+QUESTION|Pourquoi les littoraux doivent-ils être gérés durablement ?
+REPONSES|Pour concilier activités et protection;Pour arrêter le tourisme;Pour supprimer les ports
+BONNE|Pour concilier activités et protection
+EXPLICATION|Il faut trouver un équilibre entre développement et préservation.

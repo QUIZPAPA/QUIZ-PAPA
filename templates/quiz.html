@@ -33,8 +33,6 @@ align-items:flex-start;
 padding:20px;
 }
 
-/* CADRE MASCOTTE */
-
 .cadreMascotte{
 background:#fff8dc;
 padding:15px;
@@ -138,6 +136,23 @@ let lectureTerminee=false
 
 let derniereSelection=null
 let tactile=false
+
+/* NOUVEAU : phrases positives */
+
+let felicitations = [
+"Bravo !",
+"Super !",
+"Génial !",
+"Exactement !",
+"Très bien !",
+"Parfait !",
+"Excellent !",
+"Bien joué !"
+]
+
+function phraseAleatoire(){
+return felicitations[Math.floor(Math.random()*felicitations.length)]
+}
 
 function parler(texte){
 
@@ -291,13 +306,14 @@ bravo.style.opacity=0
 {% if feedback[0] == "bonne" %}
 
 <script>
-texteCorrection="Bravo ! {{ feedback[1] }}"
+let phrase = phraseAleatoire()
+texteCorrection = phrase + " {{ feedback[1] }}"
 setTimeout(function(){
 lireCorrection()
 },200)
 </script>
 
-<h3 style="color:green;">🎉 Bravo !<br>{{ feedback[1] }}</h3>
+<h3 style="color:green;">🎉 {{ "Bravo !" }}<br>{{ feedback[1] }}</h3>
 
 {% else %}
 

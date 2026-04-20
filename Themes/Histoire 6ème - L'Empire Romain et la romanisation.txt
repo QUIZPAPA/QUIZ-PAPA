@@ -1,0 +1,179 @@
+SESSION|1
+QUESTION|Quel est le nom du premier empereur romain ?
+REPONSES|Octave Auguste;Jules César;Clovis
+BONNE|Octave Auguste
+EXPLICATION|Octave, fils adoptif de César, devient Auguste en -27 et fonde l’Empire.
+
+SESSION|1
+QUESTION|Que signifie le titre "Imperator" ?
+REPONSES|Chef de l’armée;Chef religieux;Chef des citoyens
+BONNE|Chef de l’armée
+EXPLICATION|Imperator est un titre militaire donné au chef victorieux.
+
+SESSION|1
+QUESTION|Que signifie le titre "Auguste" ?
+REPONSES|Protégé des dieux;Chef militaire;Magistrat
+BONNE|Protégé des dieux
+EXPLICATION|Auguste donne un caractère sacré au pouvoir impérial.
+
+SESSION|1
+QUESTION|Quel pouvoir permet à l’empereur de gouverner ?
+REPONSES|Le pouvoir politique;Le pouvoir agricole;Le pouvoir sportif
+BONNE|Le pouvoir politique
+EXPLICATION|Il dirige l’Empire et fait les lois.
+
+SESSION|1
+QUESTION|Quel pouvoir permet à l’empereur de diriger l’armée ?
+REPONSES|Le pouvoir militaire;Le pouvoir culturel;Le pouvoir économique
+BONNE|Le pouvoir militaire
+EXPLICATION|Il est le chef des armées.
+
+SESSION|1
+QUESTION|Quel pouvoir fait de l’empereur un chef religieux ?
+REPONSES|Le pouvoir religieux;Le pouvoir judiciaire;Le pouvoir commercial
+BONNE|Le pouvoir religieux
+EXPLICATION|Il est aussi le grand pontife.
+
+SESSION|1
+QUESTION|Comment appelle-t-on une frontière fortifiée de l’Empire ?
+REPONSES|Le limes;Le forum;Le cirque
+BONNE|Le limes
+EXPLICATION|Le limes protège l’Empire contre les invasions.
+
+SESSION|1
+QUESTION|Pourquoi les Romains construisent-ils des routes ?
+REPONSES|Relier les territoires;Décorer;Faire du sport
+BONNE|Relier les territoires
+EXPLICATION|Les routes facilitent les échanges et les déplacements.
+
+SESSION|1
+QUESTION|Comment appelle-t-on la période de paix dans l’Empire ?
+REPONSES|La Pax Romana;La guerre romaine;La paix grecque
+BONNE|La Pax Romana
+EXPLICATION|C’est une période de paix et de prospérité.
+
+SESSION|1
+QUESTION|À quelle période correspond la Pax Romana ?
+REPONSES|Ier et IIe siècles;Moyen Âge;XXe siècle
+BONNE|Ier et IIe siècles
+EXPLICATION|Elle correspond aux deux premiers siècles après J.-C.
+
+SESSION|2
+QUESTION|Pourquoi les empereurs apparaissent-ils sur les pièces de monnaie ?
+REPONSES|Pour montrer leur pouvoir;Pour décorer;Pour compter l’argent
+BONNE|Pour montrer leur pouvoir
+EXPLICATION|Les pièces diffusent l’image et l’autorité de l’empereur.
+
+SESSION|2
+QUESTION|Quel pouvoir peut être montré par une armure sur une pièce ?
+REPONSES|Le pouvoir militaire;Le pouvoir religieux;Le pouvoir politique
+BONNE|Le pouvoir militaire
+EXPLICATION|Les symboles militaires montrent le rôle de chef de guerre.
+
+SESSION|2
+QUESTION|Quel pouvoir peut être montré par un symbole religieux ?
+REPONSES|Le pouvoir religieux;Le pouvoir militaire;Le pouvoir commercial
+BONNE|Le pouvoir religieux
+EXPLICATION|L’empereur est aussi chef de la religion.
+
+SESSION|2
+QUESTION|Quel pouvoir est représenté par le fait de gouverner ?
+REPONSES|Le pouvoir politique;Le pouvoir militaire;Le pouvoir artistique
+BONNE|Le pouvoir politique
+EXPLICATION|Il décide des lois et dirige l’Empire.
+
+SESSION|2
+QUESTION|Que signifie "DIVI F" sur une pièce ?
+REPONSES|Fils du divin;Chef militaire;Citoyen libre
+BONNE|Fils du divin
+EXPLICATION|Cela signifie que l’empereur est fils d’un dieu (César divinisé).
+
+SESSION|2
+QUESTION|Que signifie "PP" (Pater Patriae) ?
+REPONSES|Père de la patrie;Chef de guerre;Citoyen
+BONNE|Père de la patrie
+EXPLICATION|C’est un titre honorifique donné à l’empereur.
+
+SESSION|2
+QUESTION|Quel animal apparaît sur la monnaie de Nîmes ?
+REPONSES|Un crocodile;Un lion;Un aigle
+BONNE|Un crocodile
+EXPLICATION|Le crocodile rappelle la conquête de l’Égypte.
+
+SESSION|2
+QUESTION|Que montre une pièce de monnaie romaine ?
+REPONSES|Les pouvoirs de l’empereur;Une carte;Un paysage
+BONNE|Les pouvoirs de l’empereur
+EXPLICATION|Elle sert de propagande politique.
+
+SESSION|2
+QUESTION|Pourquoi la monnaie est-elle un outil de propagande ?
+REPONSES|Elle circule partout;Elle est cachée;Elle est rare
+BONNE|Elle circule partout
+EXPLICATION|Tout le monde voit les images de l’empereur.
+
+SESSION|2
+QUESTION|Quel bâtiment de Nîmes montre le pouvoir religieux ?
+REPONSES|La Maison Carrée;Les arènes;Les remparts
+BONNE|La Maison Carrée
+EXPLICATION|C’est un temple romain.
+
+SESSION|3
+QUESTION|Comment appelle-t-on l’adoption du mode de vie romain ?
+REPONSES|La romanisation;La migration;La colonisation
+BONNE|La romanisation
+EXPLICATION|Les populations adoptent les habitudes romaines.
+
+SESSION|3
+QUESTION|Comment appelle-t-on les habitants de Nîmes à l’époque romaine ?
+REPONSES|Gallo-Romains;Gaulois;Romains purs
+BONNE|Gallo-Romains
+EXPLICATION|Ils mélangent culture gauloise et romaine.
+
+SESSION|3
+QUESTION|Qu’est-ce qu’un pérégrin ?
+REPONSES|Un habitant libre sans citoyenneté;Un empereur;Un esclave
+BONNE|Un habitant libre sans citoyenneté
+EXPLICATION|Il vit dans l’Empire mais n’a pas tous les droits.
+
+SESSION|3
+QUESTION|Que permet l’édit de Caracalla en 212 ?
+REPONSES|Donner la citoyenneté;Créer des routes;Faire la guerre
+BONNE|Donner la citoyenneté
+EXPLICATION|Tous les hommes libres deviennent citoyens romains.
+
+SESSION|3
+QUESTION|Où ont lieu les combats de gladiateurs ?
+REPONSES|Dans les arènes;Dans les temples;Dans les maisons
+BONNE|Dans les arènes
+EXPLICATION|Les arènes accueillent les spectacles.
+
+SESSION|3
+QUESTION|À quoi servent les thermes ?
+REPONSES|À se laver et se détendre;À prier;À travailler
+BONNE|À se laver et se détendre
+EXPLICATION|Les thermes sont des bains publics.
+
+SESSION|3
+QUESTION|À quoi servent les aqueducs ?
+REPONSES|Amener l’eau;Faire la guerre;Transporter des soldats
+BONNE|Amener l’eau
+EXPLICATION|Ils alimentent les villes en eau.
+
+SESSION|3
+QUESTION|Que se passe-t-il en 395 ?
+REPONSES|Division de l’Empire;Fin de Rome;Début de la République
+BONNE|Division de l’Empire
+EXPLICATION|L’Empire est séparé en deux parties.
+
+SESSION|3
+QUESTION|Que se passe-t-il en 476 ?
+REPONSES|Chute de l’Empire d’Occident;Début de l’Empire;Victoire romaine
+BONNE|Chute de l’Empire d’Occident
+EXPLICATION|L’Empire d’Occident disparaît.
+
+SESSION|3
+QUESTION|L’Empire romain disparaît-il complètement en 476 ?
+REPONSES|Non, l’Empire d’Orient continue;Oui totalement;Il devient grec
+BONNE|Non, l’Empire d’Orient continue
+EXPLICATION|L’Empire d’Orient (byzantin) dure encore 1000 ans.

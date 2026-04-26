@@ -1,0 +1,95 @@
+SESSION|1
+QUESTION|Une solution est un mélange homogène obtenu lorsqu’une substance se dissout complètement dans une autre. Par exemple, si on met du sel dans un verre d’eau et qu’on mélange, le sel disparaît à l’œil nu : on obtient de l’eau salée, qui est une solution. Dans une solution, on distingue deux éléments : le solvant et le soluté. Le solvant est le liquide qui dissout (le plus souvent l’eau). Le soluté est la substance qui se dissout (par exemple le sel ou le sucre). Une solution est dite homogène car on ne distingue plus les différents éléments à l’œil nu : tout est parfaitement mélangé. Si on ajoute trop de soluté (par exemple trop de sel), il ne peut plus se dissoudre : une partie reste visible au fond. Le mélange devient alors hétérogène car on distingue plusieurs parties. La dissolution est une transformation physique car le soluté ne change pas de nature : le sel reste du sel, même dissous dans l’eau. On peut d’ailleurs récupérer le sel en laissant l’eau s’évaporer. L’évaporation est aussi une transformation physique : l’eau passe de l’état liquide à l’état gazeux (vapeur d’eau), mais reste de l’eau. Exemple : une flaque d’eau qui disparaît au soleil. On dit que ces transformations sont réversibles car on peut retrouver les substances de départ. À retenir : solution = mélange homogène ; solvant = liquide qui dissout ; soluté = substance dissoute ; homogène = on ne voit pas les éléments ; hétérogène = on voit plusieurs éléments.
+REPONSES|J'ai bien écouté;J'ai bien écouté;J'ai bien écouté
+BONNE|J'ai bien écouté
+EXPLICATION|Cours validé
+
+SESSION|2
+QUESTION|Dans l’eau salée, qu’est-ce que la solution ?
+REPONSES|L’eau salée;L’eau seule;Le sel seul
+BONNE|L’eau salée
+EXPLICATION|La solution est le mélange homogène obtenu.
+
+SESSION|2
+QUESTION|Dans l’eau salée, quel est le solvant ?
+REPONSES|L’eau;Le sel;L’air
+BONNE|L’eau
+EXPLICATION|Le solvant est le liquide qui dissout.
+
+SESSION|2
+QUESTION|Dans l’eau salée, quel est le soluté ?
+REPONSES|Le sel;L’eau;Le verre
+BONNE|Le sel
+EXPLICATION|Le soluté est la substance dissoute.
+
+SESSION|2
+QUESTION|Quand le sel est totalement dissous, le mélange est-il homogène ou hétérogène ?
+REPONSES|Homogène;Hétérogène;Solide
+BONNE|Homogène
+EXPLICATION|On ne voit plus le sel.
+
+SESSION|2
+QUESTION|Si du sel reste visible au fond, le mélange est-il homogène ou hétérogène ?
+REPONSES|Hétérogène;Homogène;Liquide
+BONNE|Hétérogène
+EXPLICATION|On distingue plusieurs éléments.
+
+SESSION|2
+QUESTION|Pourquoi le mélange devient-il hétérogène ?
+REPONSES|Le sel ne se dissout plus;L’eau disparaît;Le sel change
+BONNE|Le sel ne se dissout plus
+EXPLICATION|Il y a trop de soluté.
+
+SESSION|2
+QUESTION|Comment appelle-t-on l’action de dissoudre une substance ?
+REPONSES|La dissolution;La combustion;La fusion
+BONNE|La dissolution
+EXPLICATION|C’est le mélange soluté + solvant.
+
+SESSION|2
+QUESTION|La dissolution est-elle une transformation chimique ou physique ?
+REPONSES|Physique;Chimique;Nucléaire
+BONNE|Physique
+EXPLICATION|La substance ne change pas.
+
+SESSION|3
+QUESTION|L’évaporation est-elle une transformation chimique ou physique ?
+REPONSES|Physique;Chimique;Biologique
+BONNE|Physique
+EXPLICATION|Changement d’état uniquement.
+
+SESSION|3
+QUESTION|Quand l’eau s’évapore, que devient-elle ?
+REPONSES|De la vapeur d’eau;Du sel;Du gaz inconnu
+BONNE|De la vapeur d’eau
+EXPLICATION|L’eau devient un gaz.
+
+SESSION|3
+QUESTION|Dans un mélange homogène, voit-on les éléments ?
+REPONSES|Non;Oui;Parfois
+BONNE|Non
+EXPLICATION|Tout est uniforme.
+
+SESSION|3
+QUESTION|Dans un mélange hétérogène, que voit-on ?
+REPONSES|Plusieurs éléments;Un seul;Rien
+BONNE|Plusieurs éléments
+EXPLICATION|Les éléments sont visibles.
+
+SESSION|3
+QUESTION|Quel est le rôle du solvant ?
+REPONSES|Dissoudre le soluté;Créer une réaction;Colorer
+BONNE|Dissoudre le soluté
+EXPLICATION|Le solvant permet la dissolution.
+
+SESSION|3
+QUESTION|Que se passe-t-il si l’eau salée s’évapore ?
+REPONSES|Le sel reste;Tout disparaît;Le sel fond
+BONNE|Le sel reste
+EXPLICATION|Le soluté reste après évaporation.
+
+SESSION|3
+QUESTION|Pourquoi peut-on récupérer le sel après évaporation ?
+REPONSES|La transformation est réversible;Le sel disparaît;L’eau change
+BONNE|La transformation est réversible
+EXPLICATION|On retrouve les substances initiales.

@@ -1,0 +1,179 @@
+SESSION|1
+QUESTION|Qu’est-ce qu’un écosystème ?
+REPONSES|Un milieu de vie avec les êtres vivants qui y vivent;Un endroit sans vie;Une espèce animale seule
+BONNE|Un milieu de vie avec les êtres vivants qui y vivent
+EXPLICATION|Un écosystème comprend le milieu de vie et tous les êtres vivants présents.
+
+SESSION|1
+QUESTION|Comment appelle-t-on les êtres vivants d’un écosystème ?
+REPONSES|La biocénose;Le biotope;Le climat
+BONNE|La biocénose
+EXPLICATION|La biocénose correspond à tous les êtres vivants d’un milieu.
+
+SESSION|1
+QUESTION|Comment appelle-t-on les conditions physiques d’un milieu ?
+REPONSES|Le biotope;La biocénose;La biodiversité
+BONNE|Le biotope
+EXPLICATION|Le biotope correspond aux conditions physico-chimiques du milieu.
+
+SESSION|1
+QUESTION|Quel élément fait partie du monde vivant de la mare ?
+REPONSES|La grenouille;La bâche;Le caillou
+BONNE|La grenouille
+EXPLICATION|La grenouille est un être vivant de l’écosystème.
+
+SESSION|1
+QUESTION|Quel élément appartient au monde minéral ?
+REPONSES|L’eau;Le trèfle;Le moustique
+BONNE|L’eau
+EXPLICATION|L’eau est un élément naturel non vivant.
+
+SESSION|1
+QUESTION|Quel élément est artificiel dans la mare du collège ?
+REPONSES|La bâche;Les algues;La boue
+BONNE|La bâche
+EXPLICATION|La bâche a été fabriquée par les humains.
+
+SESSION|1
+QUESTION|Quel animal vit dans l’eau de la mare ?
+REPONSES|La limnée;Le renard;Le pigeon
+BONNE|La limnée
+EXPLICATION|La grande limnée est un mollusque aquatique.
+
+SESSION|1
+QUESTION|Quel être vivant microscopique trouve-t-on dans la mare ?
+REPONSES|Les algues microscopiques;Les arbres;Les pierres
+BONNE|Les algues microscopiques
+EXPLICATION|Des algues microscopiques vivent dans l’eau de la mare.
+
+SESSION|1
+QUESTION|Pourquoi certaines espèces vivent-elles dans la mare mais pas dans le pré ?
+REPONSES|Les conditions du milieu sont différentes;Les animaux se perdent;Le pré est vide
+BONNE|Les conditions du milieu sont différentes
+EXPLICATION|L’eau, la température et la lumière influencent les espèces présentes.
+
+SESSION|1
+QUESTION|Quelle condition du milieu est importante pour les êtres vivants ?
+REPONSES|La température;La couleur des fleurs;Le bruit
+BONNE|La température
+EXPLICATION|Les conditions physico-chimiques influencent la répartition des espèces.
+
+SESSION|2
+QUESTION|Voit-on les mêmes espèces dans la mare et dans la forêt ?
+REPONSES|Non;Oui;Toujours
+BONNE|Non
+EXPLICATION|Chaque milieu possède des conditions différentes.
+
+SESSION|2
+QUESTION|Pourquoi les algues vivent-elles dans la mare ?
+REPONSES|Parce qu’il y a de l’eau;Parce qu’il y a du sable;Parce qu’il y a du béton
+BONNE|Parce qu’il y a de l’eau
+EXPLICATION|Les algues ont besoin d’un milieu aquatique.
+
+SESSION|2
+QUESTION|Pourquoi une limnée ne peut-elle pas vivre dans un pré sec ?
+REPONSES|Elle a besoin d’eau;Elle a besoin d’arbres;Elle a besoin de neige
+BONNE|Elle a besoin d’eau
+EXPLICATION|La limnée est adaptée au milieu aquatique.
+
+SESSION|2
+QUESTION|Quel élément influence la présence des espèces ?
+REPONSES|La luminosité;Le hasard uniquement;La couleur du ciel
+BONNE|La luminosité
+EXPLICATION|La lumière influence les végétaux et les animaux.
+
+SESSION|2
+QUESTION|Comment appelle-t-on les éléments vivants d’un écosystème ?
+REPONSES|Les composantes biologiques;Les composantes minérales;Les composantes artificielles
+BONNE|Les composantes biologiques
+EXPLICATION|Les êtres vivants forment les composantes biologiques.
+
+SESSION|2
+QUESTION|Les cailloux appartiennent-ils au monde vivant ?
+REPONSES|Non;Oui;Parfois
+BONNE|Non
+EXPLICATION|Les cailloux sont des éléments minéraux.
+
+SESSION|2
+QUESTION|Pourquoi dit-on que les éléments d’un écosystème sont en interaction ?
+REPONSES|Ils agissent les uns sur les autres;Ils vivent séparément;Ils ne se rencontrent jamais
+BONNE|Ils agissent les uns sur les autres
+EXPLICATION|Les êtres vivants dépendent du milieu et des autres espèces.
+
+SESSION|2
+QUESTION|Le bois mort fait-il partie de l’écosystème ?
+REPONSES|Oui;Non;Seulement en hiver
+BONNE|Oui
+EXPLICATION|Même mort, il appartient au milieu et sert à d’autres êtres vivants.
+
+SESSION|2
+QUESTION|Pourquoi le trèfle peut-il être présent dans plusieurs milieux ?
+REPONSES|Il supporte différentes conditions;Il vit seulement dans l’eau;Il pousse uniquement sur les arbres
+BONNE|Il supporte différentes conditions
+EXPLICATION|Certaines espèces vivent dans plusieurs écosystèmes.
+
+SESSION|2
+QUESTION|Quel mot désigne la diversité des êtres vivants ?
+REPONSES|La biodiversité;La respiration;La dissolution
+BONNE|La biodiversité
+EXPLICATION|La biodiversité correspond à la variété des espèces vivantes.
+
+SESSION|3
+QUESTION|Un écosystème peut-il changer si une espèce disparaît ?
+REPONSES|Oui;Non;Jamais
+BONNE|Oui
+EXPLICATION|Les espèces sont liées entre elles dans l’écosystème.
+
+SESSION|3
+QUESTION|Pourquoi une mare et une forêt sont-elles deux écosystèmes différents ?
+REPONSES|Les espèces et les conditions changent;Les arbres sont plus grands;La Terre change
+BONNE|Les espèces et les conditions changent
+EXPLICATION|Chaque écosystème possède son propre biotope et sa propre biocénose.
+
+SESSION|3
+QUESTION|Quel élément est une composante artificielle ?
+REPONSES|Une barrière;Une grenouille;Une algue
+BONNE|Une barrière
+EXPLICATION|Les éléments artificiels sont fabriqués par l’humain.
+
+SESSION|3
+QUESTION|L’eau de la mare appartient-elle au biotope ou à la biocénose ?
+REPONSES|Au biotope;À la biocénose;Aux deux
+BONNE|Au biotope
+EXPLICATION|L’eau fait partie des conditions physiques du milieu.
+
+SESSION|3
+QUESTION|Les grenouilles appartiennent-elles au biotope ou à la biocénose ?
+REPONSES|À la biocénose;Au biotope;Aux deux
+BONNE|À la biocénose
+EXPLICATION|Les grenouilles sont des êtres vivants.
+
+SESSION|3
+QUESTION|Pourquoi certaines espèces disparaissent-elles si le milieu change ?
+REPONSES|Elles ne sont plus adaptées;Elles oublient de vivre;Elles changent de planète
+BONNE|Elles ne sont plus adaptées
+EXPLICATION|Les espèces ont besoin de certaines conditions pour survivre.
+
+SESSION|3
+QUESTION|Quel facteur peut modifier un écosystème ?
+REPONSES|La température;Le nom du lieu;La couleur des pierres
+BONNE|La température
+EXPLICATION|Les conditions physico-chimiques influencent les êtres vivants.
+
+SESSION|3
+QUESTION|Une mare sans eau resterait-elle le même écosystème ?
+REPONSES|Non;Oui;Seulement en été
+BONNE|Non
+EXPLICATION|Les espèces aquatiques disparaîtraient.
+
+SESSION|3
+QUESTION|Pourquoi les moustiques pondent-ils dans la mare ?
+REPONSES|Les larves vivent dans l’eau;Ils aiment les arbres;Ils vivent sous les pierres
+BONNE|Les larves vivent dans l’eau
+EXPLICATION|Les moustiques ont besoin d’eau pour leur développement.
+
+SESSION|3
+QUESTION|Pourquoi étudie-t-on les interactions dans un écosystème ?
+REPONSES|Pour comprendre le fonctionnement du milieu;Pour compter uniquement les plantes;Pour dessiner les animaux
+BONNE|Pour comprendre le fonctionnement du milieu
+EXPLICATION|Tous les éléments de l’écosystème sont liés entre eux.

@@ -1,0 +1,179 @@
+SESSION|1
+QUESTION|Qu’est-ce qu’une religion monothéiste ?
+REPONSES|Une religion avec un seul dieu;Une religion avec plusieurs dieux;Une religion sans dieu
+BONNE|Une religion avec un seul dieu
+EXPLICATION|Le mot monothéiste signifie croire en un dieu unique.
+
+SESSION|1
+QUESTION|Quelle religion pratiquent les Romains au début de l’Empire ?
+REPONSES|Une religion polythéiste;Une religion monothéiste;Aucune religion
+BONNE|Une religion polythéiste
+EXPLICATION|Les Romains croient en plusieurs dieux comme Jupiter ou Mars.
+
+SESSION|1
+QUESTION|Comment appelle-t-on une religion avec plusieurs dieux ?
+REPONSES|Une religion polythéiste;Une religion monothéiste;Une religion impériale
+BONNE|Une religion polythéiste
+EXPLICATION|Le polythéisme est la croyance en plusieurs dieux.
+
+SESSION|1
+QUESTION|Quelle religion monothéiste existe déjà avant le christianisme ?
+REPONSES|Le judaïsme;L’hindouisme;La religion romaine
+BONNE|Le judaïsme
+EXPLICATION|Le judaïsme est l’une des premières religions monothéistes.
+
+SESSION|1
+QUESTION|Quel peuple pratique le judaïsme ?
+REPONSES|Les Hébreux;Les Gaulois;Les Romains
+BONNE|Les Hébreux
+EXPLICATION|Les Hébreux croient en un dieu unique.
+
+SESSION|1
+QUESTION|Comment s’appelle le dieu unique des Hébreux ?
+REPONSES|Yahvé;Jupiter;Zeus
+BONNE|Yahvé
+EXPLICATION|Les Juifs croient en un dieu unique nommé Yahvé.
+
+SESSION|1
+QUESTION|Quel livre sacré est important dans le judaïsme ?
+REPONSES|La Torah;Le Coran;L’Odyssée
+BONNE|La Torah
+EXPLICATION|La Torah contient les textes religieux du judaïsme.
+
+SESSION|1
+QUESTION|Dans quelle région naît le judaïsme ?
+REPONSES|En Palestine;En Gaule;En Égypte
+BONNE|En Palestine
+EXPLICATION|Le judaïsme se développe au Proche-Orient.
+
+SESSION|1
+QUESTION|Qui est Jésus pour les chrétiens ?
+REPONSES|Le fils de Dieu;Un empereur;Un général romain
+BONNE|Le fils de Dieu
+EXPLICATION|Les chrétiens pensent que Jésus est le messie envoyé par Dieu.
+
+SESSION|1
+QUESTION|Où naît le christianisme ?
+REPONSES|Dans l’Empire romain;En Chine;En Amérique
+BONNE|Dans l’Empire romain
+EXPLICATION|Le christianisme apparaît dans l’Empire romain au Ier siècle.
+
+SESSION|2
+QUESTION|Comment appelle-t-on les personnes qui suivent Jésus ?
+REPONSES|Les chrétiens;Les sénateurs;Les gladiateurs
+BONNE|Les chrétiens
+EXPLICATION|Les chrétiens suivent l’enseignement de Jésus.
+
+SESSION|2
+QUESTION|Quel livre sacré utilisent les chrétiens ?
+REPONSES|La Bible;La Torah uniquement;Le Coran
+BONNE|La Bible
+EXPLICATION|La Bible raconte la vie de Jésus et les croyances chrétiennes.
+
+SESSION|2
+QUESTION|Pourquoi les premiers chrétiens sont-ils parfois persécutés ?
+REPONSES|Ils refusent le culte impérial;Ils refusent de parler latin;Ils quittent Rome
+BONNE|Ils refusent le culte impérial
+EXPLICATION|Les Romains veulent que l’empereur soit honoré comme un dieu.
+
+SESSION|2
+QUESTION|Comment appelle-t-on les personnes tuées pour leur foi chrétienne ?
+REPONSES|Les martyrs;Les consuls;Les prêtres
+BONNE|Les martyrs
+EXPLICATION|Les martyrs meurent parce qu’ils refusent d’abandonner leur religion.
+
+SESSION|2
+QUESTION|Quel symbole représente souvent les chrétiens ?
+REPONSES|La croix;Le glaive;Le casque
+BONNE|La croix
+EXPLICATION|La croix rappelle la mort et la résurrection de Jésus.
+
+SESSION|2
+QUESTION|Quel empereur autorise le christianisme au IVe siècle ?
+REPONSES|Constantin;Auguste;Néron
+BONNE|Constantin
+EXPLICATION|Constantin autorise les chrétiens à pratiquer leur religion.
+
+SESSION|2
+QUESTION|Comment appelle-t-on le lieu de culte des Juifs ?
+REPONSES|La synagogue;Le temple romain;La basilique
+BONNE|La synagogue
+EXPLICATION|Les Juifs prient dans des synagogues.
+
+SESSION|2
+QUESTION|Comment appelle-t-on le lieu de culte des chrétiens ?
+REPONSES|L’église;Le cirque;Le forum
+BONNE|L’église
+EXPLICATION|Les chrétiens se réunissent dans des églises.
+
+SESSION|2
+QUESTION|Pourquoi le christianisme se diffuse-t-il dans l’Empire romain ?
+REPONSES|Les croyants voyagent et partagent leur foi;Les Romains l’imposent dès le début;Les armées l’interdisent
+BONNE|Les croyants voyagent et partagent leur foi
+EXPLICATION|Les apôtres et les missionnaires diffusent le christianisme.
+
+SESSION|2
+QUESTION|Que signifie le mot "messie" ?
+REPONSES|Envoyé de Dieu;Chef militaire;Empereur
+BONNE|Envoyé de Dieu
+EXPLICATION|Les chrétiens pensent que Jésus est le messie attendu.
+
+SESSION|3
+QUESTION|Quelle différence existe entre la religion romaine et le christianisme ?
+REPONSES|Les Romains ont plusieurs dieux;Les Romains n’ont pas de religion;Les chrétiens ont plusieurs dieux
+BONNE|Les Romains ont plusieurs dieux
+EXPLICATION|Les Romains sont polythéistes alors que les chrétiens sont monothéistes.
+
+SESSION|3
+QUESTION|Pourquoi le judaïsme et le christianisme sont-ils des religions monothéistes ?
+REPONSES|Ils croient en un seul dieu;Ils ont plusieurs temples;Ils refusent les prières
+BONNE|Ils croient en un seul dieu
+EXPLICATION|Ces religions adorent un dieu unique.
+
+SESSION|3
+QUESTION|Quel point commun existe entre le judaïsme et le christianisme ?
+REPONSES|Ils croient en un dieu unique;Ils adorent Jupiter;Ils refusent les lois
+BONNE|Ils croient en un dieu unique
+EXPLICATION|Le christianisme naît à partir du judaïsme.
+
+SESSION|3
+QUESTION|Pourquoi parle-t-on des premières religions monothéistes ?
+REPONSES|Elles sont parmi les premières à croire en un dieu unique;Elles sont les premières religions du monde;Elles n’ont pas de livre sacré
+BONNE|Elles sont parmi les premières à croire en un dieu unique
+EXPLICATION|La plupart des peuples antiques étaient polythéistes.
+
+SESSION|3
+QUESTION|Quel empire favorise la diffusion du christianisme ?
+REPONSES|L’Empire romain;L’Empire égyptien;L’Empire mongol
+BONNE|L’Empire romain
+EXPLICATION|Les routes et les villes romaines facilitent les échanges.
+
+SESSION|3
+QUESTION|Pourquoi les routes romaines aident-elles à diffuser les religions ?
+REPONSES|Les voyageurs circulent facilement;Les routes empêchent les échanges;Les routes servent seulement à l’armée
+BONNE|Les voyageurs circulent facilement
+EXPLICATION|Les croyants peuvent voyager et transmettre leurs idées.
+
+SESSION|3
+QUESTION|Le christianisme devient-il important dans l’Empire romain ?
+REPONSES|Oui;Non;Seulement en Gaule
+BONNE|Oui
+EXPLICATION|Le christianisme se développe progressivement dans tout l’Empire.
+
+SESSION|3
+QUESTION|Quelle religion est pratiquée par Jésus ?
+REPONSES|Le judaïsme;La religion romaine;L’islam
+BONNE|Le judaïsme
+EXPLICATION|Jésus est né dans une famille juive.
+
+SESSION|3
+QUESTION|Comment appelle-t-on les croyances et pratiques d’une religion ?
+REPONSES|Le culte;Le forum;La citoyenneté
+BONNE|Le culte
+EXPLICATION|Le culte correspond aux pratiques religieuses.
+
+SESSION|3
+QUESTION|Pourquoi les religions monothéistes sont-elles nouvelles pour les Romains ?
+REPONSES|Les Romains croient en plusieurs dieux;Les Romains refusent les temples;Les Romains n’ont pas de prêtres
+BONNE|Les Romains croient en plusieurs dieux
+EXPLICATION|Le monothéisme est différent de la religion romaine traditionnelle.

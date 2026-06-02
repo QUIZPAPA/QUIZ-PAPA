@@ -1,0 +1,185 @@
+SESSION|1
+QUESTION|Comment appelle-t-on une religion qui croit en un seul dieu ?
+REPONSES|Une religion monothéiste;Une religion polythéiste;Une religion impériale
+BONNE|Une religion monothéiste
+EXPLICATION|Le mot monothéiste signifie croire en un dieu unique. Le judaïsme et le christianisme sont des religions monothéistes.
+
+SESSION|1
+QUESTION|Quel peuple pratique le judaïsme dans l’Antiquité ?
+REPONSES|Les Hébreux;Les Romains;Les Gaulois
+BONNE|Les Hébreux
+EXPLICATION|Les Hébreux, aussi appelés Israélites, croient en un dieu unique nommé Yahvé.
+
+SESSION|1
+QUESTION|Comment s’appelle le dieu unique des Hébreux ?
+REPONSES|Yahvé;Jupiter;Mars
+BONNE|Yahvé
+EXPLICATION|Les Hébreux pensent que Yahvé protège leur peuple et leur donne des règles religieuses.
+
+SESSION|1
+QUESTION|Quel livre sacré raconte les croyances des Hébreux ?
+REPONSES|La Bible hébraïque;L’Odyssée;Les lois romaines
+BONNE|La Bible hébraïque
+EXPLICATION|Les récits religieux et historiques des Hébreux sont regroupés dans la Bible hébraïque.
+
+SESSION|1
+QUESTION|Quelle ville est le centre religieux des Hébreux ?
+REPONSES|Jérusalem;Rome;Athènes
+BONNE|Jérusalem
+EXPLICATION|Le Temple de Jérusalem est le lieu le plus sacré du judaïsme.
+
+SESSION|1
+QUESTION|Pourquoi les Hébreux sont-ils dispersés autour de la Méditerranée ?
+REPONSES|À cause des invasions et des guerres;À cause du commerce uniquement;À cause des jeux romains
+BONNE|À cause des invasions et des guerres
+EXPLICATION|Les invasions assyriennes, babyloniennes puis romaines provoquent la dispersion des Juifs : c’est la diaspora.
+
+SESSION|1
+QUESTION|Dans quel empire naît le christianisme ?
+REPONSES|Dans l’Empire romain;Dans l’Empire égyptien;Dans l’Empire mongol
+BONNE|Dans l’Empire romain
+EXPLICATION|Le christianisme apparaît au Ier siècle dans une province de l’Empire romain.
+
+SESSION|1
+QUESTION|Qui est Jésus pour les chrétiens ?
+REPONSES|Le fils de Dieu et le messie;Un empereur romain;Un dieu grec
+BONNE|Le fils de Dieu et le messie
+EXPLICATION|Les chrétiens pensent que Jésus est envoyé par Dieu pour sauver les hommes.
+
+SESSION|1
+QUESTION|Dans quelle religion Jésus est-il né ?
+REPONSES|Le judaïsme;La religion romaine;Le christianisme
+BONNE|Le judaïsme
+EXPLICATION|Jésus est né dans une famille juive et suit la religion juive.
+
+SESSION|1
+QUESTION|Quel message Jésus transmet-il ?
+REPONSES|Aimer Dieu et les autres;Faire la guerre;Adorer plusieurs dieux
+BONNE|Aimer Dieu et les autres
+EXPLICATION|Jésus enseigne l’amour, le pardon et l’aide aux plus pauvres.
+
+SESSION|2
+QUESTION|Comment appelle-t-on les personnes qui suivent Jésus ?
+REPONSES|Les chrétiens;Les sénateurs;Les gladiateurs
+BONNE|Les chrétiens
+EXPLICATION|Les disciples de Jésus diffusent ensuite le christianisme dans l’Empire romain.
+
+SESSION|2
+QUESTION|Quel livre sacré utilisent les chrétiens ?
+REPONSES|La Bible;La Torah uniquement;Le Coran
+BONNE|La Bible
+EXPLICATION|La Bible chrétienne contient l’Ancien Testament et le Nouveau Testament racontant la vie de Jésus.
+
+SESSION|2
+QUESTION|Pourquoi les Romains se méfient-ils des premiers chrétiens ?
+REPONSES|Ils refusent le culte de l’empereur;Ils refusent les routes;Ils quittent Rome
+BONNE|Ils refusent le culte de l’empereur
+EXPLICATION|Les chrétiens croient en un seul dieu et refusent de considérer l’empereur comme un dieu.
+
+SESSION|2
+QUESTION|Comment appelle-t-on les chrétiens tués pour leur foi ?
+REPONSES|Les martyrs;Les consuls;Les chevaliers
+BONNE|Les martyrs
+EXPLICATION|Certains chrétiens sont persécutés car ils refusent d’abandonner leur religion.
+
+SESSION|2
+QUESTION|Quel symbole représente souvent le christianisme ?
+REPONSES|La croix;Le glaive;Le casque
+BONNE|La croix
+EXPLICATION|La croix rappelle la mort de Jésus et sa résurrection selon les chrétiens.
+
+SESSION|2
+QUESTION|Quel empereur autorise le christianisme au IVe siècle ?
+REPONSES|Constantin;Auguste;Néron
+BONNE|Constantin
+EXPLICATION|L’empereur Constantin met fin aux persécutions contre les chrétiens.
+
+SESSION|2
+QUESTION|Pourquoi le christianisme se diffuse-t-il rapidement ?
+REPONSES|Les croyants voyagent dans l’Empire;Les Romains imposent la religion dès le début;Les routes sont fermées
+BONNE|Les croyants voyagent dans l’Empire
+EXPLICATION|Les routes romaines et les villes permettent aux missionnaires de voyager facilement.
+
+SESSION|2
+QUESTION|Comment appelle-t-on le lieu de culte des Juifs ?
+REPONSES|La synagogue;Le forum;Le cirque
+BONNE|La synagogue
+EXPLICATION|Les Juifs prient et étudient leurs textes religieux dans les synagogues.
+
+SESSION|2
+QUESTION|Comment appelle-t-on le lieu de culte des chrétiens ?
+REPONSES|L’église;Le temple romain;Les thermes
+BONNE|L’église
+EXPLICATION|Les chrétiens se réunissent dans des églises pour prier ensemble.
+
+SESSION|2
+QUESTION|Quel point commun existe entre judaïsme et christianisme ?
+REPONSES|Ils croient en un seul dieu;Ils adorent Jupiter;Ils refusent les lois
+BONNE|Ils croient en un seul dieu
+EXPLICATION|Le christianisme naît à partir du judaïsme et garde la croyance en un dieu unique.
+
+SESSION|3
+QUESTION|Comment appelle-t-on une religion avec plusieurs dieux ?
+REPONSES|Une religion polythéiste;Une religion monothéiste;Une religion chrétienne
+BONNE|Une religion polythéiste
+EXPLICATION|Les Romains sont polythéistes car ils adorent plusieurs dieux comme Jupiter ou Mars.
+
+SESSION|3
+QUESTION|Pourquoi le monothéisme est-il nouveau pour les Romains ?
+REPONSES|Les Romains croient en plusieurs dieux;Les Romains n’ont pas de religion;Les Romains refusent les temples
+BONNE|Les Romains croient en plusieurs dieux
+EXPLICATION|Les religions monothéistes changent les habitudes religieuses du monde romain.
+
+SESSION|3
+QUESTION|Comment appelle-t-on la dispersion des Juifs hors de Palestine ?
+REPONSES|La diaspora;La romanisation;Le limes
+BONNE|La diaspora
+EXPLICATION|Après plusieurs guerres et invasions, les Juifs vivent dans de nombreuses régions autour de la Méditerranée.
+
+SESSION|3
+QUESTION|Pourquoi Jérusalem est-elle une ville importante ?
+REPONSES|Le Temple s’y trouvait;C’est la capitale de Rome;Les empereurs y vivent
+BONNE|Le Temple s’y trouvait
+EXPLICATION|Jérusalem est le centre religieux du judaïsme dans l’Antiquité.
+
+SESSION|3
+QUESTION|Quel événement marque souvent la naissance du christianisme ?
+REPONSES|La prédication de Jésus;La chute de Rome;La conquête de la Gaule
+BONNE|La prédication de Jésus
+EXPLICATION|Les enseignements de Jésus donnent naissance à une nouvelle religion.
+
+SESSION|3
+QUESTION|Pourquoi les routes romaines aident-elles à diffuser le christianisme ?
+REPONSES|Les voyageurs circulent facilement;Les routes empêchent les échanges;Les routes servent seulement à l’armée
+BONNE|Les voyageurs circulent facilement
+EXPLICATION|Les missionnaires utilisent les routes et les ports romains pour transmettre leurs croyances.
+
+SESSION|3
+QUESTION|Le christianisme devient-il important dans l’Empire romain ?
+REPONSES|Oui;Non;Seulement en Gaule
+BONNE|Oui
+EXPLICATION|Le christianisme se développe progressivement jusqu’à devenir très important dans l’Empire.
+
+SESSION|3
+QUESTION|Quel mot désigne les pratiques religieuses ?
+REPONSES|Le culte;Le forum;La citoyenneté
+BONNE|Le culte
+EXPLICATION|Le culte correspond aux prières, cérémonies et pratiques religieuses.
+
+SESSION|3
+QUESTION|Pourquoi les Hébreux écrivent-ils leurs croyances ?
+REPONSES|Pour transmettre leur religion;Pour apprendre le latin;Pour construire des temples
+BONNE|Pour transmettre leur religion
+EXPLICATION|Les textes religieux permettent de garder la mémoire et les croyances du peuple hébreu.
+
+SESSION|3
+QUESTION|Pourquoi peut-on dire que le christianisme vient du judaïsme ?
+REPONSES|Jésus et ses disciples sont juifs;Les Romains créent le christianisme;Les Grecs inventent Jésus
+BONNE|Jésus et ses disciples sont juifs
+EXPLICATION|Le christianisme naît dans le monde juif avant de devenir une religion différente.
+
+SESSION|3
+QUESTION|Quelle différence principale existe entre la religion romaine et les religions monothéistes ?
+REPONSES|Les Romains croient en plusieurs dieux;Les Romains n’ont pas de prêtres;Les monothéistes refusent les lois
+BONNE|Les Romains croient en plusieurs dieux
+EXPLICATION|Les religions monothéistes croient en un dieu unique alors que les Romains adorent plusieurs dieux.

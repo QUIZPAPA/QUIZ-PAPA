@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -34,6 +35,7 @@ font-size:clamp(26px,4vw,42px);
 font-weight:600;
 padding:2vh;
 box-shadow:0 4px 12px rgba(0,0,0,0.2);
+box-sizing:border-box;
 }
 
 /* layout */
@@ -46,12 +48,15 @@ gap:4vw;
 padding:2vh;
 flex-wrap:wrap;
 max-height:90vh;
+box-sizing:border-box;
 }
 
 /* logo */
 
 .logo{
 width:min(300px,25vw);
+max-height:55vh;
+object-fit:contain;
 filter:
 drop-shadow(0 0 20px rgba(255,255,255,0.9))
 drop-shadow(0 0 40px rgba(255,255,255,0.6))
@@ -66,13 +71,22 @@ padding:2vh 2vw;
 border-radius:15px;
 box-shadow:0 6px 18px rgba(0,0,0,0.2);
 width:min(420px,90vw);
+box-sizing:border-box;
+}
+
+/* titres */
+
+h2{
+font-size:clamp(22px,2.5vw,30px);
+margin-top:5px;
+margin-bottom:15px;
 }
 
 /* consignes */
 
 .consignes{
 font-size:clamp(14px,1.6vw,18px);
-margin-bottom:20px;
+margin-bottom:15px;
 color:#333;
 line-height:1.4;
 }
@@ -82,10 +96,11 @@ line-height:1.4;
 select{
 font-size:clamp(16px,1.6vw,18px);
 padding:10px;
-margin:10px;
+margin:8px;
 width:90%;
 max-width:320px;
 font-family:'Fredoka',sans-serif;
+box-sizing:border-box;
 }
 
 /* boutons */
@@ -93,7 +108,7 @@ font-family:'Fredoka',sans-serif;
 button{
 font-size:clamp(16px,1.8vw,20px);
 padding:12px 30px;
-margin-top:15px;
+margin-top:12px;
 background:#70d5ff;
 border:none;
 border-radius:10px;
@@ -109,15 +124,166 @@ color:white;
 
 .boutonConsigne{
 font-size:16px;
-margin-bottom:15px;
+margin-bottom:10px;
 background:#ffd166;
+}
+
+/* inscription nouveautés */
+
+.notificationZone{
+margin-top:15px;
+padding-top:12px;
+border-top:2px solid #eeeeee;
+}
+
+.notificationZone h3{
+font-size:clamp(16px,1.7vw,20px);
+margin:0 0 6px 0;
+cursor:pointer;
+}
+
+.notificationInfo{
+font-size:14px;
+color:#555;
+line-height:1.3;
+margin:0 0 8px 0;
+}
+
+.emailInput{
+box-sizing:border-box;
+width:90%;
+max-width:320px;
+padding:10px;
+font-size:16px;
+border:2px solid #70d5ff;
+border-radius:10px;
+font-family:'Fredoka',sans-serif;
+}
+
+.notificationBtn{
+background:#ffd166;
+font-size:16px;
+padding:10px 20px;
+margin-top:8px;
+}
+
+.notificationBtn:hover{
+background:#ffc233;
+color:white;
+}
+
+/* adaptation petits écrans */
+
+@media (max-height:700px){
+
+.bandeau{
+font-size:28px;
+padding:10px;
+}
+
+.container{
+gap:15px;
+padding:10px;
+}
+
+.logo{
+width:min(220px,22vw);
+}
+
+.selection{
+padding:12px 18px;
+}
+
+.consignes{
+font-size:14px;
+margin-bottom:8px;
+}
+
+select{
+margin:5px;
+padding:7px;
+}
+
+button{
+margin-top:7px;
+padding:9px 20px;
+}
+
+.notificationZone{
+margin-top:8px;
+padding-top:8px;
+}
+
+}
+
+/* adaptation tablette verticale / petits écrans */
+
+@media (max-width:700px){
+
+body{
+justify-content:flex-start;
+}
+
+.bandeau{
+font-size:26px;
+padding:12px;
+}
+
+.container{
+padding:15px;
+gap:15px;
+}
+
+.logo{
+width:180px;
+max-height:25vh;
+}
+
+.selection{
+width:95vw;
+max-width:420px;
+}
+
+}
+
+/* écrans très petits */
+
+@media (max-height:600px){
+
+.logo{
+display:none;
+}
+
+.container{
+padding:8px;
+}
+
+.selection{
+padding:10px 15px;
+}
+
+h2{
+margin:3px 0 8px;
+}
+
+.consignes{
+margin-bottom:5px;
+}
+
+.notificationZone{
+margin-top:5px;
+padding-top:5px;
+}
+
 }
 
 </style>
 
 <script>
 
-let consignes = "Bienvenue. Passe ta souris sur les textes pour entendre les textes. Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique à nouveau pour valider la réponse."
+/* =========================
+   VOIX
+========================= */
 
 function parler(texte){
 
@@ -133,11 +299,24 @@ speechSynthesis.speak(msg)
 
 }
 
+
+/* =========================
+   CONSIGNES
+========================= */
+
+let consignes =
+"Bienvenue. Passe ta souris sur les textes pour entendre les textes. Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique à nouveau pour valider la réponse."
+
 function lireConsignes(){
+
 parler(consignes)
+
 }
 
-/* lecture matière sélectionnée */
+
+/* =========================
+   MATIÈRE
+========================= */
 
 function lireMatiere(){
 
@@ -153,7 +332,10 @@ parler("Matière sélectionnée : " + matiere)
 
 }
 
-/* lecture thème sélectionné */
+
+/* =========================
+   THÈME
+========================= */
 
 function lireTheme(){
 
@@ -169,6 +351,40 @@ parler("Thème sélectionné : " + theme)
 
 }
 
+
+/* =========================
+   INSCRIPTION
+========================= */
+
+function lireInscription(){
+
+parler("M’avertir d’un nouveau thème")
+
+}
+
+function lireChampEmail(){
+
+parler("Entre ton adresse e-mail")
+
+}
+
+function lireBoutonInscription(){
+
+parler("S’inscrire pour recevoir les nouveaux thèmes")
+
+}
+
+
+/* =========================
+   BOUTON COMMENCER
+========================= */
+
+function lireBouton(){
+
+parler("Commencer le quiz")
+
+}
+
 </script>
 
 </head>
@@ -179,13 +395,27 @@ parler("Thème sélectionné : " + theme)
 QUIZ QUIZZZ QUIZZZZZ !
 </div>
 
+
 <div class="container">
 
-<img class="logo" src="{{ url_for('static', filename='images/logo.gif') }}">
+
+<img
+class="logo"
+src="{{ url_for('static', filename='images/logo.gif') }}"
+alt="Logo du quiz"
+>
+
 
 <div class="selection">
 
-<h2 onmouseenter="parler('Choisis ton quiz')">Choisis ton quiz</h2>
+
+<h2
+onmouseenter="parler('Choisis ton quiz')"
+ontouchstart="parler('Choisis ton quiz')"
+>
+Choisis ton quiz
+</h2>
+
 
 <div class="consignes">
 
@@ -195,78 +425,174 @@ Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique 
 
 </div>
 
-<button class="boutonConsigne" onmouseenter="lireConsignes()" ontouchstart="lireConsignes()">
+
+<button
+class="boutonConsigne"
+onmouseenter="lireConsignes()"
+ontouchstart="lireConsignes()"
+onclick="lireConsignes()"
+>
 🔊 Réécouter les consignes
 </button>
 
+
 <form method="post" action="/start">
+
 
 <select
 id="matiere"
 onmouseenter="parler('Choisis une matière')"
+ontouchstart="parler('Choisis une matière')"
 onchange="lireMatiere()"
+required
 >
 
-<option value="">Choisir une matière</option>
+<option value="">
+Choisir une matière
+</option>
 
 {% for matiere in matieres %}
 
-<option value="{{ matiere }}">{{ matiere }}</option>
+<option value="{{ matiere }}">
+{{ matiere }}
+</option>
 
 {% endfor %}
 
 </select>
 
+
 <br>
+
 
 <select
 name="theme"
 id="theme"
 onmouseenter="parler('Choisis un thème')"
+ontouchstart="parler('Choisis un thème')"
 onchange="lireTheme()"
+required
 >
 
-<option value="">Choisir un thème</option>
+<option value="">
+Choisir un thème
+</option>
 
 </select>
 
+
 <br>
+
 
 <button
 type="submit"
-onmouseenter="parler('Commencer le quiz')"
-ontouchstart="parler('Commencer le quiz')"
+onmouseenter="lireBouton()"
+ontouchstart="lireBouton()"
 >
 Commencer
 </button>
 
+
 </form>
 
+
+<!-- =========================
+     INSCRIPTION NOUVEAUX THÈMES
+========================= -->
+
+<div class="notificationZone">
+
+
+<h3
+onmouseenter="lireInscription()"
+ontouchstart="lireInscription()"
+>
+M’avertir d’un nouveau thème
+</h3>
+
+
+<p class="notificationInfo">
+
+Entre ton adresse e-mail pour être informé lorsqu’un nouveau thème est disponible.
+
+</p>
+
+
+<form method="post" action="/inscription">
+
+
+<input
+class="emailInput"
+type="email"
+name="email"
+placeholder="Ton adresse e-mail"
+required
+onmouseenter="lireChampEmail()"
+ontouchstart="lireChampEmail()"
+>
+
+
+<br>
+
+
+<button
+class="notificationBtn"
+type="submit"
+onmouseenter="lireBoutonInscription()"
+ontouchstart="lireBoutonInscription()"
+>
+S’inscrire
+</button>
+
+
+</form>
+
+
+</div>
+
+
 </div>
 
 </div>
+
 
 <script>
 
+/* =========================
+   MATIÈRES ET THÈMES
+========================= */
+
 const matieres = {{ matieres | tojson }}
 
-const matiereSelect = document.getElementById("matiere")
-const themeSelect = document.getElementById("theme")
+const matiereSelect =
+document.getElementById("matiere")
+
+const themeSelect =
+document.getElementById("theme")
+
 
 matiereSelect.addEventListener("change", function(){
 
 let matiere = this.value
 
-themeSelect.innerHTML = "<option value=''>Choisir un thème</option>"
+
+themeSelect.innerHTML =
+"<option value=''>Choisir un thème</option>"
+
 
 if(matieres[matiere]){
 
 matieres[matiere].forEach(function(theme){
 
-let option = document.createElement("option")
+let option =
+document.createElement("option")
+
 
 option.value = theme
-option.textContent = theme.replace(".txt","")
+
+option.textContent =
+theme.replace(".txt","")
+
 
 themeSelect.appendChild(option)
 
@@ -278,6 +604,8 @@ themeSelect.appendChild(option)
 
 </script>
 
+
 </body>
 
 </html>
+```

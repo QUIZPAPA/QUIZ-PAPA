@@ -9,57 +9,29 @@ app.secret_key = "supersecret"
 
 @app.route("/")
 def accueil():
-    return render_template("accueil.html", themes=charger_themes())
 
+    themes = charger_themes()
 
-# =========================================================
-# INSCRIPTION POUR RECEVOIR LES NOUVEAUX THÈMES
-# =========================================================
+    matieres = {}
 
-@app.route("/inscription", methods=["POST"])
-def inscription():
+    for t in themes:
 
-    email = request.form.get("email", "").strip()
+        matiere = t.split()[0]
 
-    if email:
+        if matiere not in matieres:
+            matieres[matiere] = []
 
-        # Le fichier contact.txt sera créé dans le dossier
-        # où se trouve ce fichier app.py
-        chemin_contact = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
-            "contact.txt"
-        )
+        matieres[matiere].append(t)
 
-        # Lire les adresses déjà enregistrées
-        adresses = []
+    return render_template("accueil.html", matieres=matieres)
 
-        if os.path.exists(chemin_contact):
-
-            with open(chemin_contact, "r", encoding="utf-8") as f:
-                adresses = [
-                    ligne.strip().lower()
-                    for ligne in f
-                    if ligne.strip()
-                ]
-
-        # Ajouter seulement si l'adresse n'est pas déjà présente
-        if email.lower() not in adresses:
-
-            with open(chemin_contact, "a", encoding="utf-8") as f:
-                f.write(email + "\n")
-
-    return redirect("/")
-
-
-# =========================================================
-# DÉMARRAGE DU QUIZ
-# =========================================================
 
 @app.route("/start", methods=["POST"])
 def start():
 
     theme = request.form["theme"]
 
+    session["theme"] = theme
     session["questions"] = charger_questions(theme)
     session["session_actuelle"] = 1
     session["index_question"] = 0
@@ -69,15 +41,14 @@ def start():
     return redirect("/quiz")
 
 
-# =========================================================
-# QUIZ
-# =========================================================
-
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
 
     if "questions" not in session:
         return redirect("/")
+
+    theme = session.get("theme", "Quiz")
+    theme = theme.replace("_", " ").replace(".txt", "")
 
     questions = session["questions"]
     session_actuelle = session["session_actuelle"]
@@ -85,7 +56,7 @@ def quiz():
     mode_revision = session.get("mode_revision", False)
 
     # -------------------------
-    # MODE NORMAL (Sessions 1,2,3...)
+    # MODE NORMAL
     # -------------------------
 
     if not mode_revision:
@@ -98,43 +69,31 @@ def quiz():
             q = questions_session[index_question]
 
             if reponse == q["bonne"]:
-
                 feedback = ("bonne", q["explication"])
-
             else:
-
                 session["questions_ratees"].append(q)
-
-                feedback = (
-                    "fausse",
-                    q["bonne"],
-                    q["explication"]
-                )
+                feedback = ("fausse", q["bonne"], q["explication"])
 
             session["index_question"] += 1
             session.modified = True
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 fin=False,
                 question=q,
                 feedback=feedback
             )
 
-        # -------------------------
-        # QUESTIONS DE LA SESSION
-        # -------------------------
-
         if index_question < len(questions_session):
 
             q = questions_session[index_question]
-
             reps = q["reponses"][:]
-
             random.shuffle(reps)
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 question=q,
                 reponses=reps,
                 session_actuelle=session_actuelle,
@@ -142,10 +101,6 @@ def quiz():
                 index=index_question,
                 fin=False
             )
-
-        # -------------------------
-        # FIN DE SESSION
-        # -------------------------
 
         else:
 
@@ -156,10 +111,6 @@ def quiz():
                 session.modified = True
 
                 return redirect("/quiz")
-
-            # -------------------------
-            # TOUTES LES SESSIONS TERMINÉES
-            # -------------------------
 
             else:
 
@@ -175,12 +126,13 @@ def quiz():
 
                     return render_template(
                         "quiz.html",
+                        theme=theme,
                         fin=True
                     )
 
-    # =====================================================
-    # MODE RÉVISION
-    # =====================================================
+    # -------------------------
+    # MODE REVISION
+    # -------------------------
 
     else:
 
@@ -194,49 +146,35 @@ def quiz():
             if reponse == q["bonne"]:
 
                 erreurs.pop(index_question)
-
-                feedback = (
-                    "bonne",
-                    q["explication"]
-                )
+                feedback = ("bonne", q["explication"])
 
             else:
 
-                feedback = (
-                    "fausse",
-                    q["bonne"],
-                    q["explication"]
-                )
-
+                feedback = ("fausse", q["bonne"], q["explication"])
                 session["index_question"] += 1
 
             session.modified = True
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 fin=False,
                 question=q,
                 feedback=feedback
             )
 
-        # -------------------------
-        # QUESTIONS À RÉVISER
-        # -------------------------
-
         if erreurs:
 
             if index_question >= len(erreurs):
-
                 session["index_question"] = 0
 
             q = erreurs[session["index_question"]]
-
             reps = q["reponses"][:]
-
             random.shuffle(reps)
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 question=q,
                 reponses=reps,
                 session_actuelle="Révision",
@@ -245,27 +183,17 @@ def quiz():
                 fin=False
             )
 
-        # -------------------------
-        # FIN DE LA RÉVISION
-        # -------------------------
-
         else:
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 fin=True
             )
 
-
-# =========================================================
-# LANCEMENT DE L'APPLICATION
-# =========================================================
 
 if __name__ == "__main__":
 
     port = int(os.environ.get("PORT", 5000))
 
-    app.run(
-        host="0.0.0.0",
-        port=port
-    )
+    app.run(host="0.0.0.0", port=port)

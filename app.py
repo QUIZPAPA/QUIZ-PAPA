@@ -6,37 +6,32 @@ from quiz_logic import charger_themes, charger_questions
 app = Flask(__name__)
 app.secret_key = "supersecret"
 
+
 @app.route("/")
 def accueil():
-    return render_template("accueil.html", themes=charger_themes())
 
+    themes = charger_themes()
 
-# =========================================================
-# INSCRIPTION NOUVEAUX THÈMES
-# =========================================================
+    matieres = {}
 
-@app.route("/inscription", methods=["POST"])
-def inscription():
+    for t in themes:
 
-    email = request.form.get("email", "").strip()
+        matiere = t.split()[0]
 
-    if email:
+        if matiere not in matieres:
+            matieres[matiere] = []
 
-        chemin_contact = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
-            "contact.txt"
-        )
+        matieres[matiere].append(t)
 
-        with open(chemin_contact, "a", encoding="utf-8") as f:
-            f.write(email + "\n")
-
-    return redirect("/")
+    return render_template("accueil.html", matieres=matieres)
 
 
 @app.route("/start", methods=["POST"])
 def start():
+
     theme = request.form["theme"]
 
+    session["theme"] = theme
     session["questions"] = charger_questions(theme)
     session["session_actuelle"] = 1
     session["index_question"] = 0
@@ -52,19 +47,24 @@ def quiz():
     if "questions" not in session:
         return redirect("/")
 
+    theme = session.get("theme", "Quiz")
+    theme = theme.replace("_", " ").replace(".txt", "")
+
     questions = session["questions"]
     session_actuelle = session["session_actuelle"]
     index_question = session["index_question"]
     mode_revision = session.get("mode_revision", False)
 
     # -------------------------
-    # MODE NORMAL (Sessions 1,2,3.)
+    # MODE NORMAL
     # -------------------------
+
     if not mode_revision:
 
         questions_session = questions[str(session_actuelle)]
 
         if request.method == "POST":
+
             reponse = request.form["reponse"]
             q = questions_session[index_question]
 
@@ -79,19 +79,21 @@ def quiz():
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 fin=False,
                 question=q,
                 feedback=feedback
             )
 
-        # Si encore des questions dans la session
         if index_question < len(questions_session):
+
             q = questions_session[index_question]
             reps = q["reponses"][:]
             random.shuffle(reps)
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 question=q,
                 reponses=reps,
                 session_actuelle=session_actuelle,
@@ -100,39 +102,54 @@ def quiz():
                 fin=False
             )
 
-        # Fin de session → passer à la suivante
         else:
+
             if str(session_actuelle + 1) in questions:
+
                 session["session_actuelle"] += 1
                 session["index_question"] = 0
                 session.modified = True
+
                 return redirect("/quiz")
 
-            # Toutes les sessions terminées
             else:
+
                 if session["questions_ratees"]:
+
                     session["mode_revision"] = True
                     session["index_question"] = 0
                     session.modified = True
+
                     return redirect("/quiz")
+
                 else:
-                    return render_template("quiz.html", fin=True)
+
+                    return render_template(
+                        "quiz.html",
+                        theme=theme,
+                        fin=True
+                    )
 
     # -------------------------
-    # MODE RÉVISION
+    # MODE REVISION
     # -------------------------
+
     else:
 
         erreurs = session["questions_ratees"]
 
         if request.method == "POST":
+
             reponse = request.form["reponse"]
             q = erreurs[index_question]
 
             if reponse == q["bonne"]:
+
                 erreurs.pop(index_question)
                 feedback = ("bonne", q["explication"])
+
             else:
+
                 feedback = ("fausse", q["bonne"], q["explication"])
                 session["index_question"] += 1
 
@@ -140,6 +157,7 @@ def quiz():
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 fin=False,
                 question=q,
                 feedback=feedback
@@ -156,6 +174,7 @@ def quiz():
 
             return render_template(
                 "quiz.html",
+                theme=theme,
                 question=q,
                 reponses=reps,
                 session_actuelle="Révision",
@@ -165,9 +184,16 @@ def quiz():
             )
 
         else:
-            return render_template("quiz.html", fin=True)
+
+            return render_template(
+                "quiz.html",
+                theme=theme,
+                fin=True
+            )
 
 
 if __name__ == "__main__":
+
     port = int(os.environ.get("PORT", 5000))
+
     app.run(host="0.0.0.0", port=port)

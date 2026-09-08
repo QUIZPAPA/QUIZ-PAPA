@@ -1,4 +1,3 @@
-```python
 import os
 import random
 from flask import Flask, render_template, request, redirect, session
@@ -13,27 +12,18 @@ def accueil():
 
     themes = charger_themes()
 
-    classes = {}
+    matieres = {}
 
     for t in themes:
 
-        morceaux = t.split()
+        matiere = t.split()[0]
 
-        if len(morceaux) < 2:
-            continue
+        if matiere not in matieres:
+            matieres[matiere] = []
 
-        matiere = morceaux[0]
-        classe = morceaux[1]
+        matieres[matiere].append(t)
 
-        if classe not in classes:
-            classes[classe] = {}
-
-        if matiere not in classes[classe]:
-            classes[classe][matiere] = []
-
-        classes[classe][matiere].append(t)
-
-    return render_template("accueil.html", classes=classes)
+    return render_template("accueil.html", matieres=matieres)
 
 
 @app.route("/start", methods=["POST"])
@@ -207,4 +197,3 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
 
     app.run(host="0.0.0.0", port=port)
-```

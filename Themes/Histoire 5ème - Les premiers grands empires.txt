@@ -1,0 +1,65 @@
+id|chretientes_islam_5eme_lecture
+SESSION|1
+QUESTION|Après la disparition de l’Empire romain d’Occident en 476, le monde méditerranéen reste profondément marqué par le christianisme et par l’héritage de Rome. 
+Le christianisme est une religion monothéiste dont le personnage le plus important est Jésus. Pour être chrétien, il faut croire en Dieu, être baptisé et participer à la messe pour communier. Le christianisme devient la religion officielle de l’Empire romain en 380. 
+Après 476, l’ancien monde romain se transforme. 
+Deux grands empires chrétiens deviennent notamment les héritiers de l’Empire romain : l’Empire byzantin et l’Empire carolingien. Ils ont en commun d’être dirigés par des souverains chrétiens et de se considérer comme les héritiers d’une partie de la tradition romaine. Cependant, ils ne forment pas un seul empire : ils sont séparés géographiquement et présentent aussi des différences politiques, culturelles et religieuses. 
+L’Empire byzantin se développe autour de Constantinople, tandis que l’Empire carolingien se développe en Europe occidentale. À partir du VIIe siècle, une nouvelle religion monothéiste apparaît dans la péninsule Arabique : l’islam.
+Elle se diffuse ensuite dans de vastes territoires autour de la Méditerranée. Des empires musulmans deviennent alors de grandes puissances. Au Moyen-Âge, les chrétiens d’Occident, les Byzantins et les musulmans ne vivent donc pas dans des mondes complètement séparés. Ils échangent, commercent, voyagent, se rencontrent et peuvent aussi entrer en conflit. La Méditerranée devient ainsi un espace où plusieurs empires et plusieurs religions sont en contact. Pour comprendre cette période, il faut donc observer à la fois les points communs et les différences entre les mondes chrétien et musulman, ainsi que les nombreux contacts qui existent entre eux.
+REPONSES|J'ai bien lu le texte
+BONNE|J'ai bien lu le texte
+EXPLICATION|Lis ou fais lire ce texte deux fois avant de commencer les questions. Les réponses aux questions suivantes se trouvent dans le texte.
+
+SESSION|2
+QUESTION|Quelle date marque la fin de l’Empire romain d’Occident ?
+REPONSES|476;380;VIIe siècle
+BONNE|476
+EXPLICATION|En 476, l’Empire romain d’Occident disparaît. Cette date marque une rupture importante, même si l’héritage romain continue après cette disparition.
+
+SESSION|2
+QUESTION|Quel est le personnage le plus important du christianisme ?
+REPONSES|Jésus;Constantin;Un empereur carolingien
+BONNE|Jésus
+EXPLICATION|Jésus est le personnage central du christianisme. Les chrétiens considèrent son enseignement comme essentiel à leur religion.
+
+SESSION|2
+QUESTION|Quelles sont les trois règles essentielles indiquées dans le texte pour être chrétien ?
+REPONSES|Croire en Dieu, être baptisé et aller à la messe pour communier;Prier, faire la guerre et devenir empereur;Commercer, voyager et construire une ville
+BONNE|Croire en Dieu, être baptisé et aller à la messe pour communier
+EXPLICATION|Le texte présente trois pratiques essentielles : croire en Dieu, recevoir le baptême et participer à la messe pour communier.
+
+SESSION|2
+QUESTION|En quelle année le christianisme devient-il la religion officielle de l’Empire romain ?
+REPONSES|380;476;VIIe siècle
+BONNE|380
+EXPLICATION|Le christianisme devient la religion officielle de l’Empire romain en 380, avant la disparition de l’Empire romain d’Occident.
+
+SESSION|2
+QUESTION|Quels sont les deux grands empires chrétiens présentés comme des héritiers de l’Empire romain ?
+REPONSES|L’Empire byzantin et l’Empire carolingien;L’Empire romain et l’Empire musulman;L’Empire grec et l’Empire égyptien
+BONNE|L’Empire byzantin et l’Empire carolingien
+EXPLICATION|Après 476, l’Empire byzantin et l’Empire carolingien deviennent deux grands pouvoirs chrétiens héritiers d’une partie de la tradition romaine.
+
+SESSION|3
+QUESTION|Quelle ville est associée à l’Empire byzantin dans le texte ?
+REPONSES|Constantinople;Rome;Paris
+BONNE|Constantinople
+EXPLICATION|L’Empire byzantin se développe autour de Constantinople. Cette ville constitue un important centre politique et culturel.
+
+SESSION|3
+QUESTION|Où se développe principalement l’Empire carolingien ?
+REPONSES|En Europe occidentale;Dans la péninsule Arabique;Autour de Constantinople
+BONNE|En Europe occidentale
+EXPLICATION|L’Empire carolingien se développe en Europe occidentale, alors que l’Empire byzantin est centré sur Constantinople.
+
+SESSION|3
+QUESTION|Quand l’islam apparaît-il ?
+REPONSES|Au VIIe siècle;Au Ve siècle;Au XIIIe siècle
+BONNE|Au VIIe siècle
+EXPLICATION|L’islam apparaît au VIIe siècle dans la péninsule Arabique. Il devient ensuite une religion présente dans de nombreux territoires.
+
+SESSION|3
+QUESTION|Pourquoi peut-on dire que la Méditerranée est un espace de contacts au Moyen-Âge ?
+REPONSES|Parce que plusieurs peuples, empires et religions s’y rencontrent;Parce que personne ne voyage en Méditerranée;Parce qu’un seul empire contrôle toute la région
+BONNE|Parce que plusieurs peuples, empires et religions s’y rencontrent
+EXPLICATION|La Méditerranée met en contact des mondes différents. Les populations y commercent, voyagent et échangent, mais peuvent aussi s’affronter.

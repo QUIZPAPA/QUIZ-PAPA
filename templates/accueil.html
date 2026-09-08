@@ -184,54 +184,55 @@ parler(
 }
 
 
-/* ORGANISATION DES THEMES */
+/* DONNEES DES THEMES */
 
 const themes = {{ themes | tojson }}
 
-let organisation = {}
-
 
 /*
-Les fichiers sont organisés sous la forme :
+Les noms de fichiers suivent le modèle :
 
-Svt 6ème - L'alimentation humaine
-Emc 6ème - La politique Francaise
+Svt 6ème - L'alimentation humaine - Copie.txt
+Emc 6ème - La politique Francaise.txt
 
-On récupère :
-matière = Svt
-classe = 6ème
-thème = L'alimentation humaine
+On construit ici :
+Classe → Matière → Thème
 */
+
+let classes = {}
 
 themes.forEach(function(theme){
 
-let morceaux = theme.split(" - ")
+let nom = theme.replace(/\.txt$/i,"")
+
+let morceaux = nom.split(" - ")
 
 if(morceaux.length < 2){
 return
 }
 
-let partie = morceaux[0]
-let nomTheme = morceaux.slice(1).join(" - ")
+let avant = morceaux[0]
 
-let position = partie.lastIndexOf(" ")
+let correspondance = avant.match(/^(.+)\s+(6ème|5ème|4ème|3ème)$/i)
 
-if(position === -1){
+if(!correspondance){
 return
 }
 
-let matiere = partie.substring(0,position)
-let classe = partie.substring(position + 1)
+let matiere = correspondance[1]
+let classe = correspondance[2]
 
-if(!organisation[classe]){
-organisation[classe] = {}
+let nomTheme = morceaux.slice(1).join(" - ")
+
+if(!classes[classe]){
+classes[classe] = {}
 }
 
-if(!organisation[classe][matiere]){
-organisation[classe][matiere] = []
+if(!classes[classe][matiere]){
+classes[classe][matiere] = []
 }
 
-organisation[classe][matiere].push({
+classes[classe][matiere].push({
 nom: nomTheme,
 fichier: theme
 })
@@ -239,66 +240,50 @@ fichier: theme
 })
 
 
-/* LECTURE THEME */
-
-function lireTheme(){
-
-let select=document.getElementById("themes")
-
-if(!select.value){
-return
-}
-
-let theme=select.options[select.selectedIndex].text
-
-parler("Thème sélectionné : "+theme)
-
-}
-
-
-/* CHARGEMENT DES CLASSES */
+/* CLASSE */
 
 function chargerClasses(){
 
-let classeSelect=document.getElementById("classe")
+let select = document.getElementById("classe")
 
-Object.keys(organisation).sort().forEach(function(classe){
+Object.keys(classes).sort().forEach(function(classe){
 
-let option=document.createElement("option")
+let option = document.createElement("option")
 
-option.value=classe
-option.textContent=classe
+option.value = classe
+option.textContent = classe
 
-classeSelect.appendChild(option)
+select.appendChild(option)
 
 })
 
 }
 
 
-/* CHARGEMENT DES MATIERES */
+/* MATIERE */
 
 function chargerMatieres(){
 
-let classeSelect=document.getElementById("classe")
-let matiereSelect=document.getElementById("matiere")
-let themeSelect=document.getElementById("themes")
+let classe = document.getElementById("classe").value
 
-let classe=classeSelect.value
+let matiereSelect = document.getElementById("matiere")
 
-matiereSelect.innerHTML="<option value=''>Choisir une matière</option>"
-themeSelect.innerHTML="<option value=''>Choisir un thème</option>"
+let themeSelect = document.getElementById("theme")
+
+matiereSelect.innerHTML = "<option value=''>Choisir une matière</option>"
+
+themeSelect.innerHTML = "<option value=''>Choisir un thème</option>"
 
 if(!classe){
 return
 }
 
-Object.keys(organisation[classe]).sort().forEach(function(matiere){
+Object.keys(classes[classe]).sort().forEach(function(matiere){
 
-let option=document.createElement("option")
+let option = document.createElement("option")
 
-option.value=matiere
-option.textContent=matiere
+option.value = matiere
+option.textContent = matiere
 
 matiereSelect.appendChild(option)
 
@@ -307,26 +292,28 @@ matiereSelect.appendChild(option)
 }
 
 
-/* CHARGEMENT DES THEMES */
+/* THEME */
 
 function chargerThemes(){
 
-let classe=document.getElementById("classe").value
-let matiere=document.getElementById("matiere").value
-let themeSelect=document.getElementById("themes")
+let classe = document.getElementById("classe").value
 
-themeSelect.innerHTML="<option value=''>Choisir un thème</option>"
+let matiere = document.getElementById("matiere").value
+
+let themeSelect = document.getElementById("theme")
+
+themeSelect.innerHTML = "<option value=''>Choisir un thème</option>"
 
 if(!classe || !matiere){
 return
 }
 
-organisation[classe][matiere].forEach(function(theme){
+classes[classe][matiere].forEach(function(theme){
 
-let option=document.createElement("option")
+let option = document.createElement("option")
 
-option.value=theme.fichier
-option.textContent=theme.nom
+option.value = theme.fichier
+option.textContent = theme.nom
 
 themeSelect.appendChild(option)
 
@@ -335,7 +322,24 @@ themeSelect.appendChild(option)
 }
 
 
-/* LECTURE BOUTON */
+/* LECTURE DU THEME */
+
+function lireTheme(){
+
+let select = document.getElementById("theme")
+
+if(!select.value){
+return
+}
+
+let theme = select.options[select.selectedIndex].text
+
+parler("Thème sélectionné : "+theme)
+
+}
+
+
+/* LECTURE DU BOUTON */
 
 function lireBouton(){
 
@@ -344,7 +348,7 @@ parler("Commencer le quiz")
 }
 
 
-/* INTRO + LECTURE */
+/* DEMARRAGE */
 
 window.onload=function(){
 
@@ -413,7 +417,7 @@ onchange="chargerThemes()"
 </select>
 
 <select
-id="themes"
+id="theme"
 name="theme"
 required
 onchange="lireTheme()"

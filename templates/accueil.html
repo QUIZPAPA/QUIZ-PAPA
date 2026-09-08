@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 
 <head>
@@ -413,6 +414,25 @@ parler(consignes)
 
 
 /* =========================
+   CLASSE
+========================= */
+
+function lireClasse(){
+
+let select = document.getElementById("classe")
+
+if(select.selectedIndex > 0){
+
+let classe = select.options[select.selectedIndex].text
+
+parler("Classe sélectionnée : " + classe)
+
+}
+
+}
+
+
+/* =========================
    MATIÈRE
 ========================= */
 
@@ -493,9 +513,7 @@ parler("Commencer le quiz")
 QUIZ QUIZZZ QUIZZZZZ !
 </div>
 
-
 <div class="container">
-
 
 <!-- =========================
      CHOIX DU QUIZ
@@ -503,14 +521,12 @@ QUIZ QUIZZZ QUIZZZZZ !
 
 <div class="selection">
 
-
 <h2
 onmouseenter="parler('Choisis ton quiz')"
 ontouchstart="parler('Choisis ton quiz')"
 >
 Choisis ton quiz
 </h2>
-
 
 <div class="consignes">
 
@@ -520,19 +536,34 @@ Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique 
 
 </div>
 
-
 <button
 class="boutonConsigne"
 onmouseenter="lireConsignes()"
 ontouchstart="lireConsignes()"
 onclick="lireConsignes()"
->
-🔊 Réécouter les consignes
-</button>
 
+>
+
+🔊 Réécouter les consignes </button>
 
 <form method="post" action="/start">
 
+<select
+id="classe"
+onmouseenter="parler('Choisis une classe')"
+ontouchstart="parler('Choisis une classe')"
+onchange="lireClasse()"
+required
+
+>
+
+<option value="">
+Choisir une classe
+</option>
+
+</select>
+
+<br>
 
 <select
 id="matiere"
@@ -540,25 +571,16 @@ onmouseenter="parler('Choisis une matière')"
 ontouchstart="parler('Choisis une matière')"
 onchange="lireMatiere()"
 required
+
 >
 
 <option value="">
 Choisir une matière
 </option>
 
-{% for matiere in matieres %}
-
-<option value="{{ matiere }}">
-{{ matiere }}
-</option>
-
-{% endfor %}
-
 </select>
 
-
 <br>
-
 
 <select
 name="theme"
@@ -567,6 +589,7 @@ onmouseenter="parler('Choisis un thème')"
 ontouchstart="parler('Choisis un thème')"
 onchange="lireTheme()"
 required
+
 >
 
 <option value="">
@@ -575,23 +598,20 @@ Choisir un thème
 
 </select>
 
-
 <br>
-
 
 <button
 type="submit"
 onmouseenter="lireBouton()"
 ontouchstart="lireBouton()"
->
-Commencer
-</button>
 
+>
+
+Commencer </button>
 
 </form>
 
 </div>
-
 
 <!-- =========================
      LOGO CENTRAL
@@ -601,15 +621,14 @@ Commencer
 class="logo"
 src="{{ url_for('static', filename='images/logo.gif') }}"
 alt="Logo du quiz"
->
 
+>
 
 <!-- =========================
      INSCRIPTION NOUVEAUX THÈMES
 ========================= -->
 
 <div class="notificationZone">
-
 
 <h3
 onmouseenter="lireInscription()"
@@ -618,16 +637,13 @@ ontouchstart="lireInscription()"
 M’avertir d’un nouveau thème
 </h3>
 
-
 <p class="notificationInfo">
 
 Entre ton adresse e-mail pour être informé lorsqu’un nouveau thème est disponible.
 
 </p>
 
-
 <form method="post" action="/inscription">
-
 
 <input
 class="emailInput"
@@ -637,38 +653,37 @@ placeholder="Ton adresse e-mail"
 required
 onmouseenter="lireChampEmail()"
 ontouchstart="lireChampEmail()"
+
 >
 
-
 <br>
-
 
 <button
 class="notificationBtn"
 type="submit"
 onmouseenter="lireBoutonInscription()"
 ontouchstart="lireBoutonInscription()"
->
-S’inscrire
-</button>
 
+>
+
+S’inscrire </button>
 
 </form>
 
-
 </div>
 
-
 </div>
-
 
 <script>
 
 /* =========================
-   MATIÈRES ET THÈMES
+   CLASSES, MATIÈRES ET THÈMES
 ========================= */
 
-const matieres = {{ matieres | tojson }}
+const classes = {{ classes | tojson }}
+
+const classeSelect =
+document.getElementById("classe")
 
 const matiereSelect =
 document.getElementById("matiere")
@@ -677,17 +692,75 @@ const themeSelect =
 document.getElementById("theme")
 
 
+/* =========================
+   REMPLISSAGE DES CLASSES
+========================= */
+
+Object.keys(classes).forEach(function(classe){
+
+let option =
+document.createElement("option")
+
+option.value = classe
+
+option.textContent = classe
+
+classeSelect.appendChild(option)
+
+})
+
+
+/* =========================
+   CHOIX DE LA CLASSE
+========================= */
+
+classeSelect.addEventListener("change", function(){
+
+let classe = this.value
+
+matiereSelect.innerHTML =
+"<option value=''>Choisir une matière</option>"
+
+themeSelect.innerHTML =
+"<option value=''>Choisir un thème</option>"
+
+
+if(classes[classe]){
+
+Object.keys(classes[classe]).forEach(function(matiere){
+
+let option =
+document.createElement("option")
+
+option.value = matiere
+
+option.textContent = matiere
+
+matiereSelect.appendChild(option)
+
+})
+
+}
+
+})
+
+
+/* =========================
+   CHOIX DE LA MATIÈRE
+========================= */
+
 matiereSelect.addEventListener("change", function(){
 
+let classe = classeSelect.value
 let matiere = this.value
 
 themeSelect.innerHTML =
 "<option value=''>Choisir un thème</option>"
 
 
-if(matieres[matiere]){
+if(classes[classe] && classes[classe][matiere]){
 
-matieres[matiere].forEach(function(theme){
+classes[classe][matiere].forEach(function(theme){
 
 let option =
 document.createElement("option")
@@ -706,7 +779,6 @@ themeSelect.appendChild(option)
 })
 
 </script>
-
 
 </body>
 

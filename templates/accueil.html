@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 
 <head>
@@ -6,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>QUIZ QUIZZZ QUIZZZZZ</title>
+<title>Quiz</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
@@ -137,9 +138,19 @@ width:90%;
 max-width:320px;
 font-family:'Fredoka',sans-serif;
 box-sizing:border-box;
-border:2px solid #70d5ff;
 border-radius:10px;
+border:2px solid #70d5ff;
 background:white;
+}
+
+/* =========================
+   MENUS DESACTIVES
+========================= */
+
+select:disabled{
+background:#eeeeee;
+color:#888;
+cursor:not-allowed;
 }
 
 /* =========================
@@ -209,7 +220,7 @@ color:white;
 }
 
 /* =========================
-   PETITS ÉCRANS
+   PETITS ECRANS
 ========================= */
 
 @media (max-width:1000px){
@@ -287,7 +298,7 @@ padding:20px 18px;
 }
 
 /* =========================
-   PETITS ÉCRANS EN HAUTEUR
+   PETITS ECRANS EN HAUTEUR
 ========================= */
 
 @media (max-height:700px) and (min-width:701px){
@@ -331,7 +342,7 @@ padding:9px 20px;
 }
 
 /* =========================
-   TRÈS PETITS ÉCRANS
+   TRES PETITS ECRANS
 ========================= */
 
 @media (max-height:600px) and (max-width:700px){
@@ -362,7 +373,7 @@ margin-bottom:8px;
 }
 
 /* =========================
-   ÉCRANS PC TRÈS LARGES
+   ECRANS PC TRES LARGES
 ========================= */
 
 @media (min-width:1300px){
@@ -394,17 +405,17 @@ max-width:400px;
 
 function parler(texte){
 
-if(!("speechSynthesis" in window)){
+if(!window.speechSynthesis){
 return;
 }
 
 speechSynthesis.cancel();
 
-let msg = new SpeechSynthesisUtterance(texte);
+let msg=new SpeechSynthesisUtterance(texte);
 
-msg.lang = "fr-FR";
-msg.rate = 0.95;
-msg.pitch = 1;
+msg.lang="fr-FR";
+msg.rate=0.95;
+msg.pitch=1;
 
 speechSynthesis.speak(msg);
 
@@ -416,7 +427,8 @@ speechSynthesis.speak(msg);
 ========================= */
 
 let consignes =
-"Bienvenue. Passe ta souris sur les textes pour entendre les textes. Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique à nouveau pour valider la réponse.";
+"Bienvenue. Choisis d'abord ta classe, puis ta matière et enfin ton thème. Passe ta souris sur les textes pour entendre les textes. Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique à nouveau pour valider la réponse.";
+
 
 function lireConsignes(){
 
@@ -431,13 +443,14 @@ parler(consignes);
 
 function lireClasse(){
 
-let select = document.getElementById("classe");
+let select=document.getElementById("classe");
 
-if(select.selectedIndex > 0){
+if(select && select.value){
 
-let classe = select.options[select.selectedIndex].text;
-
-parler("Classe sélectionnée : " + classe);
+parler(
+"Classe sélectionnée : "
++select.options[select.selectedIndex].text
+);
 
 }
 
@@ -445,18 +458,19 @@ parler("Classe sélectionnée : " + classe);
 
 
 /* =========================
-   MATIÈRE
+   MATIERE
 ========================= */
 
 function lireMatiere(){
 
-let select = document.getElementById("matiere");
+let select=document.getElementById("matiere");
 
-if(select.selectedIndex > 0){
+if(select && select.value){
 
-let matiere = select.options[select.selectedIndex].text;
-
-parler("Matière sélectionnée : " + matiere);
+parler(
+"Matière sélectionnée : "
++select.options[select.selectedIndex].text
+);
 
 }
 
@@ -464,18 +478,19 @@ parler("Matière sélectionnée : " + matiere);
 
 
 /* =========================
-   THÈME
+   THEME
 ========================= */
 
 function lireTheme(){
 
-let select = document.getElementById("theme");
+let select=document.getElementById("theme");
 
-if(select.selectedIndex > 0){
+if(select && select.value){
 
-let theme = select.options[select.selectedIndex].text;
-
-parler("Thème sélectionné : " + theme);
+parler(
+"Thème sélectionné : "
++select.options[select.selectedIndex].text
+);
 
 }
 
@@ -488,9 +503,10 @@ parler("Thème sélectionné : " + theme);
 
 function lireInscription(){
 
-parler("M’avertir d’un nouveau thème");
+parler("M'avertir d'un nouveau thème");
 
 }
+
 
 function lireChampEmail(){
 
@@ -498,9 +514,10 @@ parler("Entre ton adresse e-mail");
 
 }
 
+
 function lireBoutonInscription(){
 
-parler("S’inscrire pour recevoir les nouveaux thèmes");
+parler("S'inscrire pour recevoir les nouveaux thèmes");
 
 }
 
@@ -517,186 +534,149 @@ parler("Commencer le quiz");
 
 
 /* =========================
-   ORGANISATION DES THÈMES
-========================= */
-
-/*
-   Les thèmes reçus par Flask sont les noms
-   des fichiers sans ".txt".
-
-   Exemple :
-
-   Svt 6ème - L'alimentation humaine
-
-   devient :
-
-   Classe  : 6ème
-   Matière : Svt
-   Thème   : L'alimentation humaine
-
-   Le formulaire continue ensuite à envoyer
-   le nom COMPLET du thème à /start.
-*/
-
-function analyserTheme(nom){
-
-let resultat = {
-classe:"",
-matiere:"",
-theme:nom
-};
-
-
-/* Recherche du séparateur principal */
-
-let morceaux = nom.split(" - ");
-
-
-/* Si le nom respecte le format :
-   Matière Classe - Thème
-*/
-
-if(morceaux.length >= 2){
-
-let partieGauche = morceaux[0].trim();
-
-resultat.theme = morceaux.slice(1).join(" - ").trim();
-
-
-/*
-   Recherche d'une classe du type :
-   6ème
-   5ème
-   4ème
-   3ème
-   6e
-   5e
-   4e
-   3e
-*/
-
-let correspondance =
-partieGauche.match(/(\d+\s*(?:ème|eme|e|er|ère))/i);
-
-
-if(correspondance){
-
-resultat.classe = correspondance[1].replace(/\s+/g," ").trim();
-
-resultat.matiere =
-partieGauche
-.replace(correspondance[0],"")
-.trim();
-
-}else{
-
-/*
-   Si aucune classe n'est trouvée,
-   on conserve toute la partie gauche
-   comme matière.
-*/
-
-resultat.matiere = partieGauche;
-
-}
-
-}else{
-
-/*
-   Format inhabituel :
-   on conserve le nom complet comme thème.
-*/
-
-resultat.theme = nom;
-
-}
-
-return resultat;
-
-}
-
-
-/* =========================
-   CRÉATION DES 3 MENUS
+   CONSTRUCTION DES MENUS
 ========================= */
 
 function construireMenus(){
 
-const themes = {{ themes | tojson }};
+/*
+app.py envoie actuellement :
 
-const classeSelect =
-document.getElementById("classe");
+themes=charger_themes()
 
-const matiereSelect =
-document.getElementById("matiere");
+On reçoit donc une liste de fichiers comme :
 
-const themeSelect =
-document.getElementById("theme");
+Svt 6ème - L'alimentation humaine - Copie
+Emc 6ème - La politique Francaise
+
+On construit ici :
+
+Classe
+   ↓
+Matière
+   ↓
+Thème
+*/
 
 
-let donnees = [];
+let donnees={{ themes | tojson }};
+
+let classes={};
+
+
+/* =========================
+   LECTURE DES THEMES
+========================= */
+
+donnees.forEach(function(theme){
+
+if(!theme){
+return;
+}
 
 
 /*
-   Analyse de chaque thème
+On cherche le premier espace.
+
+Exemple :
+
+Svt 6ème - L'alimentation humaine - Copie
+
+devient :
+
+matiere = Svt
+reste = 6ème - L'alimentation humaine - Copie
 */
 
-themes.forEach(function(nom){
+let premierEspace=theme.indexOf(" ");
 
-let info = analyserTheme(nom);
+if(premierEspace===-1){
+return;
+}
 
-donnees.push({
-nom:nom,
-classe:info.classe,
-matiere:info.matiere,
-theme:info.theme
+let matiere=theme.substring(0,premierEspace);
+
+let reste=theme.substring(premierEspace+1);
+
+
+/*
+La classe est le premier élément restant.
+
+Exemple :
+
+6ème - L'alimentation humaine - Copie
+
+classe = 6ème
+*/
+
+let deuxiemeEspace=reste.indexOf(" ");
+
+let classe;
+
+if(deuxiemeEspace===-1){
+
+classe=reste;
+
+}else{
+
+classe=reste.substring(0,deuxiemeEspace);
+
+}
+
+
+/* Création de la structure */
+
+if(!classes[classe]){
+
+classes[classe]={};
+
+}
+
+if(!classes[classe][matiere]){
+
+classes[classe][matiere]=[];
+
+}
+
+classes[classe][matiere].push(theme);
+
 });
 
-});
+
+/* =========================
+   RECUPERATION DES MENUS
+========================= */
+
+let classeSelect=
+document.getElementById("classe");
+
+let matiereSelect=
+document.getElementById("matiere");
+
+let themeSelect=
+document.getElementById("theme");
+
+
+if(!classeSelect || !matiereSelect || !themeSelect){
+
+return;
+
+}
 
 
 /* =========================
    CLASSES
 ========================= */
 
-let classes = [];
+Object.keys(classes)
+.sort()
+.forEach(function(classe){
 
-donnees.forEach(function(item){
-
-if(item.classe && !classes.includes(item.classe)){
-
-classes.push(item.classe);
-
-}
-
-});
-
-
-/*
-   Tri numérique des classes
-*/
-
-classes.sort(function(a,b){
-
-let na = parseInt(a);
-let nb = parseInt(b);
-
-if(!isNaN(na) && !isNaN(nb)){
-return na - nb;
-}
-
-return a.localeCompare(b,"fr");
-
-});
-
-
-classes.forEach(function(classe){
-
-let option =
+let option=
 document.createElement("option");
 
-option.value = classe;
-option.textContent = classe;
+option.value=classe;
+option.textContent=classe;
 
 classeSelect.appendChild(option);
 
@@ -709,183 +689,123 @@ classeSelect.appendChild(option);
 
 classeSelect.addEventListener("change",function(){
 
-let classe = this.value;
+let classe=this.value;
 
 
-/*
-   On remet la matière à zéro
-*/
+/* Reset matière */
 
-matiereSelect.innerHTML =
+matiereSelect.innerHTML=
 "<option value=''>Choisir une matière</option>";
 
-themeSelect.innerHTML =
+/* Reset thème */
+
+themeSelect.innerHTML=
 "<option value=''>Choisir un thème</option>";
 
-themeSelect.disabled = true;
+matiereSelect.disabled=true;
+themeSelect.disabled=true;
 
 
-/*
-   Si aucune classe n'est sélectionnée
-*/
+/* Si une classe est sélectionnée */
 
-if(!classe){
+if(classes[classe]){
 
-matiereSelect.disabled = true;
+Object.keys(classes[classe])
+.sort()
+.forEach(function(matiere){
 
-return;
-
-}
-
-
-matiereSelect.disabled = false;
-
-
-/*
-   Recherche des matières disponibles
-   dans cette classe.
-*/
-
-let matieres = [];
-
-
-donnees.forEach(function(item){
-
-if(
-item.classe === classe &&
-item.matiere &&
-!matieres.includes(item.matiere)
-){
-
-matieres.push(item.matiere);
-
-}
-
-});
-
-
-matieres.sort(function(a,b){
-
-return a.localeCompare(b,"fr");
-
-});
-
-
-matieres.forEach(function(matiere){
-
-let option =
+let option=
 document.createElement("option");
 
-option.value = matiere;
-option.textContent = matiere;
+option.value=matiere;
+option.textContent=matiere;
 
 matiereSelect.appendChild(option);
 
 });
 
+matiereSelect.disabled=false;
 
-lireClasse();
+}
 
 });
 
 
 /* =========================
-   CHANGEMENT DE MATIÈRE
+   CHANGEMENT DE MATIERE
 ========================= */
 
 matiereSelect.addEventListener("change",function(){
 
-let classe = classeSelect.value;
-let matiere = this.value;
+let classe=
+classeSelect.value;
+
+let matiere=
+this.value;
+
+
+/* Reset thème */
+
+themeSelect.innerHTML=
+"<option value=''>Choisir un thème</option>";
+
+themeSelect.disabled=true;
+
+
+if(
+classes[classe] &&
+classes[classe][matiere]
+){
+
+classes[classe][matiere]
+.sort()
+.forEach(function(theme){
+
+let option=
+document.createElement("option");
+
+option.value=theme;
 
 
 /*
-   Réinitialisation du thème
+On enlève :
+
+Svt 6ème -
+
+pour afficher uniquement :
+
+L'alimentation humaine - Copie
 */
 
-themeSelect.innerHTML =
-"<option value=''>Choisir un thème</option>";
+let nomTheme=theme;
 
-themeSelect.disabled = true;
+let prefix=
+matiere+" "+classe+" - ";
 
+if(nomTheme.indexOf(prefix)===0){
 
-if(!matiere){
-
-return;
+nomTheme=
+nomTheme.substring(prefix.length);
 
 }
 
-
-themeSelect.disabled = false;
-
-
-/*
-   Recherche des thèmes correspondant
-   à la classe ET à la matière.
-*/
-
-let themesDisponibles = donnees.filter(function(item){
-
-return(
-item.classe === classe &&
-item.matiere === matiere
-);
-
-});
-
-
-themesDisponibles.forEach(function(item){
-
-let option =
-document.createElement("option");
-
-
-/*
-   IMPORTANT :
-   La valeur envoyée au serveur est
-   le NOM COMPLET du thème.
-
-   Le texte affiché est seulement
-   le titre du thème.
-*/
-
-option.value = item.nom;
-
-option.textContent = item.theme;
+option.textContent=nomTheme;
 
 themeSelect.appendChild(option);
 
 });
 
+themeSelect.disabled=false;
 
-lireMatiere();
-
-});
-
-
-/* =========================
-   CHANGEMENT DE THÈME
-========================= */
-
-themeSelect.addEventListener("change",function(){
-
-lireTheme();
+}
 
 });
-
-
-/* =========================
-   INITIALISATION
-========================= */
-
-matiereSelect.disabled = true;
-themeSelect.disabled = true;
 
 }
 
 
 /* =========================
-   CHARGEMENT DE LA PAGE
+   INTRO
 ========================= */
 
 window.addEventListener("load",function(){
@@ -896,7 +816,7 @@ setTimeout(function(){
 
 lireConsignes();
 
-},500);
+},1800);
 
 });
 
@@ -904,9 +824,7 @@ lireConsignes();
 
 </head>
 
-
 <body>
-
 
 <!-- =========================
      BANDEAU
@@ -918,9 +836,7 @@ QUIZ QUIZZZ QUIZZZZZ !
 
 </div>
 
-
 <div class="container">
-
 
 <!-- =========================
      CHOIX DU QUIZ
@@ -928,25 +844,22 @@ QUIZ QUIZZZ QUIZZZZZ !
 
 <div class="selection">
 
-
 <h2
 onmouseenter="parler('Choisis ton quiz')"
 ontouchstart="parler('Choisis ton quiz')"
 >
-
 Choisis ton quiz
-
 </h2>
-
 
 <div class="consignes">
 
 Bienvenue, passe ta souris sur les textes pour entendre les textes.<br><br>
 
+Choisis d'abord ta classe, puis ta matière et enfin ton thème.<br><br>
+
 Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique à nouveau pour valider la réponse.
 
 </div>
-
 
 <button
 type="button"
@@ -954,15 +867,14 @@ class="boutonConsigne"
 onmouseenter="lireConsignes()"
 ontouchstart="lireConsignes()"
 onclick="lireConsignes()"
+
 >
 
 Réécouter les consignes
 
 </button>
 
-
 <form method="post" action="/start">
-
 
 <!-- =========================
      CLASSE
@@ -970,84 +882,86 @@ Réécouter les consignes
 
 <select
 id="classe"
+required
 onmouseenter="parler('Choisis ta classe')"
 ontouchstart="parler('Choisis ta classe')"
-required
+onchange="lireClasse()"
+
 >
 
 <option value="">
+
 Choisir une classe
+
 </option>
 
 </select>
 
-
 <br>
 
-
 <!-- =========================
-     MATIÈRE
+     MATIERE
 ========================= -->
 
 <select
 id="matiere"
+required
+disabled
 onmouseenter="parler('Choisis une matière')"
 ontouchstart="parler('Choisis une matière')"
-required
+onchange="lireMatiere()"
+
 >
 
 <option value="">
+
 Choisir une matière
+
 </option>
 
 </select>
 
-
 <br>
 
-
 <!-- =========================
-     THÈME
+     THEME
 ========================= -->
 
 <select
 name="theme"
 id="theme"
+required
+disabled
 onmouseenter="parler('Choisis un thème')"
 ontouchstart="parler('Choisis un thème')"
-required
+onchange="lireTheme()"
+
 >
 
 <option value="">
+
 Choisir un thème
+
 </option>
 
 </select>
 
-
 <br>
-
-
-<!-- =========================
-     COMMENCER
-========================= -->
 
 <button
 type="submit"
 onmouseenter="lireBouton()"
 ontouchstart="lireBouton()"
+
 >
 
 Commencer
 
 </button>
 
-
 </form>
 
-
 </div>
-
 
 <!-- =========================
      LOGO CENTRAL
@@ -1055,10 +969,10 @@ Commencer
 
 <img
 class="logo"
-src="{{ url_for('static', filename='images/logo.gif') }}"
+src="{{ url_for('static', filename='images/logo.png') }}"
 alt="Logo du quiz"
->
 
+>
 
 <!-- =========================
      INSCRIPTION
@@ -1066,29 +980,25 @@ alt="Logo du quiz"
 
 <div class="notificationZone">
 
-
 <h3
 onmouseenter="lireInscription()"
 ontouchstart="lireInscription()"
 >
 
-M’avertir d’un nouveau thème
+M'avertir d'un nouveau thème
 
 </h3>
 
-
 <p class="notificationInfo">
 
-Entre ton adresse e-mail pour être informé lorsqu’un nouveau thème est disponible.
+Entre ton adresse e-mail pour être informé lorsqu'un nouveau thème est disponible.
 
 </p>
-
 
 <form
 method="post"
 action="/inscription"
 >
-
 
 <input
 class="emailInput"
@@ -1098,32 +1008,28 @@ placeholder="Ton adresse e-mail"
 required
 onmouseenter="lireChampEmail()"
 ontouchstart="lireChampEmail()"
+
 >
 
-
 <br>
-
 
 <button
 class="notificationBtn"
 type="submit"
 onmouseenter="lireBoutonInscription()"
 ontouchstart="lireBoutonInscription()"
+
 >
 
-S’inscrire
+S'inscrire
 
 </button>
 
-
 </form>
 
-
 </div>
 
-
 </div>
-
 
 </body>
 

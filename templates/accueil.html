@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Quiz</title>
+<title>QUIZ QUIZZZ QUIZZZZZ</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
@@ -394,7 +394,7 @@ max-width:400px;
 
 function parler(texte){
 
-if(!window.speechSynthesis){
+if(!("speechSynthesis" in window)){
 return;
 }
 
@@ -517,10 +517,380 @@ parler("Commencer le quiz");
 
 
 /* =========================
-   LECTURE AU CHARGEMENT
+   ORGANISATION DES THÈMES
 ========================= */
 
-window.addEventListener("load", function(){
+/*
+   Les thèmes reçus par Flask sont les noms
+   des fichiers sans ".txt".
+
+   Exemple :
+
+   Svt 6ème - L'alimentation humaine
+
+   devient :
+
+   Classe  : 6ème
+   Matière : Svt
+   Thème   : L'alimentation humaine
+
+   Le formulaire continue ensuite à envoyer
+   le nom COMPLET du thème à /start.
+*/
+
+function analyserTheme(nom){
+
+let resultat = {
+classe:"",
+matiere:"",
+theme:nom
+};
+
+
+/* Recherche du séparateur principal */
+
+let morceaux = nom.split(" - ");
+
+
+/* Si le nom respecte le format :
+   Matière Classe - Thème
+*/
+
+if(morceaux.length >= 2){
+
+let partieGauche = morceaux[0].trim();
+
+resultat.theme = morceaux.slice(1).join(" - ").trim();
+
+
+/*
+   Recherche d'une classe du type :
+   6ème
+   5ème
+   4ème
+   3ème
+   6e
+   5e
+   4e
+   3e
+*/
+
+let correspondance =
+partieGauche.match(/(\d+\s*(?:ème|eme|e|er|ère))/i);
+
+
+if(correspondance){
+
+resultat.classe = correspondance[1].replace(/\s+/g," ").trim();
+
+resultat.matiere =
+partieGauche
+.replace(correspondance[0],"")
+.trim();
+
+}else{
+
+/*
+   Si aucune classe n'est trouvée,
+   on conserve toute la partie gauche
+   comme matière.
+*/
+
+resultat.matiere = partieGauche;
+
+}
+
+}else{
+
+/*
+   Format inhabituel :
+   on conserve le nom complet comme thème.
+*/
+
+resultat.theme = nom;
+
+}
+
+return resultat;
+
+}
+
+
+/* =========================
+   CRÉATION DES 3 MENUS
+========================= */
+
+function construireMenus(){
+
+const themes = {{ themes | tojson }};
+
+const classeSelect =
+document.getElementById("classe");
+
+const matiereSelect =
+document.getElementById("matiere");
+
+const themeSelect =
+document.getElementById("theme");
+
+
+let donnees = [];
+
+
+/*
+   Analyse de chaque thème
+*/
+
+themes.forEach(function(nom){
+
+let info = analyserTheme(nom);
+
+donnees.push({
+nom:nom,
+classe:info.classe,
+matiere:info.matiere,
+theme:info.theme
+});
+
+});
+
+
+/* =========================
+   CLASSES
+========================= */
+
+let classes = [];
+
+donnees.forEach(function(item){
+
+if(item.classe && !classes.includes(item.classe)){
+
+classes.push(item.classe);
+
+}
+
+});
+
+
+/*
+   Tri numérique des classes
+*/
+
+classes.sort(function(a,b){
+
+let na = parseInt(a);
+let nb = parseInt(b);
+
+if(!isNaN(na) && !isNaN(nb)){
+return na - nb;
+}
+
+return a.localeCompare(b,"fr");
+
+});
+
+
+classes.forEach(function(classe){
+
+let option =
+document.createElement("option");
+
+option.value = classe;
+option.textContent = classe;
+
+classeSelect.appendChild(option);
+
+});
+
+
+/* =========================
+   CHANGEMENT DE CLASSE
+========================= */
+
+classeSelect.addEventListener("change",function(){
+
+let classe = this.value;
+
+
+/*
+   On remet la matière à zéro
+*/
+
+matiereSelect.innerHTML =
+"<option value=''>Choisir une matière</option>";
+
+themeSelect.innerHTML =
+"<option value=''>Choisir un thème</option>";
+
+themeSelect.disabled = true;
+
+
+/*
+   Si aucune classe n'est sélectionnée
+*/
+
+if(!classe){
+
+matiereSelect.disabled = true;
+
+return;
+
+}
+
+
+matiereSelect.disabled = false;
+
+
+/*
+   Recherche des matières disponibles
+   dans cette classe.
+*/
+
+let matieres = [];
+
+
+donnees.forEach(function(item){
+
+if(
+item.classe === classe &&
+item.matiere &&
+!matieres.includes(item.matiere)
+){
+
+matieres.push(item.matiere);
+
+}
+
+});
+
+
+matieres.sort(function(a,b){
+
+return a.localeCompare(b,"fr");
+
+});
+
+
+matieres.forEach(function(matiere){
+
+let option =
+document.createElement("option");
+
+option.value = matiere;
+option.textContent = matiere;
+
+matiereSelect.appendChild(option);
+
+});
+
+
+lireClasse();
+
+});
+
+
+/* =========================
+   CHANGEMENT DE MATIÈRE
+========================= */
+
+matiereSelect.addEventListener("change",function(){
+
+let classe = classeSelect.value;
+let matiere = this.value;
+
+
+/*
+   Réinitialisation du thème
+*/
+
+themeSelect.innerHTML =
+"<option value=''>Choisir un thème</option>";
+
+themeSelect.disabled = true;
+
+
+if(!matiere){
+
+return;
+
+}
+
+
+themeSelect.disabled = false;
+
+
+/*
+   Recherche des thèmes correspondant
+   à la classe ET à la matière.
+*/
+
+let themesDisponibles = donnees.filter(function(item){
+
+return(
+item.classe === classe &&
+item.matiere === matiere
+);
+
+});
+
+
+themesDisponibles.forEach(function(item){
+
+let option =
+document.createElement("option");
+
+
+/*
+   IMPORTANT :
+   La valeur envoyée au serveur est
+   le NOM COMPLET du thème.
+
+   Le texte affiché est seulement
+   le titre du thème.
+*/
+
+option.value = item.nom;
+
+option.textContent = item.theme;
+
+themeSelect.appendChild(option);
+
+});
+
+
+lireMatiere();
+
+});
+
+
+/* =========================
+   CHANGEMENT DE THÈME
+========================= */
+
+themeSelect.addEventListener("change",function(){
+
+lireTheme();
+
+});
+
+
+/* =========================
+   INITIALISATION
+========================= */
+
+matiereSelect.disabled = true;
+themeSelect.disabled = true;
+
+}
+
+
+/* =========================
+   CHARGEMENT DE LA PAGE
+========================= */
+
+window.addEventListener("load",function(){
+
+construireMenus();
 
 setTimeout(function(){
 
@@ -538,8 +908,14 @@ lireConsignes();
 <body>
 
 
+<!-- =========================
+     BANDEAU
+========================= -->
+
 <div class="bandeau">
+
 QUIZ QUIZZZ QUIZZZZZ !
+
 </div>
 
 
@@ -557,7 +933,9 @@ QUIZ QUIZZZ QUIZZZZZ !
 onmouseenter="parler('Choisis ton quiz')"
 ontouchstart="parler('Choisis ton quiz')"
 >
+
 Choisis ton quiz
+
 </h2>
 
 
@@ -577,7 +955,9 @@ onmouseenter="lireConsignes()"
 ontouchstart="lireConsignes()"
 onclick="lireConsignes()"
 >
-🔊 Réécouter les consignes
+
+Réécouter les consignes
+
 </button>
 
 
@@ -590,10 +970,8 @@ onclick="lireConsignes()"
 
 <select
 id="classe"
-name="classe"
 onmouseenter="parler('Choisis ta classe')"
 ontouchstart="parler('Choisis ta classe')"
-onchange="mettreAJourMatieres(); lireClasse();"
 required
 >
 
@@ -613,10 +991,8 @@ Choisir une classe
 
 <select
 id="matiere"
-name="matiere"
 onmouseenter="parler('Choisis une matière')"
 ontouchstart="parler('Choisis une matière')"
-onchange="mettreAJourThemes(); lireMatiere();"
 required
 >
 
@@ -635,11 +1011,10 @@ Choisir une matière
 ========================= -->
 
 <select
-id="theme"
 name="theme"
+id="theme"
 onmouseenter="parler('Choisis un thème')"
 ontouchstart="parler('Choisis un thème')"
-onchange="lireTheme()"
 required
 >
 
@@ -653,16 +1028,23 @@ Choisir un thème
 <br>
 
 
+<!-- =========================
+     COMMENCER
+========================= -->
+
 <button
 type="submit"
 onmouseenter="lireBouton()"
 ontouchstart="lireBouton()"
 >
+
 Commencer
+
 </button>
 
 
 </form>
+
 
 </div>
 
@@ -679,7 +1061,7 @@ alt="Logo du quiz"
 
 
 <!-- =========================
-     INSCRIPTION NOUVEAUX THÈMES
+     INSCRIPTION
 ========================= -->
 
 <div class="notificationZone">
@@ -689,7 +1071,9 @@ alt="Logo du quiz"
 onmouseenter="lireInscription()"
 ontouchstart="lireInscription()"
 >
+
 M’avertir d’un nouveau thème
+
 </h3>
 
 
@@ -700,7 +1084,10 @@ Entre ton adresse e-mail pour être informé lorsqu’un nouveau thème est disp
 </p>
 
 
-<form method="post" action="/inscription">
+<form
+method="post"
+action="/inscription"
+>
 
 
 <input
@@ -723,7 +1110,9 @@ type="submit"
 onmouseenter="lireBoutonInscription()"
 ontouchstart="lireBoutonInscription()"
 >
+
 S’inscrire
+
 </button>
 
 
@@ -734,282 +1123,6 @@ S’inscrire
 
 
 </div>
-
-
-<script>
-
-/* =========================
-   DONNÉES DES THÈMES
-========================= */
-
-/*
-   app.py actuel envoie une liste "themes".
-
-   Exemple :
-
-   Svt 6ème - L'alimentation humaine - Copie
-   Emc 6ème - La politique Francaise
-
-   On transforme automatiquement ces noms en :
-
-   Classe → Matière → Thème
-*/
-
-
-const themesDisponibles = {{ themes | tojson }};
-
-
-/* =========================
-   STRUCTURE DES DONNÉES
-========================= */
-
-const donnees = {};
-
-
-/* =========================
-   NETTOYAGE DU NOM
-========================= */
-
-function nettoyerTexte(texte){
-
-return texte
-.trim()
-.replace(".txt","");
-
-}
-
-
-/* =========================
-   ANALYSE D'UN THÈME
-========================= */
-
-function analyserTheme(theme){
-
-let nom = nettoyerTexte(theme);
-
-let morceaux = nom.split(" - ");
-
-let premierePartie = morceaux[0] || "";
-let reste = morceaux.slice(1).join(" - ");
-
-
-/*
-   Exemple :
-
-   "Svt 6ème - L'alimentation humaine"
-
-   premierePartie = "Svt 6ème"
-
-   On récupère le premier mot comme matière
-   et le reste comme classe.
-*/
-
-let mots = premierePartie.trim().split(/\s+/);
-
-let matiere = mots.shift() || "";
-
-let classe = mots.join(" ");
-
-let themeNom = reste || nom;
-
-
-/*
-   Normalisation de quelques matières
-*/
-
-let matiereAffichage = matiere;
-
-if(matiere.toLowerCase() === "svt"){
-matiereAffichage = "SVT";
-}
-
-if(matiere.toLowerCase() === "emc"){
-matiereAffichage = "EMC";
-}
-
-if(matiere.toLowerCase() === "math"){
-matiereAffichage = "Mathématiques";
-}
-
-if(matiere.toLowerCase() === "français"){
-matiereAffichage = "Français";
-}
-
-return {
-original: theme,
-classe: classe,
-matiere: matiereAffichage,
-theme: themeNom
-};
-
-}
-
-
-/* =========================
-   CONSTRUCTION DES DONNÉES
-========================= */
-
-themesDisponibles.forEach(function(theme){
-
-let info = analyserTheme(theme);
-
-if(!info.classe || !info.matiere){
-return;
-}
-
-if(!donnees[info.classe]){
-donnees[info.classe] = {};
-}
-
-if(!donnees[info.classe][info.matiere]){
-donnees[info.classe][info.matiere] = [];
-}
-
-donnees[info.classe][info.matiere].push({
-
-nom: info.theme,
-valeur: info.original
-
-});
-
-});
-
-
-/* =========================
-   ÉLÉMENTS HTML
-========================= */
-
-const classeSelect =
-document.getElementById("classe");
-
-const matiereSelect =
-document.getElementById("matiere");
-
-const themeSelect =
-document.getElementById("theme");
-
-
-/* =========================
-   REMPLIR LES CLASSES
-========================= */
-
-function remplirClasses(){
-
-classeSelect.innerHTML =
-"<option value=''>Choisir une classe</option>";
-
-Object.keys(donnees)
-.sort()
-.forEach(function(classe){
-
-let option =
-document.createElement("option");
-
-option.value = classe;
-
-option.textContent = classe;
-
-classeSelect.appendChild(option);
-
-});
-
-}
-
-
-/* =========================
-   REMPLIR LES MATIÈRES
-========================= */
-
-function mettreAJourMatieres(){
-
-let classe = classeSelect.value;
-
-matiereSelect.innerHTML =
-"<option value=''>Choisir une matière</option>";
-
-themeSelect.innerHTML =
-"<option value=''>Choisir un thème</option>";
-
-
-if(!classe || !donnees[classe]){
-return;
-}
-
-
-Object.keys(donnees[classe])
-.sort()
-.forEach(function(matiere){
-
-let option =
-document.createElement("option");
-
-option.value = matiere;
-
-option.textContent = matiere;
-
-matiereSelect.appendChild(option);
-
-});
-
-}
-
-
-/* =========================
-   REMPLIR LES THÈMES
-========================= */
-
-function mettreAJourThemes(){
-
-let classe = classeSelect.value;
-
-let matiere = matiereSelect.value;
-
-themeSelect.innerHTML =
-"<option value=''>Choisir un thème</option>";
-
-
-if(
-!classe ||
-!matiere ||
-!donnees[classe] ||
-!donnees[classe][matiere]
-){
-return;
-}
-
-
-donnees[classe][matiere]
-.sort(function(a,b){
-
-return a.nom.localeCompare(
-b.nom,
-"fr"
-);
-
-})
-.forEach(function(theme){
-
-let option =
-document.createElement("option");
-
-option.value = theme.valeur;
-
-option.textContent = theme.nom;
-
-themeSelect.appendChild(option);
-
-});
-
-}
-
-
-/* =========================
-   INITIALISATION
-========================= */
-
-remplirClasses();
-
-</script>
 
 
 </body>

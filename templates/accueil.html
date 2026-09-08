@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -182,22 +183,45 @@ parler(
 
 }
 
+
 /* ORGANISATION DES THEMES */
 
 const themes = {{ themes | tojson }}
 
 let organisation = {}
 
+
+/*
+Les fichiers sont organisés sous la forme :
+
+Svt 6ème - L'alimentation humaine
+Emc 6ème - La politique Francaise
+
+On récupère :
+matière = Svt
+classe = 6ème
+thème = L'alimentation humaine
+*/
+
 themes.forEach(function(theme){
 
-let match = theme.match(/^(.+?)\s+(6ème|5ème|4ème|3ème)\s*-\s*(.+)$/)
+let morceaux = theme.split(" - ")
 
-if(!match){
+if(morceaux.length < 2){
 return
 }
 
-let matiere = match[1]
-let classe = match[2]
+let partie = morceaux[0]
+let nomTheme = morceaux.slice(1).join(" - ")
+
+let position = partie.lastIndexOf(" ")
+
+if(position === -1){
+return
+}
+
+let matiere = partie.substring(0,position)
+let classe = partie.substring(position + 1)
 
 if(!organisation[classe]){
 organisation[classe] = {}
@@ -207,12 +231,32 @@ if(!organisation[classe][matiere]){
 organisation[classe][matiere] = []
 }
 
-organisation[classe][matiere].push(theme)
+organisation[classe][matiere].push({
+nom: nomTheme,
+fichier: theme
+})
 
 })
 
 
-/* SELECTION CLASSE */
+/* LECTURE THEME */
+
+function lireTheme(){
+
+let select=document.getElementById("themes")
+
+if(!select.value){
+return
+}
+
+let theme=select.options[select.selectedIndex].text
+
+parler("Thème sélectionné : "+theme)
+
+}
+
+
+/* CHARGEMENT DES CLASSES */
 
 function chargerClasses(){
 
@@ -232,13 +276,15 @@ classeSelect.appendChild(option)
 }
 
 
-/* SELECTION MATIERE */
+/* CHARGEMENT DES MATIERES */
 
 function chargerMatieres(){
 
-let classe=document.getElementById("classe").value
+let classeSelect=document.getElementById("classe")
 let matiereSelect=document.getElementById("matiere")
 let themeSelect=document.getElementById("themes")
+
+let classe=classeSelect.value
 
 matiereSelect.innerHTML="<option value=''>Choisir une matière</option>"
 themeSelect.innerHTML="<option value=''>Choisir un thème</option>"
@@ -261,7 +307,7 @@ matiereSelect.appendChild(option)
 }
 
 
-/* SELECTION THEME */
+/* CHARGEMENT DES THEMES */
 
 function chargerThemes(){
 
@@ -279,29 +325,12 @@ organisation[classe][matiere].forEach(function(theme){
 
 let option=document.createElement("option")
 
-option.value=theme
-option.textContent=theme.replace(/^.+?\s+(6ème|5ème|4ème|3ème)\s*-\s*/,"")
+option.value=theme.fichier
+option.textContent=theme.nom
 
 themeSelect.appendChild(option)
 
 })
-
-}
-
-
-/* LECTURE THEME */
-
-function lireTheme(){
-
-let select=document.getElementById("themes")
-
-if(!select.value){
-return
-}
-
-let theme=select.options[select.selectedIndex].text
-
-parler("Thème sélectionné : "+theme)
 
 }
 
@@ -357,7 +386,7 @@ onmouseover="parler('Écouter les instructions')"
 
 </div>
 
-<h1>🎯 Choisis ton quiz</h1>
+<h1>🎯 Sélectionne ton quiz</h1>
 
 <p class="info">
 Choisis d'abord ta classe, puis ta matière et enfin ton thème.<br>
@@ -407,3 +436,4 @@ ontouchstart="lireBouton()"
 
 </body>
 </html>
+```

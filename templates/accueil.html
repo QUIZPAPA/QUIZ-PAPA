@@ -416,6 +416,25 @@ parler(consignes)
    MATIÈRE
 ========================= */
 
+function lireClasse(){
+
+let select = document.getElementById("classe")
+
+if(select.selectedIndex > 0){
+
+let classe = select.options[select.selectedIndex].text
+
+parler("Classe sélectionnée : " + classe)
+
+}
+
+}
+
+
+/* =========================
+   MATIÈRE
+========================= */
+
 function lireMatiere(){
 
 let select = document.getElementById("matiere")
@@ -432,7 +451,7 @@ parler("Matière sélectionnée : " + matiere)
 
 
 /* =========================
-   THÈME
+   QUIZ
 ========================= */
 
 function lireTheme(){
@@ -443,7 +462,7 @@ if(select.selectedIndex > 0){
 
 let theme = select.options[select.selectedIndex].text
 
-parler("Thème sélectionné : " + theme)
+parler("Quiz sélectionné : " + theme)
 
 }
 
@@ -535,24 +554,35 @@ onclick="lireConsignes()"
 
 
 <select
+id="classe"
+onmouseenter="parler('Choisis ta classe')"
+ontouchstart="parler('Choisis ta classe')"
+onchange="lireClasse()"
+required
+>
+
+<option value="">
+Choisir une classe
+</option>
+
+</select>
+
+
+<br>
+
+
+<select
 id="matiere"
 onmouseenter="parler('Choisis une matière')"
 ontouchstart="parler('Choisis une matière')"
 onchange="lireMatiere()"
 required
+disabled
 >
 
 <option value="">
 Choisir une matière
 </option>
-
-{% for matiere in matieres %}
-
-<option value="{{ matiere }}">
-{{ matiere }}
-</option>
-
-{% endfor %}
 
 </select>
 
@@ -563,14 +593,15 @@ Choisir une matière
 <select
 name="theme"
 id="theme"
-onmouseenter="parler('Choisis un thème')"
-ontouchstart="parler('Choisis un thème')"
+onmouseenter="parler('Choisis un quiz')"
+ontouchstart="parler('Choisis un quiz')"
 onchange="lireTheme()"
 required
+disabled
 >
 
 <option value="">
-Choisir un thème
+Choisir un quiz
 </option>
 
 </select>
@@ -670,6 +701,9 @@ S’inscrire
 
 const matieres = {{ matieres | tojson }}
 
+const classeSelect =
+document.getElementById("classe")
+
 const matiereSelect =
 document.getElementById("matiere")
 
@@ -677,31 +711,150 @@ const themeSelect =
 document.getElementById("theme")
 
 
+/*
+   Les noms de fichiers suivent la structure :
+   Matière Classe - Nom du quiz
+
+   Exemple :
+   Svt 6ème - L'alimentation humaine
+*/
+
+const donnees = {}
+
+Object.keys(matieres).forEach(function(matiere){
+
+matieres[matiere].forEach(function(theme){
+
+let nom = theme.replace(".txt","")
+let morceaux = nom.split(" - ")
+
+if(morceaux.length < 2){
+return
+}
+
+let classe = morceaux[0].trim().split(/\s+/).slice(1).join(" ").trim()
+
+if(!classe){
+return
+}
+
+if(!donnees[classe]){
+donnees[classe] = {}
+}
+
+if(!donnees[classe][matiere]){
+donnees[classe][matiere] = []
+}
+
+donnees[classe][matiere].push(theme)
+
+})
+
+})
+
+
+/* =========================
+   REMPLIR LES CLASSES
+========================= */
+
+Object.keys(donnees)
+.sort(function(a,b){
+
+return a.localeCompare(b,"fr",{numeric:true})
+
+})
+.forEach(function(classe){
+
+let option =
+document.createElement("option")
+
+option.value = classe
+option.textContent = classe
+
+classeSelect.appendChild(option)
+
+})
+
+
+/* =========================
+   CHOIX DE LA CLASSE
+========================= */
+
+classeSelect.addEventListener("change", function(){
+
+let classe = this.value
+
+matiereSelect.innerHTML =
+"<option value=''>Choisir une matière</option>"
+
+themeSelect.innerHTML =
+"<option value=''>Choisir un quiz</option>"
+
+themeSelect.disabled = true
+
+if(!classe){
+
+matiereSelect.disabled = true
+return
+
+}
+
+matiereSelect.disabled = false
+
+Object.keys(donnees[classe])
+.sort(function(a,b){
+
+return a.localeCompare(b,"fr")
+
+})
+.forEach(function(matiere){
+
+let option =
+document.createElement("option")
+
+option.value = matiere
+option.textContent = matiere
+
+matiereSelect.appendChild(option)
+
+})
+
+})
+
+
+/* =========================
+   CHOIX DE LA MATIÈRE
+========================= */
+
 matiereSelect.addEventListener("change", function(){
 
+let classe = classeSelect.value
 let matiere = this.value
 
 themeSelect.innerHTML =
-"<option value=''>Choisir un thème</option>"
+"<option value=''>Choisir un quiz</option>"
 
+if(!classe || !matiere){
 
-if(matieres[matiere]){
+themeSelect.disabled = true
+return
 
-matieres[matiere].forEach(function(theme){
+}
+
+themeSelect.disabled = false
+
+donnees[classe][matiere].forEach(function(theme){
 
 let option =
 document.createElement("option")
 
 option.value = theme
-
 option.textContent =
-theme.replace(".txt","")
+theme.replace(".txt","").replace(matiere + " " + classe + " - ","")
 
 themeSelect.appendChild(option)
 
 })
-
-}
 
 })
 

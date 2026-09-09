@@ -1,3 +1,4 @@
+```python
 import os
 import random
 from flask import Flask, render_template, request, redirect, session
@@ -24,6 +25,23 @@ def accueil():
         matieres[matiere].append(t)
 
     return render_template("accueil.html", matieres=matieres)
+
+
+@app.route("/inscription", methods=["POST"])
+def inscription():
+
+    email = request.form.get("email", "").strip()
+
+    if email:
+        fichier = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            "adresse.txt"
+        )
+
+        with open(fichier, "a", encoding="utf-8") as f:
+            f.write(email + "\n")
+
+    return redirect("/")
 
 
 @app.route("/start", methods=["POST"])
@@ -197,3 +215,4 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
 
     app.run(host="0.0.0.0", port=port)
+```

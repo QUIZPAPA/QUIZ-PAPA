@@ -33,6 +33,7 @@ def inscription():
     email = request.form.get("email", "").strip()
 
     if email:
+
         fichier = os.path.join(
             os.path.dirname(os.path.abspath(__file__)),
             "adresse.txt"

@@ -23,7 +23,25 @@ def accueil():
 
         matieres[matiere].append(t)
 
-    return render_template("accueil.html", matieres=matieres)
+    return render_template(
+        "accueil.html",
+        matieres=matieres
+    )
+
+
+@app.route("/start", methods=["POST"])
+def start():
+
+    theme = request.form["theme"]
+
+    session["theme"] = theme
+    session["questions"] = charger_questions(theme)
+    session["session_actuelle"] = 1
+    session["index_question"] = 0
+    session["questions_ratees"] = []
+    session["mode_revision"] = False
+
+    return redirect("/quiz")
 
 
 @app.route("/inscription", methods=["POST"])
@@ -41,22 +59,24 @@ def inscription():
         with open(fichier, "a", encoding="utf-8") as f:
             f.write(email + "\n")
 
-    return redirect("/")
+    themes = charger_themes()
 
+    matieres = {}
 
-@app.route("/start", methods=["POST"])
-def start():
+    for t in themes:
 
-    theme = request.form["theme"]
+        matiere = t.split()[0]
 
-    session["theme"] = theme
-    session["questions"] = charger_questions(theme)
-    session["session_actuelle"] = 1
-    session["index_question"] = 0
-    session["questions_ratees"] = []
-    session["mode_revision"] = False
+        if matiere not in matieres:
+            matieres[matiere] = []
 
-    return redirect("/quiz")
+        matieres[matiere].append(t)
+
+    return render_template(
+        "accueil.html",
+        matieres=matieres,
+        message_inscription="Inscription prise en compte"
+    )
 
 
 @app.route("/quiz", methods=["GET", "POST"])

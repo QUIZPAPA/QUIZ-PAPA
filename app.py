@@ -1,6 +1,6 @@
 import os
 import random
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session, send_file
 from quiz_logic import charger_themes, charger_questions
 
 app = Flask(__name__)
@@ -79,6 +79,71 @@ def inscription():
     )
 
 
+@app.route("/adresses", methods=["GET", "POST"])
+def adresses():
+
+    mot_de_passe = os.environ.get("ADMIN_PASSWORD")
+
+    if not mot_de_passe:
+        return "ADMIN_PASSWORD n'est pas configuré sur Render.", 500
+
+    if request.method == "GET":
+
+        return """
+        <!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <title>Accès administrateur</title>
+        </head>
+        <body style="font-family:Arial; text-align:center; margin-top:80px;">
+
+            <h2>Accès aux adresses inscrites</h2>
+
+            <form method="post">
+
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Mot de passe"
+                    required
+                    style="padding:10px;"
+                >
+
+                <button
+                    type="submit"
+                    style="padding:10px 20px; margin-left:5px;"
+                >
+                    Télécharger
+                </button>
+
+            </form>
+
+        </body>
+        </html>
+        """
+
+    if request.form.get("password") != mot_de_passe:
+        return "Mot de passe incorrect.", 403
+
+    fichier = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "adresse.txt"
+    )
+
+    if not os.path.exists(fichier):
+
+        with open(fichier, "w", encoding="utf-8"):
+            pass
+
+    return send_file(
+        fichier,
+        as_attachment=True,
+        download_name="adresse.txt",
+        mimetype="text/plain"
+    )
+
+
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
 
@@ -92,10 +157,6 @@ def quiz():
     session_actuelle = session["session_actuelle"]
     index_question = session["index_question"]
     mode_revision = session.get("mode_revision", False)
-
-    # -------------------------
-    # MODE NORMAL
-    # -------------------------
 
     if not mode_revision:
 
@@ -167,10 +228,6 @@ def quiz():
                         theme=theme,
                         fin=True
                     )
-
-    # -------------------------
-    # MODE REVISION
-    # -------------------------
 
     else:
 

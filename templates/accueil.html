@@ -11,6 +11,10 @@
 
 <style>
 
+/* =========================
+   PAGE
+========================= */
+
 body{
 background:#95F5A6;
 font-family:'Fredoka',sans-serif;
@@ -21,6 +25,10 @@ min-height:100vh;
 overflow-x:hidden;
 overflow-y:auto;
 }
+
+/* =========================
+   BANDEAU
+========================= */
 
 .bandeau{
 width:100%;
@@ -33,6 +41,10 @@ box-shadow:0 4px 12px rgba(0,0,0,0.2);
 box-sizing:border-box;
 }
 
+/* =========================
+   GRANDE STRUCTURE PC
+========================= */
+
 .container{
 min-height:calc(100vh - 82px);
 display:grid;
@@ -43,6 +55,10 @@ gap:4vw;
 padding:30px 4vw;
 box-sizing:border-box;
 }
+
+/* =========================
+   ZONES
+========================= */
 
 .selection{
 background:white;
@@ -66,6 +82,10 @@ box-sizing:border-box;
 justify-self:center;
 }
 
+/* =========================
+   LOGO
+========================= */
+
 .logo{
 width:min(360px,30vw);
 max-height:60vh;
@@ -78,6 +98,10 @@ drop-shadow(0 0 40px rgba(255,255,255,0.6))
 drop-shadow(0 0 60px rgba(255,255,255,0.4));
 }
 
+/* =========================
+   TITRES
+========================= */
+
 h2{
 font-size:clamp(24px,2.5vw,30px);
 margin:5px 0 18px 0;
@@ -89,12 +113,20 @@ margin:0 0 12px 0;
 cursor:pointer;
 }
 
+/* =========================
+   CONSIGNES
+========================= */
+
 .consignes{
 font-size:clamp(14px,1.4vw,18px);
 margin-bottom:18px;
 color:#333;
 line-height:1.4;
 }
+
+/* =========================
+   MENUS
+========================= */
 
 select{
 font-size:clamp(16px,1.5vw,18px);
@@ -105,6 +137,10 @@ max-width:320px;
 font-family:'Fredoka',sans-serif;
 box-sizing:border-box;
 }
+
+/* =========================
+   BOUTONS
+========================= */
 
 button{
 font-size:clamp(17px,1.6vw,20px);
@@ -128,6 +164,10 @@ font-size:16px;
 margin-bottom:10px;
 background:#ffd166;
 }
+
+/* =========================
+   INSCRIPTION
+========================= */
 
 .notificationInfo{
 font-size:15px;
@@ -159,14 +199,9 @@ background:#ffc233;
 color:white;
 }
 
-.messageInscription{
-background:#95F5A6;
-border-radius:10px;
-padding:10px;
-margin:0 0 15px 0;
-font-size:16px;
-font-weight:600;
-}
+/* =========================
+   PETITS ÉCRANS
+========================= */
 
 @media (max-width:1000px){
 
@@ -194,6 +229,10 @@ grid-row:2;
 }
 
 }
+
+/* =========================
+   TABLETTES ET ANDROID
+========================= */
 
 @media (max-width:700px){
 
@@ -238,6 +277,10 @@ padding:20px 18px;
 
 }
 
+/* =========================
+   PETITS ÉCRANS EN HAUTEUR
+========================= */
+
 @media (max-height:700px) and (min-width:701px){
 
 .bandeau{
@@ -278,6 +321,10 @@ padding:9px 20px;
 
 }
 
+/* =========================
+   TRÈS PETITS ÉCRANS
+========================= */
+
 @media (max-height:600px) and (max-width:700px){
 
 .logo{
@@ -305,6 +352,10 @@ margin-bottom:8px;
 
 }
 
+/* =========================
+   ÉCRANS PC TRÈS LARGES
+========================= */
+
 @media (min-width:1300px){
 
 .container{
@@ -328,6 +379,10 @@ max-width:400px;
 
 <script>
 
+/* =========================
+   VOIX
+========================= */
+
 function parler(texte){
 
 speechSynthesis.cancel()
@@ -342,6 +397,11 @@ speechSynthesis.speak(msg)
 
 }
 
+
+/* =========================
+   CONSIGNES
+========================= */
+
 let consignes =
 "Bienvenue. Passe ta souris sur les textes pour entendre les textes. Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique à nouveau pour valider la réponse."
 
@@ -350,6 +410,30 @@ function lireConsignes(){
 parler(consignes)
 
 }
+
+
+/* =========================
+   MATIÈRE
+========================= */
+
+function lireClasse(){
+
+let select = document.getElementById("classe")
+
+if(select.selectedIndex > 0){
+
+let classe = select.options[select.selectedIndex].text
+
+parler("Classe sélectionnée : " + classe)
+
+}
+
+}
+
+
+/* =========================
+   MATIÈRE
+========================= */
 
 function lireMatiere(){
 
@@ -365,6 +449,11 @@ parler("Matière sélectionnée : " + matiere)
 
 }
 
+
+/* =========================
+   QUIZ
+========================= */
+
 function lireTheme(){
 
 let select = document.getElementById("theme")
@@ -373,11 +462,16 @@ if(select.selectedIndex > 0){
 
 let theme = select.options[select.selectedIndex].text
 
-parler("Thème sélectionné : " + theme)
+parler("Quiz sélectionné : " + theme)
 
 }
 
 }
+
+
+/* =========================
+   INSCRIPTION
+========================= */
 
 function lireInscription(){
 
@@ -397,6 +491,11 @@ parler("S’inscrire pour recevoir les nouveaux thèmes")
 
 }
 
+
+/* =========================
+   BOUTON COMMENCER
+========================= */
+
 function lireBouton(){
 
 parler("Commencer le quiz")
@@ -413,9 +512,16 @@ parler("Commencer le quiz")
 QUIZ QUIZZZ QUIZZZZZ !
 </div>
 
+
 <div class="container">
 
+
+<!-- =========================
+     CHOIX DU QUIZ
+========================= -->
+
 <div class="selection">
+
 
 <h2
 onmouseenter="parler('Choisis ton quiz')"
@@ -424,6 +530,7 @@ ontouchstart="parler('Choisis ton quiz')"
 Choisis ton quiz
 </h2>
 
+
 <div class="consignes">
 
 Bienvenue, passe ta souris sur les textes pour entendre les textes.<br><br>
@@ -431,6 +538,7 @@ Bienvenue, passe ta souris sur les textes pour entendre les textes.<br><br>
 Sur tablette laisse ton doigt appuyé sur les boutons pour entendre puis clique à nouveau pour valider la réponse.
 
 </div>
+
 
 <button
 class="boutonConsigne"
@@ -441,7 +549,27 @@ onclick="lireConsignes()"
 🔊 Réécouter les consignes
 </button>
 
+
 <form method="post" action="/start">
+
+
+<select
+id="classe"
+onmouseenter="parler('Choisis ta classe')"
+ontouchstart="parler('Choisis ta classe')"
+onchange="lireClasse()"
+required
+>
+
+<option value="">
+Choisir une classe
+</option>
+
+</select>
+
+
+<br>
+
 
 <select
 id="matiere"
@@ -449,40 +577,38 @@ onmouseenter="parler('Choisis une matière')"
 ontouchstart="parler('Choisis une matière')"
 onchange="lireMatiere()"
 required
+disabled
 >
 
 <option value="">
 Choisir une matière
 </option>
 
-{% for matiere in matieres %}
-
-<option value="{{ matiere }}">
-{{ matiere }}
-</option>
-
-{% endfor %}
-
 </select>
 
+
 <br>
+
 
 <select
 name="theme"
 id="theme"
-onmouseenter="parler('Choisis un thème')"
-ontouchstart="parler('Choisis un thème')"
+onmouseenter="parler('Choisis un quiz')"
+ontouchstart="parler('Choisis un quiz')"
 onchange="lireTheme()"
 required
+disabled
 >
 
 <option value="">
-Choisir un thème
+Choisir un quiz
 </option>
 
 </select>
 
+
 <br>
+
 
 <button
 type="submit"
@@ -492,9 +618,15 @@ ontouchstart="lireBouton()"
 Commencer
 </button>
 
+
 </form>
 
 </div>
+
+
+<!-- =========================
+     LOGO CENTRAL
+========================= -->
 
 <img
 class="logo"
@@ -502,7 +634,13 @@ src="{{ url_for('static', filename='images/logo.gif') }}"
 alt="Logo du quiz"
 >
 
+
+<!-- =========================
+     INSCRIPTION NOUVEAUX THÈMES
+========================= -->
+
 <div class="notificationZone">
+
 
 <h3
 onmouseenter="lireInscription()"
@@ -523,7 +661,9 @@ Entre ton adresse e-mail pour être informé lorsqu’un nouveau thème est disp
 
 </p>
 
+
 <form method="post" action="/inscription">
+
 
 <input
 class="emailInput"
@@ -535,7 +675,9 @@ onmouseenter="lireChampEmail()"
 ontouchstart="lireChampEmail()"
 >
 
+
 <br>
+
 
 <button
 class="notificationBtn"
@@ -546,15 +688,26 @@ ontouchstart="lireBoutonInscription()"
 S’inscrire
 </button>
 
+
 </form>
 
-</div>
 
 </div>
+
+
+</div>
+
 
 <script>
 
+/* =========================
+   MATIÈRES ET THÈMES
+========================= */
+
 const matieres = {{ matieres | tojson }}
+
+const classeSelect =
+document.getElementById("classe")
 
 const matiereSelect =
 document.getElementById("matiere")
@@ -562,34 +715,156 @@ document.getElementById("matiere")
 const themeSelect =
 document.getElementById("theme")
 
+
+/*
+   Les noms de fichiers suivent la structure :
+   Matière Classe - Nom du quiz
+
+   Exemple :
+   Svt 6ème - L'alimentation humaine
+*/
+
+const donnees = {}
+
+Object.keys(matieres).forEach(function(matiere){
+
+matieres[matiere].forEach(function(theme){
+
+let nom = theme.replace(".txt","")
+let morceaux = nom.split(" - ")
+
+if(morceaux.length < 2){
+return
+}
+
+let classe = morceaux[0].trim().split(/\s+/).slice(1).join(" ").trim()
+
+if(!classe){
+return
+}
+
+if(!donnees[classe]){
+donnees[classe] = {}
+}
+
+if(!donnees[classe][matiere]){
+donnees[classe][matiere] = []
+}
+
+donnees[classe][matiere].push(theme)
+
+})
+
+})
+
+
+/* =========================
+   REMPLIR LES CLASSES
+========================= */
+
+Object.keys(donnees)
+.sort(function(a,b){
+
+return a.localeCompare(b,"fr",{numeric:true})
+
+})
+.forEach(function(classe){
+
+let option =
+document.createElement("option")
+
+option.value = classe
+option.textContent = classe
+
+classeSelect.appendChild(option)
+
+})
+
+
+/* =========================
+   CHOIX DE LA CLASSE
+========================= */
+
+classeSelect.addEventListener("change", function(){
+
+let classe = this.value
+
+matiereSelect.innerHTML =
+"<option value=''>Choisir une matière</option>"
+
+themeSelect.innerHTML =
+"<option value=''>Choisir un quiz</option>"
+
+themeSelect.disabled = true
+
+if(!classe){
+
+matiereSelect.disabled = true
+return
+
+}
+
+matiereSelect.disabled = false
+
+Object.keys(donnees[classe])
+.sort(function(a,b){
+
+return a.localeCompare(b,"fr")
+
+})
+.forEach(function(matiere){
+
+let option =
+document.createElement("option")
+
+option.value = matiere
+option.textContent = matiere
+
+matiereSelect.appendChild(option)
+
+})
+
+})
+
+
+/* =========================
+   CHOIX DE LA MATIÈRE
+========================= */
+
 matiereSelect.addEventListener("change", function(){
 
+let classe = classeSelect.value
 let matiere = this.value
 
 themeSelect.innerHTML =
-"<option value=''>Choisir un thème</option>"
+"<option value=''>Choisir un quiz</option>"
 
-if(matieres[matiere]){
+if(!classe || !matiere){
 
-matieres[matiere].forEach(function(theme){
+themeSelect.disabled = true
+return
+
+}
+
+themeSelect.disabled = false
+
+donnees[classe][matiere].forEach(function(theme){
 
 let option =
 document.createElement("option")
 
 option.value = theme
-
 option.textContent =
-theme.replace(".txt","")
+theme.replace(".txt","").replace(matiere + " " + classe + " - ","")
 
 themeSelect.appendChild(option)
 
 })
 
-}
-
 })
 
 </script>
+
 
 </body>
 

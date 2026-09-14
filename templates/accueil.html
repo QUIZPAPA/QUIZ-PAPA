@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -197,6 +198,107 @@ margin-top:10px;
 .notificationBtn:hover{
 background:#ffc233;
 color:white;
+}
+
+/* =========================
+   POP-UP INSCRIPTION
+========================= */
+
+.popupOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:10000;
+padding:20px;
+box-sizing:border-box;
+animation:popupOverlayIn 0.25s ease;
+}
+
+.popup{
+background:white;
+width:min(90vw,420px);
+padding:35px 30px 30px 30px;
+border-radius:24px;
+box-shadow:0 12px 40px rgba(0,0,0,0.3);
+text-align:center;
+animation:popupIn 0.35s ease;
+box-sizing:border-box;
+}
+
+.popupIcon{
+width:70px;
+height:70px;
+margin:0 auto 18px auto;
+border-radius:50%;
+background:#95F5A6;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:38px;
+box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.popup h3{
+font-size:clamp(22px,5vw,28px);
+margin:0 0 12px 0;
+color:#333;
+}
+
+.popup p{
+font-size:17px;
+line-height:1.5;
+color:#555;
+margin:0 0 22px 0;
+}
+
+.popupBtn{
+background:#70d5ff;
+color:white;
+font-size:18px;
+font-weight:600;
+padding:11px 35px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+margin:0;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.popupBtn:hover{
+background:#4fc3f7;
+transform:scale(1.04);
+}
+
+@keyframes popupOverlayIn{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+@keyframes popupIn{
+
+from{
+opacity:0;
+transform:scale(0.8);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
 }
 
 /* =========================
@@ -502,6 +604,23 @@ parler("Commencer le quiz")
 
 }
 
+
+/* =========================
+   FERMETURE POP-UP
+========================= */
+
+function fermerPopup(){
+
+let popup = document.getElementById("inscriptionPopup")
+
+if(popup){
+
+popup.style.display="none"
+
+}
+
+}
+
 </script>
 
 </head>
@@ -649,11 +768,6 @@ ontouchstart="lireInscription()"
 M’avertir d’un nouveau thème
 </h3>
 
-{% if message_inscription %}
-<div class="messageInscription">
-{{ message_inscription }}
-</div>
-{% endif %}
 
 <p class="notificationInfo">
 
@@ -696,6 +810,47 @@ S’inscrire
 
 
 </div>
+
+
+<!-- =========================
+     POP-UP INSCRIPTION
+========================= -->
+
+{% if message_inscription %}
+
+<div
+id="inscriptionPopup"
+class="popupOverlay"
+onclick="if(event.target === this) fermerPopup()"
+>
+
+<div class="popup">
+
+<div class="popupIcon">
+✓
+</div>
+
+<h3>
+Inscription prise en compte
+</h3>
+
+<p>
+Ton adresse e-mail a bien été enregistrée.<br>
+Tu seras averti lorsqu’un nouveau thème sera disponible.
+</p>
+
+<button
+class="popupBtn"
+onclick="fermerPopup()"
+>
+OK
+</button>
+
+</div>
+
+</div>
+
+{% endif %}
 
 
 <script>
@@ -869,3 +1024,4 @@ themeSelect.appendChild(option)
 </body>
 
 </html>
+```

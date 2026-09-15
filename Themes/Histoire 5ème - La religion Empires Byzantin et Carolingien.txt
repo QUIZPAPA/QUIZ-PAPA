@@ -1,0 +1,131 @@
+SESSION|1
+QUESTION|Quelle est la ville importante de la chrétienté orthodoxe ?
+REPONSES|Rome;Constantinople;Aix-la-Chapelle
+BONNE|Constantinople
+EXPLICATION|Constantinople est la grande ville de la chrétienté orthodoxe et la capitale de l'Empire byzantin.
+
+SESSION|1
+QUESTION|Quelle est la ville importante de la chrétienté catholique ?
+REPONSES|Rome;Constantinople;Aix-la-Chapelle
+BONNE|Rome
+EXPLICATION|Rome est la ville importante de la chrétienté catholique. Le chef de cette Église est le pape de Rome.
+
+SESSION|1
+QUESTION|Vers quels peuples la chrétienté catholique se diffuse-t-elle principalement ?
+REPONSES|Vers les peuples du Nord, comme les Baltes et les Scandinaves;Vers les peuples de l'Est, comme les Russes;Vers les peuples de l'Empire byzantin uniquement
+BONNE|Vers les peuples du Nord, comme les Baltes et les Scandinaves
+EXPLICATION|Selon le document, le christianisme catholique se diffuse vers les peuples du Nord, notamment les Baltes et les Scandinaves.
+
+SESSION|1
+QUESTION|Vers quels peuples la chrétienté orthodoxe se diffuse-t-elle principalement ?
+REPONSES|Vers les peuples du Nord, comme les Scandinaves;Vers les peuples de l'Est, comme les Russes;Vers les peuples d'Afrique du Nord uniquement
+BONNE|Vers les peuples de l'Est, comme les Russes
+EXPLICATION|La chrétienté orthodoxe se diffuse notamment vers les peuples de l'Est, comme les Russes.
+
+SESSION|1
+QUESTION|Quelle religion pratique-t-on dans l'Empire byzantin ?
+REPONSES|Le christianisme orthodoxe;Le christianisme catholique;Une religion polythéiste
+BONNE|Le christianisme orthodoxe
+EXPLICATION|La religion de l'Empire byzantin est le christianisme orthodoxe, avec Constantinople comme grande ville religieuse.
+
+SESSION|1
+QUESTION|Quelle religion pratique-t-on dans l'Empire carolingien ?
+REPONSES|Le christianisme orthodoxe;Le christianisme catholique ou latin;Une religion polythéiste
+BONNE|Le christianisme catholique ou latin
+EXPLICATION|L'Empire carolingien pratique le christianisme catholique, également appelé christianisme latin.
+
+SESSION|1
+QUESTION|Combien de domaines permettent de comparer les différences religieuses entre les deux chrétientés ?
+REPONSES|Quatre;Six;Huit
+BONNE|Six
+EXPLICATION|Le document retient six domaines : le nom du christianisme, le chef de l'Église, la langue du culte, le clergé, le baptême et le symbole.
+
+SESSION|2
+QUESTION|Qui est le chef de l'Église orthodoxe dans l'Empire byzantin ?
+REPONSES|Le pape de Rome;Le patriarche de Constantinople;L'empereur carolingien
+BONNE|Le patriarche de Constantinople
+EXPLICATION|Dans le christianisme orthodoxe présenté dans le document, le chef religieux est le patriarche de Constantinople.
+
+SESSION|2
+QUESTION|Qui est le chef de l'Église catholique dans l'Empire carolingien ?
+REPONSES|Le patriarche de Constantinople;Le pape de Rome;Le comte
+BONNE|Le pape de Rome
+EXPLICATION|Le christianisme catholique ou latin a pour chef le pape de Rome.
+
+SESSION|2
+QUESTION|Quelle est la langue utilisée pour le culte dans le christianisme orthodoxe byzantin ?
+REPONSES|Le grec;Le latin;Le français
+BONNE|Le grec
+EXPLICATION|Dans l'Empire byzantin, la langue du culte est le grec.
+
+SESSION|2
+QUESTION|Quelle est la langue utilisée pour le culte dans le christianisme catholique carolingien ?
+REPONSES|Le grec;Le latin;Le russe
+BONNE|Le latin
+EXPLICATION|Dans l'Empire carolingien, la langue du culte est le latin. C'est pourquoi on parle aussi de christianisme latin.
+
+SESSION|2
+QUESTION|Comment appelle-t-on les religieux de l'Église orthodoxe dans l'Empire byzantin selon le document ?
+REPONSES|Les popes;Les prêtres;Les comtes
+BONNE|Les popes
+EXPLICATION|Le document appelle les religieux orthodoxes des popes. Il précise qu'ils peuvent se marier.
+
+SESSION|2
+QUESTION|Comment appelle-t-on les religieux de l'Église catholique dans l'Empire carolingien ?
+REPONSES|Les popes;Les prêtres;Les patriarches
+BONNE|Les prêtres
+EXPLICATION|Dans l'Empire carolingien, les religieux sont des prêtres. Le document précise qu'ils ne peuvent pas se marier.
+
+SESSION|2
+QUESTION|Quelle différence le document donne-t-il entre les religieux orthodoxes et les prêtres catholiques concernant le mariage ?
+REPONSES|Les popes peuvent se marier tandis que les prêtres ne peuvent pas se marier;Les prêtres peuvent se marier tandis que les popes ne le peuvent pas;Les religieux des deux chrétientés doivent tous se marier
+BONNE|Les popes peuvent se marier tandis que les prêtres ne peuvent pas se marier
+EXPLICATION|C'est une différence importante entre les deux Églises présentées dans le document : les popes peuvent se marier, contrairement aux prêtres catholiques.
+
+SESSION|3
+QUESTION|Comment se fait le baptême dans le christianisme orthodoxe byzantin ?
+REPONSES|Par immersion;Par aspersion;Par une cérémonie sans eau
+BONNE|Par immersion
+EXPLICATION|Dans l'Empire byzantin, le baptême orthodoxe se fait par immersion : la personne est plongée dans l'eau.
+
+SESSION|3
+QUESTION|Comment se fait le baptême dans le christianisme catholique carolingien ?
+REPONSES|Par immersion;Par aspersion;Par une cérémonie sans eau
+BONNE|Par aspersion
+EXPLICATION|Dans l'Empire carolingien, le document indique que le baptême catholique se fait par aspersion, avec de l'eau versée sur la personne.
+
+SESSION|3
+QUESTION|Quel est le symbole du christianisme orthodoxe présenté dans le document ?
+REPONSES|La croix grecque;La croix latine;Le croissant
+BONNE|La croix grecque
+EXPLICATION|Le symbole indiqué pour le christianisme orthodoxe est la croix grecque.
+
+SESSION|3
+QUESTION|Quel est le symbole du christianisme catholique présenté dans le document ?
+REPONSES|La croix grecque;La croix latine;Le croissant
+BONNE|La croix latine
+EXPLICATION|Le symbole indiqué pour le christianisme catholique ou latin est la croix latine.
+
+SESSION|3
+QUESTION|Quels sont les six domaines utilisés dans le document pour montrer les différences entre les deux chrétientés ?
+REPONSES|Le nom du christianisme, le chef de l'Église, la langue du culte, le clergé, le baptême et le symbole;L'armée, le commerce, les impôts, les routes, les palais et les frontières;L'agriculture, la monnaie, les ports, les navires, les marchés et les villes
+BONNE|Le nom du christianisme, le chef de l'Église, la langue du culte, le clergé, le baptême et le symbole
+EXPLICATION|Ces six domaines permettent de comparer précisément les deux chrétientés et de comprendre leurs différences religieuses.
+
+SESSION|3
+QUESTION|Quelle association entre religion et ville est correcte ?
+REPONSES|Christianisme catholique avec Rome et christianisme orthodoxe avec Constantinople;Christianisme catholique avec Constantinople et christianisme orthodoxe avec Rome;Christianisme catholique avec Aix-la-Chapelle et christianisme orthodoxe avec Rome
+BONNE|Christianisme catholique avec Rome et christianisme orthodoxe avec Constantinople
+EXPLICATION|Rome est la ville importante de la chrétienté catholique tandis que Constantinople est celle de la chrétienté orthodoxe.
+
+SESSION|3
+QUESTION|Quelle association entre les deux chrétientés et leur diffusion est correcte ?
+REPONSES|Les catholiques se diffusent vers le Nord et les orthodoxes vers l'Est;Les catholiques se diffusent vers l'Est et les orthodoxes vers le Nord;Les deux chrétientés se diffusent uniquement vers l'Afrique
+BONNE|Les catholiques se diffusent vers le Nord et les orthodoxes vers l'Est
+EXPLICATION|Le document indique que les catholiques se diffusent notamment chez les Baltes et les Scandinaves, tandis que les orthodoxes se diffusent notamment chez les Russes.
+
+SESSION|3
+QUESTION|Quelle proposition résume correctement les principales différences religieuses entre les deux chrétientés ?
+REPONSES|Elles diffèrent notamment par leur chef, leur langue du culte, leur clergé, leur baptême et leur symbole;Elles ont exactement le même chef, la même langue et les mêmes pratiques;Elles se distinguent uniquement par la richesse de leurs villes
+BONNE|Elles diffèrent notamment par leur chef, leur langue du culte, leur clergé, leur baptême et leur symbole
+EXPLICATION|Les différences religieuses concernent plusieurs domaines. Le document en retient six, ce qui permet de comparer les deux chrétientés de manière précise.

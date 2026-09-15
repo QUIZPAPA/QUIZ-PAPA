@@ -154,6 +154,21 @@ function phraseAleatoire(){
 return felicitations[Math.floor(Math.random()*felicitations.length)]
 }
 
+/*
+   NOUVEAU :
+   Les balises <br> utilisées dans les textes sont supprimées
+   avant la lecture vocale.
+*/
+
+function textePourLecture(texte){
+
+let temporaire=document.createElement("div")
+
+temporaire.innerHTML=texte
+
+return temporaire.innerText
+}
+
 function parler(texte){
 
 speechSynthesis.cancel()
@@ -165,7 +180,12 @@ if(bouton){
 bouton.disabled=true
 }
 
-let msg=new SpeechSynthesisUtterance(texte)
+/* Le texte affiché peut contenir des <br>,
+   mais ils ne seront pas lus par la voix */
+
+let texteLecture=textePourLecture(texte)
+
+let msg=new SpeechSynthesisUtterance(texteLecture)
 
 msg.lang="fr-FR"
 msg.rate=0.95
@@ -339,7 +359,8 @@ Bonne réponse : {{ feedback[1] }}<br>
 {% else %}
 
 <script>
-texteQuestion="{{ question.question }}"
+texteQuestion={{ question.question|tojson }}
+
 setTimeout(lireQuestion,300)
 </script>
 
@@ -349,7 +370,13 @@ setTimeout(lireQuestion,300)
 
 <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
 
-<h2>{{ question.question }}</h2>
+<!--
+     NOUVEAU :
+     |safe permet d'interpréter <br> comme un vrai retour
+     à la ligne dans les textes des questions.
+-->
+
+<h2>{{ question.question|safe }}</h2>
 
 <form method="post">
 

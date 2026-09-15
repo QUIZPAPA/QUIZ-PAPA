@@ -1,0 +1,49 @@
+SESSION|1
+QUESTION|<strong>Lecture</strong><br><br>Chapitre 1 — Le carnet bleu<br><br>Lina, Zoé et Noé étaient tous les trois en 5e B. Ils se connaissaient depuis l'année précédente.<br><br>Un lundi matin de septembre, ils arrivèrent au collège. Près d'un radiateur, ils remarquèrent un petit carnet bleu qui semblait ancien.<br><br>Une phrase était écrite dans le carnet : « Si tu trouves ce carnet, regarde derrière la grande horloge. »<br><br>Les trois amis se dirigèrent vers la grande horloge, située à l'autre bout du bâtiment, près de la salle de musique.<br><br>Ils regardèrent derrière l'horloge. Noé y trouva une petite enveloppe blanche.<br><br>Sur l'enveloppe, il était écrit : « Pour les trois amis. »<br><br>Les trois amis se demandèrent alors comment quelqu'un avait pu savoir qu'ils trouveraient le carnet et l'enveloppe.<br><br>La sonnerie retentit. Ils devaient aller en classe. Lina rangea le carnet dans son sac. Noé garda l'enveloppe avec lui et Zoé voulait savoir ce qu'elle contenait.<br><br>Qui avait placé le carnet et l'enveloppe derrière l'horloge ? La question resta sans réponse.
+REPONSES|J'ai bien lu le texte|Je n'ai pas encore lu le texte
+BONNE|J'ai bien lu le texte
+EXPLICATION|Maintenant que tu as pris connaissance du chapitre 1, je vais te proposer des extraits du texte. Recherche l'information.
+QUESTION|Lina, Zoé et Noé étaient tous les trois en 5e B. Dans quelle classe sont les trois amis ?
+REPONSES|6e B|5e A|5e B|4e B
+BONNE|5e B
+EXPLICATION|Le texte indique clairement que les trois amis sont en 5e B.
+QUESTION|Un lundi matin, les trois amis remarquèrent un petit carnet bleu. Où trouvent-ils le carnet ?
+REPONSES|Près d'une porte|Près d'un radiateur|Dans la salle de musique|Derrière la grande horloge
+BONNE|Près d'un radiateur
+EXPLICATION|Le carnet est découvert près d'un radiateur dans le collège.
+
+SESSION|2
+QUESTION|Le carnet contient une consigne : « Si tu trouves ce carnet, regarde derrière la grande horloge. » Que doivent faire les trois amis ?
+REPONSES|Regarder derrière la grande horloge|Chercher dans la salle de musique|Rapporter le carnet en classe|Demander de l'aide à un professeur
+BONNE|Regarder derrière la grande horloge
+EXPLICATION|La phrase du carnet leur demande précisément de regarder derrière la grande horloge.
+QUESTION|La grande horloge se trouve à l'autre bout du bâtiment, près de quelle salle ?
+REPONSES|La salle de musique|La salle de sport|La salle de sciences|La salle de classe
+BONNE|La salle de musique
+EXPLICATION|Le texte précise que la grande horloge se trouve près de la salle de musique.
+QUESTION|En regardant derrière la grande horloge, que trouve Noé ?
+REPONSES|Un autre carnet bleu|Une petite enveloppe blanche|Une feuille de cours|Une vieille photo
+BONNE|Une petite enveloppe blanche
+EXPLICATION|Noé découvre une petite enveloppe blanche derrière l'horloge.
+QUESTION|Sur l'enveloppe, quelle phrase est écrite ?
+REPONSES|« Pour le professeur. »|« Pour Lina. »|« Pour les trois amis. »|« Pour la classe de 5e B. »
+BONNE|« Pour les trois amis. »
+EXPLICATION|L'inscription sur l'enveloppe indique qu'elle est destinée aux trois amis.
+
+SESSION|3
+QUESTION|Lina est présentée comme une fille curieuse et attentive, qui remarque les détails. Quel personnage est décrit comme aimant réfléchir avant d'agir ?
+REPONSES|Lina|Zoé|Noé|Un professeur
+BONNE|Noé
+EXPLICATION|Noé est présenté comme calme et comme quelqu'un qui aime réfléchir avant d'agir.
+QUESTION|Après la découverte de l'enveloppe, la sonnerie retentit. Que fait Lina avec le carnet ?
+REPONSES|Elle le laisse derrière l'horloge|Elle le donne à Noé|Elle le met dans son sac|Elle le remet à un professeur
+BONNE|Elle le met dans son sac
+EXPLICATION|Le texte précise que Lina range le carnet dans son sac.
+QUESTION|Pourquoi la découverte paraît-elle mystérieuse aux trois amis ?
+REPONSES|Ils ne savent pas qui a écrit les consignes|Ils ont perdu leur sac|Ils ne savent pas où se trouve leur classe|Ils ont oublié la salle de musique
+BONNE|Ils ne savent pas qui a écrit les consignes
+EXPLICATION|Les trois amis se demandent comment quelqu'un a pu savoir qu'ils trouveraient le carnet et l'enveloppe.
+QUESTION|À la fin du chapitre, quelle question reste sans réponse ?
+REPONSES|Pourquoi l'école est fermée|Qui a placé le carnet et l'enveloppe|Où se trouve la salle de musique|Qui a trouvé le carnet en premier
+BONNE|Qui a placé le carnet et l'enveloppe
+EXPLICATION|Le chapitre se termine sur le mystère de la personne qui a placé le carnet et l'enveloppe.

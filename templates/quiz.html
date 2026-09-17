@@ -137,7 +137,7 @@ let lectureTerminee=false
 let derniereSelection=null
 let tactile=false
 
-/* NOUVEAU : phrases positives */
+/* PHRASES POSITIVES */
 
 let felicitations = [
 "Bravo !",
@@ -154,20 +154,41 @@ function phraseAleatoire(){
 return felicitations[Math.floor(Math.random()*felicitations.length)]
 }
 
+
 /*
-   NOUVEAU :
-   Les balises <br> utilisées dans les textes sont supprimées
-   avant la lecture vocale.
+   NETTOYAGE DU TEXTE POUR LA LECTURE VOCALE
+
+   Les <br> sont transformés en espaces.
+   Cela évite que la synthèse vocale interprète
+   les retours à la ligne comme de la ponctuation.
 */
 
 function textePourLecture(texte){
 
-let temporaire=document.createElement("div")
+let temporaire = document.createElement("div")
 
-temporaire.innerHTML=texte
+temporaire.innerHTML = texte
+
+temporaire.querySelectorAll("br").forEach(br => {
+br.replaceWith(" ")
+})
 
 return temporaire.innerText
+.replace(/\s+/g, " ")
+.trim()
+
 }
+
+
+/*
+   LECTURE VOCALE
+
+   Le texte est découpé phrase par phrase.
+   La ponctuation finale est retirée afin d'éviter
+   que certaines voix prononcent "point".
+
+   Une pause de 600 ms est ajoutée entre chaque phrase.
+*/
 
 function parler(texte){
 
@@ -176,29 +197,92 @@ speechSynthesis.cancel()
 lectureTerminee=false
 
 let bouton = document.getElementById("btnSuivant")
+
 if(bouton){
 bouton.disabled=true
 }
 
-/* Le texte affiché peut contenir des <br>,
-   mais ils ne seront pas lus par la voix */
+let texteLecture = textePourLecture(texte)
 
-let texteLecture=textePourLecture(texte)
+if(!texteLecture){
+lectureTerminee=true
 
-let msg=new SpeechSynthesisUtterance(texteLecture)
+if(bouton){
+bouton.disabled=false
+}
 
-msg.lang="fr-FR"
-msg.rate=0.95
-msg.pitch=1
+return
+}
 
-msg.onend=function(){
+
+/* Découpage phrase par phrase */
+
+let phrases = texteLecture.match(/[^.!?]+[.!?]+|[^.!?]+$/g)
+
+if(!phrases){
+lectureTerminee=true
+
+if(bouton){
+bouton.disabled=false
+}
+
+return
+}
+
+let indexPhrase = 0
+
+
+function lirePhrase(){
+
+if(indexPhrase >= phrases.length){
 
 lectureTerminee=true
 
 let bouton = document.getElementById("btnSuivant")
+
 if(bouton){
 bouton.disabled=false
 }
+
+return
+}
+
+let phrase = phrases[indexPhrase].trim()
+
+
+/*
+   Retire les points, points d'exclamation
+   et points d'interrogation à la fin.
+   Cela évite leur lecture par certaines voix.
+*/
+
+phrase = phrase.replace(/[.!?]+$/g, "")
+
+if(!phrase){
+
+indexPhrase++
+
+lirePhrase()
+
+return
+}
+
+let msg = new SpeechSynthesisUtterance(phrase)
+
+msg.lang="fr-FR"
+msg.rate=0.88
+msg.pitch=1
+
+msg.onend=function(){
+
+indexPhrase++
+
+/*
+   Petite pause entre les phrases
+   pour rendre la lecture plus naturelle.
+*/
+
+setTimeout(lirePhrase,600)
 
 }
 
@@ -206,13 +290,20 @@ speechSynthesis.speak(msg)
 
 }
 
+lirePhrase()
+
+}
+
+
 function lireQuestion(){
 parler(texteQuestion)
 }
 
+
 function lireCorrection(){
 parler(texteCorrection)
 }
+
 
 function lireBouton(){
 
@@ -224,6 +315,7 @@ parler("Question suivante")
 
 }
 
+
 function lireReponse(rep){
 
 if(!lectureTerminee){
@@ -234,9 +326,11 @@ parler(rep)
 
 }
 
+
 window.addEventListener("touchstart", function(){
 tactile=true
 }, {once:true})
+
 
 function clicReponse(btn, texte){
 
@@ -269,6 +363,7 @@ btn.closest("form").submit()
 
 }
 
+
 function lancerConfettis(){
 
 confetti({
@@ -279,6 +374,7 @@ origin:{y:0.6}
 })
 
 }
+
 
 function animationFin(){
 
@@ -326,11 +422,15 @@ bravo.style.opacity=0
 {% if feedback[0] == "bonne" %}
 
 <script>
+
 let phrase = phraseAleatoire()
+
 texteCorrection = phrase + " {{ feedback[1] }}"
+
 setTimeout(function(){
 lireCorrection()
 },200)
+
 </script>
 
 <h3 style="color:green;">🎉 {{ "Bravo !" }}<br>{{ feedback[1] }}</h3>
@@ -338,10 +438,13 @@ lireCorrection()
 {% else %}
 
 <script>
+
 texteCorrection="Oups ! La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}"
+
 setTimeout(function(){
 lireCorrection()
 },200)
+
 </script>
 
 <h3 style="color:red;">❌ Oups !<br>
@@ -351,17 +454,21 @@ Bonne réponse : {{ feedback[1] }}<br>
 {% endif %}
 
 <a href="/quiz">
+
 <button id="btnSuivant" onmouseenter="lireBouton()" disabled>
 ➡️ Question suivante
 </button>
+
 </a>
 
 {% else %}
 
 <script>
+
 texteQuestion={{ question.question|tojson }}
 
 setTimeout(lireQuestion,300)
+
 </script>
 
 <button class="replay" onclick="lireQuestion()">
@@ -371,9 +478,8 @@ setTimeout(lireQuestion,300)
 <h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
 
 <!--
-     NOUVEAU :
-     |safe permet d'interpréter <br> comme un vrai retour
-     à la ligne dans les textes des questions.
+     |safe permet d'interpréter <br>
+     comme un vrai retour à la ligne.
 -->
 
 <h2>{{ question.question|safe }}</h2>
@@ -403,13 +509,17 @@ onmouseenter="lireReponse(`{{ r }}`)">
 {% else %}
 
 <script>
+
 setTimeout(animationFin,300)
+
 </script>
 
 <h2>Session terminée</h2>
 
 <a href="/">
+
 <button>🏠 Retour accueil</button>
+
 </a>
 
 {% endif %}

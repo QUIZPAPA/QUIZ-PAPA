@@ -1,0 +1,187 @@
+id|fin_deux_chretientes_5eme
+
+SESSION|1
+QUESTION|Quelle est la ville importante de la chrétienté catholique ?
+REPONSES|Rome;Constantinople;Aix-la-Chapelle
+BONNE|Rome
+EXPLICATION|Rome est la ville importante de la chrétienté catholique et le siège du pape.
+
+SESSION|1
+QUESTION|Quelle est la ville importante de la chrétienté orthodoxe ?
+REPONSES|Rome;Constantinople;Aix-la-Chapelle
+BONNE|Constantinople
+EXPLICATION|Constantinople est la ville importante de la chrétienté orthodoxe et la grande ville de l'Empire byzantin.
+
+SESSION|1
+QUESTION|Vers quels peuples la chrétienté catholique se diffuse-t-elle notamment ?
+REPONSES|Vers les peuples du Nord, comme les Baltes et les Scandinaves;Vers les peuples de l'Est, comme les Russes;Vers les peuples d'Afrique du Nord
+BONNE|Vers les peuples du Nord, comme les Baltes et les Scandinaves
+EXPLICATION|La chrétienté catholique se diffuse notamment vers les peuples du Nord, comme les Baltes et les Scandinaves.
+
+SESSION|1
+QUESTION|Vers quels peuples la chrétienté orthodoxe se diffuse-t-elle notamment ?
+REPONSES|Vers les peuples du Nord, comme les Scandinaves;Vers les peuples de l'Est, comme les Russes;Vers les peuples de l'Ouest, comme les Francs
+BONNE|Vers les peuples de l'Est, comme les Russes
+EXPLICATION|La chrétienté orthodoxe se diffuse notamment vers les peuples de l'Est, comme les Russes.
+
+SESSION|1
+QUESTION|Dans combien de domaines les deux chrétientés présentent-elles des différences religieuses ?
+REPONSES|Quatre;Six;Huit
+BONNE|Six
+EXPLICATION|Le cours retient six domaines de différences : le nom du christianisme, le chef de l'Église, la langue du culte, le clergé, le baptême et le symbole.
+
+SESSION|1
+QUESTION|Lequel de ces éléments fait partie des six domaines de différences religieuses étudiés ?
+REPONSES|Le type de baptême;La monnaie;Les routes;L'organisation de l'armée
+BONNE|Le type de baptême
+EXPLICATION|Le type de baptême fait partie des six domaines permettant de comparer les deux chrétientés.
+
+SESSION|1
+QUESTION|Quel ensemble présente correctement les six domaines de différences entre les deux chrétientés ?
+REPONSES|Nom du christianisme, chef de l'Église, langue du culte, clergé, baptême et symbole;Armée, commerce, monnaie, routes, agriculture et impôts;Capitale, frontières, population, commerce, armée et agriculture
+BONNE|Nom du christianisme, chef de l'Église, langue du culte, clergé, baptême et symbole
+EXPLICATION|Ces six domaines permettent de comparer précisément les deux Églises et leurs pratiques religieuses.
+
+SESSION|1
+QUESTION|Comment appelle-t-on le christianisme pratiqué dans l'Empire byzantin ?
+REPONSES|Christianisme orthodoxe;Christianisme catholique ou latin;Christianisme carolingien
+BONNE|Christianisme orthodoxe
+EXPLICATION|Dans l'Empire byzantin, la population pratique le christianisme orthodoxe.
+
+SESSION|1
+QUESTION|Comment appelle-t-on le christianisme pratiqué dans l'Empire carolingien ?
+REPONSES|Christianisme orthodoxe;Christianisme catholique ou latin;Christianisme byzantin
+BONNE|Christianisme catholique ou latin
+EXPLICATION|Dans l'Empire carolingien, le christianisme pratiqué est le christianisme catholique, aussi appelé christianisme latin.
+
+SESSION|1
+QUESTION|Quelle affirmation permet de distinguer les deux chrétientés ?
+REPONSES|Rome est importante pour les catholiques et Constantinople pour les orthodoxes;Rome est importante pour les orthodoxes et Constantinople pour les catholiques;Les deux Églises ont leur centre dans la même ville
+BONNE|Rome est importante pour les catholiques et Constantinople pour les orthodoxes
+EXPLICATION|Rome est associée à la chrétienté catholique tandis que Constantinople est associée à la chrétienté orthodoxe.
+
+SESSION|2
+QUESTION|En quelle année le pape de Rome et le patriarche de Constantinople s'excluent-ils mutuellement de l'Église ?
+REPONSES|843;1054;1204
+BONNE|1054
+EXPLICATION|En 1054, le pape de Rome et le patriarche de Constantinople s'excluent mutuellement de l'Église.
+
+SESSION|2
+QUESTION|Comment appelle-t-on la séparation des deux Églises qui se produit en 1054 ?
+REPONSES|Le Partage de Verdun;Le Schisme de 1054;La quatrième Croisade
+BONNE|Le Schisme de 1054
+EXPLICATION|Le Schisme de 1054 marque la séparation entre l'Église catholique et l'Église orthodoxe.
+
+SESSION|2
+QUESTION|Que devient l'Église catholique et l'Église orthodoxe après le Schisme de 1054 ?
+REPONSES|Elles deviennent deux Églises séparées;Elles fusionnent en une seule Église;Elles deviennent deux religions polythéistes
+BONNE|Elles deviennent deux Églises séparées
+EXPLICATION|Après le Schisme, l'Église catholique et l'Église orthodoxe sont désormais deux Églises séparées.
+
+SESSION|2
+QUESTION|Quel événement provoque une rupture encore plus importante entre catholiques et orthodoxes en 1204 ?
+REPONSES|Le Partage de Verdun;La quatrième Croisade;La disparition de l'Empire byzantin
+BONNE|La quatrième Croisade
+EXPLICATION|En 1204, la quatrième Croisade provoque de graves violences à Constantinople et rend la rupture avec les orthodoxes totale.
+
+SESSION|2
+QUESTION|Que font les croisés catholiques à Constantinople en 1204 ?
+REPONSES|Ils envahissent la ville, massacrent la population et pillent les lieux saints;Ils reconstruisent la ville et réconcilient les deux Églises;Ils quittent immédiatement la ville sans combattre
+BONNE|Ils envahissent la ville, massacrent la population et pillent les lieux saints
+EXPLICATION|En 1204, les croisés envahissent Constantinople, massacrent une partie de sa population et pillent les lieux saints.
+
+SESSION|2
+QUESTION|Quelle conséquence la quatrième Croisade de 1204 a-t-elle sur les relations entre les deux chrétientés ?
+REPONSES|La rupture avec les orthodoxes devient totale;Les deux Églises se réunissent;Le Schisme de 1054 est annulé
+BONNE|La rupture avec les orthodoxes devient totale
+EXPLICATION|Les violences et les pillages de 1204 aggravent fortement la séparation commencée en 1054.
+
+SESSION|2
+QUESTION|Qui écrit une lettre dénonçant les violences commises par les croisés après la prise de Constantinople ?
+REPONSES|Le pape Innocent III;Charlemagne;Le patriarche de Constantinople
+BONNE|Le pape Innocent III
+EXPLICATION|Dans une lettre datée du 12 juillet 1205, le pape Innocent III dénonce les violences commises par les croisés.
+
+SESSION|2
+QUESTION|Que reproche notamment le pape Innocent III aux croisés dans sa lettre de 1205 ?
+REPONSES|D'avoir répandu du sang chrétien et pillé des lieux saints;D'avoir refusé de combattre les musulmans;D'avoir abandonné Constantinople sans combattre
+BONNE|D'avoir répandu du sang chrétien et pillé des lieux saints
+EXPLICATION|Innocent III reproche aux croisés d'avoir versé du sang chrétien et d'avoir violé et pillé les lieux saints.
+
+SESSION|2
+QUESTION|Pourquoi la prise de Constantinople en 1204 est-elle particulièrement grave pour les relations entre les deux chrétientés ?
+REPONSES|Parce que des chrétiens catholiques attaquent une grande ville chrétienne orthodoxe;Parce que les Byzantins attaquent Rome;Parce que les deux Églises deviennent immédiatement identiques
+BONNE|Parce que des chrétiens catholiques attaquent une grande ville chrétienne orthodoxe
+EXPLICATION|La violence oppose directement des croisés catholiques à Constantinople, grande ville de la chrétienté orthodoxe.
+
+SESSION|2
+QUESTION|Quelle chronologie est correcte ?
+REPONSES|1054 Schisme puis 1204 quatrième Croisade;1204 Schisme puis 1054 quatrième Croisade;843 Schisme puis 1453 quatrième Croisade
+BONNE|1054 Schisme puis 1204 quatrième Croisade
+EXPLICATION|Le Schisme a lieu en 1054, puis la quatrième Croisade frappe Constantinople en 1204.
+
+SESSION|3
+QUESTION|En quelle année l'Empire carolingien disparaît-il ?
+REPONSES|843;1054;1453
+BONNE|843
+EXPLICATION|L'Empire carolingien disparaît dès 843, lorsqu'il est partagé entre les trois petits-fils de Charlemagne.
+
+SESSION|3
+QUESTION|Comment s'appelle le partage de l'Empire carolingien réalisé en 843 ?
+REPONSES|Le Partage de Verdun;Le Schisme de 1054;La quatrième Croisade
+BONNE|Le Partage de Verdun
+EXPLICATION|En 843, le Partage de Verdun divise l'Empire carolingien entre les trois petits-fils de Charlemagne.
+
+SESSION|3
+QUESTION|Entre qui l'Empire carolingien est-il partagé en 843 ?
+REPONSES|Entre les trois petits-fils de Charlemagne;Entre le pape et le patriarche;Entre les croisés et les Byzantins
+BONNE|Entre les trois petits-fils de Charlemagne
+EXPLICATION|Après Charlemagne, son empire est partagé entre ses trois petits-fils lors du Partage de Verdun.
+
+SESSION|3
+QUESTION|Quel événement marque le début de la perte progressive de puissance de l'Empire byzantin ?
+REPONSES|Le Schisme de 1054;Le Partage de Verdun;La disparition de l'Empire byzantin en 1453
+BONNE|Le Schisme de 1054
+EXPLICATION|L'Empire byzantin commence à perdre progressivement sa puissance après le Schisme de 1054.
+
+SESSION|3
+QUESTION|Quel événement de 1204 affaiblit encore fortement l'Empire byzantin ?
+REPONSES|La quatrième Croisade;Le Partage de Verdun;La diffusion du christianisme catholique vers les Scandinaves
+BONNE|La quatrième Croisade
+EXPLICATION|La quatrième Croisade de 1204 frappe durement Constantinople et l'Empire byzantin.
+
+SESSION|3
+QUESTION|En quelle année l'Empire byzantin disparaît-il ?
+REPONSES|843;1204;1453
+BONNE|1453
+EXPLICATION|L'Empire byzantin continue d'exister après 1204 mais disparaît finalement en 1453.
+
+SESSION|3
+QUESTION|Quelle différence concernant leur disparition distingue les deux Empires ?
+REPONSES|L'Empire carolingien disparaît en 843 et l'Empire byzantin en 1453;Les deux Empires disparaissent en 843;L'Empire byzantin disparaît en 843 et l'Empire carolingien en 1453
+BONNE|L'Empire carolingien disparaît en 843 et l'Empire byzantin en 1453
+EXPLICATION|Les deux Empires connaissent des fins très différentes : le Carolingien disparaît dès 843 tandis que le Byzantin disparaît en 1453.
+
+SESSION|3
+QUESTION|Les contacts entre l'Occident et l'Orient au Moyen Âge sont-ils uniquement liés aux guerres ?
+REPONSES|Non, il existe aussi des échanges commerciaux, artistiques et intellectuels;Oui, les contacts sont uniquement militaires;Oui, les deux régions restent totalement séparées
+BONNE|Non, il existe aussi des échanges commerciaux, artistiques et intellectuels
+EXPLICATION|Malgré les conflits, Orient et Occident entretiennent aussi de nombreux échanges commerciaux, artistiques et intellectuels.
+
+SESSION|3
+QUESTION|Quel rôle joue Constantinople dans les échanges entre l'Orient et l'Occident ?
+REPONSES|Elle permet notamment le passage de marchandises venues d'Asie;Elle empêche tous les échanges;Elle sert uniquement de forteresse militaire
+BONNE|Elle permet notamment le passage de marchandises venues d'Asie
+EXPLICATION|Grâce à sa position, Constantinople est un lieu important de passage pour les marchandises venues d'Asie.
+
+SESSION|3
+QUESTION|Quels types d'influences circulent entre les deux côtés de la Méditerranée ?
+REPONSES|Des influences artistiques et intellectuelles;Uniquement des influences militaires;Uniquement des influences agricoles
+BONNE|Des influences artistiques et intellectuelles
+EXPLICATION|Les contacts entre Orient et Occident favorisent de nombreuses influences artistiques et intellectuelles.
+
+SESSION|3
+QUESTION|Quelle idée générale permet de comprendre les relations entre l'Orient et l'Occident au Moyen Âge ?
+REPONSES|Il existe à la fois des conflits et de nombreux échanges;Il existe uniquement des conflits;Il n'existe aucun contact entre les deux régions
+BONNE|Il existe à la fois des conflits et de nombreux échanges
+EXPLICATION|Les relations sont complexes : les deux mondes peuvent s'affronter, mais ils échangent aussi des marchandises, des idées et des influences culturelles.

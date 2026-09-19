@@ -1,5 +1,3 @@
-id|fin_deux_chretientes_5eme
-
 SESSION|1
 QUESTION|Quelle est la ville importante de la chrétienté catholique ?
 REPONSES|Rome;Constantinople;Aix-la-Chapelle

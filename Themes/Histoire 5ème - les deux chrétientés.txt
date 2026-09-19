@@ -149,12 +149,6 @@ BONNE|L'Empire carolingien disparaît en 843 et l'Empire byzantin en 1453
 EXPLICATION|Les deux Empires connaissent des fins très différentes : le Carolingien disparaît dès 843 tandis que le Byzantin disparaît en 1453.
 
 SESSION|3
-QUESTION|Les contacts entre l'Occident et l'Orient au Moyen Âge sont-ils uniquement liés aux guerres ?
-REPONSES|Non, il existe aussi des échanges commerciaux, artistiques et intellectuels;Oui, les contacts sont uniquement militaires;Oui, les deux régions restent totalement séparées
-BONNE|Non, il existe aussi des échanges commerciaux, artistiques et intellectuels
-EXPLICATION|Malgré les conflits, Orient et Occident entretiennent aussi de nombreux échanges commerciaux, artistiques et intellectuels.
-
-SESSION|3
 QUESTION|Quel rôle joue Constantinople dans les échanges entre l'Orient et l'Occident ?
 REPONSES|Elle permet notamment le passage de marchandises venues d'Asie;Elle empêche tous les échanges;Elle sert uniquement de forteresse militaire
 BONNE|Elle permet notamment le passage de marchandises venues d'Asie

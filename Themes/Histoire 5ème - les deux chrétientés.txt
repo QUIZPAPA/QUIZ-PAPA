@@ -35,12 +35,6 @@ BONNE|Le type de baptême
 EXPLICATION|Le type de baptême fait partie des six domaines permettant de comparer les deux chrétientés.
 
 SESSION|1
-QUESTION|Quel ensemble présente correctement les six domaines de différences entre les deux chrétientés ?
-REPONSES|Nom du christianisme, chef de l'Église, langue du culte, clergé, baptême et symbole;Armée, commerce, monnaie, routes, agriculture et impôts;Capitale, frontières, population, commerce, armée et agriculture
-BONNE|Nom du christianisme, chef de l'Église, langue du culte, clergé, baptême et symbole
-EXPLICATION|Ces six domaines permettent de comparer précisément les deux Églises et leurs pratiques religieuses.
-
-SESSION|1
 QUESTION|Comment appelle-t-on le christianisme pratiqué dans l'Empire byzantin ?
 REPONSES|Christianisme orthodoxe;Christianisme catholique ou latin;Christianisme carolingien
 BONNE|Christianisme orthodoxe
@@ -105,12 +99,6 @@ QUESTION|Que reproche notamment le pape Innocent III aux croisés dans sa lettre
 REPONSES|D'avoir répandu du sang chrétien et pillé des lieux saints;D'avoir refusé de combattre les musulmans;D'avoir abandonné Constantinople sans combattre
 BONNE|D'avoir répandu du sang chrétien et pillé des lieux saints
 EXPLICATION|Innocent III reproche aux croisés d'avoir versé du sang chrétien et d'avoir violé et pillé les lieux saints.
-
-SESSION|2
-QUESTION|Pourquoi la prise de Constantinople en 1204 est-elle particulièrement grave pour les relations entre les deux chrétientés ?
-REPONSES|Parce que des chrétiens catholiques attaquent une grande ville chrétienne orthodoxe;Parce que les Byzantins attaquent Rome;Parce que les deux Églises deviennent immédiatement identiques
-BONNE|Parce que des chrétiens catholiques attaquent une grande ville chrétienne orthodoxe
-EXPLICATION|La violence oppose directement des croisés catholiques à Constantinople, grande ville de la chrétienté orthodoxe.
 
 SESSION|2
 QUESTION|Quelle chronologie est correcte ?

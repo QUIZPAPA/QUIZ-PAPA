@@ -1,5 +1,5 @@
 SESSION|1
-QUESTION|Lis attentivement le texte suivant, puis réponds à la question. La Chine est un pays d’Asie dont la population est particulièrement importante. En 2020, elle compte environ 1,4 milliard d’habitants. Pour comprendre l’évolution de cette population, on peut comparer plusieurs chiffres entre 1970 et 2020. En 1970, la Chine comptait 818 millions d’habitants. En 2020, elle en compte 1,4 milliard : la population chinoise a donc beaucoup augmenté en cinquante ans. Cette évolution démographique ne concerne pas seulement le nombre d’habitants. L’espérance de vie à la naissance est également passée de 60 ans en 1970 à 77 ans en 2020. Le revenu national brut par habitant est lui aussi passé de 120 dollars par an en 1970 à 10 390 dollars par an en 2020. Ces trois indicateurs montrent donc une augmentation du nombre d’habitants, de l’espérance de vie et du revenu national brut par habitant. Ces évolutions permettent de constater que les conditions de vie des Chinois se sont améliorées depuis 1970. Cependant, les habitants ne sont pas répartis de manière égale sur l’ensemble du territoire chinois. Les espaces urbains très densément peuplés se trouvent principalement à l’est et au sud-est de la Chine. On y trouve notamment les grandes villes de Pékin, Shanghai et Hong Kong. À l’inverse, les espaces ruraux très peu peuplés se trouvent principalement à l’ouest et au nord. Cette faible densité s’explique notamment par le relief et le climat de ces régions. Il existe également des espaces ruraux densément peuplés, qui se situent entre les grandes régions urbaines et les espaces ruraux très peu peuplés. La population chinoise se concentre donc fortement dans certaines parties du territoire, notamment dans les régions de l’est et du sud-est. Depuis plusieurs décennies, une partie des habitants quitte les campagnes pour rejoindre les villes : ce phénomène est appelé l’exode rural. En Chine, une partie de cet exode rural se dirige vers les villes du littoral. Cette évolution contribue à l’agrandissement des villes chinoises et à une urbanisation importante. Mais cette croissance des villes entraîne aussi des conséquences négatives. Un document consacré aux conséquences du changement démographique en Chine explique que la croissance disproportionnée des villes chinoises a provoqué plusieurs problèmes importants : une pollution environnementale, une détérioration de la santé des citoyens et une crise du logement. D’après ce texte, combien d’habitants la Chine compte-t-elle en 2020 ?
+QUESTION|Lis attentivement le texte suivant, puis réponds aux questions Attention le but n'est pas de tout retenir mais de comprendre pourquoi et comment la population d'un site évolue.<BR><BR>La Chine est un pays d’Asie très peuplé. En 1970, elle comptait 818 millions d’habitants. En 2020, sa population atteint environ 1,4 milliard d’habitants : elle a donc fortement augmenté en cinquante ans.<BR><BR>L’espérance de vie est également passée de 60 ans en 1970 à 77 ans en 2020. Le revenu national brut par habitant est passé de 120 dollars à 10 390 dollars par an. Ces trois indicateurs montrent une amélioration des conditions de vie depuis 1970.<BR><BR>La population est inégalement répartie. Les espaces urbains très densément peuplés se trouvent surtout à l’est et au sud-est, avec de grandes villes comme Pékin, Shanghai et Hong Kong. À l’ouest et au nord, les espaces ruraux sont beaucoup moins peuplés, notamment à cause du relief et du climat.<BR><BR>Depuis plusieurs décennies, une partie des habitants quitte les campagnes pour rejoindre les villes : c’est l’exode rural. En Chine, une partie de cet exode se dirige vers les villes du littoral, ce qui contribue à leur agrandissement et à une forte urbanisation.<BR><BR>Cette croissance des villes entraîne aussi des problèmes : pollution environnementale, détérioration de la santé des citoyens et crise du logement.<BR><BR>D’après ce texte, combien d’habitants la Chine compte-t-elle en 2020 ?
 REPONSES|Environ 1,4 milliard;Environ 818 millions;Environ 10 390 millions
 BONNE|Environ 1,4 milliard
 EXPLICATION|Le passage indique directement la population chinoise en 2020 : environ 1,4 milliard d’habitants.
@@ -11,73 +11,73 @@ BONNE|Une forte augmentation
 EXPLICATION|Entre 1970 et 2020, le nombre d’habitants passe de 818 millions à 1,4 milliard. Le texte parle donc d’une forte augmentation.
 
 SESSION|1
-QUESTION|« L’espérance de vie à la naissance est également passée de 60 ans en 1970 à 77 ans en 2020. » De combien d’années l’espérance de vie à la naissance a-t-elle augmenté ?
+QUESTION|« L’espérance de vie est également passée de 60 ans en 1970 à 77 ans en 2020. » De combien d’années l’espérance de vie a-t-elle augmenté ?
 REPONSES|17 ans;7 ans;27 ans
 BONNE|17 ans
 EXPLICATION|Il faut calculer 77 - 60 = 17 ans. L’espérance de vie a donc augmenté de 17 ans.
 
 SESSION|1
-QUESTION|« Le revenu national brut par habitant est lui aussi passé de 120 dollars par an en 1970 à 10 390 dollars par an en 2020. » Quel indicateur a fortement augmenté en plus de la population et de l’espérance de vie ?
+QUESTION|« Le revenu national brut par habitant est passé de 120 dollars à 10 390 dollars par an. » Quel indicateur a fortement augmenté en plus de la population et de l’espérance de vie ?
 REPONSES|Le revenu national brut par habitant;La superficie de la Chine;Le nombre de continents
 BONNE|Le revenu national brut par habitant
-EXPLICATION|Le passage cite trois évolutions : la population, l’espérance de vie et le revenu national brut par habitant.
+EXPLICATION|Le texte cite trois évolutions : la population, l’espérance de vie et le revenu national brut par habitant.
 
 SESSION|2
-QUESTION|« Ces évolutions permettent de constater que les conditions de vie des Chinois se sont améliorées depuis 1970. » Que peut-on conclure de l’évolution de la population, de l’espérance de vie et du revenu national brut par habitant ?
+QUESTION|« Ces trois indicateurs montrent une amélioration des conditions de vie depuis 1970. » Que peut-on conclure de l’évolution de la population, de l’espérance de vie et du revenu national brut par habitant ?
 REPONSES|Les conditions de vie se sont améliorées;Les conditions de vie se sont fortement dégradées;Les conditions de vie sont restées exactement identiques
 BONNE|Les conditions de vie se sont améliorées
 EXPLICATION|Le texte fait directement le lien entre l’augmentation de ces indicateurs et l’amélioration des conditions de vie.
 
 SESSION|2
-QUESTION|« Les espaces urbains très densément peuplés se trouvent principalement à l’est et au sud-est de la Chine. » Dans quelle partie de la Chine la population urbaine est-elle très dense ?
+QUESTION|« Les espaces urbains très densément peuplés se trouvent surtout à l’est et au sud-est. » Dans quelle partie de la Chine la population urbaine est-elle très dense ?
 REPONSES|À l’est et au sud-est;À l’ouest et au nord;Uniquement au centre
 BONNE|À l’est et au sud-est
-EXPLICATION|Le texte indique que les espaces urbains très densément peuplés se trouvent à l’est et au sud-est.
+EXPLICATION|Les espaces urbains très densément peuplés se trouvent principalement à l’est et au sud-est de la Chine.
 
 SESSION|2
-QUESTION|« On y trouve notamment les grandes villes de Pékin, Shanghai et Hong Kong. » Quelles sont les trois grandes villes citées dans le texte ?
+QUESTION|« Les grandes villes de Pékin, Shanghai et Hong Kong se trouvent dans ces régions. » Quelles sont les trois grandes villes citées dans le texte ?
 REPONSES|Pékin, Shanghai et Hong Kong;Paris, Londres et Rome;Moscou, Berlin et Madrid
 BONNE|Pékin, Shanghai et Hong Kong
-EXPLICATION|Les trois villes sont nommées directement dans le passage : Pékin, Shanghai et Hong Kong.
+EXPLICATION|Les trois villes citées sont Pékin, Shanghai et Hong Kong.
 
 SESSION|2
-QUESTION|« À l’inverse, les espaces ruraux très peu peuplés se trouvent principalement à l’ouest et au nord. » Dans quelles directions trouve-t-on les espaces ruraux très peu peuplés ?
+QUESTION|« À l’ouest et au nord, les espaces ruraux sont beaucoup moins peuplés. » Dans quelles directions trouve-t-on les espaces ruraux très peu peuplés ?
 REPONSES|À l’ouest et au nord;À l’est et au sud-est;Au sud et à l’est
 BONNE|À l’ouest et au nord
-EXPLICATION|Le passage donne directement les deux directions : l’ouest et le nord.
+EXPLICATION|Le texte indique directement que les espaces ruraux très peu peuplés se trouvent à l’ouest et au nord.
 
 SESSION|2
-QUESTION|« Cette faible densité s’explique notamment par le relief et le climat de ces régions. » Quelles sont les deux caractéristiques qui expliquent la faible densité de population de ces espaces ?
+QUESTION|« Ces régions sont notamment moins peuplées à cause du relief et du climat. » Quelles sont les deux caractéristiques qui expliquent la faible densité de population ?
 REPONSES|Le relief et le climat;Les villes et les emplois;Les ports et les littoraux
 BONNE|Le relief et le climat
 EXPLICATION|Le texte explique que le relief et le climat rendent ces régions moins favorables à une forte population.
 
 SESSION|3
-QUESTION|« Depuis plusieurs décennies, une partie des habitants quitte les campagnes pour rejoindre les villes : ce phénomène est appelé l’exode rural. » Comment appelle-t-on le départ d’une partie de la population des campagnes vers les villes ?
+QUESTION|« Une partie des habitants quitte les campagnes pour rejoindre les villes : c’est l’exode rural. » Comment appelle-t-on ce phénomène ?
 REPONSES|L’exode rural;La croissance naturelle;La densité rurale
 BONNE|L’exode rural
 EXPLICATION|Le texte donne directement le nom de ce phénomène : l’exode rural.
 
 SESSION|3
-QUESTION|« En Chine, une partie de cet exode rural se dirige vers les villes du littoral. » Vers quelles villes se dirige une partie de l’exode rural chinois ?
+QUESTION|« Une partie de cet exode se dirige vers les villes du littoral. » Vers quelles villes se dirige une partie de l’exode rural chinois ?
 REPONSES|Vers les villes du littoral;Vers les espaces ruraux du nord;Vers les régions montagneuses de l’ouest
 BONNE|Vers les villes du littoral
-EXPLICATION|Le passage indique précisément que l’exode rural se dirige en partie vers les villes du littoral.
+EXPLICATION|Le passage indique que l’exode rural se dirige en partie vers les villes du littoral.
 
 SESSION|3
-QUESTION|« Cette évolution contribue à l’agrandissement des villes chinoises et à une urbanisation importante. » Quelle transformation du territoire est liée à l’exode rural ?
+QUESTION|« Cette évolution contribue à leur agrandissement et à une forte urbanisation. » Quelle transformation du territoire est liée à l’exode rural ?
 REPONSES|L’agrandissement des villes et une urbanisation importante;La disparition des villes;La diminution des espaces urbains
 BONNE|L’agrandissement des villes et une urbanisation importante
-EXPLICATION|Le texte explique que l’arrivée d’habitants dans les villes participe à leur agrandissement et à l’urbanisation.
+EXPLICATION|L’arrivée d’habitants dans les villes participe à leur agrandissement et à l’urbanisation.
 
 SESSION|3
-QUESTION|« La croissance disproportionnée des villes chinoises a provoqué plusieurs problèmes importants : une pollution environnementale, une détérioration de la santé des citoyens et une crise du logement. » Combien de problèmes importants sont cités dans ce passage ?
+QUESTION|« La croissance des villes entraîne aussi des problèmes : pollution environnementale, détérioration de la santé des citoyens et crise du logement. » Combien de problèmes importants sont cités ?
 REPONSES|Trois;Deux;Cinq
 BONNE|Trois
 EXPLICATION|Le passage cite trois problèmes : la pollution environnementale, la détérioration de la santé des citoyens et la crise du logement.
 
 SESSION|3
-QUESTION|« Une pollution environnementale, une détérioration de la santé des citoyens et une crise du logement. » Lequel de ces problèmes concerne directement les logements ?
+QUESTION|« Pollution environnementale, détérioration de la santé des citoyens et crise du logement. » Lequel de ces problèmes concerne directement les logements ?
 REPONSES|La crise du logement;La pollution environnementale;La détérioration de la santé des citoyens
 BONNE|La crise du logement
 EXPLICATION|Le texte cite explicitement « une crise du logement ». C’est le problème qui concerne directement les logements.

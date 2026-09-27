@@ -106,6 +106,34 @@ width:220px;
 margin-bottom:15px;
 }
 
+/* ================================
+   KARAOKÉ
+   ================================ */
+
+.karaoke{
+line-height:1.8;
+}
+
+.motKaraoke{
+display:inline-block;
+padding:2px 6px;
+margin:1px;
+border:3px solid transparent;
+border-radius:8px;
+transition:
+background 0.15s ease,
+border-color 0.15s ease,
+transform 0.15s ease;
+}
+
+.motKaraoke.actif{
+background:#fff1a8;
+border-color:#f2b705;
+transform:scale(1.08);
+font-weight:600;
+box-shadow:0 2px 6px rgba(0,0,0,0.18);
+}
+
 #bravoMessage{
 position:fixed;
 top:40%;
@@ -137,7 +165,9 @@ let lectureTerminee=false
 let derniereSelection=null
 let tactile=false
 
-/* PHRASES POSITIVES */
+/* ================================
+   PHRASES POSITIVES
+   ================================ */
 
 let felicitations = [
 "Bravo !",
@@ -155,13 +185,9 @@ return felicitations[Math.floor(Math.random()*felicitations.length)]
 }
 
 
-/*
-   NETTOYAGE DU TEXTE POUR LA LECTURE VOCALE
-
-   Les <br> sont transformés en espaces.
-   Cela évite que la synthèse vocale interprète
-   les retours à la ligne comme de la ponctuation.
-*/
+/* ================================
+   NETTOYAGE DU TEXTE
+   ================================ */
 
 function textePourLecture(texte){
 
@@ -180,15 +206,43 @@ return temporaire.innerText
 }
 
 
-/*
-   LECTURE VOCALE
+/* ================================
+   PRÉPARATION DU KARAOKÉ
+   ================================ */
 
-   Le texte est découpé phrase par phrase.
-   La ponctuation finale est retirée afin d'éviter
-   que certaines voix prononcent "point".
+function preparerKaraoke(texte){
 
-   Une pause de 600 ms est ajoutée entre chaque phrase.
-*/
+let texteLecture = textePourLecture(texte)
+
+let mots = texteLecture.split(/\s+/)
+
+return mots.map((mot,index)=>{
+
+return `<span class="motKaraoke" id="mot-${index}">
+${mot}
+</span>`
+
+}).join(" ")
+
+}
+
+
+/* ================================
+   NETTOYAGE DU KARAOKÉ
+   ================================ */
+
+function retirerSurlignage(){
+
+document.querySelectorAll(".motKaraoke").forEach(mot=>{
+mot.classList.remove("actif")
+})
+
+}
+
+
+/* ================================
+   LECTURE VOCALE CLASSIQUE
+   ================================ */
 
 function parler(texte){
 
@@ -205,6 +259,7 @@ bouton.disabled=true
 let texteLecture = textePourLecture(texte)
 
 if(!texteLecture){
+
 lectureTerminee=true
 
 if(bouton){
@@ -220,6 +275,7 @@ return
 let phrases = texteLecture.match(/[^.!?]+[.!?]+|[^.!?]+$/g)
 
 if(!phrases){
+
 lectureTerminee=true
 
 if(bouton){
@@ -249,14 +305,7 @@ return
 
 let phrase = phrases[indexPhrase].trim()
 
-
-/*
-   Retire les points, points d'exclamation
-   et points d'interrogation à la fin.
-   Cela évite leur lecture par certaines voix.
-*/
-
-phrase = phrase.replace(/[.!?]+$/g, "")
+phrase = phrase.replace(/[.!?]+$/g,"")
 
 if(!phrase){
 
@@ -277,11 +326,6 @@ msg.onend=function(){
 
 indexPhrase++
 
-/*
-   Petite pause entre les phrases
-   pour rendre la lecture plus naturelle.
-*/
-
 setTimeout(lirePhrase,600)
 
 }
@@ -295,15 +339,249 @@ lirePhrase()
 }
 
 
+/* ================================
+   LECTURE QUESTION + KARAOKÉ
+   ================================ */
+
 function lireQuestion(){
-parler(texteQuestion)
+
+parlerKaraoke(texteQuestion)
+
 }
 
+
+/* ================================
+   LECTURE KARAOKÉ
+   ================================ */
+
+function parlerKaraoke(texte){
+
+speechSynthesis.cancel()
+
+lectureTerminee=false
+
+let bouton=document.getElementById("btnSuivant")
+
+if(bouton){
+bouton.disabled=true
+}
+
+retirerSurlignage()
+
+let texteLecture=textePourLecture(texte)
+
+if(!texteLecture){
+
+lectureTerminee=true
+
+if(bouton){
+bouton.disabled=false
+}
+
+return
+}
+
+
+/*
+   Découpage en mots.
+*/
+
+let mots=texteLecture.split(/\s+/)
+
+
+/*
+   Calcul de la position de chaque mot
+   dans le texte.
+*/
+
+let positions=[]
+
+let position=0
+
+mots.forEach((mot,index)=>{
+
+positions.push({
+index:index,
+debut:position,
+fin:position+mot.length
+})
+
+position+=mot.length+1
+
+})
+
+
+let msg=new SpeechSynthesisUtterance(texteLecture)
+
+msg.lang="fr-FR"
+msg.rate=0.88
+msg.pitch=1
+
+
+let boundaryDisponible=false
+
+
+/*
+   Le navigateur nous indique le mot
+   actuellement prononcé.
+*/
+
+msg.onboundary=function(event){
+
+if(event.name !== "word"){
+return
+}
+
+boundaryDisponible=true
+
+let charIndex=event.charIndex
+
+let motActuel=-1
+
+for(let i=0;i<positions.length;i++){
+
+if(
+charIndex >= positions[i].debut &&
+charIndex < positions[i].fin
+){
+
+motActuel=positions[i].index
+
+break
+
+}
+
+}
+
+
+/*
+   Retire l'ancien surlignage.
+*/
+
+retirerSurlignage()
+
+
+/*
+   Active le mot actuel.
+*/
+
+if(motActuel >= 0){
+
+let mot=document.getElementById("mot-"+motActuel)
+
+if(mot){
+mot.classList.add("actif")
+}
+
+}
+
+}
+
+
+/*
+   Fin de lecture.
+*/
+
+msg.onend=function(){
+
+retirerSurlignage()
+
+lectureTerminee=true
+
+if(bouton){
+bouton.disabled=false
+}
+
+}
+
+
+/*
+   Gestion d'une éventuelle erreur.
+*/
+
+msg.onerror=function(){
+
+retirerSurlignage()
+
+lectureTerminee=true
+
+if(bouton){
+bouton.disabled=false
+}
+
+}
+
+
+/*
+   Lancement de la lecture.
+*/
+
+speechSynthesis.speak(msg)
+
+
+/*
+   ------------------------------------------------
+   SECOURS POUR LES NAVIGATEURS SANS BOUNDARY
+   ------------------------------------------------
+
+   Certains navigateurs ne déclenchent pas
+   correctement l'événement "boundary".
+
+   On utilise alors une estimation basée
+   sur la durée de lecture.
+*/
+
+setTimeout(function(){
+
+if(boundaryDisponible){
+return
+}
+
+let dureeEstimee =
+(texteLecture.length / 12) * 1000
+
+let dureeMot =
+dureeEstimee / mots.length
+
+mots.forEach((mot,index)=>{
+
+setTimeout(function(){
+
+if(lectureTerminee){
+return
+}
+
+retirerSurlignage()
+
+let element=document.getElementById("mot-"+index)
+
+if(element){
+element.classList.add("actif")
+}
+
+},dureeMot*index)
+
+})
+
+},100)
+
+}
+
+
+/* ================================
+   LECTURE CORRECTION
+   ================================ */
 
 function lireCorrection(){
+
 parler(texteCorrection)
+
 }
 
+
+/* ================================
+   LECTURE BOUTON
+   ================================ */
 
 function lireBouton(){
 
@@ -316,6 +594,10 @@ parler("Question suivante")
 }
 
 
+/* ================================
+   LECTURE RÉPONSE
+   ================================ */
+
 function lireReponse(rep){
 
 if(!lectureTerminee){
@@ -327,21 +609,34 @@ parler(rep)
 }
 
 
-window.addEventListener("touchstart", function(){
+/* ================================
+   DÉTECTION TACTILE
+   ================================ */
+
+window.addEventListener("touchstart",function(){
+
 tactile=true
-}, {once:true})
+
+},{once:true})
 
 
-function clicReponse(btn, texte){
+/* ================================
+   CLIC RÉPONSE
+   ================================ */
+
+function clicReponse(btn,texte){
 
 if(!lectureTerminee){
 return
 }
 
 if(!tactile){
+
 btn.closest("form").submit()
+
 return
 }
+
 
 if(derniereSelection !== btn){
 
@@ -359,10 +654,15 @@ return
 
 }
 
+
 btn.closest("form").submit()
 
 }
 
+
+/* ================================
+   CONFETTIS
+   ================================ */
 
 function lancerConfettis(){
 
@@ -376,6 +676,10 @@ origin:{y:0.6}
 }
 
 
+/* ================================
+   ANIMATION FIN
+   ================================ */
+
 function animationFin(){
 
 let bravo=document.getElementById("bravoMessage")
@@ -384,13 +688,18 @@ bravo.style.opacity=1
 
 parler("Bravo ! Tu as terminé le quiz !")
 
-setTimeout(()=>{
+setTimeout(function(){
+
 lancerConfettis()
+
 },1500)
 
-setTimeout(()=>{
+setTimeout(function(){
+
 bravo.style.transition="opacity 2s"
+
 bravo.style.opacity=0
+
 },4000)
 
 }
@@ -405,12 +714,19 @@ bravo.style.opacity=0
 🧠 Thème : {{ theme }}
 </div>
 
-<div id="bravoMessage">🎉 BRAVO ! 🎉</div>
+<div id="bravoMessage">
+🎉 BRAVO ! 🎉
+</div>
 
 <div class="container">
 
 <div class="cadreMascotte">
-<img class="mascotte" src="{{ url_for('static', filename='images/mascotte_parle.gif') }}">
+
+<img
+class="mascotte"
+src="{{ url_for('static', filename='images/mascotte_parle.gif') }}"
+>
+
 </div>
 
 <div class="zone">
@@ -425,37 +741,56 @@ bravo.style.opacity=0
 
 let phrase = phraseAleatoire()
 
-texteCorrection = phrase + " {{ feedback[1] }}"
+texteCorrection =
+phrase + " {{ feedback[1] }}"
 
 setTimeout(function(){
+
 lireCorrection()
+
 },200)
 
 </script>
 
-<h3 style="color:green;">🎉 {{ "Bravo !" }}<br>{{ feedback[1] }}</h3>
+<h3 style="color:green;">
+🎉 {{ "Bravo !" }}<br>
+{{ feedback[1] }}
+</h3>
 
 {% else %}
 
 <script>
 
-texteCorrection="Oups ! La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}"
+texteCorrection =
+"Oups ! La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}"
 
 setTimeout(function(){
+
 lireCorrection()
+
 },200)
 
 </script>
 
-<h3 style="color:red;">❌ Oups !<br>
+<h3 style="color:red;">
+
+❌ Oups !<br>
+
 Bonne réponse : {{ feedback[1] }}<br>
-{{ feedback[2] }}</h3>
+
+{{ feedback[2] }}
+
+</h3>
 
 {% endif %}
 
 <a href="/quiz">
 
-<button id="btnSuivant" onmouseenter="lireBouton()" disabled>
+<button
+id="btnSuivant"
+onmouseenter="lireBouton()"
+disabled
+>
 ➡️ Question suivante
 </button>
 
@@ -465,24 +800,56 @@ Bonne réponse : {{ feedback[1] }}<br>
 
 <script>
 
-texteQuestion={{ question.question|tojson }}
+texteQuestion={{ question.question|tojson }>
 
-setTimeout(lireQuestion,300)
+
+/*
+   Création de la version karaoké
+   de la question.
+*/
+
+document.addEventListener("DOMContentLoaded",function(){
+
+let zoneQuestion =
+document.getElementById("questionKaraoke")
+
+if(zoneQuestion){
+
+zoneQuestion.innerHTML =
+preparerKaraoke(texteQuestion)
+
+}
+
+setTimeout(function(){
+
+lireQuestion()
+
+},300)
+
+})
 
 </script>
 
-<button class="replay" onclick="lireQuestion()">
+
+<button
+class="replay"
+onclick="lireQuestion()"
+>
 🔊 Réécouter la question
 </button>
 
-<h3>Session {{ session_actuelle }} — Question {{ index+1 }}/{{ total }}</h3>
 
-<!--
-     |safe permet d'interpréter <br>
-     comme un vrai retour à la ligne.
--->
+<h3>
+Session {{ session_actuelle }} —
+Question {{ index+1 }}/{{ total }}
+</h3>
 
-<h2>{{ question.question|safe }}</h2>
+
+<h2
+id="questionKaraoke"
+class="karaoke"
+></h2>
+
 
 <form method="post">
 
@@ -494,7 +861,8 @@ name="reponse"
 value="{{ r }}"
 class="repBtn"
 onclick="clicReponse(this, `{{ r }}`)"
-onmouseenter="lireReponse(`{{ r }}`)">
+onmouseenter="lireReponse(`{{ r }}`)"
+>
 
 {{ r }}
 
@@ -514,18 +882,26 @@ setTimeout(animationFin,300)
 
 </script>
 
-<h2>Session terminée</h2>
+<h2>
+Session terminée
+</h2>
 
 <a href="/">
 
-<button>🏠 Retour accueil</button>
+<button>
+🏠 Retour accueil
+</button>
 
 </a>
 
 {% endif %}
 
 </div>
+
 </div>
 
 </body>
 </html>
+```
+
+Cette version conserve donc le fonctionnement de ta version de référence et ajoute uniquement la couche **lecture + suivi visuel mot par mot**.

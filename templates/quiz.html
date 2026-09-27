@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 
 <html lang="fr">
@@ -60,15 +61,23 @@ animation:respiration 5s ease-in-out infinite;
 }
 
 @keyframes respiration{
-0%{transform:translateY(0) scale(1);}
-50%{transform:translateY(-4px) scale(1.02);}
-100%{transform:translateY(0) scale(1);}
+0%{
+transform:translateY(0) scale(1);
+}
+50%{
+transform:translateY(-4px) scale(1.02);
+}
+100%{
+transform:translateY(0) scale(1);
+}
 }
 
 .zone{
 flex:1;
 padding:20px;
 }
+
+/* BOUTONS */
 
 button{
 font-size:18px;
@@ -106,34 +115,6 @@ width:220px;
 margin-bottom:15px;
 }
 
-/* ================================
-   KARAOKÉ
-   ================================ */
-
-.karaoke{
-line-height:1.8;
-}
-
-.motKaraoke{
-display:inline-block;
-padding:2px 6px;
-margin:1px;
-border:3px solid transparent;
-border-radius:8px;
-transition:
-background 0.15s ease,
-border-color 0.15s ease,
-transform 0.15s ease;
-}
-
-.motKaraoke.actif{
-background:#fff1a8;
-border-color:#f2b705;
-transform:scale(1.08);
-font-weight:600;
-box-shadow:0 2px 6px rgba(0,0,0,0.18);
-}
-
 #bravoMessage{
 position:fixed;
 top:40%;
@@ -144,6 +125,7 @@ color:white;
 text-shadow:0 0 15px black;
 opacity:0;
 pointer-events:none;
+z-index:1000;
 }
 
 .repSelected{
@@ -152,22 +134,112 @@ color:white;
 transform:scale(1.05);
 }
 
+
+/* =========================================
+   KARAOKÉ
+   ========================================= */
+
+.karaoke{
+line-height:2;
+}
+
+.motKaraoke{
+display:inline-block;
+padding:3px 7px;
+margin:2px 1px;
+border:3px solid transparent;
+border-radius:8px;
+
+transition:
+background 0.12s ease,
+border-color 0.12s ease,
+transform 0.12s ease,
+box-shadow 0.12s ease;
+}
+
+.motKaraoke.actif{
+background:#fff1a8;
+border-color:#f2b705;
+transform:scale(1.08);
+font-weight:600;
+box-shadow:0 3px 8px rgba(0,0,0,0.18);
+}
+
+
+/* Texte question */
+
+#questionKaraoke{
+font-size:28px;
+font-weight:600;
+margin:20px 0;
+}
+
+
+/* Texte correction */
+
+#correctionKaraoke{
+font-size:22px;
+line-height:1.8;
+}
+
+
+/* Sur petits écrans */
+
+@media(max-width:800px){
+
+.container{
+flex-direction:column;
+align-items:center;
+}
+
+.cadreMascotte{
+margin-right:0;
+margin-bottom:15px;
+}
+
+.mascotte{
+width:240px;
+}
+
+.zone{
+width:100%;
+padding:10px;
+box-sizing:border-box;
+}
+
+button{
+width:95%;
+}
+
+#questionKaraoke{
+font-size:24px;
+}
+
+}
+
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
 <script>
 
-let texteQuestion=""
-let texteCorrection=""
-let lectureTerminee=false
+/* =========================================================
+   VARIABLES
+   ========================================================= */
 
-let derniereSelection=null
-let tactile=false
+let texteQuestion = ""
+let texteCorrection = ""
 
-/* ================================
+let lectureTerminee = false
+
+let derniereSelection = null
+
+let tactile = false
+
+
+/* =========================================================
    PHRASES POSITIVES
-   ================================ */
+   ========================================================= */
 
 let felicitations = [
 "Bravo !",
@@ -180,14 +252,19 @@ let felicitations = [
 "Bien joué !"
 ]
 
+
 function phraseAleatoire(){
-return felicitations[Math.floor(Math.random()*felicitations.length)]
+
+return felicitations[
+Math.floor(Math.random() * felicitations.length)
+]
+
 }
 
 
-/* ================================
+/* =========================================================
    NETTOYAGE DU TEXTE
-   ================================ */
+   ========================================================= */
 
 function textePourLecture(texte){
 
@@ -195,166 +272,81 @@ let temporaire = document.createElement("div")
 
 temporaire.innerHTML = texte
 
-temporaire.querySelectorAll("br").forEach(br => {
+temporaire.querySelectorAll("br").forEach(br=>{
 br.replaceWith(" ")
 })
 
 return temporaire.innerText
-.replace(/\s+/g, " ")
+.replace(/\s+/g," ")
 .trim()
 
 }
 
 
-/* ================================
-   PRÉPARATION DU KARAOKÉ
-   ================================ */
+/* =========================================================
+   PREPARATION DU KARAOKÉ
+   ========================================================= */
 
 function preparerKaraoke(texte){
 
-let texteLecture = textePourLecture(texte)
+let propre = textePourLecture(texte)
 
-let mots = texteLecture.split(/\s+/)
+let mots = propre.split(" ")
 
-return mots.map((mot,index)=>{
+return mots.map(function(mot,index){
 
-return `<span class="motKaraoke" id="mot-${index}">
+return `
+<span
+class="motKaraoke"
+id="motKaraoke-${index}">
 ${mot}
-</span>`
+</span>
+`
 
 }).join(" ")
 
 }
 
 
-/* ================================
-   NETTOYAGE DU KARAOKÉ
-   ================================ */
+/* =========================================================
+   RETIRER LE SURBRILLAGE
+   ========================================================= */
 
-function retirerSurlignage(){
+function enleverKaraoke(){
 
-document.querySelectorAll(".motKaraoke").forEach(mot=>{
+document.querySelectorAll(".motKaraoke").forEach(function(mot){
+
 mot.classList.remove("actif")
+
 })
 
 }
 
 
-/* ================================
-   LECTURE VOCALE CLASSIQUE
-   ================================ */
+/* =========================================================
+   ACTIVER UN MOT
+   ========================================================= */
+
+function activerMot(index){
+
+enleverKaraoke()
+
+let mot=document.getElementById("motKaraoke-"+index)
+
+if(mot){
+
+mot.classList.add("actif")
+
+}
+
+}
+
+
+/* =========================================================
+   LECTURE NORMALE
+   ========================================================= */
 
 function parler(texte){
-
-speechSynthesis.cancel()
-
-lectureTerminee=false
-
-let bouton = document.getElementById("btnSuivant")
-
-if(bouton){
-bouton.disabled=true
-}
-
-let texteLecture = textePourLecture(texte)
-
-if(!texteLecture){
-
-lectureTerminee=true
-
-if(bouton){
-bouton.disabled=false
-}
-
-return
-}
-
-
-/* Découpage phrase par phrase */
-
-let phrases = texteLecture.match(/[^.!?]+[.!?]+|[^.!?]+$/g)
-
-if(!phrases){
-
-lectureTerminee=true
-
-if(bouton){
-bouton.disabled=false
-}
-
-return
-}
-
-let indexPhrase = 0
-
-
-function lirePhrase(){
-
-if(indexPhrase >= phrases.length){
-
-lectureTerminee=true
-
-let bouton = document.getElementById("btnSuivant")
-
-if(bouton){
-bouton.disabled=false
-}
-
-return
-}
-
-let phrase = phrases[indexPhrase].trim()
-
-phrase = phrase.replace(/[.!?]+$/g,"")
-
-if(!phrase){
-
-indexPhrase++
-
-lirePhrase()
-
-return
-}
-
-let msg = new SpeechSynthesisUtterance(phrase)
-
-msg.lang="fr-FR"
-msg.rate=0.88
-msg.pitch=1
-
-msg.onend=function(){
-
-indexPhrase++
-
-setTimeout(lirePhrase,600)
-
-}
-
-speechSynthesis.speak(msg)
-
-}
-
-lirePhrase()
-
-}
-
-
-/* ================================
-   LECTURE QUESTION + KARAOKÉ
-   ================================ */
-
-function lireQuestion(){
-
-parlerKaraoke(texteQuestion)
-
-}
-
-
-/* ================================
-   LECTURE KARAOKÉ
-   ================================ */
-
-function parlerKaraoke(texte){
 
 speechSynthesis.cancel()
 
@@ -363,10 +355,10 @@ lectureTerminee=false
 let bouton=document.getElementById("btnSuivant")
 
 if(bouton){
-bouton.disabled=true
-}
 
-retirerSurlignage()
+bouton.disabled=true
+
+}
 
 let texteLecture=textePourLecture(texte)
 
@@ -375,41 +367,101 @@ if(!texteLecture){
 lectureTerminee=true
 
 if(bouton){
+
 bouton.disabled=false
+
 }
 
 return
+
+}
+
+let msg=new SpeechSynthesisUtterance(texteLecture)
+
+msg.lang="fr-FR"
+msg.rate=0.88
+msg.pitch=1
+
+msg.onend=function(){
+
+lectureTerminee=true
+
+if(bouton){
+
+bouton.disabled=false
+
+}
+
+}
+
+msg.onerror=function(){
+
+lectureTerminee=true
+
+if(bouton){
+
+bouton.disabled=false
+
+}
+
+}
+
+speechSynthesis.speak(msg)
+
+}
+
+
+/* =========================================================
+   LECTURE KARAOKÉ
+   ========================================================= */
+
+function parlerKaraoke(texte){
+
+speechSynthesis.cancel()
+
+lectureTerminee=false
+
+enleverKaraoke()
+
+let bouton=document.getElementById("btnSuivant")
+
+if(bouton){
+
+bouton.disabled=true
+
+}
+
+let texteLecture=textePourLecture(texte)
+
+if(!texteLecture){
+
+lectureTerminee=true
+
+if(bouton){
+
+bouton.disabled=false
+
+}
+
+return
+
 }
 
 
 /*
-   Découpage en mots.
+   Liste des mots réellement lus.
 */
 
-let mots=texteLecture.split(/\s+/)
+let mots=texteLecture.split(/\s+/).filter(function(mot){
+
+return mot.length>0
+
+})
 
 
 /*
-   Calcul de la position de chaque mot
-   dans le texte.
+   Création de la voix.
 */
-
-let positions=[]
-
-let position=0
-
-mots.forEach((mot,index)=>{
-
-positions.push({
-index:index,
-debut:position,
-fin:position+mot.length
-})
-
-position+=mot.length+1
-
-})
-
 
 let msg=new SpeechSynthesisUtterance(texteLecture)
 
@@ -418,36 +470,39 @@ msg.rate=0.88
 msg.pitch=1
 
 
-let boundaryDisponible=false
-
-
 /*
-   Le navigateur nous indique le mot
-   actuellement prononcé.
+   Certains navigateurs fournissent
+   la position exacte du mot prononcé.
 */
+
+let boundaryDisponible=false
 
 msg.onboundary=function(event){
 
-if(event.name !== "word"){
+if(event.name && event.name !== "word"){
+
 return
+
 }
 
 boundaryDisponible=true
 
-let charIndex=event.charIndex
+let debut=event.charIndex
 
-let motActuel=-1
+let texteAvant=texteLecture.substring(0,debut)
 
-for(let i=0;i<positions.length;i++){
+let index=texteAvant
+.trim()
+.split(/\s+/)
+.filter(function(mot){
 
-if(
-charIndex >= positions[i].debut &&
-charIndex < positions[i].fin
-){
+return mot.length>0
 
-motActuel=positions[i].index
+}).length
 
-break
+if(index < mots.length){
+
+activerMot(index)
 
 }
 
@@ -455,138 +510,173 @@ break
 
 
 /*
-   Retire l'ancien surlignage.
+   Quand la lecture commence.
 */
 
-retirerSurlignage()
+msg.onstart=function(){
 
-
-/*
-   Active le mot actuel.
-*/
-
-if(motActuel >= 0){
-
-let mot=document.getElementById("mot-"+motActuel)
-
-if(mot){
-mot.classList.add("actif")
-}
-
-}
+activerMot(0)
 
 }
 
 
 /*
-   Fin de lecture.
+   Fin de la lecture.
 */
 
 msg.onend=function(){
 
-retirerSurlignage()
-
 lectureTerminee=true
 
+enleverKaraoke()
+
 if(bouton){
+
 bouton.disabled=false
+
 }
 
 }
 
 
 /*
-   Gestion d'une éventuelle erreur.
+   En cas d'erreur de synthèse vocale.
 */
 
 msg.onerror=function(){
 
-retirerSurlignage()
+lectureTerminee=true
+
+enleverKaraoke()
+
+if(bouton){
+
+bouton.disabled=false
+
+}
+
+}
+
+
+/*
+   Sécurité :
+   certains navigateurs ne déclenchent pas
+   l'événement "boundary".
+
+   Dans ce cas, on anime quand même
+   les mots progressivement.
+*/
+
+let indexFallback=0
+
+let intervalFallback=null
+
+let vitesseMot=600
+
+
+msg.onstart=function(){
+
+activerMot(0)
+
+if(!boundaryDisponible){
+
+indexFallback=0
+
+intervalFallback=setInterval(function(){
+
+if(boundaryDisponible){
+
+clearInterval(intervalFallback)
+
+return
+
+}
+
+indexFallback++
+
+if(indexFallback < mots.length){
+
+activerMot(indexFallback)
+
+}
+
+},vitesseMot)
+
+}
+
+}
+
+
+msg.onend=function(){
+
+if(intervalFallback){
+
+clearInterval(intervalFallback)
+
+}
 
 lectureTerminee=true
 
+enleverKaraoke()
+
 if(bouton){
+
 bouton.disabled=false
-}
 
 }
 
+}
 
-/*
-   Lancement de la lecture.
-*/
 
 speechSynthesis.speak(msg)
 
+}
 
-/*
-   ------------------------------------------------
-   SECOURS POUR LES NAVIGATEURS SANS BOUNDARY
-   ------------------------------------------------
 
-   Certains navigateurs ne déclenchent pas
-   correctement l'événement "boundary".
+/* =========================================================
+   LIRE LA QUESTION
+   ========================================================= */
 
-   On utilise alors une estimation basée
-   sur la durée de lecture.
-*/
+function lireQuestion(){
 
-setTimeout(function(){
+if(!texteQuestion){
 
-if(boundaryDisponible){
 return
+
 }
 
-let dureeEstimee =
-(texteLecture.length / 12) * 1000
-
-let dureeMot =
-dureeEstimee / mots.length
-
-mots.forEach((mot,index)=>{
-
-setTimeout(function(){
-
-if(lectureTerminee){
-return
-}
-
-retirerSurlignage()
-
-let element=document.getElementById("mot-"+index)
-
-if(element){
-element.classList.add("actif")
-}
-
-},dureeMot*index)
-
-})
-
-},100)
+parlerKaraoke(texteQuestion)
 
 }
 
 
-/* ================================
-   LECTURE CORRECTION
-   ================================ */
+/* =========================================================
+   LIRE LA CORRECTION
+   ========================================================= */
 
 function lireCorrection(){
 
-parler(texteCorrection)
+if(!texteCorrection){
+
+return
+
+}
+
+parlerKaraoke(texteCorrection)
 
 }
 
 
-/* ================================
-   LECTURE BOUTON
-   ================================ */
+/* =========================================================
+   LIRE LE BOUTON SUIVANT
+   ========================================================= */
 
 function lireBouton(){
 
 if(!lectureTerminee){
+
 return
+
 }
 
 parler("Question suivante")
@@ -594,14 +684,16 @@ parler("Question suivante")
 }
 
 
-/* ================================
-   LECTURE RÉPONSE
-   ================================ */
+/* =========================================================
+   LIRE UNE REPONSE
+   ========================================================= */
 
 function lireReponse(rep){
 
 if(!lectureTerminee){
+
 return
+
 }
 
 parler(rep)
@@ -609,39 +701,61 @@ parler(rep)
 }
 
 
-/* ================================
-   DÉTECTION TACTILE
-   ================================ */
+/* =========================================================
+   DETECTION TACTILE
+   ========================================================= */
 
-window.addEventListener("touchstart",function(){
+window.addEventListener(
+"touchstart",
+function(){
 
 tactile=true
 
-},{once:true})
+},
+{
+once:true
+}
+)
 
 
-/* ================================
-   CLIC RÉPONSE
-   ================================ */
+/* =========================================================
+   CLIC SUR UNE REPONSE
+   ========================================================= */
 
 function clicReponse(btn,texte){
 
 if(!lectureTerminee){
+
 return
+
 }
+
+
+/*
+   Sur ordinateur :
+   un clic valide directement la réponse.
+*/
 
 if(!tactile){
 
 btn.closest("form").submit()
 
 return
+
 }
 
 
+/*
+   Sur tablette :
+   premier appui = écoute de la réponse.
+*/
+
 if(derniereSelection !== btn){
 
-document.querySelectorAll(".repBtn").forEach(b=>{
+document.querySelectorAll(".repBtn").forEach(function(b){
+
 b.classList.remove("repSelected")
+
 })
 
 btn.classList.add("repSelected")
@@ -655,34 +769,51 @@ return
 }
 
 
+/*
+   Deuxième appui = validation.
+*/
+
 btn.closest("form").submit()
 
 }
 
 
-/* ================================
+/* =========================================================
    CONFETTIS
-   ================================ */
+   ========================================================= */
 
 function lancerConfettis(){
 
 confetti({
+
 particleCount:150,
+
 spread:120,
+
 scalar:1.6,
-origin:{y:0.6}
+
+origin:{
+y:0.6
+}
+
 })
 
 }
 
 
-/* ================================
-   ANIMATION FIN
-   ================================ */
+/* =========================================================
+   FIN DU QUIZ
+   ========================================================= */
 
 function animationFin(){
 
 let bravo=document.getElementById("bravoMessage")
+
+if(!bravo){
+
+return
+
+}
 
 bravo.style.opacity=1
 
@@ -708,17 +839,38 @@ bravo.style.opacity=0
 
 </head>
 
+
 <body>
 
+
+<!-- =====================================================
+     TITRE
+     ===================================================== -->
+
 <div class="bandeau">
+
 🧠 Thème : {{ theme }}
+
 </div>
+
+
+<!-- =====================================================
+     MESSAGE DE FIN
+     ===================================================== -->
 
 <div id="bravoMessage">
+
 🎉 BRAVO ! 🎉
+
 </div>
 
+
 <div class="container">
+
+
+<!-- =====================================================
+     MASCOTTE
+     ===================================================== -->
 
 <div class="cadreMascotte">
 
@@ -729,20 +881,56 @@ src="{{ url_for('static', filename='images/mascotte_parle.gif') }}"
 
 </div>
 
+
+<!-- =====================================================
+     ZONE QUIZ
+     ===================================================== -->
+
 <div class="zone">
+
 
 {% if not fin %}
 
+
+<!-- =====================================================
+     FEEDBACK
+     ===================================================== -->
+
 {% if feedback %}
+
 
 {% if feedback[0] == "bonne" %}
 
+
 <script>
 
-let phrase = phraseAleatoire()
+/*
+   IMPORTANT :
+   tojson évite de casser le JavaScript
+   si le texte contient des apostrophes,
+   guillemets ou caractères spéciaux.
+*/
+
+texteCorrection = {{ (phraseAleatoire() if false else "")|tojson }};
+
+let phraseBravo = [
+"Bravo !",
+"Super !",
+"Génial !",
+"Exactement !",
+"Très bien !",
+"Parfait !",
+"Excellent !",
+"Bien joué !"
+]
+
+let phrase =
+phraseBravo[
+Math.floor(Math.random()*phraseBravo.length)
+]
 
 texteCorrection =
-phrase + " {{ feedback[1] }}"
+phrase + " " + {{ feedback[1]|tojson }}
 
 setTimeout(function(){
 
@@ -752,17 +940,29 @@ lireCorrection()
 
 </script>
 
+
 <h3 style="color:green;">
-🎉 {{ "Bravo !" }}<br>
+
+🎉 Bravo !
+
+<br>
+
 {{ feedback[1] }}
+
 </h3>
+
 
 {% else %}
 
+
 <script>
 
 texteCorrection =
-"Oups ! La bonne réponse était {{ feedback[1] }}. {{ feedback[2] }}"
+"Oups ! La bonne réponse était "
++ {{ feedback[1]|tojson }}
++ ". "
++ {{ feedback[2]|tojson }}
+
 
 setTimeout(function(){
 
@@ -772,17 +972,25 @@ lireCorrection()
 
 </script>
 
+
 <h3 style="color:red;">
 
-❌ Oups !<br>
+❌ Oups !
 
-Bonne réponse : {{ feedback[1] }}<br>
+<br>
+
+Bonne réponse :
+{{ feedback[1] }}
+
+<br>
 
 {{ feedback[2] }}
 
 </h3>
 
+
 {% endif %}
+
 
 <a href="/quiz">
 
@@ -791,24 +999,40 @@ id="btnSuivant"
 onmouseenter="lireBouton()"
 disabled
 >
+
 ➡️ Question suivante
+
 </button>
 
 </a>
 
+
 {% else %}
+
+
+<!-- =====================================================
+     QUESTION
+     ===================================================== -->
 
 <script>
 
-texteQuestion={{ question.question|tojson }>
+/*
+   Conversion sécurisée du texte Python
+   vers JavaScript.
+
+   C'est important :
+   on n'insère PAS directement le texte
+   dans des guillemets JavaScript.
+*/
+
+texteQuestion = {{ question.question|tojson }}
 
 
 /*
-   Création de la version karaoké
-   de la question.
+   Prépare le texte visible en karaoké.
 */
 
-document.addEventListener("DOMContentLoaded",function(){
+window.addEventListener("DOMContentLoaded",function(){
 
 let zoneQuestion =
 document.getElementById("questionKaraoke")
@@ -835,15 +1059,25 @@ lireQuestion()
 class="replay"
 onclick="lireQuestion()"
 >
+
 🔊 Réécouter la question
+
 </button>
 
 
 <h3>
-Session {{ session_actuelle }} —
+
+Session {{ session_actuelle }}
+—
 Question {{ index+1 }}/{{ total }}
+
 </h3>
 
+
+<!--
+     La question est maintenant construite
+     mot par mot pour le karaoké.
+-->
 
 <h2
 id="questionKaraoke"
@@ -853,55 +1087,77 @@ class="karaoke"
 
 <form method="post">
 
+
 {% for r in reponses %}
+
 
 <button
 type="submit"
 name="reponse"
 value="{{ r }}"
 class="repBtn"
-onclick="clicReponse(this, `{{ r }}`)"
-onmouseenter="lireReponse(`{{ r }}`)"
+onclick="clicReponse(this, {{ r|tojson }})"
+onmouseenter="lireReponse({{ r|tojson }})"
 >
 
 {{ r }}
 
 </button>
 
+
 {% endfor %}
+
 
 </form>
 
+
 {% endif %}
+
 
 {% else %}
 
+
+<!-- =====================================================
+     FIN DU QUIZ
+     ===================================================== -->
+
 <script>
 
-setTimeout(animationFin,300)
+setTimeout(function(){
+
+animationFin()
+
+},300)
 
 </script>
 
+
 <h2>
+
 Session terminée
+
 </h2>
+
 
 <a href="/">
 
 <button>
+
 🏠 Retour accueil
+
 </button>
 
 </a>
 
+
 {% endif %}
 
+
 </div>
 
 </div>
+
 
 </body>
-</html>
-```
 
-Cette version conserve donc le fonctionnement de ta version de référence et ajoute uniquement la couche **lecture + suivi visuel mot par mot**.
+</html>

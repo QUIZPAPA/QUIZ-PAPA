@@ -9,211 +9,262 @@
 
 <style>
 
+html{
+    scroll-behavior:auto;
+}
+
 body{
-background:#95F5A6;
-font-family:'Fredoka',sans-serif;
-margin:0;
-padding:0;
+    background:#95F5A6;
+    font-family:'Fredoka',sans-serif;
+    margin:0;
+    padding:0;
+    overflow-x:hidden;
 }
 
 .bandeau{
-width:100%;
-background:#70d5ff;
-color:white;
-font-size:24px;
-font-weight:600;
-padding:12px;
-text-align:center;
-box-shadow:0 3px 10px rgba(0,0,0,0.2);
+    width:100%;
+    background:#70d5ff;
+    color:white;
+    font-size:24px;
+    font-weight:600;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.2);
+    box-sizing:border-box;
 }
 
 .container{
-display:flex;
-align-items:flex-start;
-padding:20px;
+    display:flex;
+    align-items:flex-start;
+    padding:20px;
+    gap:30px;
+    box-sizing:border-box;
 }
 
 .cadreMascotte{
-background:#fff8dc;
-padding:15px;
-border:8px solid #f2b705;
-border-radius:20px;
-box-shadow:0 10px 25px rgba(0,0,0,0.25);
-position:relative;
-margin-right:30px;
+    background:#fff8dc;
+    padding:15px;
+    border:8px solid #f2b705;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+    position:relative;
+    flex-shrink:0;
+    transition:transform 0.25s ease-out;
 }
 
 .cadreMascotte:after{
-content:"✏️";
-position:absolute;
-top:-18px;
-right:-10px;
-font-size:32px;
-transform:rotate(15deg);
+    content:"✏️";
+    position:absolute;
+    top:-18px;
+    right:-10px;
+    font-size:32px;
+    transform:rotate(15deg);
 }
 
 .mascotte{
-width:320px;
-display:block;
-filter:drop-shadow(0 0 20px rgba(255,255,255,0.6));
-animation:respiration 5s ease-in-out infinite;
+    width:320px;
+    display:block;
+    filter:drop-shadow(0 0 20px rgba(255,255,255,0.6));
+    animation:respiration 5s ease-in-out infinite;
 }
 
 @keyframes respiration{
-0%{
-transform:translateY(0) scale(1);
-}
-50%{
-transform:translateY(-4px) scale(1.02);
-}
-100%{
-transform:translateY(0) scale(1);
-}
+    0%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(-4px) scale(1.02);}
+    100%{transform:translateY(0) scale(1);}
 }
 
 .zone{
-flex:1;
-padding:20px;
+    flex:1;
+    min-width:0;
+    padding:20px;
+    box-sizing:border-box;
 }
 
-/* BOUTONS */
-
 button{
-font-size:18px;
-padding:12px;
-margin:8px 0;
-width:80%;
-border:2px solid #70d5ff;
-border-radius:12px;
-background:#b8f0ff;
-cursor:pointer;
-transition:all 0.3s;
+    font-size:18px;
+    padding:12px;
+    margin:8px 0;
+    width:80%;
+    border:2px solid #70d5ff;
+    border-radius:12px;
+    background:#b8f0ff;
+    cursor:pointer;
+    transition:all 0.3s;
 
-user-select:none;
--webkit-user-select:none;
--moz-user-select:none;
--ms-user-select:none;
+    user-select:none;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
 }
 
 button:hover{
-background:#70d5ff;
-color:white;
-transform:scale(1.05);
+    background:#70d5ff;
+    color:white;
+    transform:scale(1.05);
 }
 
 button:disabled{
-background:#d3d3d3;
-border-color:#b0b0b0;
-cursor:not-allowed;
-transform:none;
+    background:#d3d3d3;
+    border-color:#b0b0b0;
+    cursor:not-allowed;
+    transform:none;
 }
 
 .replay{
-font-size:16px;
-width:220px;
-margin-bottom:15px;
+    font-size:16px;
+    width:220px;
+    margin-bottom:15px;
 }
 
 #bravoMessage{
-position:fixed;
-top:40%;
-left:50%;
-transform:translate(-50%,-50%);
-font-size:60px;
-color:white;
-text-shadow:0 0 15px black;
-opacity:0;
-pointer-events:none;
-z-index:1000;
+    position:fixed;
+    top:40%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:60px;
+    color:white;
+    text-shadow:0 0 15px black;
+    opacity:0;
+    pointer-events:none;
+    z-index:1000;
 }
 
 .repSelected{
-background:#70d5ff !important;
-color:white;
-transform:scale(1.05);
+    background:#70d5ff !important;
+    color:white;
+    transform:scale(1.05);
 }
 
 
-/* =========================================
-   KARAOKÉ
-   ========================================= */
+/* =========================================================
+   KARAOKE
+   ========================================================= */
 
+.zoneKaraoke{
+    position:relative;
+    max-width:100%;
+}
+
+/*
+   Interligne volontairement réduit.
+   Cela évite l'effet "texte très espacé" sur PC.
+*/
 .karaoke{
-line-height:2;
+    line-height:1.35;
+    font-size:1.35em;
+    max-width:100%;
+    word-wrap:break-word;
+    overflow-wrap:break-word;
+    padding:8px 5px;
 }
 
+
+/*
+   Chaque mot est indépendant.
+*/
 .motKaraoke{
-display:inline-block;
-padding:3px 7px;
-margin:2px 1px;
-border:3px solid transparent;
-border-radius:8px;
-
-transition:
-background 0.12s ease,
-border-color 0.12s ease,
-transform 0.12s ease,
-box-shadow 0.12s ease;
+    display:inline;
+    padding:2px 4px;
+    margin:0 1px;
+    border:2px solid transparent;
+    border-radius:7px;
+    transition:
+        background 0.08s ease,
+        border-color 0.08s ease,
+        transform 0.08s ease;
 }
 
+
+/*
+   Mot actuellement prononcé.
+*/
 .motKaraoke.actif{
-background:#fff1a8;
-border-color:#f2b705;
-transform:scale(1.08);
-font-weight:600;
-box-shadow:0 3px 8px rgba(0,0,0,0.18);
+    background:#fff1a8;
+    border-color:#f2b705;
+    font-weight:600;
+    box-shadow:0 2px 6px rgba(0,0,0,0.15);
 }
 
 
-/* Texte question */
-
-#questionKaraoke{
-font-size:28px;
-font-weight:600;
-margin:20px 0;
+/*
+   Zone d'explication.
+*/
+.explicationKaraoke{
+    margin-top:15px;
+    padding:12px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.35);
+    line-height:1.35;
 }
 
 
-/* Texte correction */
+/*
+   Sur téléphone, on réduit encore légèrement
+   la taille et l'espacement.
+*/
+@media (max-width:700px){
 
-#correctionKaraoke{
-font-size:22px;
-line-height:1.8;
+    .container{
+        flex-direction:column;
+        padding:10px;
+        gap:10px;
+    }
+
+    .cadreMascotte{
+        margin:0 auto;
+        padding:10px;
+        border-width:6px;
+    }
+
+    .mascotte{
+        width:220px;
+    }
+
+    .zone{
+        width:100%;
+        padding:10px;
+    }
+
+    button{
+        width:100%;
+    }
+
+    .karaoke{
+        line-height:1.32;
+        font-size:1.15em;
+        padding:5px 2px;
+    }
+
+    .motKaraoke{
+        padding:2px 3px;
+        margin:0;
+    }
+
+    .replay{
+        width:100%;
+    }
+
 }
 
 
-/* Sur petits écrans */
+/* =========================================================
+   PETITE INDICATION DE LECTURE
+   ========================================================= */
 
-@media(max-width:800px){
-
-.container{
-flex-direction:column;
-align-items:center;
+.indicationLecture{
+    font-size:14px;
+    color:#555;
+    margin:5px 0 12px 0;
 }
 
-.cadreMascotte{
-margin-right:0;
-margin-bottom:15px;
-}
 
-.mascotte{
-width:240px;
-}
+/* =========================================================
+   EXPLICATION
+   ========================================================= */
 
-.zone{
-width:100%;
-padding:10px;
-box-sizing:border-box;
-}
-
-button{
-width:95%;
-}
-
-#questionKaraoke{
-font-size:24px;
-}
-
+.titreExplication{
+    margin-bottom:5px;
 }
 
 </style>
@@ -226,186 +277,409 @@ font-size:24px;
    VARIABLES
    ========================================================= */
 
-let texteQuestion = ""
-let texteCorrection = ""
+let texteQuestion = "";
+let texteCorrection = "";
 
-let lectureTerminee = false
+let lectureTerminee = false;
 
-let derniereSelection = null
+let derniereSelection = null;
+let tactile = false;
 
-let tactile = false
+let karaokeElements = [];
+let karaokePositions = [];
+
+let indexMotActuel = -1;
+
+let timerSecours = null;
+let timerDefilement = null;
+
+let karaokeTexteBrut = "";
+
+let felicitations = [
+    "Bravo !",
+    "Super !",
+    "Génial !",
+    "Exactement !",
+    "Très bien !",
+    "Parfait !",
+    "Excellent !",
+    "Bien joué !"
+];
 
 
 /* =========================================================
-   PHRASES POSITIVES
+   PHRASE ALEATOIRE
    ========================================================= */
-
-let felicitations = [
-"Bravo !",
-"Super !",
-"Génial !",
-"Exactement !",
-"Très bien !",
-"Parfait !",
-"Excellent !",
-"Bien joué !"
-]
-
 
 function phraseAleatoire(){
 
-return felicitations[
-Math.floor(Math.random() * felicitations.length)
-]
+    return felicitations[
+        Math.floor(Math.random() * felicitations.length)
+    ];
 
 }
 
 
 /* =========================================================
-   NETTOYAGE DU TEXTE
+   NETTOYAGE DU TEXTE POUR LA SYNTHÈSE VOCALE
    ========================================================= */
 
 function textePourLecture(texte){
 
-let temporaire = document.createElement("div")
+    let temporaire = document.createElement("div");
 
-temporaire.innerHTML = texte
+    temporaire.innerHTML = texte;
 
-temporaire.querySelectorAll("br").forEach(br=>{
-br.replaceWith(" ")
-})
+    temporaire.querySelectorAll("br").forEach(br=>{
+        br.replaceWith(" ");
+    });
 
-return temporaire.innerText
-.replace(/\s+/g," ")
-.trim()
+    return temporaire.innerText
+        .replace(/\s+/g," ")
+        .trim();
 
 }
 
 
 /* =========================================================
-   PREPARATION DU KARAOKÉ
+   ARRÊT DES TIMERS
    ========================================================= */
 
-function preparerKaraoke(texte){
+function arreterTimersKaraoke(){
 
-let propre = textePourLecture(texte)
+    if(timerSecours){
+        clearInterval(timerSecours);
+        timerSecours=null;
+    }
 
-let mots = propre.split(" ")
-
-return mots.map(function(mot,index){
-
-return `
-<span
-class="motKaraoke"
-id="motKaraoke-${index}">
-${mot}
-</span>
-`
-
-}).join(" ")
+    if(timerDefilement){
+        clearTimeout(timerDefilement);
+        timerDefilement=null;
+    }
 
 }
 
 
 /* =========================================================
-   RETIRER LE SURBRILLAGE
+   RÉINITIALISATION DU KARAOKÉ
    ========================================================= */
 
-function enleverKaraoke(){
+function resetKaraoke(){
 
-document.querySelectorAll(".motKaraoke").forEach(function(mot){
+    arreterTimersKaraoke();
 
-mot.classList.remove("actif")
+    karaokeElements.forEach(element=>{
+        element.classList.remove("actif");
+    });
 
-})
+    karaokeElements=[];
+    karaokePositions=[];
+    karaokeTexteBrut="";
+    indexMotActuel=-1;
 
 }
 
 
 /* =========================================================
-   ACTIVER UN MOT
+   PRÉPARATION DES MOTS
+   ========================================================= */
+
+/*
+   Cette fonction transforme les mots du texte en spans
+   sans détruire les <br> ou les éléments HTML simples.
+*/
+
+function preparerKaraoke(conteneur){
+
+    resetKaraoke();
+
+    let position = 0;
+
+    function traiterNoeud(noeud){
+
+        if(noeud.nodeType === Node.TEXT_NODE){
+
+            let texte = noeud.textContent;
+
+            let fragment = document.createDocumentFragment();
+
+            /*
+               Séparation des mots tout en conservant
+               exactement les espaces.
+            */
+            let morceaux = texte.split(/(\s+)/);
+
+            morceaux.forEach(morceau=>{
+
+                if(!morceau){
+                    return;
+                }
+
+                if(/^\s+$/.test(morceau)){
+
+                    fragment.appendChild(
+                        document.createTextNode(morceau)
+                    );
+
+                    position += morceau.length;
+
+                    return;
+                }
+
+                let debut = position;
+                let fin = position + morceau.length;
+
+                let span = document.createElement("span");
+
+                span.className="motKaraoke";
+
+                span.textContent=morceau;
+
+                span.dataset.debut=debut;
+                span.dataset.fin=fin;
+
+                fragment.appendChild(span);
+
+                karaokeElements.push(span);
+
+                karaokePositions.push({
+                    element:span,
+                    debut:debut,
+                    fin:fin
+                });
+
+                position=fin;
+
+            });
+
+            noeud.parentNode.replaceChild(fragment,noeud);
+
+            return;
+        }
+
+
+        if(noeud.nodeType === Node.ELEMENT_NODE){
+
+            /*
+               Les <br> correspondent à un espace dans le texte
+               prononcé.
+            */
+            if(noeud.tagName.toLowerCase()==="br"){
+
+                position++;
+
+                return;
+            }
+
+            Array.from(noeud.childNodes).forEach(
+                traiterNoeud
+            );
+        }
+
+    }
+
+
+    Array.from(conteneur.childNodes).forEach(
+        traiterNoeud
+    );
+
+
+    /*
+       Reconstruction du texte réellement prononcé.
+    */
+    karaokeTexteBrut = textePourLecture(conteneur.innerHTML);
+
+}
+
+
+/* =========================================================
+   RECHERCHE DU MOT CORRESPONDANT À CHARINDEX
+   ========================================================= */
+
+function trouverMotDepuisPosition(position){
+
+    if(!karaokePositions.length){
+        return -1;
+    }
+
+    for(let i=0;i<karaokePositions.length;i++){
+
+        let mot=karaokePositions[i];
+
+        if(
+            position >= mot.debut &&
+            position <= mot.fin
+        ){
+            return i;
+        }
+
+    }
+
+
+    /*
+       Si Android donne une position légèrement différente,
+       on prend le mot immédiatement précédent.
+    */
+
+    let dernier=-1;
+
+    for(let i=0;i<karaokePositions.length;i++){
+
+        if(karaokePositions[i].debut <= position){
+            dernier=i;
+        }else{
+            break;
+        }
+
+    }
+
+    return dernier;
+
+}
+
+
+/* =========================================================
+   ACTIVATION D'UN MOT
    ========================================================= */
 
 function activerMot(index){
 
-enleverKaraoke()
+    if(index<0 || index>=karaokeElements.length){
+        return;
+    }
 
-let mot=document.getElementById("motKaraoke-"+index)
+    if(index===indexMotActuel){
+        return;
+    }
 
-if(mot){
+    if(indexMotActuel>=0 &&
+       karaokeElements[indexMotActuel]){
 
-mot.classList.add("actif")
+        karaokeElements[indexMotActuel]
+            .classList.remove("actif");
+    }
 
-}
+
+    let element=karaokeElements[index];
+
+    element.classList.add("actif");
+
+    indexMotActuel=index;
+
+
+    /*
+       Défilement automatique.
+    */
+    faireDefilerVersMot(element);
+
+
+    /*
+       La mascotte accompagne progressivement
+       la progression du texte.
+    */
+    faireSuivreMascotte(index);
 
 }
 
 
 /* =========================================================
-   LECTURE NORMALE
+   DÉFILEMENT AUTOMATIQUE
    ========================================================= */
 
-function parler(texte){
+function faireDefilerVersMot(element){
 
-speechSynthesis.cancel()
+    if(!element){
+        return;
+    }
 
-lectureTerminee=false
+    let rect=element.getBoundingClientRect();
 
-let bouton=document.getElementById("btnSuivant")
+    let hauteurFenetre=window.innerHeight;
 
-if(bouton){
+    /*
+       On garde le mot dans une zone confortable,
+       plutôt vers le milieu de l'écran.
+    */
 
-bouton.disabled=true
+    let zoneHaut=hauteurFenetre*0.25;
+    let zoneBas=hauteurFenetre*0.70;
 
-}
 
-let texteLecture=textePourLecture(texte)
+    if(rect.top < zoneHaut){
 
-if(!texteLecture){
+        window.scrollBy({
+            top:rect.top-zoneHaut,
+            behavior:"smooth"
+        });
 
-lectureTerminee=true
+    }
+    else if(rect.bottom > zoneBas){
 
-if(bouton){
+        window.scrollBy({
+            top:rect.bottom-zoneBas,
+            behavior:"smooth"
+        });
 
-bouton.disabled=false
-
-}
-
-return
-
-}
-
-let msg=new SpeechSynthesisUtterance(texteLecture)
-
-msg.lang="fr-FR"
-msg.rate=0.88
-msg.pitch=1
-
-msg.onend=function(){
-
-lectureTerminee=true
-
-if(bouton){
-
-bouton.disabled=false
+    }
 
 }
 
+
+/* =========================================================
+   MASCOTTE QUI SUIT LA PROGRESSION
+   ========================================================= */
+
+function faireSuivreMascotte(index){
+
+    let mascotte=document.querySelector(".cadreMascotte");
+
+    if(!mascotte){
+        return;
+    }
+
+    if(!karaokeElements.length){
+        return;
+    }
+
+    let progression=
+        index /
+        Math.max(1,karaokeElements.length-1);
+
+
+    /*
+       Déplacement volontairement limité :
+       la mascotte reste toujours visible sans
+       partir complètement hors écran.
+    */
+
+    let deplacement=
+        Math.min(
+            220,
+            Math.max(0,progression*220)
+        );
+
+
+    mascotte.style.transform=
+        "translateY("+deplacement+"px)";
+
 }
 
-msg.onerror=function(){
 
-lectureTerminee=true
+/* =========================================================
+   FIN DE LECTURE
+   ========================================================= */
 
-if(bouton){
+function terminerKaraoke(){
 
-bouton.disabled=false
+    arreterTimersKaraoke();
 
-}
+    lectureTerminee=true;
 
-}
+    let bouton=document.getElementById("btnSuivant");
 
-speechSynthesis.speak(msg)
+    if(bouton){
+        bouton.disabled=false;
+    }
 
 }
 
@@ -414,365 +688,598 @@ speechSynthesis.speak(msg)
    LECTURE KARAOKÉ
    ========================================================= */
 
-function parlerKaraoke(texte){
+function parlerKaraoke(texte, conteneur){
 
-speechSynthesis.cancel()
+    speechSynthesis.cancel();
 
-lectureTerminee=false
+    resetKaraoke();
 
-enleverKaraoke()
+    lectureTerminee=false;
 
-let bouton=document.getElementById("btnSuivant")
+    let bouton=document.getElementById("btnSuivant");
 
-if(bouton){
+    if(bouton){
+        bouton.disabled=true;
+    }
 
-bouton.disabled=true
 
-}
+    let texteLecture=textePourLecture(texte);
 
-let texteLecture=textePourLecture(texte)
 
-if(!texteLecture){
+    if(!texteLecture){
 
-lectureTerminee=true
+        terminerKaraoke();
 
-if(bouton){
+        return;
+    }
 
-bouton.disabled=false
 
-}
+    /*
+       Préparation des mots affichés.
+    */
+    if(conteneur){
 
-return
+        preparerKaraoke(conteneur);
 
-}
+    }
 
 
-/*
-   Liste des mots réellement lus.
-*/
+    /*
+       Pour la correction, si elle n'est pas affichée
+       comme karaoké, on crée simplement une zone cachée
+       temporaire contenant les mots.
+    */
 
-let mots=texteLecture.split(/\s+/).filter(function(mot){
+    let phrases =
+        texteLecture.match(
+            /[^.!?]+[.!?]+|[^.!?]+$/g
+        );
 
-return mot.length>0
 
-})
+    if(!phrases){
 
+        terminerKaraoke();
 
-/*
-   Création de la voix.
-*/
+        return;
+    }
 
-let msg=new SpeechSynthesisUtterance(texteLecture)
 
-msg.lang="fr-FR"
-msg.rate=0.88
-msg.pitch=1
+    let indexPhrase=0;
 
 
-/*
-   Certains navigateurs fournissent
-   la position exacte du mot prononcé.
-*/
+    function lirePhrase(){
 
-let boundaryDisponible=false
+        if(indexPhrase>=phrases.length){
 
-msg.onboundary=function(event){
+            terminerKaraoke();
 
-if(event.name && event.name !== "word"){
+            return;
+        }
 
-return
 
-}
+        let phrase=phrases[indexPhrase]
+            .trim();
 
-boundaryDisponible=true
 
-let debut=event.charIndex
+        phrase=phrase.replace(
+            /[.!?]+$/g,
+            ""
+        );
 
-let texteAvant=texteLecture.substring(0,debut)
 
-let index=texteAvant
-.trim()
-.split(/\s+/)
-.filter(function(mot){
+        if(!phrase){
 
-return mot.length>0
+            indexPhrase++;
 
-}).length
+            lirePhrase();
 
-if(index < mots.length){
+            return;
+        }
 
-activerMot(index)
 
-}
+        /*
+           Chaque phrase est prononcée séparément.
+           Cela donne au navigateur Android une meilleure
+           possibilité de fournir des événements boundary.
+        */
 
-}
+        let msg=
+            new SpeechSynthesisUtterance(
+                phrase
+            );
 
 
-/*
-   Quand la lecture commence.
-*/
+        msg.lang="fr-FR";
 
-msg.onstart=function(){
+        /*
+           Une vitesse légèrement plus lente améliore
+           la compréhension et la synchronisation.
+        */
+        msg.rate=0.84;
 
-activerMot(0)
+        msg.pitch=1;
 
-}
 
+        let positionDebutPhrase=0;
 
-/*
-   Fin de la lecture.
-*/
 
-msg.onend=function(){
+        /*
+           Retrouver le début de la phrase dans le texte.
+        */
 
-lectureTerminee=true
+        if(conteneur){
 
-enleverKaraoke()
+            let recherche=
+                texteLecture.indexOf(
+                    phrase,
+                    positionDebutPhrase
+                );
 
-if(bouton){
+            if(recherche>=0){
+                positionDebutPhrase=recherche;
+            }
 
-bouton.disabled=false
+        }
 
-}
 
-}
+        let boundaryDetecte=false;
 
 
-/*
-   En cas d'erreur de synthèse vocale.
-*/
+        /*
+           ANDROID / CHROME :
+           charIndex est beaucoup plus fiable qu'un
+           simple timer.
+        */
 
-msg.onerror=function(){
+        msg.onboundary=function(event){
 
-lectureTerminee=true
+            if(
+                typeof event.charIndex === "number"
+            ){
 
-enleverKaraoke()
+                boundaryDetecte=true;
 
-if(bouton){
+                if(timerSecours){
+                    clearInterval(timerSecours);
+                    timerSecours=null;
+                }
 
-bouton.disabled=false
 
-}
+                let positionGlobale=
+                    positionDebutPhrase+
+                    event.charIndex;
 
-}
 
+                let mot=
+                    trouverMotDepuisPosition(
+                        positionGlobale
+                    );
 
-/*
-   Sécurité :
-   certains navigateurs ne déclenchent pas
-   l'événement "boundary".
 
-   Dans ce cas, on anime quand même
-   les mots progressivement.
-*/
+                if(mot>=0){
 
-let indexFallback=0
+                    activerMot(mot);
 
-let intervalFallback=null
+                }
 
-let vitesseMot=600
+            }
 
+        };
 
-msg.onstart=function(){
 
-activerMot(0)
+        /*
+           Début de phrase.
+        */
 
-if(!boundaryDisponible){
+        msg.onstart=function(){
 
-indexFallback=0
+            /*
+               Activation immédiate du premier mot
+               de la phrase.
+            */
 
-intervalFallback=setInterval(function(){
+            if(conteneur){
 
-if(boundaryDisponible){
+                let premierMot=
+                    trouverMotDepuisPosition(
+                        positionDebutPhrase
+                    );
 
-clearInterval(intervalFallback)
+                if(premierMot>=0){
+                    activerMot(premierMot);
+                }
 
-return
+            }
 
-}
 
-indexFallback++
+            /*
+               FALLBACK :
+               uniquement si aucun boundary n'arrive.
+               On utilise une progression estimée.
+            */
 
-if(indexFallback < mots.length){
+            if(conteneur && karaokeElements.length){
 
-activerMot(indexFallback)
+                let dureeEstimee=
+                    Math.max(
+                        1200,
+                        phrase.length*62
+                    );
 
-}
 
-},vitesseMot)
+                let debut=
+                    performance.now();
 
-}
 
-}
+                timerSecours=setInterval(function(){
 
+                    if(boundaryDetecte){
+                        clearInterval(timerSecours);
+                        timerSecours=null;
+                        return;
+                    }
 
-msg.onend=function(){
 
-if(intervalFallback){
+                    let ecoule=
+                        performance.now()-debut;
 
-clearInterval(intervalFallback)
 
-}
+                    let progression=
+                        Math.min(
+                            0.98,
+                            ecoule/dureeEstimee
+                        );
 
-lectureTerminee=true
 
-enleverKaraoke()
+                    let longueurPhrase=
+                        Math.max(
+                            1,
+                            phrase.length
+                        );
 
-if(bouton){
 
-bouton.disabled=false
+                    let position=
+                        positionDebutPhrase+
+                        Math.floor(
+                            progression*
+                            longueurPhrase
+                        );
 
-}
 
-}
+                    let mot=
+                        trouverMotDepuisPosition(
+                            position
+                        );
 
 
-speechSynthesis.speak(msg)
+                    if(mot>=0){
+                        activerMot(mot);
+                    }
+
+
+                },80);
+
+            }
+
+        };
+
+
+        msg.onend=function(){
+
+            arreterTimersKaraoke();
+
+            indexPhrase++;
+
+            /*
+               Petite pause naturelle entre les phrases.
+            */
+
+            timerDefilement=
+                setTimeout(
+                    lirePhrase,
+                    250
+                );
+
+        };
+
+
+        msg.onerror=function(){
+
+            arreterTimersKaraoke();
+
+            indexPhrase++;
+
+            setTimeout(
+                lirePhrase,
+                100
+            );
+
+        };
+
+
+        speechSynthesis.speak(msg);
+
+    }
+
+
+    lirePhrase();
 
 }
 
 
 /* =========================================================
-   LIRE LA QUESTION
+   LECTURE NORMALE SANS KARAOKÉ
+   ========================================================= */
+
+function parler(texte){
+
+    speechSynthesis.cancel();
+
+    lectureTerminee=false;
+
+    let bouton=document.getElementById("btnSuivant");
+
+    if(bouton){
+        bouton.disabled=true;
+    }
+
+
+    let texteLecture=textePourLecture(texte);
+
+
+    if(!texteLecture){
+
+        terminerKaraoke();
+
+        return;
+    }
+
+
+    let phrases=
+        texteLecture.match(
+            /[^.!?]+[.!?]+|[^.!?]+$/g
+        );
+
+
+    if(!phrases){
+
+        terminerKaraoke();
+
+        return;
+    }
+
+
+    let indexPhrase=0;
+
+
+    function lirePhrase(){
+
+        if(indexPhrase>=phrases.length){
+
+            terminerKaraoke();
+
+            return;
+        }
+
+
+        let phrase=phrases[indexPhrase].trim();
+
+        phrase=phrase.replace(
+            /[.!?]+$/g,
+            ""
+        );
+
+
+        if(!phrase){
+
+            indexPhrase++;
+
+            lirePhrase();
+
+            return;
+        }
+
+
+        let msg=
+            new SpeechSynthesisUtterance(
+                phrase
+            );
+
+
+        msg.lang="fr-FR";
+        msg.rate=0.88;
+        msg.pitch=1;
+
+
+        msg.onend=function(){
+
+            indexPhrase++;
+
+            setTimeout(
+                lirePhrase,
+                300
+            );
+
+        };
+
+
+        speechSynthesis.speak(msg);
+
+    }
+
+
+    lirePhrase();
+
+}
+
+
+/* =========================================================
+   QUESTION
    ========================================================= */
 
 function lireQuestion(){
 
-if(!texteQuestion){
+    let conteneur=
+        document.getElementById(
+            "questionKaraoke"
+        );
 
-return
 
-}
+    if(!conteneur){
+        parler(texteQuestion);
+        return;
+    }
 
-parlerKaraoke(texteQuestion)
+
+    /*
+       Le HTML visible contient les mots.
+       On le reconstruit à chaque nouvelle lecture.
+    */
+
+    conteneur.innerHTML=
+        texteQuestion;
+
+
+    parlerKaraoke(
+        texteQuestion,
+        conteneur
+    );
 
 }
 
 
 /* =========================================================
-   LIRE LA CORRECTION
+   CORRECTION / EXPLICATION
    ========================================================= */
 
 function lireCorrection(){
 
-if(!texteCorrection){
+    let conteneur=
+        document.getElementById(
+            "correctionKaraoke"
+        );
 
-return
 
-}
+    if(conteneur){
 
-parlerKaraoke(texteCorrection)
+        conteneur.innerHTML=
+            texteCorrection;
+
+
+        parlerKaraoke(
+            texteCorrection,
+            conteneur
+        );
+
+    }
+    else{
+
+        parler(
+            texteCorrection
+        );
+
+    }
 
 }
 
 
 /* =========================================================
-   LIRE LE BOUTON SUIVANT
+   BOUTON QUESTION SUIVANTE
    ========================================================= */
 
 function lireBouton(){
 
-if(!lectureTerminee){
+    if(!lectureTerminee){
+        return;
+    }
 
-return
-
-}
-
-parler("Question suivante")
+    parler(
+        "Question suivante"
+    );
 
 }
 
 
 /* =========================================================
-   LIRE UNE REPONSE
+   LECTURE D'UNE RÉPONSE
    ========================================================= */
 
 function lireReponse(rep){
 
-if(!lectureTerminee){
+    if(!lectureTerminee){
+        return;
+    }
 
-return
-
-}
-
-parler(rep)
+    parler(rep);
 
 }
 
 
 /* =========================================================
-   DETECTION TACTILE
+   TOUCH / MOBILE
    ========================================================= */
 
 window.addEventListener(
-"touchstart",
-function(){
+    "touchstart",
+    function(){
 
-tactile=true
+        tactile=true;
 
-},
-{
-once:true
-}
-)
+    },
+    {
+        once:true
+    }
+);
 
 
 /* =========================================================
-   CLIC SUR UNE REPONSE
+   CLIC SUR UNE RÉPONSE
    ========================================================= */
 
 function clicReponse(btn,texte){
 
-if(!lectureTerminee){
-
-return
-
-}
+    if(!lectureTerminee){
+        return;
+    }
 
 
-/*
-   Sur ordinateur :
-   un clic valide directement la réponse.
-*/
+    if(!tactile){
 
-if(!tactile){
+        btn.closest("form").submit();
 
-btn.closest("form").submit()
-
-return
-
-}
+        return;
+    }
 
 
-/*
-   Sur tablette :
-   premier appui = écoute de la réponse.
-*/
+    if(derniereSelection!==btn){
 
-if(derniereSelection !== btn){
+        document
+            .querySelectorAll(".repBtn")
+            .forEach(function(b){
 
-document.querySelectorAll(".repBtn").forEach(function(b){
+                b.classList.remove(
+                    "repSelected"
+                );
 
-b.classList.remove("repSelected")
-
-})
-
-btn.classList.add("repSelected")
-
-derniereSelection=btn
-
-parler(texte)
-
-return
-
-}
+            });
 
 
-/*
-   Deuxième appui = validation.
-*/
+        btn.classList.add(
+            "repSelected"
+        );
 
-btn.closest("form").submit()
+
+        derniereSelection=btn;
+
+
+        parler(texte);
+
+        return;
+
+    }
+
+
+    btn.closest("form").submit();
 
 }
 
@@ -783,19 +1290,12 @@ btn.closest("form").submit()
 
 function lancerConfettis(){
 
-confetti({
-
-particleCount:150,
-
-spread:120,
-
-scalar:1.6,
-
-origin:{
-y:0.6
-}
-
-})
+    confetti({
+        particleCount:150,
+        spread:120,
+        scalar:1.6,
+        origin:{y:0.6}
+    });
 
 }
 
@@ -806,31 +1306,41 @@ y:0.6
 
 function animationFin(){
 
-let bravo=document.getElementById("bravoMessage")
+    let bravo=
+        document.getElementById(
+            "bravoMessage"
+        );
 
-if(!bravo){
 
-return
+    bravo.style.opacity=1;
 
-}
 
-bravo.style.opacity=1
+    parler(
+        "Bravo ! Tu as terminé le quiz !"
+    );
 
-parler("Bravo ! Tu as terminé le quiz !")
 
-setTimeout(function(){
+    setTimeout(
+        function(){
 
-lancerConfettis()
+            lancerConfettis();
 
-},1500)
+        },
+        1500
+    );
 
-setTimeout(function(){
 
-bravo.style.transition="opacity 2s"
+    setTimeout(
+        function(){
 
-bravo.style.opacity=0
+            bravo.style.transition=
+                "opacity 2s";
 
-},4000)
+            bravo.style.opacity=0;
+
+        },
+        4000
+    );
 
 }
 
@@ -842,321 +1352,294 @@ bravo.style.opacity=0
 <body>
 
 
-<!-- =====================================================
-     TITRE
-     ===================================================== -->
-
 <div class="bandeau">
-
-🧠 Thème : {{ theme }}
-
+    🧠 Thème : {{ theme }}
 </div>
 
 
-<!-- =====================================================
-     MESSAGE DE FIN
-     ===================================================== -->
-
 <div id="bravoMessage">
-
-🎉 BRAVO ! 🎉
-
+    🎉 BRAVO ! 🎉
 </div>
 
 
 <div class="container">
 
 
-<!-- =====================================================
-     MASCOTTE
-     ===================================================== -->
+    <!-- =====================================================
+         MASCOTTE
+         ===================================================== -->
 
-<div class="cadreMascotte">
+    <div class="cadreMascotte">
 
-<img
-class="mascotte"
-src="{{ url_for('static', filename='images/mascotte_parle.gif') }}"
->
+        <img
+            class="mascotte"
+            src="{{ url_for('static', filename='images/mascotte_parle.gif') }}"
+        >
 
-</div>
+    </div>
 
 
-<!-- =====================================================
-     ZONE QUIZ
-     ===================================================== -->
+    <!-- =====================================================
+         ZONE PRINCIPALE
+         ===================================================== -->
 
-<div class="zone">
+    <div class="zone">
 
 
-{% if not fin %}
+        {% if not fin %}
 
 
-<!-- =====================================================
-     FEEDBACK
-     ===================================================== -->
+            <!-- =================================================
+                 FEEDBACK APRÈS RÉPONSE
+                 ================================================= -->
 
-{% if feedback %}
+            {% if feedback %}
 
 
-{% if feedback[0] == "bonne" %}
+                {% if feedback[0] == "bonne" %}
 
 
-<script>
+                    <script>
 
-/*
-   IMPORTANT :
-   tojson évite de casser le JavaScript
-   si le texte contient des apostrophes,
-   guillemets ou caractères spéciaux.
-*/
+                    texteCorrection =
+                        {{ ("PLACEHOLDER")|tojson }};
 
-texteCorrection = {{ (phraseAleatoire() if false else "")|tojson }};
+                    </script>
 
-let phraseBravo = [
-"Bravo !",
-"Super !",
-"Génial !",
-"Exactement !",
-"Très bien !",
-"Parfait !",
-"Excellent !",
-"Bien joué !"
-]
 
-let phrase =
-phraseBravo[
-Math.floor(Math.random()*phraseBravo.length)
-]
+                    <h3 style="color:green;">
 
-texteCorrection =
-phrase + " " + {{ feedback[1]|tojson }}
+                        🎉 Bravo !
 
-setTimeout(function(){
+                    </h3>
 
-lireCorrection()
 
-},200)
+                    <div
+                        id="correctionKaraoke"
+                        class="karaoke explicationKaraoke"
+                    >
+                        {{ feedback[1]|safe }}
+                    </div>
 
-</script>
 
+                    <script>
 
-<h3 style="color:green;">
+                    texteCorrection =
+                        {{ feedback[1]|tojson }};
 
-🎉 Bravo !
 
-<br>
+                    setTimeout(
+                        function(){
 
-{{ feedback[1] }}
+                            lireCorrection();
 
-</h3>
+                        },
+                        250
+                    );
 
+                    </script>
 
-{% else %}
 
+                {% else %}
 
-<script>
 
-texteCorrection =
-"Oups ! La bonne réponse était "
-+ {{ feedback[1]|tojson }}
-+ ". "
-+ {{ feedback[2]|tojson }}
+                    <script>
 
+                    texteCorrection =
+                        {{ feedback[1]|tojson }}
+                        + ". "
+                        + {{ feedback[2]|tojson }};
 
-setTimeout(function(){
+                    </script>
 
-lireCorrection()
 
-},200)
+                    <h3 style="color:red;">
 
-</script>
+                        ❌ Oups !
 
+                    </h3>
 
-<h3 style="color:red;">
 
-❌ Oups !
+                    <p>
 
-<br>
+                        Bonne réponse :
+                        <strong>
+                            {{ feedback[1] }}
+                        </strong>
 
-Bonne réponse :
-{{ feedback[1] }}
+                    </p>
 
-<br>
 
-{{ feedback[2] }}
+                    <div
+                        id="correctionKaraoke"
+                        class="karaoke explicationKaraoke"
+                    >
+                        {{ feedback[2]|safe }}
+                    </div>
 
-</h3>
 
+                    <script>
 
-{% endif %}
+                    texteCorrection =
+                        "Oups ! La bonne réponse était "
+                        + {{ feedback[1]|tojson }}
+                        + ". "
+                        + {{ feedback[2]|tojson }};
 
 
-<a href="/quiz">
+                    setTimeout(
+                        function(){
 
-<button
-id="btnSuivant"
-onmouseenter="lireBouton()"
-disabled
->
+                            lireCorrection();
 
-➡️ Question suivante
+                        },
+                        250
+                    );
 
-</button>
+                    </script>
 
-</a>
 
+                {% endif %}
 
-{% else %}
 
+                <a href="/quiz">
 
-<!-- =====================================================
-     QUESTION
-     ===================================================== -->
+                    <button
+                        id="btnSuivant"
+                        onmouseenter="lireBouton()"
+                        disabled
+                    >
+                        ➡️ Question suivante
+                    </button>
 
-<script>
+                </a>
 
-/*
-   Conversion sécurisée du texte Python
-   vers JavaScript.
 
-   C'est important :
-   on n'insère PAS directement le texte
-   dans des guillemets JavaScript.
-*/
+            {% else %}
 
-texteQuestion = {{ question.question|tojson }}
 
+                <!-- =============================================
+                     QUESTION
+                     ============================================= -->
 
-/*
-   Prépare le texte visible en karaoké.
-*/
 
-window.addEventListener("DOMContentLoaded",function(){
+                <script>
 
-let zoneQuestion =
-document.getElementById("questionKaraoke")
+                texteQuestion =
+                    {{ question.question|tojson }};
 
-if(zoneQuestion){
 
-zoneQuestion.innerHTML =
-preparerKaraoke(texteQuestion)
+                setTimeout(
+                    function(){
 
-}
+                        lireQuestion();
 
-setTimeout(function(){
+                    },
+                    300
+                );
 
-lireQuestion()
+                </script>
 
-},300)
 
-})
+                <button
+                    class="replay"
+                    onclick="lireQuestion()"
+                >
+                    🔊 Réécouter la question
+                </button>
 
-</script>
 
+                <h3>
+                    Session {{ session_actuelle }}
+                    —
+                    Question {{ index+1 }}/{{ total }}
+                </h3>
 
-<button
-class="replay"
-onclick="lireQuestion()"
->
 
-🔊 Réécouter la question
+                <div class="zoneKaraoke">
 
-</button>
+                    <div
+                        id="questionKaraoke"
+                        class="karaoke"
+                    >
+                        {{ question.question|safe }}
+                    </div>
 
+                </div>
 
-<h3>
 
-Session {{ session_actuelle }}
-—
-Question {{ index+1 }}/{{ total }}
+                <p class="indicationLecture">
+                    🔊 Écoute la question, puis choisis ta réponse.
+                </p>
 
-</h3>
 
+                <form method="post">
 
-<!--
-     La question est maintenant construite
-     mot par mot pour le karaoké.
--->
 
-<h2
-id="questionKaraoke"
-class="karaoke"
-></h2>
+                    {% for r in reponses %}
 
 
-<form method="post">
+                        <button
+                            type="submit"
+                            name="reponse"
+                            value="{{ r }}"
+                            class="repBtn"
+                            onclick="clicReponse(this, {{ r|tojson }})"
+                            onmouseenter="lireReponse({{ r|tojson }})"
+                        >
 
+                            {{ r }}
 
-{% for r in reponses %}
+                        </button>
 
 
-<button
-type="submit"
-name="reponse"
-value="{{ r }}"
-class="repBtn"
-onclick="clicReponse(this, {{ r|tojson }})"
-onmouseenter="lireReponse({{ r|tojson }})"
->
+                    {% endfor %}
 
-{{ r }}
 
-</button>
+                </form>
 
 
-{% endfor %}
+            {% endif %}
 
 
-</form>
+        {% else %}
 
 
-{% endif %}
+            <!-- =================================================
+                 FIN
+                 ================================================= -->
 
+            <script>
 
-{% else %}
+            setTimeout(
+                animationFin,
+                300
+            );
 
+            </script>
 
-<!-- =====================================================
-     FIN DU QUIZ
-     ===================================================== -->
 
-<script>
+            <h2>
+                Session terminée
+            </h2>
 
-setTimeout(function(){
 
-animationFin()
+            <a href="/">
 
-},300)
+                <button>
+                    🏠 Retour accueil
+                </button>
 
-</script>
+            </a>
 
 
-<h2>
+        {% endif %}
 
-Session terminée
 
-</h2>
-
-
-<a href="/">
-
-<button>
-
-🏠 Retour accueil
-
-</button>
-
-</a>
-
-
-{% endif %}
-
-
-</div>
+    </div>
 
 </div>
 
 
 </body>
-
 </html>

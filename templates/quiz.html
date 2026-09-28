@@ -49,7 +49,12 @@ body{
     box-shadow:0 10px 25px rgba(0,0,0,0.25);
     position:relative;
     flex-shrink:0;
-    transition:transform 0.25s ease-out;
+
+    /*
+       La mascotte ne bouge plus en fonction
+       du nombre de mots lus.
+    */
+    transition:none;
 }
 
 .cadreMascotte:after{
@@ -69,9 +74,17 @@ body{
 }
 
 @keyframes respiration{
-    0%{transform:translateY(0) scale(1);}
-    50%{transform:translateY(-4px) scale(1.02);}
-    100%{transform:translateY(0) scale(1);}
+    0%{
+        transform:translateY(0) scale(1);
+    }
+
+    50%{
+        transform:translateY(-4px) scale(1.02);
+    }
+
+    100%{
+        transform:translateY(0) scale(1);
+    }
 }
 
 .zone{
@@ -138,7 +151,7 @@ button:disabled{
 
 
 /* =========================================================
-   KARAOKE
+   KARAOKÉ
    ========================================================= */
 
 .zoneKaraoke{
@@ -146,10 +159,6 @@ button:disabled{
     max-width:100%;
 }
 
-/*
-   Interligne volontairement réduit.
-   Cela évite l'effet "texte très espacé" sur PC.
-*/
 .karaoke{
     line-height:1.35;
     font-size:1.35em;
@@ -159,26 +168,18 @@ button:disabled{
     padding:8px 5px;
 }
 
-
-/*
-   Chaque mot est indépendant.
-*/
 .motKaraoke{
     display:inline;
     padding:2px 4px;
     margin:0 1px;
     border:2px solid transparent;
     border-radius:7px;
+
     transition:
         background 0.08s ease,
-        border-color 0.08s ease,
-        transform 0.08s ease;
+        border-color 0.08s ease;
 }
 
-
-/*
-   Mot actuellement prononcé.
-*/
 .motKaraoke.actif{
     background:#fff1a8;
     border-color:#f2b705;
@@ -187,9 +188,10 @@ button:disabled{
 }
 
 
-/*
-   Zone d'explication.
-*/
+/* =========================================================
+   EXPLICATION
+   ========================================================= */
+
 .explicationKaraoke{
     margin-top:15px;
     padding:12px;
@@ -198,11 +200,21 @@ button:disabled{
     line-height:1.35;
 }
 
+.titreExplication{
+    margin-bottom:5px;
+}
 
-/*
-   Sur téléphone, on réduit encore légèrement
-   la taille et l'espacement.
-*/
+.indicationLecture{
+    font-size:14px;
+    color:#555;
+    margin:5px 0 12px 0;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width:700px){
 
     .container{
@@ -247,29 +259,11 @@ button:disabled{
 
 }
 
-
-/* =========================================================
-   PETITE INDICATION DE LECTURE
-   ========================================================= */
-
-.indicationLecture{
-    font-size:14px;
-    color:#555;
-    margin:5px 0 12px 0;
-}
-
-
-/* =========================================================
-   EXPLICATION
-   ========================================================= */
-
-.titreExplication{
-    margin-bottom:5px;
-}
-
 </style>
 
+
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 
 <script>
 
@@ -277,25 +271,49 @@ button:disabled{
    VARIABLES
    ========================================================= */
 
-let texteQuestion = "";
-let texteCorrection = "";
+let texteQuestion="";
+let texteCorrection="";
 
-let lectureTerminee = false;
+let lectureTerminee=false;
 
-let derniereSelection = null;
-let tactile = false;
+let derniereSelection=null;
+let tactile=false;
 
-let karaokeElements = [];
-let karaokePositions = [];
+let karaokeElements=[];
+let karaokePositions=[];
 
-let indexMotActuel = -1;
+let indexMotActuel=-1;
 
-let timerSecours = null;
-let timerDefilement = null;
+let timerSecours=null;
+let timerDefilement=null;
 
-let karaokeTexteBrut = "";
 
-let felicitations = [
+/*
+   Indique si la page a réellement besoin
+   de défiler.
+*/
+let scrollingNecessaire=false;
+
+
+/*
+   Position de départ du scroll au début
+   de la lecture.
+*/
+let scrollDepart=0;
+
+
+/*
+   Hauteur maximale réellement disponible
+   pour le contenu.
+*/
+let hauteurContenuScrollable=0;
+
+
+/* =========================================================
+   PHRASES DE FÉLICITATION
+   ========================================================= */
+
+let felicitations=[
     "Bravo !",
     "Super !",
     "Génial !",
@@ -307,32 +325,36 @@ let felicitations = [
 ];
 
 
-/* =========================================================
-   PHRASE ALEATOIRE
-   ========================================================= */
-
 function phraseAleatoire(){
 
     return felicitations[
-        Math.floor(Math.random() * felicitations.length)
+        Math.floor(
+            Math.random()*felicitations.length
+        )
     ];
 
 }
 
 
 /* =========================================================
-   NETTOYAGE DU TEXTE POUR LA SYNTHÈSE VOCALE
+   NETTOYAGE DU TEXTE
    ========================================================= */
 
 function textePourLecture(texte){
 
-    let temporaire = document.createElement("div");
+    let temporaire=
+        document.createElement("div");
 
-    temporaire.innerHTML = texte;
+    temporaire.innerHTML=texte;
 
-    temporaire.querySelectorAll("br").forEach(br=>{
-        br.replaceWith(" ");
-    });
+    temporaire
+        .querySelectorAll("br")
+        .forEach(function(br){
+
+            br.replaceWith(" ");
+
+        });
+
 
     return temporaire.innerText
         .replace(/\s+/g," ")
@@ -348,14 +370,67 @@ function textePourLecture(texte){
 function arreterTimersKaraoke(){
 
     if(timerSecours){
+
         clearInterval(timerSecours);
         timerSecours=null;
+
     }
 
+
     if(timerDefilement){
+
         clearTimeout(timerDefilement);
         timerDefilement=null;
+
     }
+
+}
+
+
+/* =========================================================
+   DÉTECTION DU BESOIN DE SCROLL
+   ========================================================= */
+
+function verifierBesoinScroll(conteneur){
+
+    if(!conteneur){
+
+        scrollingNecessaire=false;
+        return false;
+
+    }
+
+
+    /*
+       On mesure la hauteur du contenu.
+    */
+
+    let rect=
+        conteneur.getBoundingClientRect();
+
+
+    let hauteurFenetre=
+        window.innerHeight;
+
+
+    /*
+       Marge confortable autour du texte.
+    */
+
+    let marge=100;
+
+
+    /*
+       Le texte doit dépasser la zone visible
+       pour déclencher le scrolling.
+    */
+
+    scrollingNecessaire=
+        rect.height >
+        (hauteurFenetre-marge);
+
+
+    return scrollingNecessaire;
 
 }
 
@@ -368,14 +443,28 @@ function resetKaraoke(){
 
     arreterTimersKaraoke();
 
-    karaokeElements.forEach(element=>{
-        element.classList.remove("actif");
-    });
+
+    karaokeElements.forEach(
+        function(element){
+
+            element.classList.remove(
+                "actif"
+            );
+
+        }
+    );
+
 
     karaokeElements=[];
     karaokePositions=[];
-    karaokeTexteBrut="";
+
     indexMotActuel=-1;
+
+    scrollingNecessaire=false;
+
+    scrollDepart=window.scrollY;
+
+    hauteurContenuScrollable=0;
 
 }
 
@@ -384,116 +473,179 @@ function resetKaraoke(){
    PRÉPARATION DES MOTS
    ========================================================= */
 
-/*
-   Cette fonction transforme les mots du texte en spans
-   sans détruire les <br> ou les éléments HTML simples.
-*/
-
 function preparerKaraoke(conteneur){
 
     resetKaraoke();
 
-    let position = 0;
+
+    let position=0;
+
 
     function traiterNoeud(noeud){
 
-        if(noeud.nodeType === Node.TEXT_NODE){
+        /*
+           Texte normal.
+        */
 
-            let texte = noeud.textContent;
+        if(noeud.nodeType===Node.TEXT_NODE){
 
-            let fragment = document.createDocumentFragment();
+            let texte=noeud.textContent;
 
-            /*
-               Séparation des mots tout en conservant
-               exactement les espaces.
-            */
-            let morceaux = texte.split(/(\s+)/);
+            let fragment=
+                document.createDocumentFragment();
 
-            morceaux.forEach(morceau=>{
 
-                if(!morceau){
-                    return;
-                }
+            let morceaux=
+                texte.split(/(\s+)/);
 
-                if(/^\s+$/.test(morceau)){
+
+            morceaux.forEach(
+                function(morceau){
+
+                    if(!morceau){
+                        return;
+                    }
+
+
+                    /*
+                       Les espaces restent normaux.
+                    */
+
+                    if(/^\s+$/.test(morceau)){
+
+                        fragment.appendChild(
+                            document.createTextNode(
+                                morceau
+                            )
+                        );
+
+                        position+=morceau.length;
+
+                        return;
+
+                    }
+
+
+                    let debut=position;
+
+                    let fin=
+                        position+
+                        morceau.length;
+
+
+                    let span=
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    span.className=
+                        "motKaraoke";
+
+
+                    span.textContent=
+                        morceau;
+
+
+                    span.dataset.debut=
+                        debut;
+
+
+                    span.dataset.fin=
+                        fin;
+
 
                     fragment.appendChild(
-                        document.createTextNode(morceau)
+                        span
                     );
 
-                    position += morceau.length;
 
-                    return;
+                    karaokeElements.push(
+                        span
+                    );
+
+
+                    karaokePositions.push({
+
+                        element:span,
+                        debut:debut,
+                        fin:fin
+
+                    });
+
+
+                    position=fin;
+
                 }
+            );
 
-                let debut = position;
-                let fin = position + morceau.length;
 
-                let span = document.createElement("span");
+            noeud.parentNode.replaceChild(
+                fragment,
+                noeud
+            );
 
-                span.className="motKaraoke";
-
-                span.textContent=morceau;
-
-                span.dataset.debut=debut;
-                span.dataset.fin=fin;
-
-                fragment.appendChild(span);
-
-                karaokeElements.push(span);
-
-                karaokePositions.push({
-                    element:span,
-                    debut:debut,
-                    fin:fin
-                });
-
-                position=fin;
-
-            });
-
-            noeud.parentNode.replaceChild(fragment,noeud);
 
             return;
+
         }
 
 
-        if(noeud.nodeType === Node.ELEMENT_NODE){
+        /*
+           Élément HTML.
+        */
 
-            /*
-               Les <br> correspondent à un espace dans le texte
-               prononcé.
-            */
-            if(noeud.tagName.toLowerCase()==="br"){
+        if(noeud.nodeType===Node.ELEMENT_NODE){
+
+            if(
+                noeud.tagName.toLowerCase()==="br"
+            ){
 
                 position++;
 
                 return;
+
             }
 
-            Array.from(noeud.childNodes).forEach(
+
+            Array.from(
+                noeud.childNodes
+            ).forEach(
                 traiterNoeud
             );
+
         }
 
     }
 
 
-    Array.from(conteneur.childNodes).forEach(
+    Array.from(
+        conteneur.childNodes
+    ).forEach(
         traiterNoeud
     );
 
 
     /*
-       Reconstruction du texte réellement prononcé.
+       On attend que le navigateur ait recalculé
+       la mise en page avant de mesurer.
     */
-    karaokeTexteBrut = textePourLecture(conteneur.innerHTML);
+
+    requestAnimationFrame(
+        function(){
+
+            verifierBesoinScroll(
+                conteneur
+            );
+
+        }
+    );
 
 }
 
 
 /* =========================================================
-   RECHERCHE DU MOT CORRESPONDANT À CHARINDEX
+   RECHERCHE DU MOT
    ========================================================= */
 
 function trouverMotDepuisPosition(position){
@@ -502,36 +654,57 @@ function trouverMotDepuisPosition(position){
         return -1;
     }
 
-    for(let i=0;i<karaokePositions.length;i++){
 
-        let mot=karaokePositions[i];
+    for(
+        let i=0;
+        i<karaokePositions.length;
+        i++
+    ){
+
+        let mot=
+            karaokePositions[i];
+
 
         if(
-            position >= mot.debut &&
-            position <= mot.fin
+            position>=mot.debut &&
+            position<=mot.fin
         ){
+
             return i;
+
         }
 
     }
 
 
     /*
-       Si Android donne une position légèrement différente,
-       on prend le mot immédiatement précédent.
+       Tolérance pour Android.
     */
 
     let dernier=-1;
 
-    for(let i=0;i<karaokePositions.length;i++){
 
-        if(karaokePositions[i].debut <= position){
+    for(
+        let i=0;
+        i<karaokePositions.length;
+        i++
+    ){
+
+        if(
+            karaokePositions[i].debut<=position
+        ){
+
             dernier=i;
-        }else{
+
+        }
+        else{
+
             break;
+
         }
 
     }
+
 
     return dernier;
 
@@ -544,80 +717,127 @@ function trouverMotDepuisPosition(position){
 
 function activerMot(index){
 
-    if(index<0 || index>=karaokeElements.length){
+    if(
+        index<0 ||
+        index>=karaokeElements.length
+    ){
+
         return;
+
     }
+
 
     if(index===indexMotActuel){
+
         return;
+
     }
 
-    if(indexMotActuel>=0 &&
-       karaokeElements[indexMotActuel]){
 
+    if(
+        indexMotActuel>=0 &&
         karaokeElements[indexMotActuel]
-            .classList.remove("actif");
+    ){
+
+        karaokeElements[
+            indexMotActuel
+        ].classList.remove(
+            "actif"
+        );
+
     }
 
 
-    let element=karaokeElements[index];
+    let element=
+        karaokeElements[index];
 
-    element.classList.add("actif");
+
+    element.classList.add(
+        "actif"
+    );
+
 
     indexMotActuel=index;
 
 
     /*
-       Défilement automatique.
+       IMPORTANT :
+       on ne fait défiler la page QUE si
+       le contenu est réellement trop long.
     */
-    faireDefilerVersMot(element);
 
+    if(scrollingNecessaire){
 
-    /*
-       La mascotte accompagne progressivement
-       la progression du texte.
-    */
-    faireSuivreMascotte(index);
+        faireDefilerVersMot(
+            element
+        );
+
+    }
 
 }
 
 
 /* =========================================================
-   DÉFILEMENT AUTOMATIQUE
+   SCROLL AUTOMATIQUE
    ========================================================= */
 
 function faireDefilerVersMot(element){
 
-    if(!element){
+    if(
+        !element ||
+        !scrollingNecessaire
+    ){
+
         return;
+
     }
 
-    let rect=element.getBoundingClientRect();
 
-    let hauteurFenetre=window.innerHeight;
+    let rect=
+        element.getBoundingClientRect();
+
+
+    let hauteurFenetre=
+        window.innerHeight;
+
 
     /*
-       On garde le mot dans une zone confortable,
-       plutôt vers le milieu de l'écran.
+       Zone confortable de lecture.
+       Le mot reste plutôt au centre
+       de l'écran.
     */
 
-    let zoneHaut=hauteurFenetre*0.25;
-    let zoneBas=hauteurFenetre*0.70;
+    let zoneHaut=
+        hauteurFenetre*0.28;
 
 
-    if(rect.top < zoneHaut){
+    let zoneBas=
+        hauteurFenetre*0.72;
+
+
+    if(rect.top<zoneHaut){
 
         window.scrollBy({
-            top:rect.top-zoneHaut,
+
+            top:
+                rect.top-
+                zoneHaut,
+
             behavior:"smooth"
+
         });
 
     }
-    else if(rect.bottom > zoneBas){
+    else if(rect.bottom>zoneBas){
 
         window.scrollBy({
-            top:rect.bottom-zoneBas,
+
+            top:
+                rect.bottom-
+                zoneBas,
+
             behavior:"smooth"
+
         });
 
     }
@@ -626,59 +846,27 @@ function faireDefilerVersMot(element){
 
 
 /* =========================================================
-   MASCOTTE QUI SUIT LA PROGRESSION
-   ========================================================= */
-
-function faireSuivreMascotte(index){
-
-    let mascotte=document.querySelector(".cadreMascotte");
-
-    if(!mascotte){
-        return;
-    }
-
-    if(!karaokeElements.length){
-        return;
-    }
-
-    let progression=
-        index /
-        Math.max(1,karaokeElements.length-1);
-
-
-    /*
-       Déplacement volontairement limité :
-       la mascotte reste toujours visible sans
-       partir complètement hors écran.
-    */
-
-    let deplacement=
-        Math.min(
-            220,
-            Math.max(0,progression*220)
-        );
-
-
-    mascotte.style.transform=
-        "translateY("+deplacement+"px)";
-
-}
-
-
-/* =========================================================
-   FIN DE LECTURE
+   FIN DU KARAOKÉ
    ========================================================= */
 
 function terminerKaraoke(){
 
     arreterTimersKaraoke();
 
+
     lectureTerminee=true;
 
-    let bouton=document.getElementById("btnSuivant");
+
+    let bouton=
+        document.getElementById(
+            "btnSuivant"
+        );
+
 
     if(bouton){
+
         bouton.disabled=false;
+
     }
 
 }
@@ -688,22 +876,35 @@ function terminerKaraoke(){
    LECTURE KARAOKÉ
    ========================================================= */
 
-function parlerKaraoke(texte, conteneur){
+function parlerKaraoke(
+    texte,
+    conteneur
+){
 
     speechSynthesis.cancel();
 
+
     resetKaraoke();
+
 
     lectureTerminee=false;
 
-    let bouton=document.getElementById("btnSuivant");
+
+    let bouton=
+        document.getElementById(
+            "btnSuivant"
+        );
+
 
     if(bouton){
+
         bouton.disabled=true;
+
     }
 
 
-    let texteLecture=textePourLecture(texte);
+    let texteLecture=
+        textePourLecture(texte);
 
 
     if(!texteLecture){
@@ -711,26 +912,24 @@ function parlerKaraoke(texte, conteneur){
         terminerKaraoke();
 
         return;
+
     }
 
 
     /*
-       Préparation des mots affichés.
+       Préparation du texte.
     */
+
     if(conteneur){
 
-        preparerKaraoke(conteneur);
+        preparerKaraoke(
+            conteneur
+        );
 
     }
 
 
-    /*
-       Pour la correction, si elle n'est pas affichée
-       comme karaoké, on crée simplement une zone cachée
-       temporaire contenant les mots.
-    */
-
-    let phrases =
+    let phrases=
         texteLecture.match(
             /[^.!?]+[.!?]+|[^.!?]+$/g
         );
@@ -741,30 +940,42 @@ function parlerKaraoke(texte, conteneur){
         terminerKaraoke();
 
         return;
+
     }
 
 
     let indexPhrase=0;
 
 
+    /*
+       Position globale dans le texte.
+    */
+
+    let positionRecherche=0;
+
+
     function lirePhrase(){
 
-        if(indexPhrase>=phrases.length){
+        if(
+            indexPhrase>=phrases.length
+        ){
 
             terminerKaraoke();
 
             return;
+
         }
 
 
-        let phrase=phrases[indexPhrase]
-            .trim();
+        let phrase=
+            phrases[indexPhrase].trim();
 
 
-        phrase=phrase.replace(
-            /[.!?]+$/g,
-            ""
-        );
+        phrase=
+            phrase.replace(
+                /[.!?]+$/g,
+                ""
+            );
 
 
         if(!phrase){
@@ -774,14 +985,34 @@ function parlerKaraoke(texte, conteneur){
             lirePhrase();
 
             return;
+
         }
 
 
         /*
-           Chaque phrase est prononcée séparément.
-           Cela donne au navigateur Android une meilleure
-           possibilité de fournir des événements boundary.
+           Recherche de la position réelle
+           de la phrase dans le texte.
         */
+
+        let positionDebutPhrase=
+            texteLecture.indexOf(
+                phrase,
+                positionRecherche
+            );
+
+
+        if(positionDebutPhrase<0){
+
+            positionDebutPhrase=
+                positionRecherche;
+
+        }
+
+
+        positionRecherche=
+            positionDebutPhrase+
+            phrase.length;
+
 
         let msg=
             new SpeechSynthesisUtterance(
@@ -791,57 +1022,47 @@ function parlerKaraoke(texte, conteneur){
 
         msg.lang="fr-FR";
 
+
         /*
-           Une vitesse légèrement plus lente améliore
-           la compréhension et la synchronisation.
+           Vitesse légèrement ralentie
+           pour améliorer la compréhension.
         */
+
         msg.rate=0.84;
-
         msg.pitch=1;
-
-
-        let positionDebutPhrase=0;
-
-
-        /*
-           Retrouver le début de la phrase dans le texte.
-        */
-
-        if(conteneur){
-
-            let recherche=
-                texteLecture.indexOf(
-                    phrase,
-                    positionDebutPhrase
-                );
-
-            if(recherche>=0){
-                positionDebutPhrase=recherche;
-            }
-
-        }
 
 
         let boundaryDetecte=false;
 
 
         /*
-           ANDROID / CHROME :
-           charIndex est beaucoup plus fiable qu'un
-           simple timer.
+           Android / Chrome :
+           charIndex est utilisé en priorité.
         */
 
-        msg.onboundary=function(event){
+        msg.onboundary=
+            function(event){
 
-            if(
-                typeof event.charIndex === "number"
-            ){
+                if(
+                    typeof event.charIndex!=="number"
+                ){
+
+                    return;
+
+                }
+
 
                 boundaryDetecte=true;
 
+
                 if(timerSecours){
-                    clearInterval(timerSecours);
+
+                    clearInterval(
+                        timerSecours
+                    );
+
                     timerSecours=null;
+
                 }
 
 
@@ -862,142 +1083,166 @@ function parlerKaraoke(texte, conteneur){
 
                 }
 
-            }
-
-        };
+            };
 
 
         /*
-           Début de phrase.
+           Début de la phrase.
         */
 
-        msg.onstart=function(){
+        msg.onstart=
+            function(){
 
-            /*
-               Activation immédiate du premier mot
-               de la phrase.
-            */
+                if(conteneur){
 
-            if(conteneur){
+                    let premierMot=
+                        trouverMotDepuisPosition(
+                            positionDebutPhrase
+                        );
 
-                let premierMot=
-                    trouverMotDepuisPosition(
-                        positionDebutPhrase
-                    );
 
-                if(premierMot>=0){
-                    activerMot(premierMot);
+                    if(premierMot>=0){
+
+                        activerMot(
+                            premierMot
+                        );
+
+                    }
+
                 }
 
-            }
+
+                /*
+                   Fallback si le navigateur
+                   ne fournit pas de boundary.
+                */
+
+                if(
+                    conteneur &&
+                    karaokeElements.length
+                ){
+
+                    let dureeEstimee=
+                        Math.max(
+                            1200,
+                            phrase.length*62
+                        );
 
 
-            /*
-               FALLBACK :
-               uniquement si aucun boundary n'arrive.
-               On utilise une progression estimée.
-            */
+                    let debut=
+                        performance.now();
 
-            if(conteneur && karaokeElements.length){
 
-                let dureeEstimee=
-                    Math.max(
-                        1200,
-                        phrase.length*62
+                    timerSecours=
+                        setInterval(
+                            function(){
+
+                                if(
+                                    boundaryDetecte
+                                ){
+
+                                    clearInterval(
+                                        timerSecours
+                                    );
+
+                                    timerSecours=null;
+
+                                    return;
+
+                                }
+
+
+                                let ecoule=
+                                    performance.now()-
+                                    debut;
+
+
+                                let progression=
+                                    Math.min(
+                                        0.98,
+                                        ecoule/
+                                        dureeEstimee
+                                    );
+
+
+                                let position=
+                                    positionDebutPhrase+
+                                    Math.floor(
+                                        progression*
+                                        phrase.length
+                                    );
+
+
+                                let mot=
+                                    trouverMotDepuisPosition(
+                                        position
+                                    );
+
+
+                                if(mot>=0){
+
+                                    activerMot(
+                                        mot
+                                    );
+
+                                }
+
+                            },
+                            80
+                        );
+
+                }
+
+            };
+
+
+        /*
+           Fin de phrase.
+        */
+
+        msg.onend=
+            function(){
+
+                arreterTimersKaraoke();
+
+
+                indexPhrase++;
+
+
+                timerDefilement=
+                    setTimeout(
+                        lirePhrase,
+                        250
                     );
 
-
-                let debut=
-                    performance.now();
+            };
 
 
-                timerSecours=setInterval(function(){
+        /*
+           En cas d'erreur du moteur vocal,
+           on passe à la suite.
+        */
 
-                    if(boundaryDetecte){
-                        clearInterval(timerSecours);
-                        timerSecours=null;
-                        return;
-                    }
+        msg.onerror=
+            function(){
 
-
-                    let ecoule=
-                        performance.now()-debut;
+                arreterTimersKaraoke();
 
 
-                    let progression=
-                        Math.min(
-                            0.98,
-                            ecoule/dureeEstimee
-                        );
+                indexPhrase++;
 
 
-                    let longueurPhrase=
-                        Math.max(
-                            1,
-                            phrase.length
-                        );
-
-
-                    let position=
-                        positionDebutPhrase+
-                        Math.floor(
-                            progression*
-                            longueurPhrase
-                        );
-
-
-                    let mot=
-                        trouverMotDepuisPosition(
-                            position
-                        );
-
-
-                    if(mot>=0){
-                        activerMot(mot);
-                    }
-
-
-                },80);
-
-            }
-
-        };
-
-
-        msg.onend=function(){
-
-            arreterTimersKaraoke();
-
-            indexPhrase++;
-
-            /*
-               Petite pause naturelle entre les phrases.
-            */
-
-            timerDefilement=
                 setTimeout(
                     lirePhrase,
-                    250
+                    100
                 );
 
-        };
+            };
 
 
-        msg.onerror=function(){
-
-            arreterTimersKaraoke();
-
-            indexPhrase++;
-
-            setTimeout(
-                lirePhrase,
-                100
-            );
-
-        };
-
-
-        speechSynthesis.speak(msg);
+        speechSynthesis.speak(
+            msg
+        );
 
     }
 
@@ -1008,23 +1253,32 @@ function parlerKaraoke(texte, conteneur){
 
 
 /* =========================================================
-   LECTURE NORMALE SANS KARAOKÉ
+   LECTURE NORMALE
    ========================================================= */
 
 function parler(texte){
 
     speechSynthesis.cancel();
 
+
     lectureTerminee=false;
 
-    let bouton=document.getElementById("btnSuivant");
+
+    let bouton=
+        document.getElementById(
+            "btnSuivant"
+        );
+
 
     if(bouton){
+
         bouton.disabled=true;
+
     }
 
 
-    let texteLecture=textePourLecture(texte);
+    let texteLecture=
+        textePourLecture(texte);
 
 
     if(!texteLecture){
@@ -1032,6 +1286,7 @@ function parler(texte){
         terminerKaraoke();
 
         return;
+
     }
 
 
@@ -1046,6 +1301,7 @@ function parler(texte){
         terminerKaraoke();
 
         return;
+
     }
 
 
@@ -1054,20 +1310,27 @@ function parler(texte){
 
     function lirePhrase(){
 
-        if(indexPhrase>=phrases.length){
+        if(
+            indexPhrase>=phrases.length
+        ){
 
             terminerKaraoke();
 
             return;
+
         }
 
 
-        let phrase=phrases[indexPhrase].trim();
+        let phrase=
+            phrases[indexPhrase]
+            .trim();
 
-        phrase=phrase.replace(
-            /[.!?]+$/g,
-            ""
-        );
+
+        phrase=
+            phrase.replace(
+                /[.!?]+$/g,
+                ""
+            );
 
 
         if(!phrase){
@@ -1077,6 +1340,7 @@ function parler(texte){
             lirePhrase();
 
             return;
+
         }
 
 
@@ -1091,19 +1355,23 @@ function parler(texte){
         msg.pitch=1;
 
 
-        msg.onend=function(){
+        msg.onend=
+            function(){
 
-            indexPhrase++;
-
-            setTimeout(
-                lirePhrase,
-                300
-            );
-
-        };
+                indexPhrase++;
 
 
-        speechSynthesis.speak(msg);
+                setTimeout(
+                    lirePhrase,
+                    300
+                );
+
+            };
+
+
+        speechSynthesis.speak(
+            msg
+        );
 
     }
 
@@ -1114,7 +1382,7 @@ function parler(texte){
 
 
 /* =========================================================
-   QUESTION
+   LECTURE DE LA QUESTION
    ========================================================= */
 
 function lireQuestion(){
@@ -1126,15 +1394,15 @@ function lireQuestion(){
 
 
     if(!conteneur){
-        parler(texteQuestion);
+
+        parler(
+            texteQuestion
+        );
+
         return;
+
     }
 
-
-    /*
-       Le HTML visible contient les mots.
-       On le reconstruit à chaque nouvelle lecture.
-    */
 
     conteneur.innerHTML=
         texteQuestion;
@@ -1149,7 +1417,7 @@ function lireQuestion(){
 
 
 /* =========================================================
-   CORRECTION / EXPLICATION
+   LECTURE DE L'EXPLICATION
    ========================================================= */
 
 function lireCorrection(){
@@ -1184,14 +1452,17 @@ function lireCorrection(){
 
 
 /* =========================================================
-   BOUTON QUESTION SUIVANTE
+   QUESTION SUIVANTE
    ========================================================= */
 
 function lireBouton(){
 
     if(!lectureTerminee){
+
         return;
+
     }
+
 
     parler(
         "Question suivante"
@@ -1207,8 +1478,11 @@ function lireBouton(){
 function lireReponse(rep){
 
     if(!lectureTerminee){
+
         return;
+
     }
+
 
     parler(rep);
 
@@ -1216,7 +1490,7 @@ function lireReponse(rep){
 
 
 /* =========================================================
-   TOUCH / MOBILE
+   DÉTECTION DU TACTILE
    ========================================================= */
 
 window.addEventListener(
@@ -1236,32 +1510,46 @@ window.addEventListener(
    CLIC SUR UNE RÉPONSE
    ========================================================= */
 
-function clicReponse(btn,texte){
+function clicReponse(
+    btn,
+    texte
+){
 
     if(!lectureTerminee){
+
         return;
+
     }
 
 
     if(!tactile){
 
-        btn.closest("form").submit();
+        btn
+            .closest("form")
+            .submit();
 
         return;
+
     }
 
 
-    if(derniereSelection!==btn){
+    if(
+        derniereSelection!==btn
+    ){
 
         document
-            .querySelectorAll(".repBtn")
-            .forEach(function(b){
+            .querySelectorAll(
+                ".repBtn"
+            )
+            .forEach(
+                function(b){
 
-                b.classList.remove(
-                    "repSelected"
-                );
+                    b.classList.remove(
+                        "repSelected"
+                    );
 
-            });
+                }
+            );
 
 
         btn.classList.add(
@@ -1274,12 +1562,15 @@ function clicReponse(btn,texte){
 
         parler(texte);
 
+
         return;
 
     }
 
 
-    btn.closest("form").submit();
+    btn
+        .closest("form")
+        .submit();
 
 }
 
@@ -1291,10 +1582,12 @@ function clicReponse(btn,texte){
 function lancerConfettis(){
 
     confetti({
+
         particleCount:150,
         spread:120,
         scalar:1.6,
         origin:{y:0.6}
+
     });
 
 }
@@ -1336,6 +1629,7 @@ function animationFin(){
             bravo.style.transition=
                 "opacity 2s";
 
+
             bravo.style.opacity=0;
 
         },
@@ -1343,6 +1637,47 @@ function animationFin(){
     );
 
 }
+
+
+/* =========================================================
+   RECALCUL APRÈS REDIMENSIONNEMENT
+   ========================================================= */
+
+window.addEventListener(
+    "resize",
+    function(){
+
+        let question=
+            document.getElementById(
+                "questionKaraoke"
+            );
+
+
+        let correction=
+            document.getElementById(
+                "correctionKaraoke"
+            );
+
+
+        if(question){
+
+            verifierBesoinScroll(
+                question
+            );
+
+        }
+
+
+        if(correction){
+
+            verifierBesoinScroll(
+                correction
+            );
+
+        }
+
+    }
+);
 
 </script>
 
@@ -1353,12 +1688,16 @@ function animationFin(){
 
 
 <div class="bandeau">
+
     🧠 Thème : {{ theme }}
+
 </div>
 
 
 <div id="bravoMessage">
+
     🎉 BRAVO ! 🎉
+
 </div>
 
 
@@ -1389,22 +1728,14 @@ function animationFin(){
         {% if not fin %}
 
 
-            <!-- =================================================
-                 FEEDBACK APRÈS RÉPONSE
-                 ================================================= -->
-
             {% if feedback %}
 
 
+                <!-- =============================================
+                     BONNE RÉPONSE
+                     ============================================= -->
+
                 {% if feedback[0] == "bonne" %}
-
-
-                    <script>
-
-                    texteCorrection =
-                        {{ ("PLACEHOLDER")|tojson }};
-
-                    </script>
 
 
                     <h3 style="color:green;">
@@ -1418,13 +1749,15 @@ function animationFin(){
                         id="correctionKaraoke"
                         class="karaoke explicationKaraoke"
                     >
+
                         {{ feedback[1]|safe }}
+
                     </div>
 
 
                     <script>
 
-                    texteCorrection =
+                    texteCorrection=
                         {{ feedback[1]|tojson }};
 
 
@@ -1443,15 +1776,9 @@ function animationFin(){
                 {% else %}
 
 
-                    <script>
-
-                    texteCorrection =
-                        {{ feedback[1]|tojson }}
-                        + ". "
-                        + {{ feedback[2]|tojson }};
-
-                    </script>
-
+                    <!-- =========================================
+                         MAUVAISE RÉPONSE
+                         ========================================= -->
 
                     <h3 style="color:red;">
 
@@ -1474,17 +1801,22 @@ function animationFin(){
                         id="correctionKaraoke"
                         class="karaoke explicationKaraoke"
                     >
+
                         {{ feedback[2]|safe }}
+
                     </div>
 
 
                     <script>
 
-                    texteCorrection =
+                    texteCorrection=
                         "Oups ! La bonne réponse était "
-                        + {{ feedback[1]|tojson }}
-                        + ". "
-                        + {{ feedback[2]|tojson }};
+                        +
+                        {{ feedback[1]|tojson }}
+                        +
+                        ". "
+                        +
+                        {{ feedback[2]|tojson }};
 
 
                     setTimeout(
@@ -1502,6 +1834,10 @@ function animationFin(){
                 {% endif %}
 
 
+                <!-- =============================================
+                     BOUTON QUESTION SUIVANTE
+                     ============================================= -->
+
                 <a href="/quiz">
 
                     <button
@@ -1509,7 +1845,9 @@ function animationFin(){
                         onmouseenter="lireBouton()"
                         disabled
                     >
+
                         ➡️ Question suivante
+
                     </button>
 
                 </a>
@@ -1522,10 +1860,9 @@ function animationFin(){
                      QUESTION
                      ============================================= -->
 
-
                 <script>
 
-                texteQuestion =
+                texteQuestion=
                     {{ question.question|tojson }};
 
 
@@ -1545,14 +1882,22 @@ function animationFin(){
                     class="replay"
                     onclick="lireQuestion()"
                 >
+
                     🔊 Réécouter la question
+
                 </button>
 
 
                 <h3>
-                    Session {{ session_actuelle }}
+
+                    Session
+                    {{ session_actuelle }}
+
                     —
-                    Question {{ index+1 }}/{{ total }}
+
+                    Question
+                    {{ index+1 }}/{{ total }}
+
                 </h3>
 
 
@@ -1562,14 +1907,19 @@ function animationFin(){
                         id="questionKaraoke"
                         class="karaoke"
                     >
+
                         {{ question.question|safe }}
+
                     </div>
 
                 </div>
 
 
                 <p class="indicationLecture">
-                    🔊 Écoute la question, puis choisis ta réponse.
+
+                    🔊 Écoute la question,
+                    puis choisis ta réponse.
+
                 </p>
 
 
@@ -1606,7 +1956,7 @@ function animationFin(){
 
 
             <!-- =================================================
-                 FIN
+                 FIN DU QUIZ
                  ================================================= -->
 
             <script>
@@ -1620,14 +1970,18 @@ function animationFin(){
 
 
             <h2>
+
                 Session terminée
+
             </h2>
 
 
             <a href="/">
 
                 <button>
+
                     🏠 Retour accueil
+
                 </button>
 
             </a>

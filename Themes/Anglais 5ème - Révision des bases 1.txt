@@ -1,0 +1,154 @@
+SESSION|1
+QUESTION|Que signifie le pronom anglais "I" ?
+REPONSES|Je;Tu;Il
+BONNE|Je
+EXPLICATION|En anglais, "I" signifie "je". Il s’écrit toujours avec une majuscule.
+
+QUESTION|Que signifie le pronom "They" ?
+REPONSES|Nous;Ils / elles;Vous
+BONNE|Ils / elles
+EXPLICATION|"They" signifie "ils" ou "elles".
+
+QUESTION|Quelle forme du verbe BE utilise-t-on avec "I" ?
+REPONSES|am;are;is
+BONNE|am
+EXPLICATION|Avec "I", on utilise "am" : I am.
+
+QUESTION|Quelle phrase est correcte ?
+REPONSES|She are happy;She is happy;She am happy
+BONNE|She is happy
+EXPLICATION|Avec "he", "she" et "it", on utilise "is".
+
+QUESTION|Quelle forme du verbe HAVE utilise-t-on avec "he" ?
+REPONSES|have;has;are
+BONNE|has
+EXPLICATION|Avec "he", "she" et "it", on utilise "has".
+
+QUESTION|Quelle phrase est correcte ?
+REPONSES|They has a book;They have a book;They is a book
+BONNE|They have a book
+EXPLICATION|Avec "they", on utilise "have".
+
+QUESTION|Que signifie "You" ?
+REPONSES|Je;Tu / vous;Ils / elles
+BONNE|Tu / vous
+EXPLICATION|"You" peut signifier "tu" ou "vous".
+
+QUESTION|Quelle phrase est correcte ?
+REPONSES|We are happy;We is happy;We am happy
+BONNE|We are happy
+EXPLICATION|Avec "we", on utilise "are".
+
+QUESTION|Quelle est la bonne forme ?
+REPONSES|He have;He has;He having
+BONNE|He has
+EXPLICATION|Avec "he", le verbe HAVE devient "has".
+
+QUESTION|Avec "he", "she" ou "it", que faut-il généralement ajouter aux autres verbes au présent ?
+REPONSES|Un -s;Un -ed;Un -ing
+BONNE|Un -s
+EXPLICATION|Avec les autres verbes au présent, on ajoute généralement un -s avec he, she et it.
+
+
+SESSION|2
+QUESTION|Comment dit-on "bleu" en anglais ?
+REPONSES|Blue;Brown;Black
+BONNE|Blue
+EXPLICATION|"Blue" signifie "bleu".
+
+QUESTION|Comment dit-on "rouge" en anglais ?
+REPONSES|Green;Red;Grey
+BONNE|Red
+EXPLICATION|"Red" signifie "rouge".
+
+QUESTION|Comment dit-on "jaune" en anglais ?
+REPONSES|Yellow;White;Purple
+BONNE|Yellow
+EXPLICATION|"Yellow" signifie "jaune".
+
+QUESTION|Quel nombre correspond à "twenty" ?
+REPONSES|12;20;30
+BONNE|20
+EXPLICATION|"Twenty" signifie vingt, soit 20.
+
+QUESTION|Quel nombre correspond à "forty" ?
+REPONSES|14;40;50
+BONNE|40
+EXPLICATION|"Forty" signifie quarante, soit 40.
+
+QUESTION|Comment écrit-on 55 en anglais ?
+REPONSES|Fifty-five;Fifteen-five;Fifty-fiveen
+BONNE|Fifty-five
+EXPLICATION|55 se dit "fifty-five" en anglais.
+
+QUESTION|Quel jour vient après Monday ?
+REPONSES|Tuesday;Friday;Sunday
+BONNE|Tuesday
+EXPLICATION|"Tuesday" est le mardi et vient après Monday.
+
+QUESTION|Quel jour correspond à "Sunday" ?
+REPONSES|Samedi;Dimanche;Lundi
+BONNE|Dimanche
+EXPLICATION|"Sunday" signifie dimanche.
+
+QUESTION|Quel mois correspond à "January" ?
+REPONSES|Janvier;Juin;Juillet
+BONNE|Janvier
+EXPLICATION|"January" signifie janvier. C’est le premier mois de l’année.
+
+QUESTION|Quelle saison correspond à "Winter" ?
+REPONSES|Été;Printemps;Hiver
+BONNE|Hiver
+EXPLICATION|"Winter" signifie hiver.
+
+
+SESSION|3
+QUESTION|Que signifie "sunny" pour parler de la météo ?
+REPONSES|Ensoleillé;Pluvieux;Neigeux
+BONNE|Ensoleillé
+EXPLICATION|"Sunny" signifie ensoleillé.
+
+QUESTION|Que signifie "rainy" ?
+REPONSES|Venteux;Pluvieux;Nuageux
+BONNE|Pluvieux
+EXPLICATION|"Rainy" signifie pluvieux.
+
+QUESTION|Que signifie "snowy" ?
+REPONSES|Neigeux;Orageux;Chaud
+BONNE|Neigeux
+EXPLICATION|"Snowy" signifie neigeux.
+
+QUESTION|Que signifie "windy" ?
+REPONSES|Venteux;Froid;Ensoleillé
+BONNE|Venteux
+EXPLICATION|"Windy" signifie venteux.
+
+QUESTION|Que signifie "cloudy" ?
+REPONSES|Nuageux;Pluvieux;Chaud
+BONNE|Nuageux
+EXPLICATION|"Cloudy" signifie nuageux.
+
+QUESTION|Que signifie "happy" ?
+REPONSES|Triste;Heureux;Fatigué
+BONNE|Heureux
+EXPLICATION|"Happy" signifie heureux ou contente/contente selon la personne.
+
+QUESTION|Que signifie "tired" ?
+REPONSES|Fatigué;En colère;Malade
+BONNE|Fatigué
+EXPLICATION|"Tired" signifie fatigué.
+
+QUESTION|Que signifie "angry" ?
+REPONSES|Fier;En colère;Nerveux
+BONNE|En colère
+EXPLICATION|"Angry" signifie en colère.
+
+QUESTION|Comment dit-on "froid" pour parler de la météo ?
+REPONSES|Hot;Cold;Stormy
+BONNE|Cold
+EXPLICATION|"Cold" signifie froid. "Hot" signifie chaud.
+
+QUESTION|Quelle phrase est correcte ?
+REPONSES|She are tired;She is tired;She have tired
+BONNE|She is tired
+EXPLICATION|Avec "she", on utilise "is" avec le verbe BE : She is tired.

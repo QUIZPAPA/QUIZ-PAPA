@@ -1,0 +1,83 @@
+SESSION|1
+QUESTION|La démographie étudie les populations humaines : leur nombre, leur évolution et leur répartition. Aujourd’hui, la population mondiale connaît une croissance démographique : elle augmente. Cette croissance n’est cependant pas la même partout dans le monde. Elle est forte dans certains pays pauvres, elle ralentit dans les pays émergents et elle est faible dans les pays développés. Dans certaines régions, la population peut même connaître une régression démographique, c’est-à-dire une diminution du nombre d’habitants. La croissance démographique entraîne une augmentation des besoins de la population, par exemple en nourriture, en logements et en équipements. Elle pose donc des questions importantes sur la capacité à répondre aux besoins de tous et sur la nécessité d’un développement durable et équitable. La population mondiale va aussi connaître un vieillissement généralisé : la part des personnes âgées va augmenter. Enfin, le développement ne profite pas toujours de la même manière à tous les habitants. Il existe donc des différences de richesse et de pauvreté à différentes échelles. La pauvreté correspond à l’incapacité de satisfaire ses besoins essentiels, comme se nourrir, se loger ou se soigner. Pour étudier les différences de richesse et les inégalités, on peut utiliser plusieurs indicateurs, comme le PIB par habitant, l’IDH ou l’indice de Gini.
+REPONSES|J'ai bien lu le texte
+BONNE|J'ai bien lu le texte
+EXPLICATION|Lis ou fais lire ce texte deux fois avant de commencer les questions. Les réponses aux questions suivantes se trouvent dans le texte.
+
+SESSION|2
+QUESTION|Qu’est-ce que la démographie ?
+REPONSES|L’étude des populations humaines;L’étude uniquement des richesses;L’étude des paysages
+BONNE|L’étude des populations humaines
+EXPLICATION|La démographie étudie les populations humaines, notamment leur nombre et leur évolution.
+
+SESSION|2
+QUESTION|Que signifie « croissance démographique » ?
+REPONSES|Une augmentation de la population;Une diminution de la population;Une diminution des besoins
+BONNE|Une augmentation de la population
+EXPLICATION|La croissance démographique signifie que le nombre d’habitants augmente.
+
+SESSION|2
+QUESTION|La croissance démographique est-elle la même partout dans le monde ?
+REPONSES|Non, elle varie selon les régions et les pays;Oui, elle est identique partout;Elle existe uniquement dans les pays développés
+BONNE|Non, elle varie selon les régions et les pays
+EXPLICATION|La croissance démographique est inégale : elle peut être forte, faible, ralentir ou même devenir négative selon les régions.
+
+SESSION|2
+QUESTION|Que signifie « régression démographique » ?
+REPONSES|Une diminution de la population;Une forte augmentation de la population;Une augmentation des richesses
+BONNE|Une diminution de la population
+EXPLICATION|Une régression démographique signifie que le nombre d’habitants diminue.
+
+SESSION|2
+QUESTION|Dans quels pays la croissance démographique est-elle présentée comme forte dans le texte ?
+REPONSES|Dans les pays pauvres;Dans les pays développés;Dans tous les pays de la même manière
+BONNE|Dans les pays pauvres
+EXPLICATION|Le texte indique que la croissance démographique est forte dans les pays pauvres, alors qu’elle est plus faible dans les pays développés.
+
+SESSION|2
+QUESTION|Que se passe-t-il dans les pays émergents selon le texte ?
+REPONSES|La croissance démographique ralentit;La population disparaît;La croissance devient toujours très forte
+BONNE|La croissance démographique ralentit
+EXPLICATION|Les pays émergents connaissent une croissance démographique qui ralentit.
+
+SESSION|2
+QUESTION|Quelle évolution concerne progressivement les populations du monde entier ?
+REPONSES|Le vieillissement de la population;La disparition des personnes âgées;La diminution de tous les besoins
+BONNE|Le vieillissement de la population
+EXPLICATION|Le texte indique qu’un vieillissement généralisé de la population est à venir : la part des personnes âgées va augmenter.
+
+SESSION|3
+QUESTION|Pourquoi la croissance démographique augmente-t-elle les besoins ?
+REPONSES|Parce qu’il y a davantage de personnes à nourrir, loger et équiper;Parce que les habitants ont tous les mêmes besoins;Parce que les richesses augmentent automatiquement
+BONNE|Parce qu’il y a davantage de personnes à nourrir, loger et équiper
+EXPLICATION|Quand la population augmente, les besoins en nourriture, logement et équipements augmentent également.
+
+SESSION|3
+QUESTION|Pourquoi la croissance démographique pose-t-elle la question du développement durable et équitable ?
+REPONSES|Parce qu’il faut répondre aux besoins de la population sans laisser les plus pauvres de côté;Parce qu’il faut arrêter toute croissance de la population;Parce que tous les habitants ont exactement les mêmes conditions de vie
+BONNE|Parce qu’il faut répondre aux besoins de la population sans laisser les plus pauvres de côté
+EXPLICATION|La croissance démographique augmente les besoins et le développement ne profite pas toujours de la même manière à tous.
+
+SESSION|3
+QUESTION|Qu’est-ce que la pauvreté ?
+REPONSES|L’incapacité à satisfaire ses besoins essentiels;Le fait d’avoir moins d’habitants dans un pays;Une baisse de la population
+BONNE|L’incapacité à satisfaire ses besoins essentiels
+EXPLICATION|Le texte définit la pauvreté comme l’incapacité à satisfaire des besoins essentiels comme se nourrir, se loger ou se soigner.
+
+SESSION|3
+QUESTION|À quelles échelles peut-on observer les différences de richesse et de pauvreté ?
+REPONSES|À plusieurs échelles, notamment mondiale, nationale et locale;Uniquement à l’échelle mondiale;Uniquement dans les grandes villes
+BONNE|À plusieurs échelles, notamment mondiale, nationale et locale
+EXPLICATION|Les différences de richesse et de pauvreté existent à différentes échelles. Un pays peut être riche ou pauvre dans son ensemble, mais il peut aussi comporter des habitants riches et pauvres.
+
+SESSION|3
+QUESTION|À quoi servent les indicateurs comme le PIB par habitant, l’IDH ou l’indice de Gini ?
+REPONSES|À mesurer ou comparer certains aspects de la richesse et des inégalités;À compter uniquement le nombre d’habitants;À mesurer uniquement la superficie des pays
+BONNE|À mesurer ou comparer certains aspects de la richesse et des inégalités
+EXPLICATION|Ces indicateurs permettent d’étudier le niveau de développement, la richesse ou les inégalités entre les habitants.
+
+SESSION|3
+QUESTION|Quelle idée importante faut-il retenir sur la croissance démographique ?
+REPONSES|Elle est inégale dans le monde et elle entraîne de nouveaux besoins;Elle est identique dans tous les pays;Elle concerne uniquement les pays riches
+BONNE|Elle est inégale dans le monde et elle entraîne de nouveaux besoins
+EXPLICATION|La croissance démographique varie selon les régions et augmente les besoins en nourriture, logement et équipements.

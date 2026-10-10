@@ -1,0 +1,154 @@
+SESSION|1
+QUESTION|Que signifie "It" ?
+REPONSES|Il / elle pour une personne;Il / elle pour ce qui n'est pas humain;Nous
+BONNE|Il / elle pour ce qui n'est pas humain
+EXPLICATION|Sur ta fiche, "It" désigne il ou elle pour tout ce qui n'est pas humain.
+
+QUESTION|Que signifie le pronom "He" ?
+REPONSES|Il;Elle;Ils / elles
+BONNE|Il
+EXPLICATION|"He" signifie "il".
+
+QUESTION|Que signifie le pronom "She" ?
+REPONSES|Il;Elle;Vous
+BONNE|Elle
+EXPLICATION|"She" signifie "elle".
+
+QUESTION|Que signifie le pronom "We" ?
+REPONSES|Vous;Nous;Ils / elles
+BONNE|Nous
+EXPLICATION|"We" signifie "nous".
+
+QUESTION|Quelle forme du verbe BE utilise-t-on avec "You" ?
+REPONSES|am;is;are
+BONNE|are
+EXPLICATION|Avec "You", on utilise "are".
+
+QUESTION|Quelle forme du verbe HAVE utilise-t-on avec "We" ?
+REPONSES|has;have;is
+BONNE|have
+EXPLICATION|Avec "We", on utilise "have".
+
+QUESTION|Quel nombre correspond à "three" ?
+REPONSES|2;3;4
+BONNE|3
+EXPLICATION|"Three" signifie trois.
+
+QUESTION|Quel nombre correspond à "eight" ?
+REPONSES|7;8;9
+BONNE|8
+EXPLICATION|"Eight" signifie huit.
+
+QUESTION|Quel nombre correspond à "twelve" ?
+REPONSES|10;12;20
+BONNE|12
+EXPLICATION|"Twelve" signifie douze.
+
+QUESTION|Quel nombre correspond à "nineteen" ?
+REPONSES|9;19;90
+BONNE|19
+EXPLICATION|"Nineteen" signifie dix-neuf.
+
+
+SESSION|2
+QUESTION|Comment dit-on "vert" en anglais ?
+REPONSES|Green;Grey;Brown
+BONNE|Green
+EXPLICATION|"Green" signifie vert.
+
+QUESTION|Comment dit-on "orange" en anglais ?
+REPONSES|Orange;Purple;Pink
+BONNE|Orange
+EXPLICATION|"Orange" signifie orange.
+
+QUESTION|Comment dit-on "gris" en anglais ?
+REPONSES|Grey;Green;White
+BONNE|Grey
+EXPLICATION|"Grey" signifie gris.
+
+QUESTION|Comment dit-on "blanc" en anglais ?
+REPONSES|Black;White;Blue
+BONNE|White
+EXPLICATION|"White" signifie blanc.
+
+QUESTION|Comment dit-on "noir" en anglais ?
+REPONSES|Brown;Black;Blue
+BONNE|Black
+EXPLICATION|"Black" signifie noir.
+
+QUESTION|Comment dit-on "rose" en anglais ?
+REPONSES|Purple;Pink;Red
+BONNE|Pink
+EXPLICATION|"Pink" signifie rose.
+
+QUESTION|Comment dit-on "violet" en anglais ?
+REPONSES|Purple;Yellow;Grey
+BONNE|Purple
+EXPLICATION|"Purple" signifie violet.
+
+QUESTION|Comment dit-on "marron" en anglais ?
+REPONSES|Brown;Black;Green
+BONNE|Brown
+EXPLICATION|"Brown" signifie marron.
+
+QUESTION|Quel jour correspond à "Wednesday" ?
+REPONSES|Mardi;Mercredi;Jeudi
+BONNE|Mercredi
+EXPLICATION|"Wednesday" signifie mercredi.
+
+QUESTION|Quel jour correspond à "Thursday" ?
+REPONSES|Vendredi;Jeudi;Mardi
+BONNE|Jeudi
+EXPLICATION|"Thursday" signifie jeudi.
+
+
+SESSION|3
+QUESTION|Quel jour correspond à "Friday" ?
+REPONSES|Vendredi;Samedi;Dimanche
+BONNE|Vendredi
+EXPLICATION|"Friday" signifie vendredi.
+
+QUESTION|Quel jour correspond à "Saturday" ?
+REPONSES|Dimanche;Samedi;Lundi
+BONNE|Samedi
+EXPLICATION|"Saturday" signifie samedi.
+
+QUESTION|Quel mois correspond à "February" ?
+REPONSES|Janvier;Février;Mars
+BONNE|Février
+EXPLICATION|"February" signifie février.
+
+QUESTION|Quel mois correspond à "March" ?
+REPONSES|Mars;Mai;Juin
+BONNE|Mars
+EXPLICATION|"March" signifie mars.
+
+QUESTION|Quel mois correspond à "April" ?
+REPONSES|Avril;Août;Octobre
+BONNE|Avril
+EXPLICATION|"April" signifie avril.
+
+QUESTION|Quel mois correspond à "May" ?
+REPONSES|Mars;Mai;Juillet
+BONNE|Mai
+EXPLICATION|"May" signifie mai.
+
+QUESTION|Quel mois correspond à "June" ?
+REPONSES|Juin;Juillet;Janvier
+BONNE|Juin
+EXPLICATION|"June" signifie juin.
+
+QUESTION|Quel mois correspond à "July" ?
+REPONSES|Juin;Juillet;Août
+BONNE|Juillet
+EXPLICATION|"July" signifie juillet.
+
+QUESTION|Quel mois correspond à "August" ?
+REPONSES|Avril;Août;Décembre
+BONNE|Août
+EXPLICATION|"August" signifie août.
+
+QUESTION|Quel mois correspond à "September" ?
+REPONSES|Septembre;Octobre;Novembre
+BONNE|Septembre
+EXPLICATION|"September" signifie septembre.

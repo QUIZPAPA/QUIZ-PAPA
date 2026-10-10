@@ -1,0 +1,154 @@
+SESSION|1
+QUESTION|Quel nombre correspond à "one" ?
+REPONSES|1;11;21
+BONNE|1
+EXPLICATION|"One" signifie un.
+
+QUESTION|Quel nombre correspond à "two" ?
+REPONSES|2;12;20
+BONNE|2
+EXPLICATION|"Two" signifie deux.
+
+QUESTION|Quel nombre correspond à "four" ?
+REPONSES|4;14;40
+BONNE|4
+EXPLICATION|"Four" signifie quatre.
+
+QUESTION|Quel nombre correspond à "five" ?
+REPONSES|5;15;50
+BONNE|5
+EXPLICATION|"Five" signifie cinq.
+
+QUESTION|Quel nombre correspond à "six" ?
+REPONSES|6;16;60
+BONNE|6
+EXPLICATION|"Six" signifie six.
+
+QUESTION|Quel nombre correspond à "seven" ?
+REPONSES|7;17;70
+BONNE|7
+EXPLICATION|"Seven" signifie sept.
+
+QUESTION|Quel nombre correspond à "nine" ?
+REPONSES|9;19;90
+BONNE|9
+EXPLICATION|"Nine" signifie neuf.
+
+QUESTION|Quel nombre correspond à "ten" ?
+REPONSES|10;12;20
+BONNE|10
+EXPLICATION|"Ten" signifie dix.
+
+QUESTION|Quel nombre correspond à "eleven" ?
+REPONSES|7;11;17
+BONNE|11
+EXPLICATION|"Eleven" signifie onze.
+
+QUESTION|Quel nombre correspond à "thirteen" ?
+REPONSES|13;30;3
+BONNE|13
+EXPLICATION|"Thirteen" signifie treize.
+
+
+SESSION|2
+QUESTION|Quel nombre correspond à "fourteen" ?
+REPONSES|4;14;40
+BONNE|14
+EXPLICATION|"Fourteen" signifie quatorze.
+
+QUESTION|Quel nombre correspond à "fifteen" ?
+REPONSES|5;15;50
+BONNE|15
+EXPLICATION|"Fifteen" signifie quinze.
+
+QUESTION|Quel nombre correspond à "sixteen" ?
+REPONSES|6;16;60
+BONNE|16
+EXPLICATION|"Sixteen" signifie seize.
+
+QUESTION|Quel nombre correspond à "seventeen" ?
+REPONSES|7;17;70
+BONNE|17
+EXPLICATION|"Seventeen" signifie dix-sept.
+
+QUESTION|Quel nombre correspond à "eighteen" ?
+REPONSES|8;18;80
+BONNE|18
+EXPLICATION|"Eighteen" signifie dix-huit.
+
+QUESTION|Quel nombre correspond à "thirty" ?
+REPONSES|13;30;3
+BONNE|30
+EXPLICATION|"Thirty" signifie trente.
+
+QUESTION|Quel nombre correspond à "sixty" ?
+REPONSES|16;60;6
+BONNE|60
+EXPLICATION|"Sixty" signifie soixante.
+
+QUESTION|Quel nombre correspond à "seventy" ?
+REPONSES|17;70;7
+BONNE|70
+EXPLICATION|"Seventy" signifie soixante-dix.
+
+QUESTION|Quel nombre correspond à "eighty" ?
+REPONSES|18;80;8
+BONNE|80
+EXPLICATION|"Eighty" signifie quatre-vingts.
+
+QUESTION|Quel nombre correspond à "ninety" ?
+REPONSES|19;90;9
+BONNE|90
+EXPLICATION|"Ninety" signifie quatre-vingt-dix.
+
+
+SESSION|3
+QUESTION|Comment dit-on "cent" en anglais ?
+REPONSES|One hundred;One thousand;One million
+BONNE|One hundred
+EXPLICATION|"One hundred" signifie cent.
+
+QUESTION|Comment dit-on "mille" en anglais ?
+REPONSES|One hundred;One thousand;Ten thousand
+BONNE|One thousand
+EXPLICATION|"One thousand" signifie mille.
+
+QUESTION|Comment dit-on "vingt-neuf" en anglais ?
+REPONSES|Twenty-nine;Twenty-nineen;Ninety-two
+BONNE|Twenty-nine
+EXPLICATION|"Twenty-nine" signifie vingt-neuf.
+
+QUESTION|Quelle saison correspond à "Spring" ?
+REPONSES|Le printemps;L'été;L'hiver
+BONNE|Le printemps
+EXPLICATION|"Spring" signifie printemps.
+
+QUESTION|Quelle saison correspond à "Summer" ?
+REPONSES|Le printemps;L'été;L'automne
+BONNE|L'été
+EXPLICATION|"Summer" signifie été.
+
+QUESTION|Quelle saison correspond à "Fall" sur la fiche ?
+REPONSES|L'hiver;L'automne;Le printemps
+BONNE|L'automne
+EXPLICATION|Sur la fiche, "Fall" signifie automne.
+
+QUESTION|Que signifie "stormy" pour parler de la météo ?
+REPONSES|Orageux;Ensoleillé;Neigeux
+BONNE|Orageux
+EXPLICATION|"Stormy" signifie orageux.
+
+QUESTION|Que signifie "hot" pour parler de la météo ?
+REPONSES|Froid;Chaud;Venteux
+BONNE|Chaud
+EXPLICATION|"Hot" signifie chaud.
+
+QUESTION|Que signifie "sad" ?
+REPONSES|Triste;Heureux;Fier
+BONNE|Triste
+EXPLICATION|"Sad" signifie triste.
+
+QUESTION|Que signifie "glad" ?
+REPONSES|Content;Malade;En colère
+BONNE|Content
+EXPLICATION|"Glad" signifie content ou heureux.

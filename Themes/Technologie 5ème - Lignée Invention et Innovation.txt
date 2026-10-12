@@ -1,0 +1,131 @@
+SESSION|1
+QUESTION|Qu’est-ce qu’une famille d’objets techniques ?
+REPONSES|Des objets qui répondent au même besoin et à la même fonction d’usage;Des objets fabriqués à la même époque;Des objets qui utilisent toujours la même énergie
+BONNE|Des objets qui répondent au même besoin et à la même fonction d’usage
+EXPLICATION|Une famille regroupe des objets qui répondent au même besoin et à la même fonction d’usage. Ils ne sont pas obligés d’utiliser le même principe technique.
+
+SESSION|1
+QUESTION|Qu’est-ce qu’une lignée d’objets techniques ?
+REPONSES|Une suite chronologique d’objets ayant la même fonction d’usage et le même principe technique;Des objets qui répondent à des besoins différents;Des objets qui ont tous la même forme
+BONNE|Une suite chronologique d’objets ayant la même fonction d’usage et le même principe technique
+EXPLICATION|Une lignée est une suite d’objets dans le temps qui gardent la même fonction d’usage et utilisent le même principe technique.
+
+SESSION|1
+QUESTION|Que signifie le mot « invention » dans le cours ?
+REPONSES|Elle fait suite à une découverte et peut introduire un nouveau principe de fonctionnement;C’est seulement une amélioration d’un objet existant;C’est le classement d’objets selon leur fonction
+BONNE|Elle fait suite à une découverte et peut introduire un nouveau principe de fonctionnement
+EXPLICATION|Dans le cours, une invention fait suite à une découverte. Un nouveau principe de fonctionnement peut faire naître une nouvelle lignée.
+
+SESSION|1
+QUESTION|Qu’est-ce qu’une innovation ?
+REPONSES|L’amélioration d’une invention existante grâce à un progrès technique ou technologique;La création d’un besoin qui n’existait pas;Une suite chronologique d’objets techniques
+BONNE|L’amélioration d’une invention existante grâce à un progrès technique ou technologique
+EXPLICATION|Une innovation améliore une invention existante en lui apportant un progrès technique ou technologique.
+
+SESSION|1
+QUESTION|Quel mot désigne la raison pour laquelle un objet a été créé ?
+REPONSES|La fonction principale;La fonction technique;Le principe technique
+BONNE|La fonction principale
+EXPLICATION|La fonction principale exprime la raison pour laquelle l’objet a été créé. Elle répond à la question : « À quoi sert cet objet ? »
+
+SESSION|1
+QUESTION|Quel terme désigne la règle qui explique comment un objet fonctionne et quelle technique il utilise ?
+REPONSES|Le principe technique;La famille;La fonction principale
+BONNE|Le principe technique
+EXPLICATION|Le principe technique explique le fonctionnement d’un objet en indiquant la technique utilisée.
+
+SESSION|1
+QUESTION|Que décrit une fonction technique ?
+REPONSES|Le rôle d’un ou de plusieurs composants de l’objet;La raison générale pour laquelle l’objet a été créé;La suite chronologique des objets
+BONNE|Le rôle d’un ou de plusieurs composants de l’objet
+EXPLICATION|La fonction technique décrit le rôle d’un ou de plusieurs composants de l’objet. Elle s’exprime avec un verbe à l’infinitif.
+
+SESSION|2
+QUESTION|Des objets servent à éclairer une pièce. Ils répondent au même besoin et à la même fonction d’usage. Comment peut-on les regrouper ?
+REPONSES|Dans une famille;Dans une seule lignée obligatoirement;Dans une même fonction technique obligatoirement
+BONNE|Dans une famille
+EXPLICATION|Les objets qui répondent au même besoin et à la même fonction d’usage appartiennent à une même famille, même si leur principe technique est différent.
+
+SESSION|2
+QUESTION|Deux objets servent à éclairer et utilisent tous les deux une flamme issue d’une combustion. Quel critère permet de les associer à une même lignée ?
+REPONSES|Ils ont la même fonction d’usage et le même principe technique;Ils ont exactement la même forme;Ils ont été inventés la même année
+BONNE|Ils ont la même fonction d’usage et le même principe technique
+EXPLICATION|Pour appartenir à une même lignée, les objets doivent avoir la même fonction d’usage et utiliser le même principe technique. Ils peuvent avoir une apparence différente.
+
+SESSION|2
+QUESTION|Pourquoi une famille d’objets peut-elle contenir plusieurs lignées ?
+REPONSES|Parce que des objets peuvent répondre au même besoin avec des principes techniques différents;Parce que tous les objets d’une famille ont forcément le même principe technique;Parce qu’une famille ne contient qu’un seul objet
+BONNE|Parce que des objets peuvent répondre au même besoin avec des principes techniques différents
+EXPLICATION|Une famille est définie par le besoin et la fonction d’usage. Une lignée demande en plus un même principe technique : une famille peut donc réunir plusieurs lignées.
+
+SESSION|2
+QUESTION|Dans le cours, le feu de bois et la lampe à huile produisent tous deux de la lumière grâce à une flamme. Quel principe technique ont-ils en commun ?
+REPONSES|Utiliser une flamme issue d’une combustion pour produire de la lumière;Utiliser l’électricité pour faire briller une LED;Convertir l’énergie électrique en mouvement
+BONNE|Utiliser une flamme issue d’une combustion pour produire de la lumière
+EXPLICATION|Le cours présente une lignée qui utilise une flamme issue d’une combustion pour produire de la lumière.
+
+SESSION|2
+QUESTION|Dans le cours, l’ampoule à filament et la LED utilisent l’électricité pour produire de la lumière. Quel principe technique ont-elles en commun selon la synthèse ?
+REPONSES|Utiliser l’électricité pour produire de la lumière;Utiliser une flamme de pétrole;Utiliser l’énergie musculaire pour avancer
+BONNE|Utiliser l’électricité pour produire de la lumière
+EXPLICATION|La synthèse présente une lignée qui utilise l’électricité pour produire de la lumière. L’ampoule à filament et la LED sont des exemples de cette évolution.
+
+SESSION|2
+QUESTION|La LED remplace progressivement l’ampoule à filament pour éclairer. Dans le cours, cette amélioration est présentée comme :
+REPONSES|Une innovation;Une famille;Une fonction technique
+BONNE|Une innovation
+EXPLICATION|Le cours présente les améliorations apportées aux objets d’éclairage comme des innovations. Une innovation apporte un progrès technique ou technologique à une invention existante.
+
+SESSION|2
+QUESTION|Selon la synthèse, quelle découverte est associée à une invention permettant de produire de la lumière autrement qu’avec une flamme ?
+REPONSES|La découverte de l’électricité;La découverte du vélo;La découverte du pétrole
+BONNE|La découverte de l’électricité
+EXPLICATION|La synthèse indique que la découverte de l’électricité est associée à une invention et à une nouvelle manière de produire de la lumière.
+
+SESSION|2
+QUESTION|Quelle proposition décrit correctement la différence entre invention et innovation ?
+REPONSES|Une invention fait suite à une découverte et peut introduire un nouveau principe;Une innovation est toujours la première découverte scientifique;Une invention est forcément une amélioration d’un objet déjà existant
+BONNE|Une invention fait suite à une découverte et peut introduire un nouveau principe
+EXPLICATION|Une invention fait suite à une découverte et peut introduire un nouveau principe de fonctionnement. Une innovation améliore une invention existante.
+
+SESSION|3
+QUESTION|Un groupe d’objets sert à transporter des personnes. Certains utilisent l’énergie musculaire, d’autres l’énergie électrique. Quel regroupement peut convenir si leur besoin et leur fonction d’usage sont les mêmes ?
+REPONSES|Une famille;Une seule lignée obligatoirement;Une fonction technique
+BONNE|Une famille
+EXPLICATION|Une famille regroupe les objets qui répondent au même besoin et à la même fonction d’usage, même si les principes techniques diffèrent.
+
+SESSION|3
+QUESTION|Une lampe à huile puis une lampe à pétrole sont placées dans l’ordre du temps. Elles produisent de la lumière avec une flamme. Selon la définition du cours, quel critère important justifie leur rapprochement dans une lignée ?
+REPONSES|Elles ont la même fonction d’usage et le même principe technique;Elles ont le même nom;Elles utilisent forcément le même matériau
+BONNE|Elles ont la même fonction d’usage et le même principe technique
+EXPLICATION|Une lignée est une suite chronologique d’objets qui partagent la même fonction d’usage et le même principe technique. Le nom ou le matériau ne sont pas les critères de définition.
+
+SESSION|3
+QUESTION|Un ingénieur améliore une invention existante en la rendant plus efficace grâce à un progrès technologique. Comment appelle-t-on cette amélioration ?
+REPONSES|Une innovation;Une lignée;Une fonction principale
+BONNE|Une innovation
+EXPLICATION|Une innovation est une amélioration d’une invention existante grâce à un progrès technique ou technologique.
+
+SESSION|3
+QUESTION|Une découverte conduit à créer un objet qui fonctionne selon un nouveau principe technique. Quel effet cela peut-il avoir selon le cours ?
+REPONSES|Faire naître une nouvelle lignée;Créer automatiquement une nouvelle famille sans autre condition;Supprimer le besoin auquel répond l’objet
+BONNE|Faire naître une nouvelle lignée
+EXPLICATION|Le cours précise qu’un nouveau principe de fonctionnement peut faire naître une nouvelle lignée d’objets techniques.
+
+SESSION|3
+QUESTION|Quelle proposition correspond à la définition d’une famille plutôt qu’à celle d’une lignée ?
+REPONSES|Des objets qui répondent au même besoin et à la même fonction d’usage;Des objets rangés dans l’ordre chronologique et utilisant le même principe technique;Des objets qui possèdent exactement les mêmes composants
+BONNE|Des objets qui répondent au même besoin et à la même fonction d’usage
+EXPLICATION|La famille est définie par le besoin et la fonction d’usage. La lignée est une suite chronologique qui partage aussi le même principe technique.
+
+SESSION|3
+QUESTION|Dans la phrase « La fonction principale du vélo est de déplacer une personne », quel mot désigne la notion décrite ?
+REPONSES|La fonction principale;Le principe technique;L’innovation
+BONNE|La fonction principale
+EXPLICATION|La fonction principale indique la raison pour laquelle l’objet a été créé. Ici, le vélo sert à déplacer une personne.
+
+SESSION|3
+QUESTION|Pourquoi la découverte de l’électricité a-t-elle contribué à l’évolution des objets d’éclairage selon la synthèse ?
+REPONSES|Elle a permis de produire de la lumière avec un principe différent de la flamme;Elle a rendu inutile toute forme d’éclairage;Elle a permis à tous les objets de fonctionner avec l’énergie musculaire
+BONNE|Elle a permis de produire de la lumière avec un principe différent de la flamme
+EXPLICATION|La synthèse distingue la production de lumière par une flamme et la production de lumière grâce à l’électricité. Ce nouveau principe a contribué à l’évolution des objets d’éclairage.

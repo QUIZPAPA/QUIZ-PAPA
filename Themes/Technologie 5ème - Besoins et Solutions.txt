@@ -1,0 +1,152 @@
+SESSION|1
+QUESTION|Dans un objet technique, que représente le besoin ?
+REPONSES|Ce que la personne souhaite ou doit satisfaire;La forme de l'objet;Le matériau utilisé
+BONNE|Ce que la personne souhaite ou doit satisfaire
+EXPLICATION|Le besoin correspond à ce qu'une personne attend de l'objet ou du système technique.
+
+QUESTION|Quel est le besoin d'une personne qui utilise une lampe de bureau ?
+REPONSES|Éclairer son espace de travail;Ranger ses affaires;Transporter ses documents
+BONNE|Éclairer son espace de travail
+EXPLICATION|La personne a besoin de lumière pour travailler dans de bonnes conditions.
+
+QUESTION|À quoi correspond la fonction principale d'un objet technique ?
+REPONSES|À ce que l'objet permet de faire;À la liste de ses matériaux;À son prix de fabrication
+BONNE|À ce que l'objet permet de faire
+EXPLICATION|La fonction principale décrit le service rendu par l'objet.
+
+QUESTION|Quelle est la fonction principale d'une lampe de bureau ?
+REPONSES|Éclairer une zone sur un bureau;Transporter de l'énergie électrique;Permettre de régler sa hauteur
+BONNE|Éclairer une zone sur un bureau
+EXPLICATION|La lampe sert principalement à éclairer la zone de travail.
+
+QUESTION|Qu'est-ce qu'une fonction technique ?
+REPONSES|Une action nécessaire pour réaliser la fonction principale;Le besoin exprimé par l'utilisateur;Le nom commercial de l'objet
+BONNE|Une action nécessaire pour réaliser la fonction principale
+EXPLICATION|Les fonctions techniques sont les différentes actions nécessaires au fonctionnement de l'objet.
+
+QUESTION|Pour une lampe de bureau, quelle est une fonction technique ?
+REPONSES|Diffuser la lumière;Éclairer une zone sur un bureau;Travailler dans de bonnes conditions
+BONNE|Diffuser la lumière
+EXPLICATION|Diffuser la lumière est une action qui contribue à la fonction principale de la lampe.
+
+QUESTION|Qu'est-ce qu'une solution technique ?
+REPONSES|Un élément qui permet de réaliser une fonction technique;Un besoin exprimé par une personne;Une contrainte de sécurité
+BONNE|Un élément qui permet de réaliser une fonction technique
+EXPLICATION|Une solution technique est un élément concret choisi pour assurer une fonction technique.
+
+QUESTION|Quel élément d'une lampe permet de diffuser la lumière ?
+REPONSES|L'ampoule et le globe réflecteur;Le câble électrique;Le bras articulé
+BONNE|L'ampoule et le globe réflecteur
+EXPLICATION|L'ampoule produit la lumière et le globe réflecteur contribue à sa diffusion.
+
+QUESTION|Quel élément permet de positionner l'éclairage d'une lampe de bureau ?
+REPONSES|Le bras articulé;L'interrupteur;Le câble électrique
+BONNE|Le bras articulé
+EXPLICATION|Le bras articulé permet d'orienter et de positionner la lumière.
+
+QUESTION|Quel élément permet de transporter l'énergie électrique dans une lampe ?
+REPONSES|Le câble électrique;Le globe réflecteur;L'interrupteur
+BONNE|Le câble électrique
+EXPLICATION|Le câble conduit l'énergie électrique vers les éléments de la lampe.
+
+SESSION|2
+QUESTION|Quel élément permet d'allumer ou d'éteindre une lampe ?
+REPONSES|L'interrupteur;L'ampoule;Le bras articulé
+BONNE|L'interrupteur
+EXPLICATION|L'interrupteur permet de commander la mise en marche et l'arrêt de la lampe.
+
+QUESTION|Quelle proposition distingue correctement la fonction principale et la fonction technique ?
+REPONSES|La fonction principale décrit le service rendu, la fonction technique décrit une action nécessaire;La fonction principale désigne un matériau, la fonction technique désigne le prix;Les deux expressions désignent exactement la même chose
+BONNE|La fonction principale décrit le service rendu, la fonction technique décrit une action nécessaire
+EXPLICATION|La fonction principale indique à quoi sert l'objet. Les fonctions techniques expliquent les actions qui permettent de rendre ce service.
+
+QUESTION|Qu'appelle-t-on une contrainte lors de la conception d'un objet technique ?
+REPONSES|Une exigence à respecter;Une fonction principale;Une pièce obligatoire de l'objet
+BONNE|Une exigence à respecter
+EXPLICATION|Les contraintes influencent les choix réalisés lors de la conception d'un objet.
+
+QUESTION|Laquelle de ces propositions est une contrainte de conception ?
+REPONSES|La sécurité;La couleur préférée de l'utilisateur uniquement;Le nom du fabricant
+BONNE|La sécurité
+EXPLICATION|La sécurité fait partie des contraintes à prendre en compte pour concevoir un objet.
+
+QUESTION|Quels éléments peuvent être des contraintes lors de la conception d'un objet ?
+REPONSES|La sécurité, le coût et l'esthétique;La marque, le slogan et la publicité;Le nom, la date et le numéro de série
+BONNE|La sécurité, le coût et l'esthétique
+EXPLICATION|La sécurité, les coûts d'achat et d'utilisation ainsi que l'esthétique peuvent influencer les choix techniques.
+
+QUESTION|Pourquoi utilise-t-on des matériaux adaptés dans une pompe à chaleur ?
+REPONSES|Pour résister aux conditions de fonctionnement;Pour rendre l'objet plus lourd;Pour supprimer toutes les fonctions techniques
+BONNE|Pour résister aux conditions de fonctionnement
+EXPLICATION|Les matériaux doivent notamment résister à la pression et être protégés contre le froid.
+
+QUESTION|Pourquoi peut-on utiliser du métal recyclé pour fabriquer un carter ?
+REPONSES|Pour éviter d'extraire de nouvelles matières premières;Pour augmenter les émissions de CO₂;Pour empêcher l'objet de fonctionner
+BONNE|Pour éviter d'extraire de nouvelles matières premières
+EXPLICATION|Réutiliser du métal permet de limiter l'extraction de nouvelles ressources naturelles.
+
+QUESTION|Qu'est-ce qu'une source d'énergie ?
+REPONSES|Une matière ou un phénomène dont on peut obtenir de l'énergie;Un appareil qui consomme toujours de l'électricité;Un matériau utilisé uniquement pour fabriquer des objets
+BONNE|Une matière ou un phénomène dont on peut obtenir de l'énergie
+EXPLICATION|Une source d'énergie peut être une matière comme le pétrole ou un phénomène comme le vent.
+
+QUESTION|Lequel de ces éléments est une source d'énergie ?
+REPONSES|Le vent;Le plastique;Le verre
+BONNE|Le vent
+EXPLICATION|Le vent est un phénomène naturel dont on peut tirer de l'énergie.
+
+QUESTION|Lequel de ces éléments est une source d'énergie fossile ?
+REPONSES|Le charbon;Le vent;La lumière du Soleil
+BONNE|Le charbon
+EXPLICATION|Le charbon est une énergie fossile, comme le pétrole et le gaz naturel.
+
+SESSION|3
+QUESTION|Quel gaz est émis en grande quantité lors de la combustion des énergies fossiles ?
+REPONSES|Le dioxyde de carbone (CO₂);Le dioxygène (O₂);L'azote
+BONNE|Le dioxyde de carbone (CO₂)
+EXPLICATION|La combustion du pétrole, du gaz et du charbon rejette beaucoup de dioxyde de carbone.
+
+QUESTION|Pourquoi le CO₂ est-il préoccupant pour le climat ?
+REPONSES|C'est un gaz à effet de serre qui contribue au réchauffement;Il refroidit fortement l'atmosphère;Il empêche toute lumière solaire d'atteindre la Terre
+BONNE|C'est un gaz à effet de serre qui contribue au réchauffement
+EXPLICATION|Le CO₂ contribue à l'effet de serre et au réchauffement climatique.
+
+QUESTION|Quel phénomène est favorisé par l'augmentation des gaz à effet de serre ?
+REPONSES|Le réchauffement climatique;La disparition de la gravité;La diminution permanente de la lumière du Soleil
+BONNE|Le réchauffement climatique
+EXPLICATION|L'augmentation des gaz à effet de serre contribue à réchauffer la planète et à modifier le climat.
+
+QUESTION|Selon la fiche, quelle conséquence peut être observée avec le changement climatique ?
+REPONSES|Des étés plus chauds;Des étés toujours plus froids;La disparition de toutes les saisons
+BONNE|Des étés plus chauds
+EXPLICATION|La fiche indique notamment que les étés deviennent plus chauds et les hivers moins froids.
+
+QUESTION|Qu'est-ce qu'une innovation ?
+REPONSES|Une amélioration ou une nouveauté apportée à un produit ou à une solution;Une simple copie sans changement;Un objet qui ne répond à aucun besoin
+BONNE|Une amélioration ou une nouveauté apportée à un produit ou à une solution
+EXPLICATION|Une innovation apporte une nouveauté ou une amélioration. Cette notion est mentionnée dans la fiche.
+
+QUESTION|Qu'est-ce que le développement durable ?
+REPONSES|Une manière de répondre aux besoins en tenant compte de l'environnement et des ressources;Une façon de fabriquer toujours plus sans limite;Une méthode qui consiste à utiliser uniquement du plastique
+BONNE|Une manière de répondre aux besoins en tenant compte de l'environnement et des ressources
+EXPLICATION|Le développement durable prend en compte la préservation de l'environnement et des ressources. La fiche associe cette notion à l'évolution des besoins.
+
+QUESTION|Dans un système technique, que désigne un interacteur extérieur ?
+REPONSES|Un élément extérieur qui échange ou agit avec le système;Une pièce située obligatoirement à l'intérieur;Un outil utilisé uniquement pour réparer le système
+BONNE|Un élément extérieur qui échange ou agit avec le système
+EXPLICATION|Les interacteurs extérieurs peuvent être des utilisateurs, des données, d'autres objets ou des éléments de l'environnement.
+
+QUESTION|Lequel de ces éléments peut être un interacteur extérieur ?
+REPONSES|L'utilisateur;Une vis cachée dans le mécanisme;Une pièce interne du moteur
+BONNE|L'utilisateur
+EXPLICATION|La personne qui utilise un objet fait partie des interacteurs extérieurs possibles.
+
+QUESTION|Quel indicateur peut servir à étudier l'impact environnemental d'un objet ?
+REPONSES|La qualité de l'air;La popularité de sa marque;Le nombre de publicités
+BONNE|La qualité de l'air
+EXPLICATION|La fiche cite des indicateurs concernant l'air, l'eau, les sols et la santé.
+
+QUESTION|À quoi sert une arborescence de dossiers informatiques ?
+REPONSES|À organiser les fichiers et les dossiers;À produire de l'électricité;À mesurer la température d'un ordinateur
+BONNE|À organiser les fichiers et les dossiers
+EXPLICATION|Une arborescence représente l'organisation des dossiers et sous-dossiers pour retrouver les fichiers.

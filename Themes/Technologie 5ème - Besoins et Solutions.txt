@@ -145,8 +145,3 @@ QUESTION|Quel indicateur peut servir à étudier l'impact environnemental d'un o
 REPONSES|La qualité de l'air;La popularité de sa marque;Le nombre de publicités
 BONNE|La qualité de l'air
 EXPLICATION|La fiche cite des indicateurs concernant l'air, l'eau, les sols et la santé.
-
-QUESTION|À quoi sert une arborescence de dossiers informatiques ?
-REPONSES|À organiser les fichiers et les dossiers;À produire de l'électricité;À mesurer la température d'un ordinateur
-BONNE|À organiser les fichiers et les dossiers
-EXPLICATION|Une arborescence représente l'organisation des dossiers et sous-dossiers pour retrouver les fichiers.
